@@ -1,0 +1,800 @@
+.wrap-full-popup {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: $widthFull;
+  height: 100%;
+  background: #fff;
+  .full-popup-body {
+    position: relative;
+    overflow-y: auto;
+    height: calc(100% - 56px);
+    .bottom-btn-area {
+      margin-top: 20px;
+      padding: 0 20px 20px 20px;
+    }
+  }
+}
+/* option popup header */
+.header-popup {
+  min-height: 57px;
+  padding: 18px 0 13px;
+  font-size: $fsBase + 6px;
+  line-height: 1.4;
+  text-align: center;
+  color: $colorBase;
+  border-bottom: 1px solid $colorBorder;
+  &.no-line{
+    border-bottom-color: transparent;
+  }
+}
+/* title */
+.wrap-option-popup, .wrap-full-popup {
+  .item-title {
+    padding: 15px 20px 12px;
+    border-bottom: 1px solid $colorBorder;
+    strong {
+      font-weight: 500;
+      font-size: $fsBase + 2px;
+    }
+    & + .option-content {
+      border-top: 10px solid $colorBgGray;
+    }
+  }
+}
+/* optionList */
+.option-toggle {
+  margin: 0 -20px;
+  .btn-toggle-step {
+    position: relative;
+    padding: 0 20px;
+    width: $widthFull;
+    height: 50px;
+    text-align: left;
+    background: #fff;
+    border-bottom: 1px solid $colorBorder;
+    &:after {
+      content: '';
+      @include afterArrow(inline-block, 9px, 9px, #000, 135deg);
+      position: absolute;
+      top: 15px;
+      top: 50%;
+      right: 23px;
+      margin-top: -8px;
+    }
+    &.active {
+      &:after {
+        margin-top: -2px;
+        transform: rotate(-45deg);
+      }
+    }
+    .txt-step {
+      padding-right: 14px;
+      color: $colorBase;
+      & + span {
+        font-weight: 500;
+      }
+    }
+  }
+  .option-toggle-content {
+    position: relative;
+    padding: 20px;
+    background: $colorBgGray;
+    &:after {
+      @include content;
+    }
+    .total-price {
+      float: right;
+      font-size: $fsBase;
+      strong {
+        font-weight: 700;
+        font-size: $fsBase + 6px;
+      }
+    }
+  }
+  & + .option-add-list {
+    margin-top: 20px;
+  }
+}
+/* datepicker input */
+.wrap-input-border {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 0 10px;
+  width: $widthFull;
+  height: 32px;
+  background: #fff;
+  border: 1px solid $colorBorder;
+  box-sizing: border-box;
+  input {
+    position: relative;
+    z-index: 1;
+    width: $widthFull;
+    color: transparent;
+    height: 30px;
+    padding: 0;
+  }
+  span {
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    font-size: $fsBase + 1px;
+    color: $colorLightGray;
+    background-color: #fff;
+    &.date {
+      left: 16px;
+      color: $colorBase;
+    }
+  }
+}
+.datepicker-txt-label.active {
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  font-size: 0;
+  border: 0;
+}
+.option-number {
+  float: left;
+}
+.option-content,
+.option-footer {
+  .dalisalda-list-price {
+    color: $colorGray;
+    .price-title:after {
+      display: inline-block;
+      content: '';
+      position: relative;
+      top: 1px;
+      margin: 0 4px;
+      width: 1px;
+      height: 10px;
+      background: $colorBorder;
+    }
+  }
+  .dali-price .ico-badge {
+    display: inline-block;
+    margin-right: 7px;
+    padding: 3px 8px 2px 5px;
+    font-weight: 700;
+    font-size: $fsBase - 2px;
+    color: #144733;
+    vertical-align: text-bottom;
+    background: $dalisalda;
+    border-top-right-radius: 17px;
+    border-bottom-right-radius: 17px;
+  }
+}
+/* select style button */
+.btn-select {
+  @at-root .option-content, .option-footer-gift {
+    .btn-select {
+      @include ellipsis;
+      padding-right: 30px;
+    }
+  }
+  position: relative;
+  padding: 0 11px;
+  width: $widthFull;
+  height: 32px;
+  font-size: $fsBase;
+  text-align: left;
+  background: #fff;
+  border: 1px solid $colorBorder;
+  span {
+    position: relative;
+    top: 1px;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border-top: 6px solid $colorBase;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+  }
+  & + & {
+    margin-top: 10px;
+  }
+  & + .wrap-option-list + & {
+    margin-top: 10px;
+  }
+}
+/* option list component */
+.wrap-option-list {
+  overflow-y: auto;
+  max-height: 380px;
+  border: 1px solid $colorBorder;
+  border-top: none;
+}
+.option-add {
+  background: #fff;
+  li + li {
+    border-top: 1px solid $colorBorder;
+  }
+  a {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+    figure {
+      display: inline-block;
+      margin-right: 8px;
+      width: 40px;
+      height: 40px;
+      vertical-align: middle;
+      & + .option-title {
+        max-width: 170px;
+      }
+    }
+    span {
+      font-size: $fsBase;
+    }
+  }
+  .option-title {
+    display: inline-block;
+    max-width: 220px;
+  }
+  .option-price {
+    display: block;
+    position: absolute;
+    right: 10px;
+    strong {
+      font-weight: 700;
+    }
+  }
+}
+/* selected option list component */
+.option-add-list {
+  margin-top: 10px;
+}
+.selected-option-list {
+  background: #fff;
+  > li {
+    border: 1px solid $colorBorder;
+    dl {
+      position: relative;
+      padding: 13px 15px 49px;
+      min-height: 98px;
+    }
+    .option-number {
+      position: absolute;
+      bottom: 15px;
+      float: none;
+    }
+    .option-gift {
+      position: absolute;
+      bottom: 18px;
+      left: 100px;
+      font-size: $fsBase + 2px;;
+      color: $gsfresh;
+      span {
+        display: block;
+      }
+    }
+  }
+  > li + li {
+    margin-top: 10px;
+  }
+  .addition-option-list {
+    li {
+      border-top: 1px dashed $colorBorder;
+    }
+  }
+  .delivery-desc {
+    display: block;
+    margin-bottom: 3px;
+    max-width: calc(100% - 32px);
+    font-size: $fsBase - 1px;
+  }
+  .tit {
+    max-width: calc(100% - 32px);
+    font-size: $fsBase + 1px;
+  }
+  .list-price,
+  .dalisalda-list-price {
+    position: absolute;
+    bottom: 33px;
+    right: 15px;
+  }
+  .list-price {
+    font-size: $fsBase;
+    color: $colorLightGray;
+  }
+  .dalisalda-list-price {
+    bottom: 35px;
+    padding: 0;
+    font-size: $fsBase - 1px;
+    color: $colorGray;
+  }
+  .sale-price,
+  .dali-price {
+    position: absolute;
+    right: 15px;
+    bottom: 11px;
+    font-size: $fsBase;
+    strong {
+      font-weight: 700;
+      font-size: $fsBase + 5px;
+    }
+  }
+}
+.btn-del {
+  position: absolute;
+  top: 12px;
+  right: 11px;
+  width: 20px;
+  height: 20px;
+  background: url('#{$imgIcoPath}/ico_layer_close.png') no-repeat center;
+  background-size: 13px 13px;
+}
+/* 날짜 고정 시 */
+.option-content {
+  & + .option-footer {
+    margin-top: 13px;
+  }
+  padding: 0 20px;
+  .wrap-option-package {
+    .selected-option-title {
+      padding-bottom: 6px;   
+    }
+    & + .option-add-list {
+      margin-top: 20px;
+    }
+  }
+  .selected-option-title {
+    padding: 7px 0 12px;
+    &:first-child {
+      padding-top: 17px;
+    }
+    strong {
+      display: block;
+      font-weight: 500;
+      font-size: $fsBase + 2px;
+    }
+    & + .option-add-list {
+      margin-top: 0;
+    }
+  }
+}
+/* QnA 팝업 */
+.wrap-form.qna {
+  margin: 0 20px;
+  font-size: $fsBase;
+  &:first-child {
+    padding-top: 14px;
+  }
+  & + .wrap-form.qna:not(.answerrequest) {
+    margin-top: 16px;
+    padding-top: 6px;
+    border-top: 1px solid $colorBgGray;
+  } 
+  & + .list-info {
+    margin-top: 17px;
+    padding-top: 10px;
+    border-top: 1px solid $colorBgGray;
+  } 
+  dl {
+    & + dl {
+      padding-top: 9px;
+    }
+  }
+  dt {
+    position: relative;
+    height: 44px;
+    font-weight: 500;
+    font-size: $fsBase + 2px;
+    line-height: 44px;
+    color: $colorBase;
+    button {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+  }
+  dd {
+    select {
+      width: $widthFull;
+      height: 32px;
+      border: 1px solid $colorBorder;
+    }
+    .wrap-textarea {
+      position: relative;
+      width: $widthFull;
+      height: 150px;
+      border: 1px solid $colorBorder;
+      textarea {
+        padding: 9px 9px 0;
+        width: $widthFull;
+        height: 127px;
+        font-size: $fsBase;
+        border: none;
+        box-sizing: border-box;
+      }
+      .input-text-num {
+        position: absolute;
+        right: 4px;
+        bottom: 3px;
+        span {
+          color: $colorLightGray;
+        }
+      }
+      & + p {
+        padding-top: 10px;
+      }
+    }
+    .inp-chk input[type='checkbox'] + label {
+      line-height: 20px;
+    }
+  }
+  .wrap-inp-chk-block {
+    &:first-child {
+      padding-top: 2px;
+    }
+    & + .wrap-inp-chk-block {
+      padding-top: 11px;
+    }
+  }
+  .box-selectproduct {
+    p {
+      font-weight: 500;
+      span {
+        font-weight: 400;
+      }
+    }
+  }
+}
+.list-info {
+  margin: 0 20px;
+  font-size: $fsBase - 1px;
+  color: $colorGray;
+  li {
+    padding-top: 9px;
+    padding-left: 5px;
+    text-indent: -5px;
+    &:before {
+      display: inline;
+      content: '· ';
+    }
+  }
+}
+/* wrap-footer-btn */
+.wrap-footer-btn {
+  margin-left: -10px;
+  button {
+    padding: 12px 0 10px;
+    margin-left: 10px;
+    width: calc(50% - 10px);
+  }
+}
+/* footer */
+.option-footer {
+  padding: 0 20px 100px;
+  margin-top: 35px;
+  .option-total-price {
+    @include flexSpaceBetween;
+    align-items: center;
+    padding-bottom: 10px;
+    font-size: $fsBase + 2px;
+    border-bottom: 1px solid #000;
+    .total-title {
+      margin-top: auto;
+      padding-left: 4px;
+      strong {
+        font-weight: 500;
+      }
+    }
+    .dalisalda-list-price {
+      display: block;
+      font-size: $fsBase + 2px;
+      text-align: right;
+      .price-title {
+        &:after {
+          top: 0;
+        }
+      }
+    }
+    .total-price {
+      padding-right: 4px;
+    }
+    .dali-price,
+    .total-price {
+      font-size: $fsBase;
+      strong {
+        font-size: $fsBase + 11px;
+        font-weight: 700;
+      }
+      .ico-badge {
+        font-size: $fsBase + 2px;
+      }
+      .ico-badge:after {
+        height: 13px;
+      }
+    }
+  }
+}
+/* 옵션 팝업 하단 정보 텍스트 */
+.option-footer-info-txt {
+  @include flexSpaceBetween;
+  align-items: center;
+  margin: 12px 0 0;
+  padding-left: 4px;
+  &.btntype {
+    p {
+      max-width: 210px;
+    }
+  }
+  p {
+    font-size: $fsBase + 1px;
+    color: $colorBase;
+    & + p {
+      margin-top: 10px;
+    }
+    strong {
+      font-weight: 500;
+      color: $colorRed;  
+      &.complete {
+        color: $gsfresh;  
+      }
+    }
+  }
+  .btn-gift {
+    width: 56px;
+    height: 23px;
+    font-size: $fsBase - 1px;
+    vertical-align: middle;
+    color: $colorBase;
+    background: none;
+    border: 1px solid $colorBase;
+  }
+}
+.option-footer-gift {
+  margin-top: 13px;
+}
+.option-footer-btn {
+  @include flexSpaceBetween;
+  flex-wrap: nowrap;
+  padding-top: 30px;
+  .btn-gift {
+    width: 40px;
+    height: 40px;
+    border: 1px solid $colorBorder;
+    background-position: center;
+    background-size: 19px;
+    & + .btn-bg {
+      &.btn-md {
+        width: calc((100% - 60px) / 2);
+        & + .btn-md {
+          margin-left: 0;
+          width: calc((100% - 60px) / 2);
+        }
+      }
+    }
+  }
+  .btn-bg {
+    &.btn-md {
+      width: 100%;
+      & + .btn-md {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+/* 이미지 zoom 팝업 */
+.vue-zoomer {
+  margin: -1px;
+  width: calc(100vw + 2px);
+  height: calc(100vh - 55px);
+  border: 1px solid transparent;
+  img {
+    width: $widthFull;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+/* 상품 qna 주문 선택 팝업 */
+.wrap-search-layer.selectproduct.selectItem {
+  z-index: 201;
+  .layer-bg {
+    opacity: 1;
+  }
+}
+.item-select-list {
+  li {
+    position: relative;
+  }
+  li + li {
+    &:after {
+      @include content;
+      position: absolute;
+      left: -20px;
+      top: 0;
+      width: calc(100% + 40px);
+      height: 1px;
+      background: $colorBorder;
+    }
+  }
+}
+.item-select {
+  padding-bottom: 20px;
+  &:after {
+    @include content;
+  }
+  .inp-radio {
+    display: block;
+    padding-bottom: 10px;
+    label {
+      color: $colorGray;
+      strong {
+        font-weight: 500;
+        color: $colorBase;
+      }
+    }
+  }
+  .thumb {
+    width: 75px;
+    float: left;
+  }
+  .text {
+    float: left;
+    padding-left: 10px;
+    width: calc(100% - 75px);
+    font-size: $fsBase + 1px;
+    strong {
+      @include ellipsis;
+      display: block;
+      font-weight: 500;
+    }
+    p, span {
+      display: block;
+      font-size: $fsBase - 1px;
+      color: $colorGray;
+    }
+    .option {
+      background: none;
+    }
+  }
+}
+/* datepicker custom */
+.option-toggle-content {
+  .calendar-custom header {
+    line-height: 50px;
+  }
+  .info {
+    margin-top: 7px;
+    font-size: $fsBase - 1px;
+    color: $colorLightGray;
+    &:before {
+      content: '*';
+    }
+  }
+}
+.vdp-datepicker {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  // border: 1px solid $colorBorder !important;
+  border: 1px solid $colorBorder;
+  background: #fff;
+}
+
+@mixin calendar-selected {
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  background: transparent;
+  background-size: 29px 29px;
+  &:after {
+    background: $gsfresh;
+  }
+}
+.calendar-custom.vdp-datepicker__calendar {
+  width: 320px;
+  background: none;
+  border: none;
+  header {
+    & + div {
+      padding: 11px 12px;
+      width: $widthFull;
+    }
+    span {
+      font-weight: 700;
+      font-size: $fsBase + 4px;
+    }
+    .prev {
+      &:after {
+        border-right: 7px solid $colorGray;
+      }
+      &.disabled:after {
+        border-right: 7px solid #d2d2d2;
+      }
+      &:hover {
+        background: none !important;
+      }
+    }
+    .next {
+      &:after {
+        border-left: 7px solid $colorGray;
+      }
+      &.disabled:after {
+        border-left: 7px solid #d2d2d2;
+      }
+      &:hover {
+        background: none !important;
+      }
+    }
+  }
+  .cell {
+    position: relative;
+    padding: 0;
+    width: calc(100% / 7);
+    height: 31px;
+    font-size: $fsBase + 2px;
+    line-height: 31px;
+    color: $colorGray;
+    background-size: 29px 29px;
+    &:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      z-index: -1;
+      width: 30px;
+      height: 30px;
+      background: #F5F5F5;
+      border-radius: 50%;
+      transform: translateX(-50%);
+    }
+    &.blank {
+      &:after {
+        display: none;
+      }
+    }
+    &.disabled {
+      color: #d2d2d2;
+      &:after {
+        display: none;
+      }
+    }
+    &.day-header {
+      font-size: $fsBase + 4px;
+      color: $colorGray;
+      background: #fff;
+      &:after {
+        display: none;
+      }
+    }
+    &.today {
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 2px;
+        left: 50%;
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: $colorGray;
+        transform: translateX(-50%);
+      }
+    }
+  }
+  .cell.selected,
+  .cell:not(.blank):not(.disabled).day:hover,
+  .cell:not(.blank):not(.disabled).month:hover,
+  .cell:not(.blank):not(.disabled).year:hover {
+    @include calendar-selected;
+  }
+  .cell.selected.disabled {
+    color: #d2d2d2;
+    border: 1px solid transparent;
+    font-weight: 400;
+  }
+} 

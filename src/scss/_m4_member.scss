@@ -1,0 +1,41 @@
+.marketFor {
+    /* 가입완료 */
+    .signup-layer {
+        .signup-layer-inner {
+            background: $colorBgGray;
+            &.v2 {
+              .text-welcome-name {
+                color: #019A92;
+              }
+            }
+            .welcome-user,
+            .desc {
+                color:$marketfor;
+            }
+            .layer-content {
+                background: url('#{$imgPath}/bg_signup_marketfor.png') right 42px no-repeat;
+                background-size: 196px auto;
+                .signup-benefit {
+                    color:$marketfor;
+                    &:before {
+                      @include content;
+                      position:absolute;
+                      left:1px;top:-5px;
+                      width:13px;height:2px;
+                      border-radius:2px;background:$marketfor;
+                    }
+                }
+                .btn-link {
+                  &:before {
+                    background: $colorPoint3;
+                    height:4px;
+                    bottom:2px;
+                  }
+                  span:after {
+                    border-color:$marketfor;
+                  }
+                }
+            }
+        }
+    }
+}

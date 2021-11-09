@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="gsecfocmuimo" basedir="../">
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties" />
+	<property name="PROJECT_NAME" value="gsecfocmuimo" />
+	<property name="env.PROJECT_MODE" value="${project.mode}" />
+	<property file="./deploy/${env.PROJECT_MODE}/build_${env.PROJECT_MODE}.properties" />
+
+        <!-- 일자 -->
+        <property name="curdate" value="${user.curdate}" />
+        <!-- 폴더 -->
+        <property name="day.tar.dir" value="/data/buildmodule" />
+        <!-- 폴더 날짜 -->
+        <tstamp>
+            <format property="dir.curdate" pattern="yyyyMMdd" locale="en,GB"/>
+        </tstamp>
+
+	<echo message="${project.mode}"/>
+
+	<!-- System Properties -->
+	<property name="web.tar.dir" value="${basedir}/build/web" />
+
+
+	<target name="align">
+        <echo message="===============================================  ${work.home.dir}" />
+		<copy todir="${work.home.dir}" overwrite="yes">
+			<fileset dir="${basedir}" />
+			<mapper type="glob" from="*_${env.PROJECT_MODE}" to="*" />
+		</copy>
+	</target>
+
+	<target name="web_tar">
+		<echo>Delete directory and create directory</echo>
+		<delete dir="${web.tar.dir}" />
+		<mkdir dir="${web.tar.dir}" />
+		<tar destfile="${web.tar.dir}/cmuimo_${PROJECT_NAME}_${curdate}.tar" longfile="gnu">
+			<tarfileset dir="${basedir}" preserveLeadingSlashes="true">
+				<exclude name="deploy/**" />
+				<exclude name=".git" />
+			</tarfileset>
+		</tar>
+	</target>
+
+      	<!-- back up -->
+      	<target name="day_tar">
+              	<echo> Build Copy </echo>
+              	<mkdir dir="${day.tar.dir}/${dir.curdate}" />
+              	<move todir="${day.tar.dir}/${dir.curdate}" verbose="true">
+                      	<fileset dir="${web.tar.dir}" >
+                      	<include name="*.tar"/>
+                      	</fileset>
+              	</move>
+      	</target>
+	
+	<target name="build_all">
+		<antcall target="align" />
+		<antcall target="web_tar" />
+		<antcall target="day_tar" />
+	</target>
+</project>

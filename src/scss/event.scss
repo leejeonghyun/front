@@ -1,0 +1,381 @@
+.wrap-event-tab {
+  border-top: 5px solid $colorBgGray;
+  .btn-more-detail-view {
+    padding: 10px 15px 15px;
+  }
+}
+/* 이벤트 배너 */
+.wrap-event-banner {
+  padding: 20px 0 0 0;
+  border-bottom: 1px solid $colorBorder;
+  .swiper-slide {
+    width: calc(100% - 65px);
+    height: 47.223vw;
+    a {
+      height: 100%;
+      figure {
+        height: 100%;
+        overflow: hidden;
+      }
+    }
+  }
+  .swiper-button-prev, 
+  .swiper-button-next { 
+    transform: translateY(-50%);
+  }
+ .swiper-container {
+  padding-bottom: 52px;
+  .swiper-pagination {
+    bottom: 23px;
+  }
+ }
+ .wrap-controls {
+   padding: 0 1px 0 30px;
+   width: 55px;
+   text-align: right;
+   .btn-slide-controls {
+     float: right;
+   }
+ }
+ .swiper-pagination {
+   right: 30px;
+   padding: 4px 0 3px;
+ }
+}
+/* 이벤트 - 이벤트 목록*/
+.wrap-event-list {
+  padding: 0 15px;
+  .list + .list { 
+    border-top: 1px solid $colorBorder;
+  }
+  .list .link {
+    display: flex;
+    align-items: center;
+    padding: 15px 0 15px 5px;
+    figure {
+      position: relative;
+      flex: none;
+      overflow: hidden;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: url('#{$imgPath}/img_product_thumb_shadow.png') no-repeat center center;
+        background-size: 100%;
+      }
+      img {
+        height: 100%;
+      }
+    }
+    .event-info {
+      padding-left: 20px;
+      .title {
+        @include ellipsis-into-2;
+        font-size: $fsBase + 1px;
+        line-height: 18px;
+        color: $colorBase;
+      }
+      .period {
+        font-size: $fsBase - 1px;
+        color: $colorLightGray;
+      }
+    }
+  }
+}
+/* 이벤트 - 당첨자발표 목록 */
+.wrap-notice-list {
+  padding: 0 15px;
+  .list {
+    border-bottom: 1px solid $colorBorder;
+    .link {
+      @include flexSpaceBetween;
+      align-items: center;
+      width: $widthFull;
+      padding: 11px 0;
+      .notice-title {
+        width: calc(100% - 94px);
+        font-size: $fsBase;
+        color: $colorBase;
+        strong {
+          font-weight: 500;
+        }
+      }
+      .notice-date {
+        width: 94px;
+        font-size: $fsBase - 1px;
+        text-align: right;
+        color: $colorGray;
+      }
+    }
+  }
+}
+/* 쿠폰/이벤트 - 당첨자발표 */
+.wrap-notice {
+  position: relative;
+  border-bottom: 5px solid $colorBorder;
+  &.dim:before {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: $widthFull;
+    height: 100%;
+    background: rgba(#000, .2);
+  }
+  .notice-top {
+    @include flexSpaceBetween;
+    align-items: center;
+    padding: 5px 10px 8px 15px;
+    .btn-sns {
+      flex: none;
+    }
+  }
+  .notice-top .wrap-title {
+    .title {
+      font-weight: 500;
+      font-size: $fsBase + 3px;
+      color: $colorBase;
+      & + .period {
+        padding-bottom: 5px;
+      }
+      span {
+        display: block;
+        padding-top: 10px;
+        strong {
+          font-weight: 500;
+        }
+      }
+    }
+    .period {
+      margin-top: 3px;
+      font-size: $fsBase - 1px;
+      color: $colorLightGray;
+    }
+  }
+  .notice-content {
+    border-top: 5px solid $colorBgGray;
+    .wrap-inner-content {
+      padding: 25px 20px 20px;
+    }
+  }
+  .btn-more-detail-view {
+    padding-top: 15px;
+  }
+}
+
+/* 쿠폰/이벤트 - 당첨자발표 - 리스트형 */
+.notice-content {
+  .wrap-table {
+    table-layout: fixed;
+    width: $widthFull;
+    font-size: $fsBase - 1px;
+    text-align: center;
+    color: $colorBase;
+    thead tr th,
+    tbody tr td { 
+      padding: 8px 0 6px;
+      border: 1px solid $colorBorder;
+      @at-root {
+        /* IOS 에서만 적용되는 CSS */
+        /* .notice-content .wrap-table th, td */
+        _::-webkit-full-page-media, _:future, :root & {
+          padding: 9px 0 5px;
+        }
+      }
+    }
+    thead tr {
+      th {
+        background: #f6f6f6;
+      }
+    }
+    tbody tr {
+      td {
+        color: $colorGray;
+      }
+    }
+  }
+  .wrap-input-search {
+    &:after {
+      @include content;
+    }
+    .input-title {
+      display: block;
+      padding-bottom: 5px;
+      font-weight: 500;
+      color: $colorBase;
+    }
+    .input-border {
+      float: left;
+      width: calc(100% - 80px);
+      font-size: $fsBase;
+      color: $colorBase;
+      input {
+        display: block;
+        padding: 7px 10px 5px;
+        width: $widthFull;
+        height: 32px;
+        border: 1px solid $colorBorder;
+        box-sizing: border-box;
+      }
+    }
+    .btn-bg {
+      float: right;
+      width: 75px;
+      height: 32px;
+      font-size: $fsBase;
+    }
+  }
+  .wrap-list-winner {
+    margin-top: 21px;
+    li {
+      & + li {
+        margin-top: 16px;
+      }
+      .title {
+        font-weight: 500;
+        color: $colorBase;
+        .num {
+          display: inline-block;
+          margin-right: 4px;
+          font-weight: 500;
+          color: $gsfresh;
+        }
+        .count {
+          font-weight: 400;
+          font-size: $fsBase + 1px;
+          color: $colorGray;        
+        }
+      }
+      .wrap-table {
+        margin-top: 5px; 
+      }
+    }
+  }
+}
+
+/*------------------------
+ 기획전 공용 elements
+------------------------*/
+.templete-event {
+  a {
+    display: block;
+  }
+  // top sticky nav
+  .evt-sticky-nav {
+    background-color: #242424;
+    border-bottom: 1px solid #000;
+    ul {
+      &:after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+      li {
+        position: relative;
+        float: left;
+        box-sizing: border-box;
+        a {
+          display: block;
+          height: 69px;
+          line-height: 20px;
+          font-size: 14px;
+          color: #fff;
+          text-align: center;
+          padding: 15px 0;
+        }
+        &.active {
+          a {
+            color: #34d330;
+            font-weight: bold;
+          }
+        }
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 50%;
+          right: -1px;
+          transform: translateY(-50%);
+          width: 1px;
+          height: 33px;
+          background-color: #000;
+        }
+        &:last-child {
+          &:after {
+            content: none;
+          }
+        }
+      }
+    }
+    &.col-2 {
+      li {
+        width: 50%;
+      }
+    }
+    &.col-3 {
+      li {
+        width: 33.3%;
+      }
+    }
+    &.fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width:100%;
+      & + div {
+        margin-top: 70px;
+      }
+    }
+  }
+  .evt-sticky-btn {
+    position: fixed;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: bottom .5s ease-in-out;
+    li {
+      position: relative;
+      text-align: center;
+      a {
+        display: block;
+        height: 48px;
+        line-height: 48px;
+        font-size: 18px;
+        color: #fff;
+        font-weight: bold;
+        white-space: nowrap;
+        background-color: #34d330;
+        border-radius: 29px;
+        padding: 0 50px;
+      }
+      &.hide {
+        display: none;
+      }
+    }
+    &.hide {
+      display: none;
+    }
+    &.up {
+      bottom: 90px;
+    }
+  }
+  // 리뷰 이벤트 12-22 add
+  .box-img-a {
+    img {
+      vertical-align:top;
+      width:100%;
+    }
+  }
+  .box-link-a {
+    button {
+      vertical-align:top;
+    }
+  }
+}

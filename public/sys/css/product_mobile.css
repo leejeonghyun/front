@@ -1,0 +1,84 @@
+/***************************/
+/* 상품상세 템플릿 **********/
+/***************************/
+
+/* 기본 레이아웃 */
+.pd-template {min-height:300px;font-family:'AppleSDGothicNeo-Regular',sans-serif;letter-spacing:-1.3px;margin-top:32px;}
+
+/* 유틸 클래스 */
+.pd-template .mb-2x {margin-bottom:40px !important;}
+.pd-template .txt-bold {font-weight:bold !important;}
+
+/* 제목 영역 */
+.pd-template h1,
+.pd-template h2,
+.pd-template h3 {font-family:'AppleSDGothicNeo-Regular',sans-serif;color:#222;font-weight:normal;text-align:left;padding:0;margin:0 14px;}
+.pd-template h1 {font-size:29px;line-height:42px;border-bottom:1px solid #222;padding-bottom:32px;margin-bottom:32px;}
+.pd-template h2 {font-size:26px;line-height:36px;margin-bottom:16px;}
+.pd-template h3 {font-size:19px;}
+
+/* 본문 */
+.pd-template .txt-wrapper {margin-bottom:16px;}
+.pd-template .txt-wrapper.content-2 {margin-bottom:40px;}
+.pd-template .txt-wrapper p {line-height:28px;font-size:16px;color:#222;text-align:left;padding:0 14px;margin-bottom:16px;}
+.pd-template .txt-wrapper.content-2 p {line-height:30px;font-size:19px;border-bottom:1px solid #222;padding:0 0 16px 0;margin:0 14px 16px;}
+.pd-template .txt-wrapper p.content-2 {line-height:30px;font-size:19px;}
+.pd-template .txt-wrapper p:last-child {margin-bottom:0;}
+.pd-template .txt-wrapper.content-2 p:last-child {border-bottom:0;padding-bottom:0;}
+
+/* 라벨 리스트 */
+.pd-template .label-list {text-align:center;margin-bottom:32px;}
+.pd-template .label-list:after {content:'';display:block;clear:both;}
+.pd-template .label-list li {display:inline-block;position:relative;width:100px;height:100px;background-color:#f5f5f5;}
+.pd-template .label-list li:first-child {float:left;}
+.pd-template .label-list li:last-child {float:right;}
+.pd-template .label-list.label-round li {border-radius:50px;}
+.pd-template .label-list li p {position:absolute;top:50%;left:0;width:100%;line-height:22px;font-size:16px;text-align:center;transform:translateY(-50%);padding:0;margin-bottom:0;}
+
+/* 이미지 */
+.pd-template img {display:block;width:100%;max-width:100%;height:auto;}
+.pd-template img.pd-img {margin-bottom:40px;}
+
+/* Q&A */
+.pd-template dl {position:relative;padding:0 14px;margin-bottom:40px;}
+.pd-template dl dt {line-height:32px;font-size:23px;color:#c4c4c4;font-weight:bold;text-align:left;margin-bottom:8px;}
+.pd-template dl dd {line-height:28px;font-size:16px;color:#222;text-align:left;margin-bottom:16px;}
+.pd-template dl dd:last-child {margin-bottom:0;}
+
+/* 인용구 */
+.pd-template .quote-wrapper {position:relative;padding:0 10px;margin-bottom:36px;}
+.pd-template .quote-wrapper:after {content:'';display:block;clear:both;}
+.pd-template .quote-wrapper .quote-inner {box-sizing:border-box;border-left:1px solid #222;padding:1px 0 1px;margin-bottom:32px;}
+.pd-template .quote-wrapper .quote-inner:last-child {margin-bottom:0;}
+.pd-template .quote-wrapper .quote-inner p {line-height:30px;font-size:19px;text-align:left;box-sizing:border-box;padding:0 0 0 16px;margin-bottom:0;}
+
+/* 구분선 */
+.pd-template .divider {height:1px;background-color:#222;margin-bottom:16px;}
+
+/* 레시피 */
+.pd-recipe-wrapper {text-align:left;padding:0 14px;margin-bottom:32px;}
+.pd-recipe-wrapper .pd-recipe-tit {line-height:32px;font-size:23px;color:#222;font-weight:bold;margin-bottom:8px;}
+.pd-recipe-wrapper .pd-recipe-txt {line-height:28px;font-size:16px;color:#222;margin-bottom:0;}
+.pd-recipe-wrapper ol.pd-recipe-txt {list-style-type:none;}
+.pd-recipe-wrapper ol.pd-recipe-txt li {position:relative;padding-left:20px;}
+.pd-recipe-wrapper ol.pd-recipe-txt li:before {content:'';position:absolute;top:0;left:0;font-weight:bold;}
+.pd-recipe-wrapper ol.pd-recipe-txt li:nth-child(1):before {content:'1.';}
+.pd-recipe-wrapper ol.pd-recipe-txt li:nth-child(2):before {content:'2.';}
+.pd-recipe-wrapper ol.pd-recipe-txt li:nth-child(3):before {content:'3.';}
+.pd-recipe-wrapper ol.pd-recipe-txt li:nth-child(4):before {content:'4.';}
+.pd-recipe-wrapper ol.pd-recipe-txt li:nth-child(5):before {content:'5.';}
+.pd-recipe-wrapper ol.pd-recipe-txt li:nth-child(6):before {content:'6.';}
+.pd-recipe-wrapper ol.pd-recipe-txt li:nth-child(7):before {content:'7.';}
+.pd-recipe-wrapper ol.pd-recipe-txt li:nth-child(8):before {content:'8.';}
+.pd-recipe-wrapper ol.pd-recipe-txt li:nth-child(9):before {content:'9.';}
+.pd-recipe-wrapper ol.pd-recipe-txt li:nth-child(10):before {content:'10.';}
+.pd-recipe-wrapper ol.pd-recipe-txt li:nth-child(11):before {content:'11.';}
+.pd-recipe-wrapper ol.pd-recipe-txt li:nth-child(12):before {content:'12.';}
+.pd-recipe-wrapper ol.pd-recipe-txt li:nth-child(13):before {content:'13.';}
+.pd-recipe-wrapper ol.pd-recipe-txt li:nth-child(14):before {content:'14.';}
+.pd-recipe-wrapper ol.pd-recipe-txt li:nth-child(15):before {content:'15.';}
+.pd-recipe-wrapper ol.pd-recipe-txt li:nth-child(16):before {content:'16.';}
+.pd-recipe-wrapper ol.pd-recipe-txt li:nth-child(17):before {content:'17.';}
+.pd-recipe-wrapper ol.pd-recipe-txt li:nth-child(18):before {content:'18.';}
+.pd-recipe-wrapper ol.pd-recipe-txt li:nth-child(19):before {content:'19.';}
+.pd-recipe-wrapper ol.pd-recipe-txt li:nth-child(20):before {content:'20.';}

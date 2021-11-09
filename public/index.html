@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,maximum-scale=3.0,user-scalable=yes"
+      />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <title>GS Retail</title>
+  </head>
+  <script type="text/javascript" charset="UTF-8" src="/js/legacy/common.app.js"></script>
+  <script defer>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    if(location.hostname.indexOf("dalisalda") > -1) {
+      fbq('init', '314867593127394');
+      console.log("dalisalda facebook fixel : 314867593127394");
+    } else if(location.hostname.indexOf("gsfresh") > -1) {
+      fbq('init', '234508130416308');
+      console.log("fresh facebook fixel : 234508130416308");
+    }
+  </script>
+  <script>
+(function() {
+    var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+    link.type = 'image/x-icon';
+    link.rel = 'shortcut icon';
+    if(location.origin.indexOf("dalisalda") > -1) {
+    	link.href = '/favicon-dali.png';
+    } else if(location.hostname.indexOf("gsfresh") > -1) {
+    	link.href = '/favicon.ico';
+    } else {
+    	link.href = '/favicon-marketfor.ico';
+    }
+    // const fav = (/dalisalda/.test(location.origin)) ? '/favicon-dali.png' : '/favicon.ico';
+    // link.href = fav;
+    document.getElementsByTagName('head')[0].appendChild(link);
+})();
+  </script>
+  <noscript>
+      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=234508130416308&ev=PageView&noscript=1"/>
+  </noscript>
+  <body>
+    <noscript>
+      <strong>지원하지 않는 브라우저입니다. 자바스크립트 기능을 활성화 해주시기 바랍니다.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

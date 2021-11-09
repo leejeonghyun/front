@@ -1,0 +1,1401 @@
+/* wrap-signup */
+.wrap-signup {
+  @at-root &.signup-main,
+  .full-popup-body.signup.signup-main {
+    background-color: #000;
+    background-image: url('#{$imgPath}/bg_signup.jpg');
+    background-position: left top 56px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    main {
+      position: relative;
+      width: 100%;
+      height: calc(100% - 56px);
+      // overflow-y: auto;
+    }
+    .inner {
+      padding: 0 20px;
+      position: relative;
+      height: 100%;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: none;
+      // min-height: calc(100vh - 56px);
+      .wrap-box {
+        position: relative;
+        z-index: 1;
+      }
+      // &:after {
+      //   @include content;
+      //   position: fixed;
+      //   z-index: 0;
+      //   left: 0;
+      //   bottom: 0;
+      //   width: 100%;
+      //   height: 100px;
+      //   background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+      // }
+      .btn-area {
+        padding: 25px 0 53px;
+        &.v2 {
+          padding-bottom:32px;
+          margin:0 10px;
+        }
+      }
+    }
+    .welcome-desc {
+      padding-top: 231px;
+      background-image: url('#{$imgPath}/img_welcome.png');
+      background-size: 143px auto;
+      background-position: center top 103px;
+      background-repeat: no-repeat;
+      font-size: $fsBase + 7px;
+      color: #fff;
+      text-align: center;
+      strong {
+        font-weight: 700;
+      }
+    }
+    .sns-desc {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      font-size: $fsBase;
+      color: #fff;
+      span {
+        display: inline-block;
+        width: 226px;
+        padding: 0 15px;
+        text-align: center;
+        font-size:$fsBase + 2px;
+      }
+      .line {
+        display: block;
+        width: calc((100% - 226px) / 2);
+        height: 1px;
+        background: rgba(255,255,255,.3);
+      }
+      &.v2 {
+        margin-top:26px;
+        span {
+          width:240px
+        }
+        .line {
+          width: calc((100% - 240px) / 2);
+        }
+      }
+    }
+    // 친구초대
+    .welcome-friend-desc {
+      position: absolute;
+      z-index: 10;
+      left: 0;
+      top: 23px;
+      width: 100%;
+      font-size: $fsBase + 3px;
+      color: #fff;
+      text-align: center;
+      strong {
+        font-weight: 700;
+      }
+      .btn-signup-friend {
+        position: relative;
+        padding: 0 10px 1px 0;
+        color: $gsfresh;
+        font-size: $fsBase - 1px;
+        border-bottom: 1px solid $gsfresh;
+        &:before {
+          @include afterArrow(block, 5px, 5px, $gsfresh, 45deg);
+          position: absolute;
+          top: 3px;
+          right: 2px;
+        }
+      }
+      &+.new-benefit {
+        padding-top: 83px;
+      }
+    }
+    .btn-area {
+      .btn-signup {
+        font-size: $fsBase + 5px;
+      }
+    }
+  }
+  .inner {
+    padding: 0 20px;
+  }
+  .warp-input-txt {
+    padding: 30px 0 16px;
+    .wrap-checked {
+      display: flex;
+      margin: 10px 0;
+      .row {
+        padding: 12px 15px 10px;
+        width: $widthFull;
+        font-size: $fsBase;
+        // line-height: 38px;
+        color: #d2d2d2;
+        background: #f8f8f8;
+        border: 1px solid $colorBorder;
+        &.active {
+          color: $colorGray;
+          span {
+            &:after {
+              display: inline-block;
+              content: '';
+              width: 11px;
+              height: 10px;
+              margin-left: 4px;
+              background: url('#{$imgIcoPath}/ico_check_black.png') no-repeat;
+              background-size: 11px 10px;
+            }
+          }
+        }
+        & + .row {
+          border-left: none;
+        }
+      }
+    }
+  }
+  .title {
+    padding-top: 40px;
+    font-size: $fsBase + 6px;
+    .point {
+      font-weight: 500;
+    }
+  }
+  .txt-desc {
+    padding: 15px 0 40px;
+    font-size: $fsBase;
+    color: $colorGray;
+  }
+  .btn-area {
+    margin: 0;
+    padding: 20px 0 30px;
+    &.v2 {
+      padding:0;
+    }
+    .btn-signup {
+      display: block;
+      width: $widthFull;
+      font-size: $fsBase + 5px;
+      line-height: 50px;
+      text-align: center;
+      border-radius: 2px;
+      & + .btn-signup {
+        margin-top: 10px;
+      }
+    }
+    .dalisalda {
+      background: #00cf7d;
+    }
+  }
+  .wrap-box {
+    .title {
+      padding-top: 30px;
+      font-size: $fsBase + 4px;
+      text-align: center;
+    }
+    .desc {
+      padding-top: 8px;
+      font-size: $fsBase;
+      text-align: center;
+    }
+    .list-link-sns {
+      padding-top: 25px;
+      &.txt-type {
+        padding-top:14px;
+        li {
+          .ico span {
+            font-size:$fsBase + 1px;
+            line-height:20px;
+            bottom:-26px;
+            white-space:nowrap;
+            letter-spacing:-.25px;
+            margin:0 -7px;
+            text-align:center;
+            width:calc(100% + 14px);
+          }
+        }
+        li + li {
+          margin-left:15px;
+        }
+      }
+    }
+    .area-image {
+      .list-benefit {
+        padding-top: 20px;
+      }
+    }
+    @at-root .wrap-signup:not(.signup-main) .wrap-box + .wrap-box {
+      border-top: 1px solid $colorBorder;
+    }
+    &:last-child {
+      padding-bottom: 70px;
+    }
+  }
+  .wrap-inp-select .wrap-select-popup {
+    height: 40px;
+    .inp-email {
+      line-height: 38px;
+    }
+  }
+}
+/* common */
+.list-benefit {
+  display: flex;
+  padding-top: 20px;
+  li {
+    width: $widthFull;
+    text-align: center;
+    & + li {
+      border-left: 1px solid $colorBorder;
+    }
+  }
+  .ico {
+    display: block;
+    width: $widthFull;
+    height: 53px;
+    background-repeat: no-repeat;
+    background-size: 56px 39px;
+    background-position: top center;
+  }
+  @each $type in coupon benefit gspoint {
+    .#{$type} {
+      background-image: url('#{$imgIcoPath}/ico_signup_#{$type}_gsfresh.png');
+    }
+  }
+  .label {
+    display: block;
+    font-size: $fsBase - 1px;
+    line-height: 17px;
+    color: $colorBase;
+  }
+}
+/* 약관동의 */
+.wrap-agreement {
+  .wrap-inp-chk {
+    & + .wrap-inp-chk {
+      margin-top: 7px;
+    }
+  }
+  .subtitle {
+    display: inline-block;
+    font-size: $fsBase - 1px;
+    color: $colorGray;
+  }
+  .inp-chk {
+    display: block;
+    input[type='checkbox'] {
+      margin: -11px 0 0;
+    }
+    input[type='checkbox'] + label {
+      margin-top: 3px;
+      font-size: $fsBase;
+      color: $colorBase;
+    }
+    &.small {
+      & + .inp-chk {
+        margin-top: 10px;
+      }
+      input[type='checkbox'] {
+        // margin: -5px 0 0; // 8/4 로그인 페이지 본인인증 약관 확인 후 수정
+      }
+      input[type='checkbox'] + label {
+        margin-top: 0;
+        font-size: $fsBase - 1px;
+        color: $colorGray;
+        letter-spacing: -0.25px;
+      }
+      label + .btn-arrow {
+        &.gray {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 16px;
+          height: 100%;
+        }
+      }
+    }
+    label {
+      color: $colorGray;
+    }
+  }
+  .wrap-input-chk {
+    padding: 15px 5px;
+    background: #f6f6f6;
+    border-top: 1px solid $colorBorder;
+    .inp-chk {
+      &.type02 {
+        input[type='checkbox'] + label {
+          padding: 0 22px;
+        }
+      }
+    }
+  }
+  .sub-btn-area {
+    margin-top: 30px;
+    button {
+      font-size: $fsBase + 2px;
+    }
+  }
+  .wrap-inp-chk-type02 {
+    margin-top: -5px;
+    margin-left: 24px;
+    .inp-chk {
+      display: inline-block;
+      margin-top: 0;
+      input {
+        margin: -8px 0 0;
+        background: #fff;
+      }
+      & + .inp-chk {
+        margin-left: 20px;
+        margin-top: 0;
+      }
+    }
+  }
+  .area-top {
+    position: relative;
+    padding: 8px 0;
+    .btn-accordion {
+      position: absolute;
+      top: 8px;
+      right: 0;
+      width: 22px;
+      height: 22px;
+      &:after {
+        @include afterArrow(inline-block, 7px, 7px, $colorLightGray, 135deg);
+        position: absolute;
+        top: 6px;
+        right: 7px;
+      }
+    }
+    .btn-accordion[aria-expanded='true']:after {
+      top: 10px;
+      transform: rotate(-45deg);
+    }
+  }
+  .inp-chk ~ .wrap-list-agree {
+    padding-left: 10px;
+  }
+  .inp-chk.type02 ~ .wrap-list-agree {
+    padding-left: 22px;
+  }
+  .btn-arrow {
+    display: block;
+    position: relative;
+    z-index: 1;
+    padding: 4px 16px 2px 7px;
+    width: $widthFull;
+    font-size: $fsBase - 1px;
+    text-align: left;
+    &:after {
+      @include afterArrow(inline-block, 5px, 5px, $colorBase, 45deg);
+      position: absolute;
+      top: 7px;
+      right: 6px;
+      z-index: 10;
+    }
+    &.gray {
+      color: $colorLightGray;
+    }
+    &.right:after {
+      right: 10px;
+      border-color: $colorLightGray;
+    }
+  }
+  .wrap-list-agree {
+    margin-top: 4px;
+    li {
+      font-size: $fsBase - 1px;
+      .btn-arrow:before {
+        content: '·';
+        position: absolute;
+        left: 0;
+        z-index: 10;
+      }
+    }
+  }
+}
+/* IOS 에서만 적용되는 CSS */
+/* 회원가입 약관 체크박스 */
+_::-webkit-full-page-media, _:future, :root .wrap-agreement .wrap-inp-chk-type02 .inp-chk input {
+  margin: -9px 0 0;
+}
+/* popup > Alert */
+.alert-layer {
+  .layer-inner {
+    overflow: hidden;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: 0 auto;
+    width: 260px;
+    min-height: 52px;
+    border-radius: 14px;
+    transform: translate(-50%, -50%);
+    .inner-box {
+      padding: 0 20px;
+      background-color: #fff;
+    }
+    .title {
+      padding: 35px 0 0;
+      height: auto;
+      border-bottom: none;
+      h3 {
+        overflow: inherit;
+        padding: 0;
+        font-weight: 500;
+        font-size: $fsBase + 2px;
+        text-align: center;
+        text-overflow: inherit;
+        white-space: normal;
+      }
+    }
+    .desc {
+      padding: 15px 0 35px;
+      font-size: $fsBase;
+      text-align: center;
+      color: $colorBase;
+    }
+    .layer-content {
+      min-height: 78px;
+    }
+  }
+  .sub-btn-area {
+    .btn-lg {
+      height: 40px;
+      font-size: $fsBase;
+    }
+  }
+}
+/* popup > GS fresh 회원가입 완료 팝업 */
+.daybreak { // 새벽배송 컬러 분기
+  .signup-layer {
+    .signup-layer-inner {
+      background-color: #777cf5; /* 컬러값 공통과 맞지 않음 별도 컬러 */
+      background-image: url('#{$imgPath}/bg_signup_daybreak.png');
+    }
+    .layer-content {
+      .btn-link {
+        span {
+          &:after {
+            border-color: #7f84ee;
+          }
+        }
+        &:before {
+          background-color: #dcddf4;
+        }
+      }
+    }
+  }
+}
+.signup-layer {
+  position: fixed;
+  z-index: 300;
+  left: 0;
+  bottom: 0;
+  width: $widthFull;
+  height: 100%;
+  transition: all .5s;
+  .layer-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $widthFull;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+  }
+  .signup-layer-inner {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: -248px;
+    width: $widthFull;
+    height: 248px;
+    border-radius: 19px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    // background: $gsfresh;
+    background-color: #37d32e; /* 컬러값 공통과 맞지 않음 별도 컬러 */
+    background-image: url('#{$imgPath}/bg_signup_gsfresh.png');
+    background-size: 196px auto;
+    background-repeat: no-repeat;
+    background-position: right top 45px;
+    animation: signUp .25s linear forwards;
+    &.v2 {
+      background-image:none;
+      background-color:#fff;
+      height:380px;
+      bottom:-380px;
+      .inner-box-a {
+        padding:0 40px;
+        width:100%;
+      }
+      .benefit-list-a {
+        margin:8px 0;
+        .list-item {
+          height:62px;
+          display:flex;
+          justify-content:space-between;
+          align-items:center;
+          padding:0 10px;
+          ~ .list-item {
+            border-top:1px solid #e5e5e5;
+          }
+          .title-benefit {
+            font-size:$fsBase + 3px;
+            color:$colorBase;
+            font-weight:400;
+            letter-spacing:-.5px;
+            .text-point {
+              font-weight:600;
+            }
+          }
+        }
+      }
+      [class^="ico-benefit-"] {
+        display:inline-block;
+        width:26px;
+        height:24px;
+        background-repeat:no-repeat;
+        background-size:100%;
+        background-position:0 0;
+      }
+      .ico-benefit-a {
+        background-image:url('#{$imgIcoPath}/ico-benefit-a1.png');
+      }
+      .ico-benefit-b {
+        background-image:url('#{$imgIcoPath}/ico-benefit-b1.png');
+      }
+      .ico-benefit-c {
+        background-image:url('#{$imgIcoPath}/ico-benefit-c1.png');
+      }
+      .btn-area-a {
+        margin:0 -10px;
+      }
+      .btn-layer-close.sign-up {
+        background:none;
+        right:15px;
+        top:15px;
+        &:before,
+        &:after {
+          content:'';
+          width:18px;
+          height:1px;
+          display:block;
+          background-color:$colorBase;
+          position:absolute;
+          top:50%;
+          left:50%;
+          margin-left:-9px;
+        }
+        &:before {
+          transform:rotate(45deg);
+          -webkit-transform:rotate(45deg);
+        }
+        &:after {
+          transform:rotate(-45deg);
+          -webkit-transform:rotate(-45deg);
+        }
+      }
+      .text-welcome {
+        font-size:$fsBase + 8px;
+        line-height:32px;
+        color:$colorBase;
+        font-weight:600;
+        letter-spacing:-1px;
+        padding:0 10px;
+        &-name {
+          color:$gsfresh;
+        }
+      }
+    }
+  }
+  .inner-box {
+    display: flex;
+    align-items: center;
+    width: $widthFull;
+    padding: 45px 25px 42px;
+  }
+  .title {
+    margin-top: -10px;
+    color: #fff;
+    .welcome-user {
+      font-size: $fsBase + 17px;
+      font-weight: 700;
+      padding-bottom: 17px;
+      span {
+        display: block;
+      }
+    }
+    .desc {
+      font-size: $fsBase + 1px;
+      letter-spacing: -.7px;
+    }
+  }
+  .layer-content {
+    position: absolute;
+    width: 196px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    .signup-benefit {
+      position: absolute;
+      top: 64px;
+      left: 55px;
+      color: #fff;
+      font-size: $fsBase + 6px;
+      span {
+        font-weight: 700;
+      }
+    }
+    .btn-link {
+      position: absolute;
+      bottom: 52px;
+      left: 14px;
+      color: $colorGray;
+      font-size: $fsBase;
+      letter-spacing: -.3px;
+      span {
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        &:after {
+          @include afterArrow(inline-block, 5px, 5px, $gsfresh, 45deg);
+          position: absolute;
+          right: -8px;
+          top: 5px;
+        }
+      }
+      &:before {
+        @include content;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 0;
+        width: $widthFull;
+        height: 7px;
+        background-color: #c8efc6;
+      }
+    }
+  }
+  .btn-layer-close.sign-up {
+    top: 13px;
+    right: 22px;
+    background-image: url('#{$imgIcoPath}/btn_close_white.png');
+    background-size: 13px 13px;
+  }
+}
+@keyframes signUp {
+  0% {
+    bottom: -248px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+/* popup > dalisalda */
+.dalisalda-layer { // 삭제
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  .layer-inner {
+    overflow: hidden;
+    position: relative;
+    width: calc(100% - 40px);
+    max-width: 320px;
+    min-height: 52px;
+    margin: 0 auto;
+    border-radius: 14px;
+    .inner-box {
+      padding: 0 20px;
+      background: #fff url('#{$imgPath}/bg_popup_dalisalda.png') no-repeat center center;
+      background-size: cover;
+    }
+    .title {
+      padding: 35px 0 0;
+      height: auto;
+      border-bottom: none;
+      h3 {
+        overflow: inherit;
+        padding: 0;
+        font-weight: 500;
+        font-size: $fsBase + 7px;
+        text-align: center;
+        text-overflow: inherit;
+        white-space: normal;
+        color: $dalisalda;
+      }
+    }
+    .desc {
+      padding: 10px 0 20px;
+      font-size: $fsBase - 1px;
+      text-align: center;
+      color: $colorBase;
+      span {
+        font-weight: 500;
+        color: #144733;
+      }
+    }
+    .layer-content {
+      min-height: 78px;
+    }
+    .list-icon {
+      display: flex;
+      padding-bottom: 30px;
+      li {
+        width: 25%;
+        padding-top: 59px;
+        background-size: 54px;
+        background-repeat: no-repeat;
+        background-position: center 0;
+        font-size: $fsBase - 2px;
+        text-align: center;
+        @each $type in ico-off ico-gift ico-crossbordershopping ico-advancereservation {
+          &.#{type} {
+            background-image: url('#{$imgIcoPath}/#{$type}.png') ;
+          }
+        }
+      }
+    }
+  }
+  .sub-btn-area {
+    .btn-lg {
+      background: #00d17a;
+      font-size: $fsBase;
+    }
+  }
+}
+
+/* full-popup */
+.wrap-full-popup {
+  .btn-area {
+    margin: 0
+  }  
+}
+.full-popup-body {
+  &.login, &.signup {
+    .inner {
+      padding: 40px 20px;
+    }
+    .area-text {
+      padding: 0;
+    }
+  }
+  .area-text {
+    padding-top: 7px;
+  }
+  .title {
+    font-size: $fsBase + 6px;
+    text-align: center;
+    color: $colorBase;
+    .point {
+      font-weight: 500;
+    }
+  }
+  .desc {
+    padding-top: 15px;
+    font-size: $fsBase;
+    text-align: center;
+    color: $colorBase;
+    strong {
+      font-weight: 500;
+    }
+    .notice { 
+      padding: 3px 0 0 0;
+    }    
+  }
+  .wrap-signup-change {
+    .inner {
+      padding: 40px 20px;
+    }
+    .area-text {
+      padding: 0 0 45px;
+    }
+    .title {
+      text-align: left;
+    }
+    .desc {
+      padding-top: 10px;
+      text-align: left;
+      color: $colorGray;
+    }
+    .list-info {
+      margin: 0;
+      padding-bottom: 35px;
+      li {
+        &:first-child {
+          padding-top: 0;
+        }
+      }
+    }
+    .wrap-agreement {
+      .wrap-input-chk {
+        background: #fff;
+      }
+    }
+    .btn-area {
+      margin: 0;
+      padding-top: 20px;
+      a, button {
+        font-size: $fsBase + 2px;
+        text-align: center;
+      }
+    }
+    &.integrate {
+      .area-text {
+        padding-bottom: 0;
+        & + .list-info {
+          margin-top: 15px;
+        }
+      }
+      .wrap-memberinfo {
+        margin: 17px 0 15px;
+        padding: 25px 0;
+        background: #f6f6f6;
+        text-align: center;
+        .tag.dalisalda {
+          display: inline-block;
+          margin: 0 0 5px 10px;
+          padding: 0 8px;
+          font-weight: 700;
+          font-size: $fsBase - 2px;
+          line-height: 20px;
+          background: $dalisalda;
+          border-radius: 10px;
+          color: #fff;
+        }
+        .user-id {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          span {
+            display: inline-block;
+            &.id {
+              word-break: break-all;
+            }
+            & + span:not(.tag) {
+              position: relative;
+              padding-left: 21px;
+              &:before {
+                content: '';
+                position: absolute;
+                left: 10px;
+                top: 2px;
+                width: 1px;
+                height: 14px;
+                background: $colorBorder;
+              }
+            }
+            &.tag {
+              font-size: $fsBase - 1px;
+              color: $colorGray;
+              padding-left: 5px;
+              &.dalisalda {
+                display: inline-block;
+                margin: 0 0 0 10px;
+                padding: 0 8px;
+                font-size: $fsBase - 2px;
+                font-weight: 700;
+                line-height: 20px;
+                background: #00ce7c;
+                border-radius: 10px;
+                color: #fff;
+              }
+            }
+          }
+          .label {
+            font-size: $fsBase + 2px;
+            color: $colorGray;
+          }
+          .id {
+            font-size: $fsBase + 2px;
+            color: $colorBase;
+          }
+        }
+        .date {
+          padding-top: 3px;
+          font-size: $fsBase - 1px;
+          color: $colorGray;
+        }
+      }
+    }
+  }
+  &.signup {
+    /* popup > 친구초대가입 */
+    .friend {
+      .title {
+        .name {
+          font-weight: 500;
+          color: $gsfresh;
+        }
+      }
+      .notice {
+        display: block;
+        font-size: $fsBase - 1px;
+        text-align: center;
+        color: $colorGray;
+      }
+      .area-image {
+        padding: 30px 0 50px;
+        text-align: center;
+        .ico {
+          display: inline-block;
+          background-repeat: no-repeat;
+          &.coupon {
+            width: 105px;
+            height: 105px;
+            background-size: 105px;
+          }
+          &.plus {
+            margin: 0 15px;
+            width: 23px;
+            height: 105px;
+            background-size: 23px;
+            background-image: url('#{$imgIcoPath}/ico_plus_bold.png');
+            background-position: center;
+          }
+          @each $join-coupon in new add {
+            &.#{$join-coupon} {
+              background-image: url('#{$imgPath}/img_signup_coupon_#{$join-coupon}_gsfresh.png');
+            }
+          }
+        }
+      }
+    }
+    /* popup > 달리살다 */
+    .dalisalda {
+      .title {
+        font-weight: 500;
+      }
+      .desc {
+        padding-top: 5px;
+        color: $colorBase;
+      }
+      .wrap-dalidream {
+        margin-top: 40px;
+        padding: 20px 20px 25px 20px;
+        height: auto;
+        min-height: auto;
+        text-align: center;
+        border: 1px solid $colorBorder;
+        .area-text {
+          .title {
+            display: inline-block;
+            position: relative;
+            font-size: $fsBase + 2px;
+            &:after {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              width: $widthFull;
+              z-index: -1;
+              height: 9px;
+              background: #dbf9e8;
+            }
+          }
+          .desc {
+            padding-top: 8px;
+            font-size: $fsBase - 1px;
+            line-height: 17px;
+            color: $colorGray;
+          }
+        }
+        .area-cont {
+          .desc {
+            padding-top: 8px;
+            font-size: $fsBase + 1px;
+            color: $colorBase;
+          }
+        }
+        .benefit-details {
+          padding: 0 10px;
+        }
+        .list-icon {
+          margin: 0 auto;
+          padding: 15px 0 0;
+          width: 262px;
+          font-size: 0;
+          li {
+            display: inline-block;
+            margin-bottom: 10px;
+            padding: 0 0 0 64px;
+            width: 50%;
+            height: 54px;
+            background-size: 54px;
+            background-repeat: no-repeat;
+            background-position: left;
+            .desc {
+              padding-top: 10px;
+              font-size: $fsBase - 1px;
+              line-height: 17px;
+              text-align: left;
+              color: $colorBase;
+            }
+            &:nth-child(even) {
+              float: right;
+            }
+            // 삭제
+            @each $type in ico-off ico-gift ico-crossbordershopping ico-advancereservation {
+              &.#{type} {
+                background-image: url('#{$imgIcoPath}/#{$type}.png') ;
+              }
+            }
+          }
+        }
+        .btn-link {
+          display: inline-block;
+          margin-top: 15px;
+          padding-right: 2px;
+          font-size: $fsBase - 1px;
+          color:$colorBase;
+          span {
+            &:after {
+              @include afterArrow(inline-block, 5px, 5px, $colorBase, 45deg);
+              margin-left: 2px;
+            }
+          }
+          &:after {
+            display: block;
+            content: '';
+            margin-top: 1px;
+            width: $widthFull;
+            height: 1px;
+            background: $colorBase;
+          }
+        }
+        .notice {
+          margin-top: 5px;
+          font-size: $fsBase - 1px;
+          text-align: center;
+          color: $colorLightGray;
+        }
+        .btn-area {
+          margin-top: 17px;
+          .btn-signup {
+            line-height: 40px;
+          }
+        }
+      }
+    }
+    .btn-area {
+      margin: 0;
+      .btn-signup {
+        display: block;
+        width: $widthFull;
+        font-size: $fsBase + 2px;
+        line-height: 50px;
+        text-align: center;
+        border-radius: 2px;
+        & + .btn-signup {
+          margin-top: 10px;
+        }
+      }
+      .dalisalda {
+        background: #00cf7d;
+      }
+    }
+  }
+}
+/* 약관팝업 */
+.wrap-terms-type {
+  padding: 30px 20px;
+  font-size: $fsBase;
+  .terms-section {
+    & + .terms-section {
+      padding-top: 18px;
+    }
+    h6 {
+      padding-bottom: 10px;
+      font-weight: 500;
+      font-size: $fsBase + 2px;
+    }
+    p + .terms-list {
+      padding-top: 10px;
+    }
+    .terms-list {
+      &.depth1 {
+        li {
+          padding-left: 14px;
+          text-indent: -14px;
+          & + li {
+            padding-top: 10px;
+          }
+          .depth2 {
+            margin-top: 10px;
+          }
+        }
+      }
+      &.depth2 {
+        li {
+          padding-left: 14px;
+          font-size: $fsBase - 1px;
+          color: $colorGray;
+          text-indent: -14px;
+          & + li {
+            padding-top: 2px;
+          }
+        }
+      }
+      &.depth3 {
+        margin-left: -14px;
+      }
+      &.depth3,
+      &.depth4 {
+        margin-top: 10px;
+        li {
+          padding-left: 0;
+          text-indent: 0;
+          & + li {
+            padding-top: 2px;
+          }
+        }
+      }
+    }
+  }
+  /* 전사 약관 custom */
+  &.system {
+    line-height: 1.4;
+    & > div {
+      font-weight: normal !important;
+    }
+    strong, em {
+      display: block;
+      font-size: $fsBase + 2px;
+      font-weight: 500;
+    }
+    em {
+      padding-bottom: 15px;
+    }
+    p {
+      word-break: break-all;
+      & + p,
+      & + ul {
+        padding-top: 10px;
+        & + p {
+          padding-top: 10px;
+        }
+      }
+    }
+    ul {
+      ul {
+        padding: 10px 0 10px 10px;
+      }
+    }
+    li + li {
+      padding-top: 5px;
+    }
+    .tbl_style {
+      margin: 15px 0 10px;
+      width: 100%;
+      table-layout: fixed;
+      th, td {
+        padding: 7px 5px;
+        font-size: $fsBase - 1 !important;
+        text-align: center;
+        border: 1px solid $colorBorder;
+        word-wrap: break-word;
+        vertical-align: middle;
+        li + li {
+          padding-top: 0;
+        }
+        * {
+          font-size: $fsBase - 1 !important;
+        }
+      }
+      td {
+        height: 40px;
+        padding: 2px 0;
+      }
+      thead th {
+        color: $colorBase;
+        background-color: #f6f6f6;
+      }
+      tbody th {
+        line-height: 15px;
+      }
+    }
+  }
+}
+.terms-table {
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: $widthFull;
+    height: 1px;
+    background: $colorLightGray;
+  }
+  table {
+    width: $widthFull;
+    font-size: $fsBase - 1px;
+    color: $colorGray;
+    border-bottom: 1px solid $colorBorder;
+    tbody {
+      tr {
+        & + tr {
+          border-top: 1px solid $colorBorder;
+        }
+      }
+      th, td {
+        padding: 9px 0;
+        text-align: center;
+      }
+      th {
+        & + td {
+          border-left: 1px solid $colorBorder;
+        }
+      }
+    }
+  }
+}
+/* 약관 하단 팝업 */
+.wrap-terms-btn {
+  padding: 30px 20px;
+  button {
+    font-size: $fsBase + 2px;
+    border-radius: 2px;
+  }
+}
+/* 오프라인 회원 아이디 생성 */
+.wrap-user-form.offline {
+  .warp-input-txt {
+    padding: 30px 0 16px;
+  }
+  .btn-area {
+    padding: 21px 0;
+    button {
+      border-radius: 2px;
+    }
+  }
+}
+/* 회원가입 튜토리얼 */
+.dalisalda {
+  .tutorials-layer.signup {
+    .btn-bg.lightgreen {
+      color: #fff;
+    }
+  }
+}
+.tutorials-layer.signup {
+  article {
+    position: relative;
+    padding: 0 20px;
+    height: 100%;
+    section {
+      h3 {
+        width: 100%;
+        position: absolute;
+        font-weight: 700;
+        font-size: $fsBase + 18px;
+        color: #fff;
+        text-align: center;
+        line-height: 1.3;
+        span {
+          font-size: $fsBase + 8px;
+          font-weight: 700;
+        }
+      }
+      &.tutorials-step1 {
+        position: absolute;
+        top: 339px;
+        width: calc(100% - 40px);
+        h3 {
+          padding-bottom: 23px;
+          transform: translateY(-100%);
+        }
+        .btn-area {
+          padding: 0;
+        }
+      }
+      &.tutorials-step2 {
+        position: absolute;
+        top: 473px;
+        width: calc(100% - 40px);
+        display: flex;
+        justify-content: center;
+        .tutorials-inner {
+          position: relative;
+          padding: 12px 0 66px;
+          width: $widthFull;
+        }
+        h3 {
+          top: 60px;
+          // transform: translateY(100%);
+        }
+        .list-link-sns {
+          width: $widthFull;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.new-benefit {
+  padding:48px 10px 0;
+  .text-benefit {
+    font-size:$fsBase + 8px;
+    color:#fff;
+    letter-spacing:-1.3px;
+    line-height:30px;
+    text-align:center;
+    font-weight:500;
+  }
+  .list-benefit-a {
+    margin-top:14px;
+    display:flex;
+    justify-content:space-between;
+    .benefit-item {
+      width:68px;
+      .box-benefit {
+        height:68px;
+        border-radius:16px;
+        background-color:rgba(255,255,255,.9);
+        display:flex;
+        justify-content:center;
+        align-items:center;
+      }
+      .text-benefit-info {
+        color:#fff;
+        font-size:$fsBase + 1px;
+        line-height:18px;
+        letter-spacing:-1.3px;
+        text-align:center;
+        margin-top:6px;
+      }
+    }
+  }
+  [class^="ico-benefit-"] {
+    width:28px;
+    height:28px;
+    vertical-align:middle;
+    display:inline-block;
+    background-repeat:no-repeat;
+    background-position:50% 50%;
+    background-size:100%;
+  }
+  .ico-benefit-a {
+    background-image:url('#{$imgIcoPath}/ico-benefit-a.png');
+  }
+  .ico-benefit-b {
+    background-image:url('#{$imgIcoPath}/ico-benefit-b.png');
+  }
+  .ico-benefit-c {
+    background-image:url('#{$imgIcoPath}/ico-benefit-c.png');
+  }
+  .ico-benefit-d {
+    background-image:url('#{$imgIcoPath}/ico-benefit-d.png');
+  }
+}

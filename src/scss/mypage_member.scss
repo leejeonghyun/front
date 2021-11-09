@@ -1,0 +1,2112 @@
+/* 공통 */
+.wrap-mypage {
+  main.bg-gray {
+    height: calc(100vh - 56px);
+    min-height: calc(100vh - 56px);
+    background: $colorBgGray;
+  }
+  /* 회원 */
+  &.member {
+    .section-area {
+      position: relative;
+      background: #fff;
+      &:not(:first-of-type) {
+        border-top: 5px solid $colorBgGray;
+      }
+    }
+    .inner {
+      padding: 25px 20px;
+    }
+    @at-root .wrap-certify {
+      .wrap-my-grade {
+        text-align: center;
+        .name {
+          font-size: $fsBase + 2px;
+          color: $colorGray;
+          strong {
+            font-weight: 500;
+            color: $colorBase;
+          }
+        }
+        .grade {
+          padding-top: 5px;
+          font-size: 25px;
+          letter-spacing: -.5px;
+        }
+        .tag {
+          display: inline-block;
+          margin-top: 4px;
+          padding: 0 8px;
+          font-weight: 700;
+          font-size: $fsBase - 2px;
+          line-height: 20px;
+          border-radius: 10px;
+          &.dalisalda {
+            background: $dalisalda;
+            color: #fff;
+          }
+        }
+      }
+      .box-grade {
+        margin-top: 20px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 6px 2px rgba(#000, .1);
+        .inner-wrap-link {
+          display: block;
+          padding: 20px 15px;
+          text-align: center;
+          .desc {
+            padding-top: 15px;
+            font-size: $fsBase - 1px;
+            color: $colorBase;
+            letter-spacing: -.3px;
+            .point {
+              font-weight: 500;
+            }
+            & + .desc {
+              padding-top: 10px;
+            }
+            .bold {
+              font-weight: 500;
+              color: $colorBase;
+            }
+          }
+          .total {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 0 15px;
+            line-height: 25px;
+            border: 1px solid $colorBorder;
+            border-radius: 20px;
+            .label {
+              font-size: $fsBase - 1px;
+              color: $colorGray;
+            }
+            .date {
+              display: inline-block;
+              padding-left: 10px;
+              font-weight: 700;
+              font-size: $fsBase - 1px;
+            }
+            .unit {
+              font-weight: 500;
+              font-size: $fsBase - 1px;
+            }
+            &.dalisalda {
+              .date {
+                color: $dalisalda;
+              }
+              .unit {
+                color: $dalisalda;
+              }
+              .amounts {
+                padding-left: 5px;
+                color: $dalisalda;
+              }
+            }
+          }
+        }
+        .wrap-gauge {
+          .top {
+            &:after {
+              @include content;
+            }
+          }
+          .mygrade {
+            float: left;
+            font-size: $fsBase - 1px;
+            color: $gsfresh;
+            letter-spacing: -.5px;
+          }
+          .nextgrade {
+            float: right;
+            font-size: $fsBase - 1px;
+            color: $colorLightGray;
+          }
+          .gauge {
+            margin-top: 5px;
+            width: 100%;
+            height: 6px;
+            background: #dfdfdf;
+            border-radius: 10px;
+            .bar {
+              display: block;
+              height: 6px;
+              background: $gsfresh;
+              border-radius: 10px;
+            }
+          }
+        }
+        .wrap-link {
+          display: flex;
+          border-top: 1px solid $colorBorder;
+          .link {
+            display: block;
+            width: 100%;
+            line-height: 40px;
+            text-align: center;
+            &:after {
+              @include afterArrow(inline-block, 5px, 5px, $colorLightGray, 45deg);
+              margin: 0 0 1px 3px;
+            }
+            & + .link {
+              border-left: 1px solid $colorBorder;
+            }
+          }
+        }
+      }
+      .btn-lg {
+        height: 40px;
+        font-size: $fsBase + 2px;
+      }
+    }
+    .txt-subtitle {
+      font-size: $fsBase + 4px;
+      text-align: center;
+      color: $colorBase;
+    }
+    .box-desc {
+      padding: 15px 0 25px;
+      font-size: $fsBase;
+      text-align: center;
+      color: $colorGray;
+      border-radius: 5px;
+    }
+    .wrap-link { //TODO: 삭제 예정
+      .btn-arrow {
+        display: block;
+        padding: 12px 20px;
+        width: 100%;
+        font-size: $fsBase - 1px;
+        color: $colorBase;
+        border-bottom: 1px solid $colorBorder;
+        &.right {
+          position: relative;
+          &:after {
+            @include afterArrow(inline-block, 6px, 6px, $colorBase, -135deg);
+            margin-top: -4px;
+          }
+        }
+      }
+    }
+    @at-root .box-point {
+      display: table;
+      padding: 15px 20px;
+      width: 100%;
+      .title {
+        display: table-cell;
+        font-size: $fsBase + 4px;
+        color: $colorBase;
+        vertical-align: middle;
+        &:before {
+          content: '';
+          display: inline-block;
+          margin-right: 6px;
+          background-repeat: no-repeat;
+          background-size: cover;
+          vertical-align: bottom;
+        }
+        &.rewards {
+          &:before {
+            width: 17px;
+            height: 20px;
+            background-image: url('#{$imgIcoPath}/ico_rewards_small_gsfresh.png');
+          }
+        }
+        &.gspoint {
+          &:before {
+            width: 20px;
+            height: 20px;
+            background-image: url('#{$imgIcoPath}/ico_point_small_gsfresh.png');
+          }
+        }
+      }
+      .wrap-txt-point {
+        display: table-cell;
+        .txt-point {
+          text-align: right;
+          .label {
+            display: inline-block;
+            padding-right: 4px;
+            font-size: $fsBase;
+            color: $colorGray;
+          }
+          .num {
+            font-size: $fsBase;
+            color: $colorGray;
+            &.point {
+              font-size: $fsBase + 4px;
+              font-weight: 500;
+            }
+          }
+          & + .txt-point {
+            padding-top: 5px;
+          }
+        }
+      }
+    }
+    .wrap-point {
+      .wrap-select {
+        select {
+          background-image: url('#{$imgIcoPath}/ico_select_bl.png');
+        }
+      }
+      //TODO: 추후 확인
+      /* .wrap-tab {
+        .tablist {
+          &.type03 {
+            margin: 0;
+            padding: 15px 20px;
+          }
+        }
+      } */
+    }
+    .wrap-grade {
+      .title {
+        padding-bottom: 15px;
+        font-weight: 500;
+        font-size: $fsBase + 4px;
+        color: $colorBase;
+      }
+    }
+    .list-grade-benefit {
+      padding-top: 15px;
+      li {
+        padding: 25px 10px;
+        border: 1px solid $colorBorder;
+        border-bottom-style: dashed;
+        .desc {
+          display: inline-block;
+          width: calc(100% - 100);
+          font-size: $fsBase + 2px;
+          color: $colorBase;
+          vertical-align: middle;
+        }
+        & + li {
+          border-top: none;
+        }
+        &:first-child {
+          border-radius: 5px 5px 0 0;
+        }
+        &:last-child {
+          border-radius: 0 0 5px 5px;
+          border-bottom-style: solid;
+        }
+        .grade {
+          .title {
+            padding: 0;
+            font-weight: 500;
+            font-size: $fsBase + 4px;
+            text-align: center;
+            color: $colorBase;
+          }
+          .desc {
+            display: block;
+            padding-top: 3px;
+            font-weight: 500;
+            font-size: $fsBase;
+            text-align: center;
+            color: $colorGray;
+          }
+          &.star {
+            padding-left: 50px;
+            background-size: 40px auto;
+            background-repeat: no-repeat;
+            min-height: 39px;
+            @each $icon in gsstar lalavla {
+              &.#{$icon} {
+                background-image: url('#{$imgIcoPath}/ico_#{$icon}.png');
+              }
+            }
+            .title {
+              font-size: $fsBase + 2px;
+              text-align: left;
+            }
+            .desc {
+              font-size: $fsBase - 1px;
+              text-align: left;
+            }
+          }
+        }
+        .grade-start {
+          margin: 15px 14px 0;
+          padding: 20px 15px;
+          background-color: #f6f6f6;
+          border-radius: 4px;
+          dt {
+            padding-bottom: 14px;
+            border-bottom: 1px solid $colorBorder;
+          }
+        }
+        &.bottom-info {
+          padding: 25px;
+          background-color: #f6f6f6;
+          .info-title {
+            display: block;
+            padding-bottom:5px;
+            font-size: $fsBase - 1px;
+            color: $colorBase;
+          }
+          p {
+            font-size: $fsBase - 1px;
+            color: $colorGray;
+          }
+        }
+      }
+    }
+    .list-benefit {
+      li {
+        border: none;
+        padding: 0;
+        figure {
+          margin: 0 auto;
+          width: 66px;
+          height: 40px;
+          img {
+            width: 100%;
+          }
+        }
+        .ico {
+          width: 100%;
+          height: 40px;
+          background-repeat: no-repeat;
+          background-position: center;
+          @each $grade-benefit in gspoint rewards {
+            &.#{$grade-benefit} {
+              background-image: url('#{$imgIcoPath}/ico_grade_#{$grade-benefit}.png');
+            }
+          }
+          &.gspoint {
+            background-size: 55px 17px;
+          }
+          &.rewards {
+            background-size: 49px 36px;
+          }
+          // &.coupon {
+          //   background-size: 66px 39px;
+          //   @each $coupon-benefit in vvip vip family {
+          //     &.#{$coupon-benefit} {
+          //       background-image: url('#{$imgIcoPath}/ico_grade_coupon_#{$coupon-benefit}.png');
+          //     }
+          //   }
+          // }
+          &.coupon {
+            background-size: 68px 41px;
+            @each $coupon-benefit in vvip vip {
+              &.#{$coupon-benefit} {
+                background-image: url('#{$imgIcoPath}/ico_grade_coupon_#{$coupon-benefit}_gsfresh.png');
+              }
+            }
+          }
+        }
+        .desc {
+          padding-top: 15px;
+          font-size: $fsBase;
+          line-height: 18px;
+          letter-spacing: -0.25px;
+          color: $colorBase;
+          span {
+            display: block;
+            font-size: $fsBase - 1px;
+            color: $colorLightGray;
+          }
+        }
+        &:last-child {
+          border: none;
+        }
+      }
+    }
+    @at-root .list-grade {
+      display: flex;
+      padding: 9px 0;
+      border: 1px solid $colorBorder;
+      border-radius: 5px;
+      li {
+        width: 100%;
+        text-align: center;
+        .txt-grade {
+          position: relative;
+          padding-top: 33px;
+          width: auto;
+          height: auto;
+          font-size: $fsBase + 2px;
+          background-position: center 10px;
+        }
+        .desc {
+          padding: 8px 0;
+          font-size: $fsBase - 1px;
+          color: $colorGray;
+        }
+        & + li {
+          border-left: 1px solid $colorBorder;
+        }
+      }
+    }
+    @at-root .list-point {
+      li {
+        padding: 16px 20px;
+        &:after {
+          @include content;
+        }
+        & + li {
+          border-top: 1px solid $colorBorder;
+        }
+        .row {
+          float: left;
+          .date {
+            font-size: $fsBase - 1px;
+            color: $colorGray;
+          }
+          .name {
+            padding-top: 6px;
+            font-size: $fsBase;
+            color: $colorBase;
+          }
+        }
+        .num {
+          float: right;
+          padding-top: 8px;
+          font-weight: 700;
+          font-size: $fsBase + 3px;
+          color: $gsfresh;
+          &.minus {
+            color: $colorRed !important;
+          }
+        }
+      }
+    }
+    .list-accordion {
+      &.type02 {
+        .btn-accordion {
+          margin: 0;
+          padding: 11px 20px;
+          width: 100%;
+          font-size: $fsBase - 1px;
+          color: $colorBase;
+          &:after {
+            @include afterArrow(inline-block, 6px, 6px, $colorBase, 135deg);
+            position: absolute;
+            right: 20px;
+            margin-top: -6px;
+          }
+          &[aria-expanded='true']:after {
+            margin-top: -2px;
+            transform: rotate(-45deg);
+          }
+        }
+        .list-info {
+          margin: 0;
+        }
+      }
+      .cont-accordion {
+        top: 0;
+        .list-info {
+          li {
+            &:first-child {
+              padding-top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  @at-root {
+    .member-grade-info {
+      margin-top: 20px;
+      font-size: $fsBase - 2px;
+      color: #fe9042;
+    }
+    .wrap-list-dot.mypage-grade {
+      margin-top: 17px;
+      li + li {
+        margin-top: 5px;
+      }
+    }
+  }
+  /* 회원 > 회원정보 */
+  &.member-info{
+    .inner {
+      padding: 0 20px 30px;
+    }
+    .area-title {
+      padding: 28px 0 22px;
+      .txt-subtitle {
+        // padding: 30px 0 10px;
+        font-weight: 500;
+        font-size: $fsBase + 2px;
+        text-align: center;
+        color: $colorBase;
+      }
+      .txt-desc {
+        font-size: $fsBase;
+        text-align: center;
+        color: $colorGray;
+      }
+    }
+    .wrap-box {
+      padding: 30px 0;
+      & + .wrap-box {
+        border-top: 1px solid $colorBorder;
+      }
+      .txt-desc {
+        padding-bottom: 20px;
+        font-size: $fsBase + 2px;
+        text-align: center;
+        color: $colorBase;
+      }
+      .inp-id {
+        .label {
+          display: inline-block;
+          width: 90px;
+          font-size: $fsBase;
+          color: $colorBase;
+        }
+        & + .inp-box {
+          padding: 20px 0;
+        }
+      }
+    }
+    /* .wrap-input-box { //TODO: 추후 확인
+      padding: 0 20px 30px;
+      textarea {
+        margin: 10px 0 0;
+        padding: 10px;
+        width: 100%;
+        height: 70px;
+        font-size: $fsBase;
+        color: $colorLightGray;
+        border: 1px solid $colorBorder;
+        box-sizing: border-box;
+      }
+    } */
+    .btn-area {
+      .btn-lg {
+        font-size: $fsBase + 2px;
+      }
+      &.bg-gray {
+        padding: 20px 15px 60px;
+        background: $colorBgGray;
+      }
+      .wrap-link-area {
+        padding-top: 10px;
+        text-align: center;
+        .link-underbar {
+          position: relative;
+          padding: 10px;
+          font-weight: 500;
+          font-size: $fsBase;
+          color: $colorBase;
+          &:before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            bottom: 8px;
+            width: calc(100% - 20px);
+            height: 1px;
+            background: $colorBase;            
+          }
+        }
+      }
+    }
+    .section-area {
+      position: relative;
+      background: #fff;
+      & + .btn-area {
+        padding: 50px 20px;
+      }
+    }
+    .txt-title {
+      padding: 22px 20px 15px;
+      font-weight: 500;
+      font-size: $fsBase + 4px;
+      color: $colorBase;
+      &.type02 {
+        padding: 22px 20px 5px;
+      }
+      &.type03 {
+        font-size: $fsBase;
+        padding: 22px 20px 5px;
+      }
+    }
+    .txt-desc {
+      padding: 0 20px 20px;
+      font-size: $fsBase - 1px;
+      color: $colorLightGray;
+    }
+    .txt-required {
+      position: absolute;
+      top: 27px;
+      right: 20px;
+      font-size: $fsBase - 1px;
+      color: $colorLightGray;
+    }
+    .btn-modify {
+      display: inline-block;
+      width: 71px;
+      border: 1px solid $colorBorder;
+      line-height: 22px;
+      letter-spacing: -1px;
+      box-sizing: border-box;
+    }
+    .tbl-member {
+      margin: 0 15px;
+      width: calc(100% - 30px);
+      tr {
+        th {
+          padding: 0 5px;
+          font-size: $fsBase;
+          text-align: left;
+          color: $colorBase;
+          word-break: break-all;
+          border-top: 1px solid $colorBorder;
+        }
+        td {
+          position: relative;
+          padding: 9px 5px;
+          font-size: $fsBase;
+          color: $colorGray;
+          word-break: break-all;
+          border-top: 1px solid $colorBorder;
+          .data {
+            display: inline-block;
+            line-height: 32px;
+          }
+          .employees {
+            display: inline-block;
+            padding-left: 5px;
+            line-height: 32px;
+            color: $colorLightGray;
+          }
+          .inp-box {
+            & + .radio-box {
+              margin-top: 7px;
+              padding: 0;
+            }
+            .txt-notice {
+              display: block;
+              padding-top: 3px;
+              font-size: $fsBase - 2px;
+              color: $colorGray;
+            }
+            .txt-error {
+              & + .btn-gray {
+                margin-top: 10px;
+              }
+            }
+            .inp-number {
+              width: $widthFull;
+              height: 32px;
+              padding: 6px 10px;
+              font-size: $fsBase;
+              line-height: 20px;
+              border: 1px solid $colorBorder;
+              border-radius: 1px;
+              background: #fff;
+              box-sizing: border-box;
+              outline: none;
+              vertical-align: middle;
+              &:focus{
+                border: 1px solid $gsfresh;
+              }
+            }
+            .inp-box-time {
+              position: relative;
+              .inp-number {
+                padding: 6px 94px 6px 10px;
+              }
+              .txt-time {
+                position: absolute;
+                top: 8px;
+                right: 10px;
+                font-size: $fsBase;
+                color: $colorRed;
+              }
+            }
+          }
+          .radio-box {
+            padding: 7px 0;
+            .inp-radio {
+              & + .inp-radio {
+                margin-left: 10px;
+              }
+            }
+          }
+          .btn-modify {
+            position: absolute;
+            top: 13px;
+            right: 5px;
+          }
+          .btn-gray {
+            display: block;
+            width: 100%;
+            font-size: $fsBase;
+            line-height: 30px;
+            color: $colorBase;
+            background: #f6f6f6;
+            border: 1px solid $colorBorder;
+          }
+          .wrap-icon {
+            display: inline-block;
+            margin-left: 6px;
+            height: 24px;
+            vertical-align: middle;
+            .ico {
+              display: inline-block;
+              width: 24px;
+              height: 24px;
+              background-repeat: no-repeat;
+              background-size: 24px;
+              @each $type in naver kakaotalk facebook payco apple {
+                &.#{$type} {
+                  background-image: url('#{$imgIcoPath}/ico_#{$type}_gray.png');
+                }
+              }
+            }
+            & + .span {
+              padding-left: 30px;
+            }
+          }
+        }
+        .wrap-inp-btn {
+          position: relative;
+          .inp-txt {
+            width: calc(100% - 90px);
+          }
+          .btn-gray {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 85px;
+          }
+        }
+        .box-info {
+          padding-top: 5px;
+          .txt-info {
+            padding-top: 5px;
+            font-size: $fsBase - 1px;
+            color: $colorGray;
+          }
+          .link-more {
+            display: inline-block;
+            float: none;
+            margin-left: 8px;
+            font-size: $fsBase - 1px;
+            color: $colorBase;
+            &:before {
+              content: '';
+              position: absolute;
+              left: 0;
+              bottom: -2px;
+              width: 100%;
+              height: 1px;
+              background: $colorBase;            
+            }
+          }
+        }
+        &:not(.unipass):last-child {
+          td {
+            padding: 10px 5px 20px;
+          }
+        }
+        &.unipass {
+          th {
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+    .area-radio {
+      margin: 0 15px;
+      padding: 15px 5px;
+      border-top: 1px solid $colorBorder;
+      text-align: right;
+      .inp-radio {
+        & + .inp-radio {
+          margin-left: 30px;
+        }
+      }
+    }
+    .wrap-withdraw {
+      .area-title {
+        .txt-desc {
+          padding: 0 0 30px;
+        }
+      }
+      .area-info {
+        padding-bottom: 50px;
+        .title {
+          padding: 22px 0 15px;
+          border-top: 1px solid $colorBorder;
+          font-weight: 500;
+          font-size: $fsBase + 4px;
+          color: $colorBase;
+        }
+      }
+      .list-number {
+        padding-bottom: 50px;
+        .txt-title {
+          padding: 0;
+          font-weight: 500;
+          font-size: $fsBase - 1px;
+          color: #5f5f5f;
+        }
+        .txt-desc {
+          padding: 10px 0 15px;
+          color: #5f5f5f;
+        }
+      }
+      .list-info {
+        margin: 0;
+        li {
+          color: #5f5f5f;
+          &:first-child {
+            padding-top: 0;
+          }
+        }
+      }
+    }
+    &.wrap-setting {
+      .txt-desc {
+        padding: 0;
+      }
+      .wrap-list-setting {
+        border-bottom: none;
+        .txt-title {
+          padding: 0;
+          font-weight: 500;
+        }
+        &.type02 {
+          li:last-child {
+            border-bottom: 1px solid $colorBorder;
+          }
+          .txt-desc {
+            padding-bottom: 15px;
+          }
+        }
+      }
+      @at-root .wrap-list-setting.member {
+        font-size: $fsBase;
+        li {
+          .inner {
+            padding: 14px 0 12px
+          }
+        }
+        .txt-title {
+          padding: 5px 0;
+        }
+        .desc {
+          margin: 0;
+        }
+        .txt-subtitle {
+          .sns {
+            font-size: $fsBase;
+            color: $colorBase;
+          }
+          .date {
+            display: inline-block;
+            padding-left: 10px;
+            font-size: $fsBase - 1px;
+            color: $colorLightGray;
+            vertical-align: middle;
+          }
+          .ico {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: left center;
+            vertical-align: middle;
+            @each $sns in naver kakaotalk facebook payco apple {
+              &.#{$sns} {
+                background-image: url('#{$imgIcoPath}/ico_#{$sns}_gray.png');
+              }
+            }
+            & + span {
+              vertical-align: middle;
+            }
+          }
+        }
+        .btn-connect {
+          display: inline-block;
+          padding: 3px 0;
+          width: 71px;
+          border: 1px solid $colorBorder;
+          letter-spacing: -1px;
+          &.active {
+            border: 1px solid $gsfresh;
+            color: $gsfresh;
+          }
+        }
+        &.type02 {
+          li:last-child {
+            border-bottom: 1px solid $colorBorder;
+          }
+          .txt-desc {
+            padding-bottom: 15px;
+          }
+        }
+      }
+    }
+    // TODO: 추후 확인
+    /* .list-link-login { 
+      li {
+        display: inline-block;
+        margin-bottom: 10px;
+        width: calc(50% - 8px);
+        border: 1px solid $colorBorder;
+        .ico {
+          display: block;
+          line-height: 38px;
+          text-align: center;
+          span {
+            display: inline-block;
+            padding-left: 10px;
+            vertical-align: middle;
+          }
+          &:before {
+            content: '';
+            display: inline-block;
+            background-repeat: no-repeat;
+            vertical-align: middle;
+          }
+          &.naver {
+            &:before {
+              width: 15px;
+              height: 15px;
+              background-image: url('#{$imgIcoPath}/ico_link_naver.png');
+              background-size: 15px;
+            }
+          }
+          &.kakaotalk {
+            &:before {
+              width: 16px;
+              height: 15px;
+              background-image: url('#{$imgIcoPath}/ico_link_kakao.png');
+              background-size: 16px 15px;
+            }
+          }
+          &.facebook {
+            &:before {
+              width: 9px;
+              height: 16px;
+              background-image: url('#{$imgIcoPath}/ico_link_facebook.png');
+              background-size: 9px 16px;
+            }
+          }
+          &.payco {
+            &:before {
+              width: 12px;
+              height: 16px;
+              background-image: url('#{$imgIcoPath}/ico_link_payco.png');
+              background-size: 12px 16px;
+            }
+          }
+        }
+        &:nth-child(even) {
+          margin-left: 8px;
+        }
+      }
+    } */
+    .required {
+      padding-left: 3px;
+    }
+    .area-number {
+      &.hide {
+        display: none;
+      }
+    }
+    .wrap-insert-number {
+      display: none;
+      &.show {
+        display: block;
+      }
+    }
+  }
+  /* 쿠폰 */
+  &.coupon {
+    .section-area:not(:first-of-type) {
+      border-top: 5px solid $colorBgGray;
+    }
+    .wrap-input:not(.search) {
+      position: relative;
+      padding: 15px 20px;
+      background: #f8f8f8;
+      border-bottom: 1px solid $colorBorder;
+      .warp-input-txt {
+        width: calc(100% - 80px);
+        padding: 0;
+      }
+      .inp-box {
+        .inp-txt {
+          height: 32px;
+        }
+      }
+      .btn-Register { //TODO: 클래스명 추후 변경 예정
+        position: absolute;
+        top: 15px;
+        padding: 9px 0 7px;
+        right: 20px;
+        width: 75px;
+        background: $colorPointGray;
+        border-radius: 2px;
+        font-size: $fsBase;
+        color: #fff;
+      }
+    }
+    .wrap-tab {
+      border-bottom: 5px solid $colorBgGray;
+    }
+    .inner {
+      padding: 20px;
+    }
+    .inner-coupon {
+      padding: 0 20px;
+    }
+    .wrap-inner-tab-contents {
+      margin: 0;
+    }
+    .inner-tablist {
+      li {
+        .btn-border {
+          padding: 8px 0 6px;
+          height: auto;
+          .title {
+            display: block;
+            font-size: $fsBase;
+            color: $colorLightGray;
+          }
+          .num {
+            display: block;
+            padding-top: 3px;
+            font-weight: 500;
+            font-size: $fsBase + 12px;
+            line-height: 1;
+            color: $colorLightGray;
+          }
+        }
+      }
+    }
+    @at-root .inner-tablist.flex-type li.active {
+      &.active {
+        .title,
+        .num {
+          color: $gsfresh;
+        }
+      }
+    }
+    .wrap-tab {
+      .txt-notice {
+        margin-top: 13px;
+        font-size: $fsBase;
+        color: $colorGray;
+        .point {
+          font-weight: 500;
+        }
+      }
+    }
+    .inner-title {
+      padding: 20px 20px 0;
+      font-weight: 500;
+      font-size: $fsBase + 2px;
+      color: $colorBase;
+    }
+    /* swiper */
+    .wrap-slide {
+      padding: 15px 0 37px;
+      .swiper-pagination {
+        bottom: -20px;
+      }
+    }
+  }
+  /* 나의활동 */
+  &.review {
+    /* Mypage > review scrollX tab */
+    .wrap-searchresult {
+      // border-top: 1px solid $colorBorder;
+    }
+  }
+  &.inquiry {
+    .wrap-searchresult {
+      border-top: 1px solid $colorBorder;
+    }
+    .wrap-list-review li {
+      .product-name .link-text {
+        // max-width: 88%;
+      }
+    }
+    .wrap-list-review li .review-inner .wrap-photoreview-slide .wrap-view-image {
+      margin: -15px 0 0 -15px;
+      li {
+        margin: 15px 0 0 15px;
+        width: 85px;
+        height: 85px;
+      }
+    }
+  }
+  @at-root .area-link {
+    padding: 15px 20px;
+    .btn-inquiry {
+      padding: 7px 0 5px;
+      width: $widthFull;
+      font-size: $fsBase;
+      text-align: center;
+      color: $gsfresh;
+      border: 1px solid $gsfresh;
+    }
+  }
+  /* Mypage inner tab */
+  .wrap-tab-review {
+    padding: 0 15px;
+    height: 40px;
+    background: #fff;
+    border-bottom: 1px solid $colorBorder;
+    &.sticky {
+      position: fixed;
+      top: 42px;
+      left: 0;
+      width: 100%;
+      z-index: 2;
+    }
+    &:after {
+      @include content;
+    }
+    .tab-review {
+      float: left;
+      li {
+        display: inline-block;
+        button {
+          display: inline-block;
+          height: 40px;
+          font-size: $fsBase;
+          color: $colorGray;
+          &.active {
+            padding-left: 22px;
+            color: $colorBase;
+            background: url('#{$imgIcoPath}/ico_check_black.png') no-repeat 7px center;
+            background-size: 11px auto;
+            strong, span {
+              font-weight: 500;
+            }
+          }
+        }
+        & + li {
+          position: relative;
+          margin-left: 5px;
+          padding-left: 5px;
+          &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 1px;
+            height: 12px;
+            background: $colorBorder;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+    .sorting {
+      @extend .wrap-select-category;
+      float: right;
+      select {
+        padding-top: 4px;
+        padding-bottom: 4px;
+      }
+    }
+  }
+  /* 내가 작성한 상품평 목록 */
+  .period-details {
+    padding: 15px 20px;
+    .term {
+      button {
+        padding: 8px 0 6px;
+        height: auto;
+        @at-root {
+          /* IOS 에서만 적용되는 CSS */
+          /* .period-details .term button */
+          _::-webkit-full-page-media, _:future, :root & {
+            padding: 9px 0 5px;
+          }
+        }
+      }
+      & +.term-calendar { 
+        margin-top: 10px;
+      }
+    }
+    .term-calendar {
+      display: flex;
+      /* 달력 아이콘 */
+      .btn-calendar {
+        display: block;
+        position: relative;
+        z-index: 1;
+        padding-left: 10px;
+        width: $widthFull;
+        font-size: $fsBase;
+        text-align: left;
+        border: 1px solid $colorBorder;
+        span {
+          display: inline-block;
+          padding-top: 2px;
+        }
+      }
+      .ico-period {
+        display: block;
+        flex: none;
+        width: 20px;
+        height: 32px;
+        line-height: 32px;
+        text-align: center;
+      }
+    }
+  }
+  .wrap-review-guide {
+    display: block;
+  }
+  .wrap-review {
+    width: $widthFull;
+    .wrap-list-review {
+      li {
+        figure {
+          float: left;
+          width: 104px;
+          height: 104px;
+          img {
+            height: 100%;
+          }
+        }
+        .wrap-md-talk {
+          bottom: 16px;
+          margin-top: 16px;
+        }
+      }
+      .area-text {
+        position: relative;
+        margin: 0 0 15px 104px;
+        padding-left: 15px;
+        min-height: 105px;
+        line-height: 1;
+        .brand {
+          width: auto;
+          height: auto;
+          font-weight: 500;
+          font-size: $fsBase - 1px;
+          color: $colorGray;
+          &.top {
+            padding-top: 7px;
+          }
+        }
+        .date-write {
+          position: absolute;
+          top: 0;
+          right: 0;
+          font-size: $fsBase - 1px;
+          color: $colorLightGray;
+        }
+        .name-product {
+          @include ellipsis-into-2;
+          padding-top: 15px;
+          font-size: $fsBase + 1px;
+          line-height: 16px;
+          color: $colorBase;
+        }
+        .option {
+          @include ellipsis;
+          padding-top: 10px;
+          font-size: $fsBase - 1px;
+          color: $colorGray;
+        }
+        .star {
+          padding-top: 10px;
+        }
+      }
+      @at-root .review-footer {
+        margin: 0 -20px;
+        padding: 0 20px 8px;
+        &:after {
+          @include content;
+        }
+        .left {
+          float: left;
+          padding: 4px 0 5px;
+          font-size: $fsBase - 1px; 
+          color: $colorGray;
+        }
+        .right {
+          float: right;
+        }
+        .like-desc {
+          font-weight: 300;
+          font-size: $fsBase - 1px;
+          color: $colorGray;
+          .num {
+            color: $gsfresh;
+          }
+        }
+        .btn-delete {
+          height: 24px;
+          font-size: $fsBase;
+          color: $colorLightGray;
+        }
+        .btn-write {
+          padding: 5px 10px 2px;
+          font-size: $fsBase - 1px;
+          color: $colorBase;
+          background: #fff;
+          border: 1px solid $colorBorder;
+          border-radius: 2px;
+        }
+      }
+    }
+  }
+  /* popup > 상품평 수정 */
+  &.popup-review {
+    .product-item {
+      padding: 40px 20px;
+      figure {
+        float: none;
+        width: 155px;
+      }
+      .inner {
+        margin: 0;
+        padding: 0 45px;
+        text-align: center;
+      }
+    }
+    .wrap-star-rate {
+      margin: 0 0 50px;
+      text-align: center;
+    }
+  }
+}
+.wrap-mylist {
+  border-top: 10px solid $colorBgGray;
+  border-bottom: 5px solid $colorBorder;
+}
+/* 리스트 타입 01 */
+.list-type01 {
+  li {
+    & + li {
+      .list-type01-inner {
+        border-top: 1px solid $colorBorder;
+      }
+    }
+  }
+  .list-type01-inner {
+    padding: 20px 20px 10px;
+    .list-divider {
+      display: inline-block;
+      content: '';
+      margin: 0 4px;
+      width: 1px;
+      height: 9px;
+      background: $colorBorder;
+    }
+    .list-type01-header {
+      p {
+        display: inline-block;
+      }
+      .txt-state {
+        font-size: $fsBase - 1px;
+        color: $gsfresh;
+        & + .wrap-label {
+          margin-left: 5px;
+        }
+      }
+      .wrap-label {
+        .ico-label {
+          padding: 2px 8px 0;
+          font-size: $fsBase - 1px;
+          height: 16px;
+          color: $colorLightGray;
+          border: 1px solid #c8c8c8;
+          border-radius: 10px;
+          &.red {
+            border: 1px solid $colorRed;
+          }
+        }
+      }
+      & + .wrap-title {
+        padding: 7px 0 0;
+      }
+      .txt-data {
+        font-size: $fsBase - 1px;
+        color: $colorLightGray;
+        &:before {
+          @extend .list-divider;
+        }
+      }
+    }
+    .wrap-title {
+      text-align: left;
+      p {
+        display: inline-block;
+      }
+      .brand {
+        width: auto;
+        height: auto;
+        font-weight: 500;
+        font-size: $fsBase - 1px;
+        color: $colorBase;
+      }
+      .title {
+        font-size: $fsBase;
+        color: $colorBase;
+        &:before {
+          @extend .list-divider;
+        }
+        &:only-child {
+          padding-left: 0;
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+    .list-type01-footer {
+      margin-top: 7px;
+      font-size: $fsBase - 1px;
+      line-height: 27px;
+      color: $colorLightGray;
+      &:after {
+        @include content;
+      }
+      .left {
+        float: left;
+      }
+      .right {
+        float: right;
+        .btn-border {
+          padding: 7px 10px 4px;
+          font-size: $fsBase - 1px;
+          line-height: 1;
+          color: $gsfresh;
+          border: 1px solid $gsfresh;
+          border-radius: 2px;
+        }
+      }
+    }
+  }
+}
+.nolist-area .servicecenter {
+  padding: 20px;
+}
+/* 아코디언 + 나의활동 공통 리스트 */
+.wrap-list-review {
+  &.list-accordion {
+    margin: 0;
+    padding: 0;
+    li {
+      margin: 0;
+      padding: 0;
+      border-bottom: none;
+      .wrap-title {
+       & + .wrap-text {
+         margin-top: 12px;
+       }
+      }
+      .wrap-text {
+        margin-top: 0;
+      }
+    }
+    .open {
+      .wrap-btn-accordion .btn-accordion {
+        &:after {
+          transform: rotate(-45deg) translateY(1px);
+          margin-top: -4px;
+        }
+      }
+    }
+    .wrap-btn-accordion {
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      z-index: 1;
+      width: 20px;
+      height: 20px;
+      .btn-accordion {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        border-bottom: none;
+        background: none;
+        &:after {
+          left: 50%;
+          margin: -8px 0 0 -6px;
+        }
+      }
+    }
+    .list-type01-header {
+      .txt-state {
+        &.cancel {
+          color: $colorLightGray;
+        }
+      }
+    }
+    .wrap-photoreview-slide {
+      .product-top-visual {
+        padding: 25px 50px 0;
+      }
+      & + .list-type01-footer {
+        margin-top: 10px;
+      }
+    }
+    .list-type01-footer {
+      margin-top: 0;
+    }
+  }
+  &.list-type01 {
+    .list-type01-inner {
+      position: relative;
+      padding: 20px 20px 10px;
+    }
+    .product-name {
+      display: flex;
+      margin: 15px 0 5px;
+      .wrap-link {
+        display: inline-flex;
+        @include ellipsis;
+        &.point {
+          color: $gsfresh;
+        }
+        &.order-number {
+          flex: none;
+        }
+      }
+     .link-text {
+       @include ellipsis;
+        vertical-align: top;
+        text-decoration: underline;
+      }
+    }
+    /* 답변 */
+    .area-answer {
+      padding: 20px;
+      background: #f6f6f6;
+      &.wrap-satisfation-survey {
+        .question-list {
+          padding: 0;
+          .satisfation-area {
+            margin: 0 0 20px;
+            ul {
+              @include flexSpaceBetween;
+              width: 100%;
+              max-width: 293px;
+              li {
+                display: inline-block;
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+      .txt-answer {
+        font-size: $fsBase;
+        color: $colorBase;
+        white-space: pre-line;
+      }
+      // .admin-date {
+      //   padding-bottom: 10px;
+      //   font-size: $fsBase;
+      //   color: $colorLightGray;
+      // }
+      .date {
+        padding-bottom: 10px;
+        font-size: $fsBase;
+        color: $colorLightGray;
+      }
+    }
+  }
+}
+
+/* popup > 쿠폰 적용 */
+.alert-layer {
+  .alert-layer-inner {
+    &.coupon {
+      .inner-box {
+        padding: 0 20px;
+      }
+      .title {
+        text-align: left;
+      }
+      .list-info {
+        margin: 0;
+        li {
+          &:first-child {
+            padding-top: 0;
+          }
+        }
+      }
+      .btn-layer-close {
+        width: 30px;
+        height: 30px;
+      }
+      .layer-content {
+        margin: 0 -20px;
+        padding: 20px;
+        height: auto;
+        width: calc(100% + 40px);
+        max-height: 151px;
+      }
+    }
+    &.product {
+      width: 340px;
+      height: auto;
+      max-height: 572px;
+      .inner-box {
+        height: calc(100% - 42px);
+      }
+      .layer-content {
+        height: calc(100% - 50px);
+        padding: 0;
+        &.coupon {
+          margin: 0 -20px;
+          padding: 0 20px;
+          width: calc(100% + 40px);
+          height: auto;
+          max-height: 400px;
+        }
+      }
+    }
+  }
+  .alert-layer-inner.product .wrap-product-list {
+    max-height: 440px;
+    border-top: none;
+    .product.coupon {
+      padding: 15px 0;
+      .item .item-link {
+        width: 74px;
+        height: 74px;
+      }
+      .item .wrap-info .title em {
+        height: 30px;
+        line-height: 15px;
+        -webkit-line-clamp: 2;
+      }
+      .wrap-product-tag .ico-benefit {
+        left: 0;
+      }
+    }
+  }
+}
+
+/* Coupon */
+.wrap-coupon {
+  position: relative;
+  z-index: 1;
+  border-style: solid;
+  border-color: $gsfreshLight;
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    height: 100%;
+    background: #fff;
+    box-sizing: border-box;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .type,
+  .price {
+    color: $gsfresh;
+  }
+  .text {
+    font-weight: 500;
+    line-height: 1.1;
+    color: $gsfresh;
+  }
+  // 쿠폰 상세형
+  &.type-detail {
+    position: relative;
+    width: 200px;
+    min-height: 117px;
+    padding: 20px;
+    border-width: 1px 0px 1px 7px;
+    &:before {
+      width: calc(100% - 10px);
+    }
+    &:after {
+      width: 10px;
+      background-image: url('#{$imgPath}/bg_coupon_big_gsfresh.png');
+      background-size: auto 100%;
+    }
+    .badge.day {
+      position: absolute;
+      top: 13px;
+      right: 13px;
+      z-index: 10;
+    }
+    .type {
+      font-size: $fsBase + 2px;
+    }
+    .usedtype {
+      color: $gsfresh;
+    }
+    .price {
+      display: inline-block;
+      padding-bottom: 3px;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 1;
+      .unit {
+        display: inline-block;
+        font-size: $fsBase + 6px;
+        vertical-align: middle;
+      }
+    }
+    .text {
+      padding: 3px 0 4px;
+      font-size: $fsBase + 17px;
+    }
+  }
+  // 쿠폰 리스트형
+  &.type-list {
+    padding: 10px;
+    width: 101px;
+    min-height: 59px;
+    border-width: 1px 0px 1px 3px;
+    &:before {
+      width: calc(100% - 6px);
+    }
+    &:after {
+      width: 6px;
+      background-image: url('#{$imgPath}/bg_coupon_small_gsfresh.png');
+      background-size: 6px 57px;
+    }
+    .type {
+      font-size: $fsBase - 2px;
+    }
+    .price {
+      display: inline-block;
+      font-weight: 700;
+      font-size: $fsBase + 9px;
+      line-height: 1;
+      .unit {
+        display: inline-block;
+        font-size: $fsBase - 2px;
+        vertical-align: middle;
+      }
+    }
+    .text {
+      padding-top: 5px;
+      font-size: $fsBase + 4px;
+    }
+  }
+  // 쿠폰 팝업형
+  &.type-popup {
+    padding: 12px 12px 5px 12px;
+    width: 147px;
+    min-height: 85px;
+    border-width: 1px 0px 1px 4px;
+    &:before {
+      width: calc(100% - 8px);
+    }
+    &:after {
+      width: 8px;
+      background-image: url('#{$imgPath}/bg_coupon_middle_gsfresh.png');
+      background-size: 8px 83px;
+    }
+    .title {
+      overflow: hidden;
+      margin-bottom: 3px;
+      height: 25px;
+      font-size: $fsBase - 1px;
+      line-height: 12px;
+      color: $gsfresh;
+    }
+    .price {
+      display: inline-block;
+      font-weight: 700;
+      font-size: $fsBase + 14px;
+      line-height: 1;
+      .unit {
+        display: inline-block;
+        font-size: $fsBase + 1px;
+        vertical-align: middle;
+      }
+    }
+    .text {
+      padding-top: 5px;
+      font-size: 24px;
+    }
+  }
+}
+
+/* Coupon > silde type */
+.slide-coupon {
+  width: 200px;
+  margin: 0 auto;
+  .title {
+    @include ellipsis;
+    padding-bottom: 10px;
+    font-size: $fsBase + 1px;
+    color: $colorBase;
+  }
+  .list-info {
+    margin: 5px 0 0;
+    li {
+      padding-top: 5px;
+    }
+  }
+}
+
+/* Coupon > Event type */
+.wrap-event-coupon {
+  width: 200px;
+  .list-info {
+    margin: 0;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid $colorBorder;
+    border-top: none;
+    li {
+      padding-top: 0;
+    }
+  }
+}
+
+/* Coupon > list */
+.list-coupon {
+  &:after {
+    @include content;
+  }
+  li {
+    padding: 20px 0 15px;
+    letter-spacing: -0.25px;
+    & + li {
+      border-top: 1px solid $colorBorder;
+    }
+  }
+  .coupon-area:after {
+    @include content;
+  }
+  .wrap-coupon {
+    float: left;
+    margin-right: 20px;
+  }
+  .wrap-coupon-info {
+    position: relative;
+    float: right;
+    width: calc(100% - 126px);
+    .title {
+      @include ellipsis-into-2;
+      margin-bottom: 3px;
+      font-size: $fsBase + 1px;
+      line-height: 17px;
+      white-space: normal;
+      word-wrap: break-word;
+    }
+    .desc {
+      @include ellipsis;
+      font-size: $fsBase - 1px;
+      color: $colorGray;
+    }
+    .day-info {
+      padding-top: 3px;
+    }
+    .date {
+      font-size: $fsBase - 1px;
+      color: $colorGray;
+      span {
+        color: $colorLightGray;        
+      }
+    }
+    .badge.day {
+      margin-left: 6px;
+    }
+  }
+  .btn-area-coupon {
+    margin-top: 20px;
+    padding: 7px 15px;
+    background: #f6f6f6;
+    border-radius: 20px;
+    &:after {
+      @include content;
+    }
+    .usedtype {
+      float: left;
+    }
+    .btn-coupon {
+      float: right;
+    }
+  }
+}
+
+/* Coupon > button */
+.btn-area-coupon {
+  margin-top: 10px;
+  text-align: right;
+}
+.btn-coupon {
+  font-size: $fsBase - 1px;
+  color: $colorLightGray;
+  &.bg-line-brush.gray {
+    padding: 2px 5px 2px 10px;
+  }
+  &.bg-line-brush.gray:before {
+    left: 1px;
+    bottom: 0;
+  }
+  &.bg-line-brush.gray:after {
+    right: 0;
+    bottom: 0;
+  }
+  strong {
+    font-weight: 400;
+    &:after {
+      @include afterArrow(inline-block, 4px, 4px, $colorLightGray, 45deg);
+      position: relative;
+      top: -1px;
+      right: -2px;
+      z-index: 1;
+      @at-root {
+        /* IOS 에서만 적용되는 CSS */
+        /* .btn-coupon strong:after */
+        _::-webkit-full-page-media, _:future, :root & {
+          top: -2px;
+        }
+      }
+    }
+  }
+}
+
+/* Coupon > 사용처 */
+.usedtype {
+  span {
+    display: inline-block;
+    font-size: $fsBase - 1px;
+    letter-spacing: -0.25px;
+  }
+}
+
+/* D-day badge */
+.badge.day {
+  display: inline-block;
+  padding: 2px 8px 1px;
+  font-size: $fsBase - 2px;
+  line-height: 1;
+  color: $gsfresh;
+  border: 1px solid $gsfresh;
+  border-radius: 10px;
+}
+
+/* 배송만족도조사 */
+.delivery-detail-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 4px;
+  &:after {
+    @include content;
+  }
+  & + .list-type01-footer {
+    padding-top: 12px;
+  }
+  dt {
+    width: 74px;
+  }
+  dd {
+    width: calc(100% - 74px);
+    color: $colorGray;
+    & + dt {
+      padding-top: 6px;
+      & + dd {
+        padding-top: 6px;
+      }
+    }
+  }
+}
+.btn-text.btn-delete {
+  padding: 9px 10px 6px;
+  min-width: 60px;
+  font-size: $fsBase - 1px;
+  line-height: 1;
+  color: #7f7f7f;
+  border: 1px solid $colorBorder;
+  border-radius: 2px;
+}
+
+.type-reward {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  &.thepop {
+    background: -moz-linear-gradient(129deg, #459efc 0%, #297bd1 54%, #0c56a4 91%);
+    background: -webkit-linear-gradient(129deg, #459efc 0%,#297bd1 54%,#0c56a4 91%);
+    background: linear-gradient(129deg, #459efc 0%,#297bd1 54%,#0c56a4 91%);
+  }
+  &.gspoint {
+    background: -moz-linear-gradient(129deg, #3eb9b9 0%, #009898 54%, #047b7b 91%);
+    background: -webkit-linear-gradient(129deg, #3eb9b9 0%,#009898 54%,#047b7b 91%);
+    background: linear-gradient(129deg, #3eb9b9 0%,#009898 54%,#047b7b 91%);
+  }
+  .cont {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    width: 125px;
+    height: 125px;
+    background: #fff;
+    border-radius: 50%;
+    color: $gsfresh;
+    .price {
+      width: $widthFull;
+      font-weight: 500;
+      font-size: $fsBase + 16px;
+      .unit {
+        font-size: $fsBase + 2px;
+      }
+    }
+    .desc {
+      width: $widthFull;
+      font-size: $fsBase - 2px;
+    }
+    img {
+      width: auto;
+      height: 18px;
+    }
+  }
+}
+/* 라인형 더보기 버튼 */
+.btn-more-view {
+  border-top: 1px solid $colorBorder;
+  &.open span:after {
+    margin-top: -2px;
+    transform: rotate(-45deg);
+  }
+  button {
+    width: $widthFull;
+    font-size: $fsBase;
+    background: #fff;
+  }
+  span {
+    display: inline-block;
+    position: relative;
+    padding: 15px 14px 15px 0;
+    &:after {
+      @include afterArrow(inline-block, 6px, 6px, $colorLightGray, 135deg);
+      margin: 2px 0 0 5px;
+      vertical-align: top;
+    }
+  }
+}
+.box-info.unipass { // 개인통관고유부호
+  padding: 0 20px 15px;
+}

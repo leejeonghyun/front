@@ -1,0 +1,1936 @@
+/* Event Templete 기존 */
+.event-templete {
+  .contents {
+    //   룰렛 이벤트
+    // .wrap-roulette {
+    //   position: relative;
+    //   .roulette {
+    //     position: absolute;
+    //     top: 5%;
+    //     left: 0;
+    //     z-index: 0;
+    //     width: 100%;
+    //     .inner {
+    //       position: relative;
+    //       text-align: center;
+    //       .roulette-pin {
+    //         position: absolute;
+    //         left: 50%;
+    //         top: 0;
+    //         z-index: 100;
+    //         width: 10%;
+    //         transform: translate(-50%, 0);
+    //       }
+    //       .roulette-panel {
+    //         margin: 0 auto;
+    //         width: 90%;
+    //         height: 90%;
+    //       }
+    //       .roulette-start-btn {
+    //         position: absolute;
+    //         left: 50%;
+    //         top: 50%;
+    //         z-index: 1;
+    //         width: 40%;
+    //         transform: translate(-50%, -50%);
+    //       }
+    //       .roulette-stop-btn {
+    //         position: absolute;
+    //         left: 50%;
+    //         top: 50%;
+    //         z-index: 0;
+    //         width: 40%;
+    //         transform: translate(-50%, -50%);
+    //       }
+    //     }
+    //   }
+    // }
+    // .wrap-event-guide {
+    //   position: relative;
+    //   .event-guide {
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     z-index: 0;
+    //     padding: 20px;
+    //     width: 100%;
+    //     ol {
+    //       margin-top: 20%;
+    //       li {
+    //         margin-bottom: 10px;
+    //         padding: 15px 40px 15px 80px;
+    //         border-radius: 50px;
+    //         &:nth-child(1) {
+    //           background: url('../assets/images/img/img_event_roulette_num01.png')
+    //             no-repeat 20px center;
+    //           background-size: 36px;
+    //           background-color: #fff;
+    //         }
+    //         &:nth-child(2) {
+    //           background: url('../assets/images/img/img_event_roulette_num02.png')
+    //             no-repeat 20px center;
+    //           background-size: 36px;
+    //           background-color: #fff;
+    //         }
+    //         &:nth-child(3) {
+    //           background: url('../assets/images/img/img_event_roulette_num03.png')
+    //             no-repeat 20px center;
+    //           background-size: 36px;
+    //           background-color: #fff;
+    //         }
+    //         &:nth-child(4) {
+    //           background: url('../assets/images/img/img_event_roulette_num04.png')
+    //             no-repeat 20px center;
+    //           background-size: 36px;
+    //           background-color: #fff;
+    //         }
+    //         &:nth-child(5) {
+    //           background: url('../assets/images/img/img_event_roulette_num05.png')
+    //             no-repeat 20px center;
+    //           background-size: 36px;
+    //           background-color: #fff;
+    //         }
+    //         &:nth-child(6) {
+    //           background: url('../assets/images/img/img_event_roulette_num06.png')
+    //             no-repeat 20px center;
+    //           background-size: 36px;
+    //           background-color: #fff;
+    //         }
+    //         .giveaway {
+    //           float: left;
+    //           dt {
+    //             font-size: 13px;
+    //             color: #222;
+    //             font-weight: 500;
+    //           }
+    //           dd {
+    //             font-size: 17px;
+    //             color: #f64872;
+    //             font-weight: 700;
+    //           }
+    //         }
+    //         .cnt {
+    //           float: right;
+    //           line-height: 36px;
+    //           .numerator {
+    //             font-size: 15px;
+    //             color: #222;
+    //             font-weight: 700;
+    //           }
+    //           .denominator {
+    //             font-size: 12px;
+    //             color: #aaa;
+    //             font-weight: 500;
+    //             &.black {
+    //               color: #000;
+    //             }
+    //           }
+    //         }
+    //         &::after {
+    //           display: block;
+    //           content: '';
+    //           clear: both;
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+    // .wrap-event-info {
+    //   background-color: #204366;
+    //   &.check-in {
+    //     background-color: #0f85a2;
+    //   }
+    //   &.entry {
+    //     background-color: #606060;
+    //   }
+    //   &.quiz {
+    //     background-color: #494949;
+    //   }
+    //   &.vote {
+    //     background-color: #aa3433;
+    //   }
+    //   &.privacy-agree {
+    //     background-color: #4d5748;
+    //   }
+    //   &.ad-agree {
+    //     background-color: #6e6e6e;
+    //   }
+    //   &.app-push {
+    //     background-color: #555;
+    //   }
+    //   &.event-sns {
+    //     background-color: #657994;
+    //   }
+    //   &.event-reply {
+    //     background-color: #288ccb;
+    //   }
+    //   &.event-reply-photo {
+    //     background-color: #657994;
+    //   }
+    //   &.app-review {
+    //     background-color: #4f5651;
+    //   }
+    //   &.rank {
+    //     background-color:#373737;
+    //   }
+    //   &.app-newby {
+    //     background-color: #007b7e;
+    //   }
+    // }
+    // .wrap-event-templete {
+    //   // 경품 배송지 입력하기
+    //   &.event-roullete {
+    //     .layer-inner {
+    //       width:300px;
+    //     }
+    //     .search-addr {
+    //       position: relative;
+    //       > input {
+    //         padding:10px 12px;
+    //         width:100%;
+    //         font-size:12px;
+    //         color:#999;
+    //         border:1px solid #e0e0e0;
+    //         box-sizing: border-box;
+    //       }
+    //       > button {
+    //         position: absolute;
+    //         top:50%;
+    //         right:0;
+    //         z-index: 0;
+    //         transform:translate(0, -50%);
+    //         width:30px;
+    //         height:30px;
+    //         text-indent: -99999px;
+    //         background:url('../assets/images/icon/ico_header_search_bl.png') no-repeat center center;
+    //         background-size:16px;
+    //       }
+    //     }
+    //     dl {
+    //       margin-top:20px;
+    //       dt {
+    //         font-size:11px;
+    //         color:#022222;
+    //         font-weight: 500;
+    //       }
+    //       dd {
+    //         font-size:11px;
+    //         color:#022222;
+    //       }
+    //     }
+    //     ul {
+    //       li {
+    //         position: relative;
+    //         margin-top:15px;
+    //         padding-left:10px;
+    //         font-size:11px;
+    //         color:#808080;
+    //         &:after {
+    //           display: block;
+    //           content:"";
+    //           position: absolute;
+    //           top:7px;
+    //           left:0;
+    //           z-index: 0;
+    //           width:2px;
+    //           height:2px;
+    //           border-radius: 2px;
+    //           background-color:#808080;
+    //         }
+    //         span {
+    //           display:block;
+    //           font-size:11px;
+    //           color:#8cc206;
+    //         }
+    //       }
+    //     }
+    //   }
+    //   // 앱리뷰 이벤트 응모하기
+    //   &.event-app-review {
+    //     .layer-inner {
+    //       width:300px;
+    //     }
+    //     .nickname {
+    //       padding:10px;
+    //       width:100%;
+    //       font-size:12px;
+    //       color:#999;
+    //       border:1px solid #e0e0e0;
+    //       box-sizing: border-box;
+    //     }
+    //     .wrap-add-photo {
+    //       overflow: hidden;
+    //       margin-top:20px;
+    //       .desc {
+    //         float:left;
+    //         dl {
+    //           dt {
+    //             font-size:11px;
+    //             color:#022222;
+    //             font-weight: 500;
+    //           }
+    //           dd {
+    //             position: relative;
+    //             margin-top:7px;
+    //             padding-left:7px;
+    //             font-size:11px;
+    //             color:#808080;
+    //             &:after {
+    //               display: block;
+    //               content:"";
+    //               position: absolute;
+    //               top:50%;
+    //               left:0;
+    //               transform: translate(0, -50%);
+    //               width:2px;
+    //               height:2px;
+    //               border-radius: 2px;
+    //               background-color:#808080;
+    //             }
+    //           }
+    //         }
+    //       }
+    //       .add-photo {
+    //         float:right;
+    //         label {
+    //           display:block;
+    //           margin-top:4px;
+    //           width:50px;
+    //           height:50px;
+    //           background: url('../assets/images/icon/ico-camera-gray.png') no-repeat center center;
+    //           background-size:50px;
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+    // 출석체크 이벤트
+    // .wrap-checkin {
+    //   position: relative;
+    //   .wrap-daily-cal {
+    //     position: absolute;
+    //     top: 0;
+    //     z-index: 100;
+    //     width: 100%;
+    //     text-align: center;
+    //     .daily-cal {
+    //       position: relative;
+    //       margin: 0 auto;
+    //       width: 190px;
+    //       .msg {
+    //         position: absolute;
+    //         top:90px;
+    //         left:-80px;
+    //         width:90px;
+    //         &.hide {
+    //           display:none;
+    //         }
+    //       }
+    //       .month {
+    //         position: absolute;
+    //         top: 30px;
+    //         left: 50%;
+    //         z-index: 0;
+    //         transform: translate(-50%, 0);
+    //         .num {
+    //           font-size: 24px;
+    //           color: #fff;
+    //           font-weight: 700;
+    //         }
+    //         .txt {
+    //           font-size: 19px;
+    //           color: #fff;
+    //         }
+    //       }
+    //       .page {
+    //         position: absolute;
+    //         top: 62px;
+    //         left: 50%;
+    //         z-index: 0;
+    //         transform: translate(-50%, 0);
+    //         width: 156px;
+    //         height: 116px;
+    //         .inner {
+    //           position: relative;
+    //           .date {
+    //             .num {
+    //               font-size: 51px;
+    //               color: #707070;
+    //               font-weight: 700;
+    //             }
+    //             .txt {
+    //               font-size: 18px;
+    //               color: #1a2a2f;
+    //             }
+    //             .state {
+    //               display: block;
+    //               margin-top: -10px;
+    //               font-size: 11px;
+    //               color: #1a2a2f;
+    //             }
+    //           }
+    //           .text {
+    //             margin-top: 15px;
+    //             font-size: 11px;
+    //             color: #fd6d4c;
+    //             .italic {
+    //               font-size: 13px;
+    //               font-weight: 700;
+    //               font-style: italic;
+    //             }
+    //             .bold {
+    //               font-size: 11px;
+    //               font-weight: 700;
+    //             }
+    //           }
+    //         }
+    //         &.tear {
+    //           // display: none;
+    //           z-index: 100;
+    //           background: url('../assets/images/img/img_event_checkin_daily_cal_tear.png')
+    //             no-repeat center center;
+    //           background-size: 156px;
+    //           &.checkin {
+    //             border-top: 5px solid #707070;
+    //             border-style: dashed;
+    //             animation: tear-animation 0.8s linear forwards;
+    //           }
+    //         }
+    //         &.complete {
+    //           .inner {
+    //             background: url('../assets/images/img/img_event_checkin_cal_stamp_transparent.png')
+    //               no-repeat 35px 0;
+    //             background-size: 95px;
+    //             .date {
+    //               .num {
+    //                 font-size: 48px;
+    //               }
+    //             }
+    //           }
+    //         }
+    //       }
+    //     }
+    //     .wrap-state {
+    //       font-size: 13px;
+    //       color: #222;
+    //       font-weight: 500;
+    //       text-align: center;
+    //       span {
+    //         font-size: 15px;
+    //         color: #3a3a3a;
+    //         font-weight: 500;
+    //       }
+    //       strong {
+    //         font-size: 16px;
+    //         color: #222;
+    //         font-weight: 700;
+    //       }
+    //     }
+    //   }
+    //   .wrap-calendar {
+    //     position: absolute;
+    //     top: 35%;
+    //     left: 50%;
+    //     z-index: 0;
+    //     transform: translate(-50%, 0);
+    //     margin: 0 auto;
+    //     padding-top: 10px;
+    //     width: 90%;
+    //     border-radius: 5px;
+    //     box-shadow: 0px 0px 15px rgba($color: #458298, $alpha: 0.5);
+    //     background-color: #fff;
+    //     .wrap-state {
+    //       margin: 0 20px;
+    //       padding: 20px 5px;
+    //       border-top: 1px solid #dbdbdb;
+    //       .state-text {
+    //         padding: 10px;
+    //         text-align: center;
+    //         border: 1px solid #dbdbdb;
+    //         border-radius: 25px;
+    //         .txt1 {
+    //           display: inline-block;
+    //           font-size: 13px;
+    //           color: #222;
+    //           font-weight: 700;
+    //         }
+    //         .txt2 {
+    //           display: inline-block;
+    //           margin-left: 10px;
+    //           font-size: 14px;
+    //           color: #fd6d4c;
+    //           font-weight: 500;
+    //           font-style: italic;
+    //         }
+    //       }
+    //       .state-stamp {
+    //         margin-top: 20px;
+    //         ul {
+    //           padding: 0 5px;
+    //           &:after {
+    //             display: block;
+    //             content: '';
+    //             clear: both;
+    //           }
+    //           li {
+    //             float: left;
+    //             margin: 0 5px;
+    //             width: 37px;
+    //             font-size: 13px;
+    //             color: #018cae;
+    //             font-weight: 500;
+    //             line-height: 34px;
+    //             text-indent: 6px;
+    //             background: url('../assets/images/img/img_event_checkin_stamp_transparent.png')
+    //               no-repeat center center;
+    //             background-size: 37px;
+    //           }
+    //         }
+    //       }
+    //     }
+    //     .vdp-datepicker {
+    //       border: none !important;
+    //     }
+    //     .vdp-datepicker__calendar .cell {
+    //       background: none;
+    //     }
+    //     .vdp-datepicker__calendar .cell.disabled {
+    //       text-indent: -9999px;
+    //       background: url('../assets/images/img/img_event_checkin_cal_stamp.png')
+    //         no-repeat center center;
+    //       background-size: 29px;
+    //     }
+    //   }
+    // }
+    // 스탬프 이벤트
+    // .wrap-event-stamp {
+    //   position: relative;
+    //   .event-stamp {
+    //     display:none;
+    //     position: absolute;
+    //     top:45%;
+    //     left:50%;
+    //     z-index: 0;
+    //     transform: translate(-50%, 0);
+    //     width:335px;
+    //     .inner {
+    //       position: relative;
+    //     }
+    //     .stamp {
+    //       display:none;
+    //       position: absolute;
+    //       width:55px;
+    //       height:55px;
+    //       &.active {
+    //         display:block;
+    //       }
+    //     }
+    //     &.active {
+    //       display:block;
+    //     }
+    //     &.type1 {
+    //       .stamp-00 {
+    //         top:31px;
+    //         left:65px;
+    //       }
+    //       .stamp-01 {
+    //         top:31px;
+    //         left:146px;
+    //       }
+    //       .stamp-02 {
+    //         top:31px;
+    //         left:222px;
+    //       }
+    //       .stamp-03 {
+    //         top:120px;
+    //         left:31px;
+    //       }
+    //       .stamp-04 {
+    //         top:120px;
+    //         left:101px;
+    //       }
+    //       .stamp-05 {
+    //         top:120px;
+    //         left:182px;
+    //       }
+    //       .stamp-06 {
+    //         top:123px;
+    //         left:252px;
+    //       }
+    //       .stamp-07 {
+    //         top:210px;
+    //         left:58px;
+    //       }
+    //       .stamp-08 {
+    //         top:210px;
+    //         left:138px;
+    //       }
+    //       .stamp-09 {
+    //         top:210px;
+    //         left:215px;
+    //       }
+    //       .complete {
+    //         top:219px;
+    //         left:287px;
+    //       }
+    //     }
+    //     &.type2 {
+    //       .stamp-00 {
+    //         top:53px;
+    //         left:212px;
+    //       }
+    //       .stamp-01 {
+    //         top:30px;
+    //         left:128px;
+    //       }
+    //       .stamp-02 {
+    //         top:64px;
+    //         left:47px;
+    //       }
+    //       .stamp-03 {
+    //         top:143px;
+    //         left:24px;
+    //       }
+    //       .stamp-04 {
+    //         top:214px;
+    //         left:55px;
+    //       }
+    //       .stamp-05 {
+    //         top:235px;
+    //         left:128px;
+    //       }
+    //       .stamp-06 {
+    //         top:228px;
+    //         left:211px;
+    //       }
+    //       .stamp-07 {
+    //         top:171px;
+    //         left:276px;
+    //       }
+    //       .stamp-08 {
+    //         top:129px;
+    //         left:227px;
+    //       }
+    //       .stamp-09 {
+    //         top:146px;
+    //         left:159px;
+    //       }
+    //       .complete {
+    //         top:111px;
+    //         left:98px;
+    //       }
+    //     }
+    //     .stamp-state {
+    //       // display:block;
+    //       margin:20px auto;
+    //       padding:8px 0;
+    //       width:240px;
+    //       font-size:12px;
+    //       color:#222;
+    //       text-align:center;
+    //       border-radius: 50px;
+    //       background-color:#fff;
+    //       box-shadow:5px 5px 0 rgba($color: #000000, $alpha: 0.4);
+    //       span {
+    //         font-size:14px;
+    //         color:#469640;
+    //         font-weight: 700;;
+    //       }
+    //     }
+    //   }
+    // }
+    // .event-info-list {
+    //   position: relative;
+    //   .inner {
+    //     position: absolute;
+    //     top:19%;
+    //     left:0;
+    //   }
+    //   .swiper-slide {
+    //     width:100% !important;
+    //   }
+    //   .swiper-button-prev {
+    //     left:0;
+    //     width:30px;
+    //     height:70px;
+    //     background:url('../assets/images/img/img_event_stamp_btn_prev.png') no-repeat center center;
+    //     background-size:30px;
+    //   }
+    //   .swiper-button-next {
+    //     right:0;
+    //     width:30px;
+    //     height:70px;
+    //     background:url('../assets/images/img/img_event_stamp_btn_next.png') no-repeat center center;
+    //     background-size:30px;
+    //   }
+    //   .swiper-pagination-bullets {
+    //     bottom:0;
+    //   }
+    //   .swiper-pagination-bullet {
+    //     margin:0 2px;
+    //   }
+    //   .swiper-pagination-bullet-active {
+    //     background-color:#469640;
+    //   }
+    //   .list {
+    //     padding:15px 50px 30px;
+    //     li {
+    //       display:block;
+    //       overflow:hidden;
+    //       margin-top:2px;
+    //       border-radius: 85px;
+    //       box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    //     }
+    //   }
+    // }
+    // 개인정보 수신 동의
+    // .event-privacy {
+    //   padding:20px 46px 12px;
+    //   background-color:#d0edce;
+    //   .privacy-title {
+    //     margin:0 auto 10px;
+    //     width:115px;
+    //   }
+    //   .event-privacy-agree {
+    //     background-color:#fff;
+    //     box-shadow: 0 0 15px rgba($color: #000000, $alpha: 0.4);
+    //   }
+    // }
+    // .event-privacy-agree {
+    //   .wrap-event-info {
+    //     border-top: 1px solid #c9cbcf;
+    //     background-color:#fff;
+    //     &:first-child {
+    //       border:none;
+    //     }
+    //   }
+    //   .btn-accordion {
+    //     &::after {
+    //       border: {
+    //         bottom:1px solid #232323;
+    //         right:1px solid #232323;
+    //       }
+    //     }
+    //   }
+    //   .btn-event-info {
+    //     padding:18px 15px;
+    //     font-size:13px;
+    //     color:#333333;
+    //     font-weight: 500;
+    //     background:#fff;
+    //     label {
+    //       display:block;
+    //       input[type=checkbox] {
+    //         display:inline-block;
+    //         margin:0;
+    //         width:20px;
+    //         height:20px;
+    //         vertical-align: middle;
+    //         border:1px solid #e0e0e0;
+    //       }
+    //       span {
+    //         margin-left:5px;
+    //         font-size:13px;
+    //         color:#333;
+    //         font-weight: 500;
+    //         vertical-align: middle;
+    //       }
+    //       em {
+    //         font-size:13px;
+    //         color:#cd042a;
+    //         font-weight: 500;
+    //         vertical-align: middle;
+    //       }
+    //     }
+    //   }
+    //   .privacy-list {
+    //     padding:12px 15px;
+    //     border-top: 1px solid #c9cbcf;
+    //     li {
+    //       position: relative;
+    //       margin-top:18px;
+    //       padding-left:14px;
+    //       font-size:11px;
+    //       color:#5f5f5f;
+    //       &:first-child {
+    //         margin:0;
+    //       }
+    //       &::after {
+    //         display: block;
+    //         content: '';
+    //         position: absolute;
+    //         left: 2px;
+    //         top: 7px;
+    //         z-index: 0;
+    //         width: 2px;
+    //         height: 2px;
+    //         background-color: rgba(0, 0, 0, 0.65);
+    //       }
+    //     }
+    //   }
+    // }
+    // .event-privacy-enter {
+    //   padding:12px 0 50px;
+    //   text-align:center;
+    //   background:url('../assets/images/img/img_event_privacy_bg.png') no-repeat 0 0 #d0edce;
+    //   background-size:contain;
+    //   .btn-enter {
+    //     padding:16px 0;
+    //     width:195px;
+    //     font-size:21px;
+    //     color:#fff;
+    //     font-weight: 700;
+    //     border-radius: 50px;
+    //     background-color: #0d4734;
+    //   }
+    //   p {
+    //     margin-top:25px;
+    //     font-size:12px;
+    //     color:#222;
+    //   }
+    //   .free-use {
+    //     margin-top:16px;
+    //     font-size:12px;
+    //     color:#24b154;
+    //     text-decoration: underline;
+    //   }
+    // }
+    // 광고수신동의 이벤트
+    // .wrap-event-adagree {
+    //   position: relative;
+    //   &.z1 {
+    //     padding-bottom:140px;
+    //     z-index: 1;
+    //   }
+    //   .event-adagree {
+    //     position: absolute;
+    //     left:50%;
+    //     bottom:-30px;
+    //     z-index: 100;
+    //     transform: translate(-50%, 0);
+    //     padding:15px 17px;
+    //     width:275px;
+    //     background-color:#fff;
+    //     box-shadow: 0 0 15px rgba($color: #000000, $alpha: 0.4);
+    //     .chk-total {
+    //       padding:0 0 12px;
+    //       label {
+    //         font-size:13px;
+    //         font-weight: 500;
+    //       }
+    //     }
+    //     .chk-list {
+    //       border-top:1px solid #c9cbcf;
+    //       ul {
+    //         overflow: hidden;
+    //         li {
+    //           float:left;
+    //           margin-top:12px;
+    //           width:45%;
+    //           &:nth-child(2n) {
+    //             float:right;
+    //           }
+    //           &:last-child {
+    //             float: none;
+    //             width:100%;
+    //             input[type=checkbox] {
+    //               width:40px;
+    //               height:20px;
+    //               border-radius: 15px;
+    //               background-color:#c8c8c8;
+    //               appearance: none;
+    //               &:after {
+    //                 top:2px;
+    //                 left:2px;
+    //                 width:16px;
+    //                 height:16px;
+    //                 border:none;
+    //                 border-radius:8px;
+    //                 background:none;
+    //                 background-color:#fff;
+    //                 transition: left 0.2s;
+    //               }
+    //               &:checked {
+    //                 background-color: #a0d02b;
+    //                 &:after {
+    //                   left:20px;
+    //                 }
+    //               }
+    //             }
+    //           }
+    //         }
+    //       }
+    //     }
+    //     .inp-chk {
+    //       display:block;
+    //       label {
+    //         font-size:12px;
+    //         color:#333;
+    //       }
+    //       input {
+    //         right:0;
+    //       }
+    //     }
+    //   }
+    //   .btn-coupon {
+    //     position: absolute;
+    //     left:50%;
+    //     bottom:8%;
+    //     transform:translate(-50%, 0);
+    //     width:60%;
+    //   }
+    // }
+    // APP PUSH 알림 수신 동의 : POPUP
+    // .event-app-push {
+    //   padding:20px;
+    //   .tit {
+    //     font-size:13px;
+    //     font-weight: 500;
+    //   }
+    //   > dl {
+    //     dt {
+    //       position: relative;
+    //       margin-top:12px;
+    //       padding-left:7px;
+    //       font-size:11px;
+    //       color:#8cc206;
+    //       font-weight: 500;
+    //       &:after {
+    //         display: block;
+    //         content: "";
+    //         position: absolute;
+    //         top:50%;
+    //         left:0;
+    //         z-index: 0;
+    //         transform:translate(0, -50%);
+    //         width:3px;
+    //         height:3px;
+    //         border-radius:3px;
+    //         background-color:#8cc206;
+    //       }
+    //     }
+    //     dd {
+    //       padding-left:7px;
+    //       font-size:11px;
+    //       color:#606060
+    //     }
+    //   }
+    //   > ul {
+    //     li {
+    //       position: relative;
+    //       padding-left:7px;
+    //       font-size:11px;
+    //       color:#808080;
+    //       &:after {
+    //         display: block;
+    //         content: "";
+    //         position: absolute;
+    //         top:50%;
+    //         left:0;
+    //         z-index: 0;
+    //         transform:translate(0, -50%);
+    //         width:2px;
+    //         height:2px;
+    //         border-radius:2px;
+    //         background-color:#808080;
+    //       }
+    //     }
+    //   }
+    // }
+    // 신규회원 쿠폰 이벤트 
+    // .event-newby {
+    //   position: relative;
+    //   .btn {
+    //     position: absolute;
+    //     left:50%;
+    //     width:60%;
+    //     transform: translate(-50%, 0);
+    //   }
+    //   .btn-01 {
+    //     bottom:15%;
+    //   }
+    //   .btn-02 {
+    //     bottom:6%;
+    //   }
+    // }
+    // 단순응모 이벤트
+    // .wrap-event-box {
+    //   position: relative;
+    //   > a {
+    //     display: block;
+    //   }
+    //   .btn-event-detail {
+    //     position: absolute;
+    //     left: 50%;
+    //     bottom: 5%;
+    //     z-index: 0;
+    //     transform: translate(-50%, 0);
+    //     padding: 10px;
+    //     width: 70%;
+    //     text-align: center;
+    //     border-radius: 25px;
+    //     background-color: #fff;
+    //     > span {
+    //       position: relative;
+    //       &:after {
+    //         display: block;
+    //         content: '';
+    //         position: absolute;
+    //         right: -10px;
+    //         top: 50%;
+    //         width: 7px;
+    //         height: 7px;
+    //         border: {
+    //           top: 1px solid #222;
+    //           right: 1px solid #222;
+    //         }
+    //         transform: rotate(45deg) translate(0, -50%);
+    //       }
+    //     }
+    //   }
+    // }
+    // // 광고수신 동의 이벤트 (APP PUSH)
+    // .wrap-app-push {
+    //   position: relative;
+    //   .swiper-pagination {
+    //     top:62%;
+    //     left:50%;
+    //     transform:translate(-50%, -50%);
+    //     .swiper-pagination-bullet-active {
+    //       width:7px;
+    //       background-color:#a0d02b;
+    //     }
+    //   }
+    //   .btn-toggle {
+    //     display:block;
+    //     position: absolute;
+    //     top:22%;
+    //     left:50%;
+    //     transform:translate(-50%, 0);
+    //     width:113px;
+    //     height:48px;
+    //     input[type=checkbox] {
+    //       display:block;
+    //       margin:0;
+    //       padding:0;
+    //       width:113px;
+    //       height:48px;
+    //       background:url('../assets/images/img/img_event_toggle_off.png') no-repeat center center;
+    //       background-size:113px;
+    //       &:checked {
+    //         background:url('../assets/images/img/img_event_toggle_on.png') no-repeat center center;
+    //         background-size:113px;
+    //       }
+    //     }
+    //   }
+    // }
+    // SNS 공유 이벤트, 댓글(포토) 이벤트
+    // .wrap-event-sns {
+    //   position: relative;
+    //   &.bg {
+    //     height:1020px;
+    //     background-color:#eff7fc;
+    //   }
+    //   &.photo-bg {
+    //     height:400px;
+    //     background-color:#eff7fc;
+    //     .swiper-pagination {
+    //       left:50%;
+    //       bottom:20px;
+    //       transform: translate(-50%, 0);
+    //       .swiper-pagination-bullet-active {
+    //         width:7px;
+    //         background-color:#245698;
+    //       }
+    //     }
+    //   }
+    //   &.photo-bg2 {
+    //     height:220px;
+    //     background-color:#eff7fc;
+    //   }
+    //   .inner {
+    //     overflow: hidden;
+    //     position: absolute;
+    //     top:-50px;
+    //     left:50%;
+    //     transform:translate(-50%, 0);
+    //     width:320px;
+    //     border-radius: 10px;
+    //     background-color:#fff;
+    //     box-shadow: 0 0 15px rgba($color: #000000, $alpha: 0.4);
+    //     .swiper-pagination {
+    //       left:50%;
+    //       transform: translate(-50%, 0);
+    //       .swiper-pagination-bullet-active {
+    //         width:7px;
+    //         background-color:#245698;
+    //       }
+    //     }
+    //   }
+    //   .coupon {
+    //     position: absolute;
+    //     bottom: 0;
+    //     padding:30px 0 40px;
+    //     width:100%;
+    //     > img {
+    //       margin:0 auto;
+    //       width:200px;
+    //     }
+    //   }
+    //   .obj {
+    //     position: absolute;
+    //     bottom:-50px;
+    //     right:0;
+    //     width:65px;
+    //   }
+    //   .wrap-reply {
+    //     position: relative;
+    //     padding:30px 20px;
+    //     .title {
+    //       font-size:14px;
+    //       color:#222;
+    //       font-weight: 500;
+    //     }
+    //     textarea {
+    //       margin-top:15px;
+    //       padding:10px;
+    //       width:100%;
+    //       height:150px;
+    //       border:1px solid #e0e0e0;
+    //       resize: none;
+    //       box-sizing: border-box;
+    //     }
+    //     .text-cnt {
+    //       position: absolute;
+    //       top:180px;
+    //       right:30px;
+    //       .cnt {
+    //         font-size:11px;
+    //         color:#000;
+    //       }
+    //       .length {
+    //         font-size:11px;
+    //         color:#999;
+    //       }
+    //     }
+    //     .btn-submit {
+    //       display:block;
+    //       margin-top:20px;
+    //       padding:12px 0;
+    //       width:100%;
+    //       font-size:14px;
+    //       color:#fff;
+    //       text-align: center;
+    //       border-radius: 3px;
+    //       background-color: #8cc206;
+    //     }
+    //     .wrap-photo {
+    //       margin: 18px -20px 0 -20px;
+    //       border-top: 1px dotted #c9c9c9;
+    //       .btn-add {
+    //         & + label {
+    //           float: left;
+    //           margin-top: 10px;
+    //           padding-top: 58px;
+    //           width: 78px;
+    //           height: 78px;
+    //           font-weight: 300;
+    //           font-size: 11px;
+    //           color: #fff;
+    //           text-align: center;
+    //           background: #c6c6c6 url('../assets/images/icon/ico_plus_photo.png') no-repeat center 17px;
+    //           background-size: 25px;
+    //         }
+    //       }
+    //       .wrap-list-photo {
+    //         padding: 10px 20px;
+    //         .swiper-slide {
+    //           width: auto;
+    //         }
+    //         .thumb {
+    //           position: relative;
+    //           z-index: 1;
+    //           display: inline-block;
+    //           figure {
+    //             padding-top: 10px;
+    //             margin-left: 10px;
+    //             width: 78px;
+    //           }
+    //           .btn-delete {
+    //             position: absolute;
+    //             top: 0;
+    //             right: -10px;
+    //             z-index: 10;
+    //             width: 20px;
+    //             height: 20px;
+    //             background: url('../assets/images/icon/ico_btn_reset_gr.png') no-repeat center center;
+    //             background-size: 15px;
+    //           }
+    //         }
+    //       }
+    //       .swiper-scrollbar {
+    //         left: 20px;
+    //         right: 20px;
+    //         width: calc(100% - 40px);
+    //       }
+    //     }
+    //   }
+    //   .wrap-reply-list {
+    //     border-top:5px solid #f0f0f0;
+    //     > .total {
+    //       padding:30px 20px;
+    //       font-size:12px;
+    //       color:#222;
+    //       font-weight: 700;
+    //     }
+    //     .list {
+    //       li {
+    //         padding:20px;
+    //         border-top:1px solid #f0f0f0;
+    //         &:last-child {
+    //           border-bottom:1px solid #f0f0f0;
+    //         }
+    //         .text {
+    //           font-size:12px;
+    //           color:#606060;
+    //         }
+    //         .wrap-info {
+    //           overflow: hidden;
+    //           margin-top:25px;
+    //           .id-date {
+    //             float:left;
+    //             font-size:12px;
+    //             color:#999;
+    //             line-height: 27px;
+    //           }
+    //           .wrap-btn {
+    //             float:right;
+    //             .btn-edit {
+    //               display:inline-block;
+    //               margin-left:5px;
+    //               padding:5px 10px;
+    //               font-size:11px;
+    //               color:#7f7f7f;
+    //               text-align:center;
+    //               border:1px solid #e0e0e0;
+    //             }
+    //             .btn-delete {
+    //               display:inline-block;
+    //               margin-left:5px;
+    //               padding:5px 10px;
+    //               font-size:11px;
+    //               color:#7f7f7f;
+    //               text-align:center;
+    //               border:1px solid #e0e0e0;
+    //             }
+    //           }
+    //         }
+    //         .wrap-editable {
+    //           position: relative;
+    //           margin:0 -20px -20px;
+    //           padding: 20px;
+    //           border-top:1px solid #f0f0f0;
+    //           background-color: #f8f8f8;
+    //           textarea {
+    //             width:100%;
+    //             height:150px;
+    //             border:1px solid #e0e0e0;
+    //             resize: none;
+    //             box-sizing: border-box;
+    //           }
+    //           .text-cnt {
+    //             position: absolute;
+    //             top:140px;
+    //             right:30px;
+    //             .cnt {
+    //               font-size:11px;
+    //               color:#000;
+    //             }
+    //             .length {
+    //               font-size:11px;
+    //               color:#999;
+    //             }
+    //           }
+    //           .wrap-btn {
+    //             margin-top:10px;
+    //             text-align:right;
+    //             .btn-edit {
+    //               display:inline-block;
+    //               margin-left:5px;
+    //               padding:5px 10px;
+    //               font-size:11px;
+    //               color:#7f7f7f;
+    //               text-align:center;
+    //               border:1px solid #e0e0e0;
+    //               background-color: #fff;
+    //             }
+    //             .btn-cancel {
+    //               display:inline-block;
+    //               margin-left:5px;
+    //               padding:5px 10px;
+    //               font-size:11px;
+    //               color:#7f7f7f;
+    //               text-align:center;
+    //               border:1px solid #e0e0e0;
+    //               background-color: #fff;
+    //             }
+    //           }
+    //         }
+    //       }
+    //     }
+    //     .wrap-list-review {
+    //       margin:0;
+    //       padding:0 20px;
+    //       li {
+    //         &:first-child {
+    //           border-top:1px solid #f0f0f0;
+    //         }
+    //         .wrap-info {
+    //           overflow: hidden;
+    //           margin-top:20px;
+    //           padding-left:15px;
+    //           .id-date {
+    //             font-size:12px;
+    //             color:#999;
+    //             line-height: 27px;
+    //           }
+    //         }
+    //         .btn-detail-more {
+    //           position: relative;
+    //           z-index: 1;
+    //           padding: 4px 16px 4px 4px;
+    //           min-width: 45px;
+    //           font-size: 11px;
+    //           color: #999;
+    //           border: 1px solid #e0e0e0;
+    //           border-radius: 1px;
+    //           &:after {
+    //             content: '';
+    //             position: absolute;
+    //             top: 8px;
+    //             right: 5px;
+    //             z-index: 10;
+    //             width: 3px;
+    //             height: 3px;
+    //             border: 1px solid #999;
+    //             border-top: 0;
+    //             border-left: 0;
+    //             -webkit-transform: rotate(45deg);
+    //             transform: rotate(45deg);
+    //           }
+    //           &.active:after {
+    //             transform: rotate(-135deg);
+    //           }
+    //         }
+    //         .wrap-btn {
+    //           margin-bottom:20px;
+    //           text-align:right;
+    //           .btn-edit {
+    //             display:inline-block;
+    //             margin-left:5px;
+    //             padding:2px 10px;
+    //             font-size:11px;
+    //             color:#7f7f7f;
+    //             text-align:center;
+    //             border:1px solid #e0e0e0;
+    //             background-color: #fff;
+    //           }
+    //           .btn-delete {
+    //             display:inline-block;
+    //             margin-left:5px;
+    //             padding:2px 10px;
+    //             font-size:11px;
+    //             color:#7f7f7f;
+    //             text-align:center;
+    //             border:1px solid #e0e0e0;
+    //             background-color: #fff;
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }
+    //   .btn-more-detail-view {
+    //     b {
+    //       font-weight: 700;
+    //     }
+    //   }
+    // }
+    // 댓글 이벤트
+    // .wrap-event-reply {
+    //   position: relative;
+    //   .event-reply {
+    //     position: absolute;
+    //     top:35%;
+    //     left:50%;
+    //     z-index: 0;
+    //     transform:translate(-50%, 0);
+    //     .inner {
+    //       position: relative;
+    //       width:331px;
+    //       textarea {
+    //         position: absolute;
+    //         bottom:50px;
+    //         left:50%;
+    //         z-index: 0;
+    //         transform:translate(-50%, 0);
+    //         padding:10px;
+    //         width:150px;
+    //         height: 90px;
+    //         border:none;
+    //         background-color:transparent;
+    //         box-sizing: border-box;
+    //         resize: none;
+    //       }
+    //     }
+    //   }
+    //   .btn-enter {
+    //     display:block;
+    //     position: absolute;
+    //     top:72%;
+    //     left:50%;
+    //     z-index: 0;
+    //     transform: translate(-50%, 0);
+    //     width:140px;
+    //     height:41px;
+    //     font-size:18px;
+    //     color:#fff;
+    //     font-weight: 700;
+    //     line-height:41px;
+    //     border-radius: 25px;
+    //     background-color:#cc214a;
+    //   }
+    //   .event-before {
+    //     position: absolute;
+    //     top:80%;
+    //     left:50%;
+    //     z-index: 0;
+    //     transform: translate(-50%, 0);
+    //     width:250px;
+    //   }
+    //   .event-after {
+    //     position: absolute;
+    //     top:80%;
+    //     left:50%;
+    //     z-index: 0;
+    //     transform: translate(-50%, 0);
+    //     width:240px;
+    //   }
+    // }
+    // 투표 이벤트
+    // .event-vote {
+    //   padding:40px 20px 50px;
+    //   background-color:#ec4a48;
+    //   .wrap-img {
+    //     margin:0 auto;
+    //     width:300px;
+    //   }
+    //   .wrap-select-vote {
+    //     margin-top:20px;
+    //     .select-vote {
+    //       min-height:200px;
+    //       background: url('../assets/images/img/img_event_vote_vs.png') no-repeat center center;
+    //       background-size:27px;
+    //       &::after {
+    //         display:block;
+    //         content:"";
+    //         clear: both;
+    //       }
+    //     }
+    //     .choice {
+    //       float: left;
+    //       position: relative;
+    //       width:140px;
+    //       height:194px;
+    //       background:url('../assets/images/img/img_event_vote_frame.jpg') no-repeat 0 0;
+    //       background-size:140px;
+    //       &:after {
+    //         display:block;
+    //         content:"";
+    //         position: absolute;
+    //         right:0;
+    //         top:0;
+    //         z-index: 0;
+    //         width:24px;
+    //         height:24px;
+    //         background:url('../assets/images/img/img_event_vote_frame_corner.jpg') no-repeat 0 0;
+    //         background-size:24px;
+    //       }
+    //       &:last-child {
+    //         float:right;
+    //       }
+    //       &.active {
+    //         background:url('../assets/images/img/img_event_vote_frame_active.jpg') no-repeat 0 0;
+    //         background-size:140px;
+    //         &:after {
+    //           background:url('../assets/images/img/img_event_vote_frame_corner_active.jpg') no-repeat 0 0;
+    //           background-size:24px;
+    //         }
+    //         .pic {
+    //           filter:brightness(50%);
+    //         }
+    //         .wrap-result {
+    //           color:#6ae3ee;
+    //           .win {
+    //             display:block;
+    //           }
+    //           .result {
+    //             margin-top:0;
+    //           }
+    //         }
+    //         .vs {
+    //           color:#6ae3ee;
+    //         }
+    //         .selected {
+    //           display: block;
+    //         }
+    //       }
+    //       > input {
+    //         position: absolute;
+    //         top:10px;
+    //         left:10px;
+    //         z-index: 0;
+    //         margin:0;
+    //         padding:0;
+    //         width: 22px;
+    //         height:22px;
+    //         background:url('../assets/images/img/img_event_vote_radio.png') no-repeat center center;
+    //         background-size:22px;
+    //         &:checked {
+    //           background:url('../assets/images/img/img_event_vote_radio_active.png') no-repeat center center;
+    //           background-size:22px;
+    //         }
+    //       }
+    //       .pic {
+    //         position: absolute;
+    //         top:0;
+    //         left:0;
+    //         z-index: 0;
+    //         padding:3px;
+    //       }
+    //       .selected {
+    //         display: none;
+    //         position: relative;
+    //         margin:40px auto;
+    //         width:95px;
+    //       }
+    //       .wrap-result {
+    //         position: relative;
+    //         padding:7px 12px;
+    //         color:#fff;
+    //         text-align:center;
+    //         .win {
+    //           display:none;
+    //           margin:0 auto;
+    //           width:34px;
+    //         }
+    //         .result {
+    //           margin-top:24px;
+    //           .text-01 {
+    //             font-size:11px;
+    //           }
+    //           .text-02 {
+    //             font-size:13px;
+    //             span {
+    //               font-size:20px;
+    //             }
+    //           }
+    //         }
+    //         .vs {
+    //           padding:5px 0;
+    //           margin:5px 0 0;
+    //           border-top:1px solid rgba(255, 255, 255, 0.4);
+    //         }
+    //       }
+    //       .vs {
+    //         position: relative;
+    //         padding: 40px 0;
+    //         font-size:30px;
+    //         color:#fff;
+    //         font-weight: 700;
+    //         text-align: center;
+    //         .per {
+    //           font-size:20px;
+    //           font-weight: 500;
+    //         }
+    //         .cnt {
+    //           font-size:13px;
+    //         }
+    //       }
+    //       .wrap-text {
+    //         position: absolute;
+    //         bottom:10px;
+    //         width:100%;
+    //         color:#222;
+    //         text-align:center;
+    //         .text-01 {
+    //           font-size:11px;
+    //         }
+    //         .text-02 {
+    //           font-size:14px;
+    //           font-weight: 700;
+    //         }
+    //       }
+    //     }
+    //   }
+    //   .btn-vote-submit {
+    //     display: block;
+    //     margin:20px auto 0;
+    //     width:150px;
+    //   }
+    // }
+    // 친구추천 이벤트
+    .wrap-event-invite {
+      position: relative;
+      .btn-invite {
+        display:block;
+        position: absolute;
+        left:50%;
+        transform:translate(-50%, 0);
+        width:280px;
+      }
+      .btn-01 {
+        bottom:105px;
+        z-index: 0;
+      }
+      .btn-02 {
+        bottom:50px;
+        z-index: 1;
+      }
+    }
+    // 퀴즈 이벤트
+    // .wrap-event-quiz {
+    //   position: relative;
+    //   background-color: #f4f7f7;
+    //   .event-quiz {
+    //     position: relative;
+    //     top: -30px;
+    //     margin: 0 auto;
+    //     width: 85%;
+    //     box-shadow: 0px 0px 15px rgba($color: #505050, $alpha: 0.3);
+    //     background-color: #fff;
+    //     .question {
+    //       padding: 30px 60px 15px;
+    //     }
+    //     .hint {
+    //       text-align: center;
+    //       > button {
+    //         position: relative;
+    //         padding-right: 15px;
+    //         font-size: 11px;
+    //         color: #606060;
+    //         &:after {
+    //           display: block;
+    //           content: '';
+    //           position: absolute;
+    //           top: 50%;
+    //           right: 0;
+    //           z-index: 0;
+    //           transform: translate(0, -50%);
+    //           width: 11px;
+    //           height: 11px;
+    //           background: url('../assets/images/icon/ico_exclamation_gray.png')
+    //             no-repeat center center;
+    //           background-size: 11px;
+    //         }
+    //       }
+    //       .hint-pop {
+    //         position: absolute;
+    //         top: 0;
+    //         left: 50%;
+    //         z-index: 0;
+    //         transform: translate(-50%, 0);
+    //         padding: 52px 0;
+    //         width: 100%;
+    //         text-align: center;
+    //         background-color: rgba(0, 0, 0, 0.75);
+    //         > img {
+    //           display: inline-block;
+    //           width: 50px;
+    //         }
+    //         > p {
+    //           padding: 10px 10px 0;
+    //           font-size: 13px;
+    //           color: #fff;
+    //         }
+    //         .btn-close {
+    //           position: absolute;
+    //           right: 10px;
+    //           top: 10px;
+    //           z-index: 0;
+    //           width: 30px;
+    //           height: 30px;
+    //           text-indent: -99999px;
+    //           background: url('../assets/images/icon/ico_gift_close.png')
+    //             no-repeat center center;
+    //           background-size: 15px;
+    //         }
+    //       }
+    //     }
+    //     .answer {
+    //       margin-top: 15px;
+    //       padding: 20px;
+    //       border-top: 1px solid #e4e4e4;
+    //       border-style: dotted;
+    //       > input {
+    //         display: block;
+    //         padding: 15px;
+    //         width: 100%;
+    //         // line-height:50px;
+    //         border: 1px solid #222;
+    //         box-sizing: border-box;
+    //       }
+    //       > button {
+    //         display: block;
+    //         margin-top: 10px;
+    //         padding: 15px;
+    //         width: 100%;
+    //         font-size: 16px;
+    //         color: #fff;
+    //         text-align: center;
+    //         border-radius: 3px;
+    //         background-color: #222;
+    //       }
+    //     }
+    //   }
+    // }
+    // 구매왕 이벤트
+    // .wrap-event-rank {
+    //   padding:50px 20px;
+    //   background-color: #f7f7f7;
+    //   > img {
+    //     margin:0 auto;
+    //     width:290px;
+    //   }
+    //   > ul {
+    //     margin-top:20px;
+    //     border:2px solid #222;
+    //     background-color:#fff;
+    //     li {
+    //       padding:20px;
+    //       border-top:1px dotted #e1e1e1;
+    //       &:after {
+    //         display:block;
+    //         content: "";
+    //         clear: both;
+    //       }
+    //       &:first-child {
+    //         border:none;
+    //       }
+    //       p {
+    //         overflow:hidden;
+    //         width:100%;
+    //         text-overflow: ellipsis;
+    //         font-size:13px;
+    //         color:#222;
+    //         font-weight: 500;
+    //         white-space:nowrap;
+    //       }
+    //       .thumb {
+    //         overflow: hidden;
+    //         float:left;
+    //         width:100px;
+    //         height:100px;
+    //         border-radius: 50px;
+    //       }
+    //       .detail {
+    //         float:left;
+    //         margin-left:20px;
+    //         padding:13px 0;
+    //         width:calc(100% - 120px);
+    //         a {
+    //           display:inline-block;
+    //           margin-top:10px;
+    //           padding:5px 10px;
+    //           font-size:11px;
+    //           color:#222;
+    //           border:1px solid #e0e0e0;
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+    // .wrap-event-ranker {
+    //   padding:40px 20px 50px;
+    //   background-color:#f4202f;
+    //   .rank-my {
+    //     margin:20px auto 0;
+    //     width:320px;
+    //     .my-ranking {
+    //       position: relative;
+    //       p {
+    //         position: absolute;
+    //       }
+    //       .rank {
+    //         top:30px;
+    //         left:20px;
+    //         width:52px;
+    //         height:55px;
+    //         font-size:10px;
+    //         color:#fff;
+    //         font-weight: 500;
+    //         line-height:52px;
+    //         text-align:center;
+    //         background:url('../assets/images/img/img_event_rank_my_rank_bg.png') no-repeat center center;
+    //         background-size:52px;
+    //         span {
+    //           font-size:13px;
+    //         }
+    //       }
+    //       .id {
+    //         overflow: hidden;
+    //         top:55px;
+    //         left:90px;
+    //         width:130px;
+    //         font-size:13px;
+    //         color:#000;
+    //         font-weight: 500;
+    //         text-overflow: ellipsis;
+    //       }
+    //       .won {
+    //         top:50px;
+    //         right:20px;
+    //         padding-left:22px;
+    //         font-size:13px;
+    //         color:#f22728;
+    //         font-weight: 500;
+    //         background:url('../assets/images/img/img_event_rank_won.png') no-repeat 0 center;
+    //         background-size: 17px;
+    //       }
+    //       .next {
+    //         bottom:0;
+    //         width:100%;
+    //         font-size:11px;
+    //         text-align:center;
+    //         line-height: 32px;
+    //         span {
+    //           font-size:11px;
+    //           color:#f22728;
+    //           font-weight: 700;
+    //         }
+    //       }
+    //     }
+    //   }
+    //   .rank-list {
+    //     margin:15px auto 0;
+    //     width:320px;
+    //     p {
+    //       font-size:10px;
+    //       color:#ffbbbb;
+    //       text-align:right;
+    //     }
+    //     table {
+    //       table-layout: fixed;
+    //       margin-top:5px;
+    //       width:100%;
+    //       border:2px solid #222;
+    //       background-color: #fff;
+    //       thead {
+    //         tr {
+    //           color:#fff;
+    //           background-color:#222;
+    //           th {
+    //             position: relative;
+    //             padding:13px 0;
+    //             font-size:13px;
+    //             color:#fff;
+    //             font-weight: 500;
+    //             &:after {
+    //               display: block;
+    //               content:"";
+    //               position: absolute;
+    //               left:0;
+    //               top:50%;
+    //               z-index: 0;
+    //               transform:translate(0, -50%);
+    //               width:1px;
+    //               height:10px;
+    //               background-color: rgba(255, 255, 255, 0.2);
+    //             }
+    //             &:first-child {
+    //               &::after {
+    //                 display: none;
+    //               }
+    //             }
+    //           }
+    //         }
+    //       }
+    //       tbody {
+    //         tr {
+    //           border-top:1px dotted #e1e1e1;
+    //           &:first-child {
+    //             border:none;
+    //           }
+    //           td {
+    //             padding: 10px 0;
+    //             font-size:13px;
+    //             color:#000;
+    //             vertical-align: middle;
+    //             &:first-child {
+    //               padding-left:20px;
+    //             }
+    //             &:last-child {
+    //               padding-right:20px;
+    //               text-align:center;
+    //             }
+    //             img {
+    //               width:52px;
+    //             }
+    //             span {
+    //               padding-left:20px;
+    //               font-size:18px;
+    //               color:#f22728;
+    //               font-weight: 500;
+    //               background: url('../assets/images/img/img_event_rank_won.png') no-repeat 0 center;
+    //               background-size:17px;
+    //             }
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+    // 앱 리뷰 이벤트
+    // .event-review {
+    //   position: relative;
+    //   .btn-event-join {
+    //     position: absolute;
+    //     bottom: 8%;
+    //     left: 50%;
+    //     z-index: 0;
+    //     transform: translate(-50%, 0);
+    //     padding: 16px 0;
+    //     width: 78%;
+    //     font-size: 16px;
+    //     color: #fff;
+    //     font-weight: 500;
+    //     text-align: center;
+    //     border-radius: 50px;
+    //     background-color: #f56644;
+    //   }
+    // }
+    // Footer
+    // & + .wrap-footer {
+    //   border-top: none;
+    // }
+  }
+}
+
+// @keyframes tear-animation {
+//   0% {
+//     transform: rotate(0deg) translate(-50%, 0);
+//     top: 62px;
+//     opacity: 1;
+//   }
+//   20% {
+//     transform: rotate(9deg) translate(-50%, 0);
+//     top: 92px;
+//     opacity: 1;
+//   }
+//   70% {
+//     opacity: 1;
+//   }
+//   100% {
+//     top: 200px;
+//     opacity: 0;
+//   }
+// }

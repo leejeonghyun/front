@@ -1,0 +1,624 @@
+.wrap-category {
+  & + .wrap-recommend-tab.open {
+    border-bottom: 1px solid $colorBorder;
+  }
+}
+
+/* MD Talk - 상품평,  기획전 */
+.wrap-md-talk {
+  .ic-tag {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    width: 48px;
+    height: 16px;
+    font-size: $fsBase - 2px;
+    letter-spacing: -0.5px;
+    font-weight: 700;
+    padding: 0 0 5px 3px;
+    background-image: url('#{$imgPath}/bg_mdtalk_gsfresh.png');
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: auto 15px;
+    strong {
+      font-weight: 700;
+      padding-right: 1px;
+    }
+    // &:before {
+    //   content: '';
+    //   position: absolute;
+    //   top: -1px;
+    //   left: -6px;
+    //   width: 4px;
+    //   height: 6px;
+    //   border-left: 1px dotted $gsfresh; 
+    //   border-bottom: 1px dotted $gsfresh;
+    // }
+  }
+  .text {
+    font-size: $fsBase;
+    line-height: 16px;
+    color: $colorGray;
+  }
+}
+
+/* 레이어 팝업 추가 혜택가 -> 삭제*/
+/* .description-layer.coupon-layer {
+  .layer-inner {
+    width: 280px;
+    .layer-content {
+      padding-top: 0;
+    }
+  }
+  .wrap-coupon {
+    .coupon-all {
+      position: relative;
+      z-index: 1;
+      margin-top: 5px;
+      padding-right: 60px;
+      line-height: 24px;
+      font-size: 12px;
+      color: $colorBase;
+      .btn-border {
+        position: absolute;
+        top: 2px;
+        right: 0;
+        z-index: 10;
+        padding: 3px 7px;
+        line-height: 1.4;
+      }
+    }
+    .wrap-list-coupon {
+      overflow-y: auto;
+      margin-top: 10px;
+      max-height: 231px;
+    }
+  }
+  .wrap-list-coupon li {
+    position: relative;
+    z-index: 1;
+    padding: 0 55px 0 10px;
+    width: 240px;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      width: 10px;
+      height: 100%;
+      background: #fff url('#{$imgPath}/bg_coupon_left.png') no-repeat 0 0;
+      background-size: 10px 100%;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 52px;
+      z-index: 10;
+      width: 3px;
+      height: 100%;
+      background: #fff url('#{$imgPath}/bg_coupon_right.png') no-repeat 0 0;
+      background-size: 3px 100%;
+    }
+    & + li {
+      margin-top: 6px;
+    }
+    .inner {
+      position: relative;
+      z-index: 1;
+      padding: 5px 0 8px 10px;
+      background: #fff;
+      border-top: 1px solid $colorBorder;
+      border-bottom: 1px solid $colorBorder;
+    }
+    .btn-coupon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 10;
+      padding-left: 3px;
+      width: 52px;
+      height: 100%;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        width: 3px;
+        height: 100%;
+        background: url('#{$imgPath}/bg_coupon_btn.png') no-repeat 0 0;
+        background-size: 3px 100%;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 3px;
+        z-index: -1;
+        background: $colorLightGray;
+      }
+      span {
+        display: inline-block;
+        padding-top: 20px;
+        font-size: 9px;
+        color: #fff;
+        background: url('#{$imgIcoPath}/ico_coupon.png') no-repeat top center;
+        background-size: 15px 13px;
+        vertical-align: middle;
+      }
+    }
+    .inner {
+      .coupon-name {
+        display: block;
+        font-size: 11px;
+        color: $colorGray;
+        strong {
+          margin-right: 3px;
+          font-weight: 500;
+          color: #469640;
+        }
+      }
+      .coupon-amount {
+        display: block;
+        font-weight: 500;
+        font-size: 14px;
+        color: $colorBase;
+        .num {
+          line-height: 36px;
+          font-size: 34px;
+          color: $gsfresh;
+        }
+      }
+      .coupon-apply {
+        line-height: 12px;
+        font-size: 11px;
+        color: $colorGray;
+      }
+      .period {
+        margin-top: 2px;
+        font-size: 10px;
+        color: $colorLightGray;
+      }
+    } 
+  }
+} */
+
+/* 상품 목록 하위 카테고리 */
+.wrap-category {
+  .wrap-menu-category {
+    padding-left: 5px;
+    border-bottom: 1px solid $colorBorder;
+    &:after {
+      @include content;
+    }
+    .btn-menu {
+      float: left;
+      width: 36px;
+      height: 44px;
+      background: url('#{$imgIcoPath}/ico_menu_bl.png') no-repeat 10px 15px;
+      background-size: 16px 13px;
+      vertical-align: top;
+    }
+    .depth {
+      display: flex;
+      justify-content: left;
+      float: left;
+      padding: 12px 20px 11px 0;
+      width: calc(100% - 36px);
+      height: 44px;
+      font-size: $fsBase + 3px;
+      vertical-align: top;
+      color: $colorGray;
+      white-space: nowrap;
+      .num {
+        font-size: $fsBase;
+      }
+    }
+  }
+  // 2020.08.04 기획 버튼 삭제
+  // .wrap-list-category {
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   position: relative;
+  //   z-index: 1;
+  //   background: #f6f6f6;
+  //   &:before {
+  //     content: '';
+  //     position: absolute;
+  //     left: 0;
+  //     right: 0;
+  //     bottom: 0;
+  //     z-index: 10;
+  //     height: 1px;
+  //     background: $colorBorder;
+  //   }
+  //   &:after {
+  //     @include content;
+  //   }
+  //   li {
+  //     display: flex;
+  //     align-items: center;
+  //     width: 33.33%;
+  //     min-height: 35px;
+  //     border-bottom: 1px solid $colorBorder;
+  //     border-right: 1px solid $colorBorder;
+  //     &:nth-child(3n) {
+  //       border-left: 0;
+  //     }
+  //     a {
+  //       display: block;
+  //       padding: 0 0 0 10px;
+  //       font-size: $fsBase - 1px;
+  //       color: $colorGray;
+  //     }
+  //   }
+  // }
+}
+
+/* 상품상세 - 묶음/패키지 */
+.btn-popup-list {
+  &.active strong:after {
+    top: 10px;
+    right: 3px;
+    transform: rotate(-45deg);
+  }
+  strong {
+    position: relative;
+    z-index: 1;
+    padding-right: 18px;
+    &:after {
+      @include afterArrow(block, 7px, 7px, $colorLightGray, 135deg);
+      position: absolute;
+      top: 6px;
+      right: 2px;
+    }
+  }
+}
+
+/* 묶음상품상세보기 */
+.wrap-full-popup.popup-product-detail {
+  z-index: 90;
+}
+.product-top-visual .detail-view {
+  @at-root .inner-full-popup .product-top-visual {
+    padding-bottom: 50px;
+  }
+  &:not(.required) {
+    padding: 12px 0 16px;
+  }
+  figure {
+    width: 100%;
+    img {
+      width: 100% !important;
+      height: auto !important;
+    }
+  }
+  .product-info {
+    font-size: 0;
+    text-align: center;
+    dt {
+      padding-bottom: 10px;
+      .title-desc {
+        @include ellipsis;
+        font-weight: 300;
+        font-size: $fsBase + 1px;
+        color: $colorBase;
+      }
+      .title em {
+        display: block;
+        @include ellipsis;
+        font-size: $fsBase + 3px;
+        color: $colorBase;
+      } 
+    }
+  }
+  .product-info dd {
+    display: inline-block;
+    font-size: $fsBase;
+    &.discount {
+      color: $gsfresh;
+      .num {
+        font-weight: 500;
+        font-size: $fsBase + 5px;
+      }
+    }
+    &.sale-price {
+      float: none;
+      margin-left: 10px;
+      color: $colorBase;
+      .price {
+        font-weight: 700;
+        font-size: $fsBase + 5px;  
+      }
+    }
+    &.list-price {
+      margin-left: 6px;
+      color: #a2a2a2;
+    }
+  }
+}
+/* 묶음상품상세보기 셀렉트 */
+.wrap-layer.wrap-package {
+  display: inline-block;
+  top: 56px;
+  overflow-y: auto;
+  width: $widthFull;
+  max-height: 213px;
+  background: #fff;
+  border-top: 1px solid $colorBorder;
+  border-bottom: 1px solid $colorBorder;
+  &.active {
+    overflow-y: auto;
+  }
+  .wrap-list-package { 
+    .list {
+      border-bottom: 1px solid $colorBorder;
+      &:last-child {
+        border-bottom: 0;
+      }
+      a {
+        display: block;
+        padding: 10px; 
+        text-align: left;
+        &:after {
+          @include content;
+        }
+      }
+      figure {
+        float: left;
+        width: 40px;
+        height: 40px;
+        background: url('#{$imgPath}/img_product_nothumb.jpg') no-repeat center center;
+        background-size: 40px auto;
+      }
+    }
+  }
+}
+.wrap-layer.wrap-package .wrap-list-package .info {
+  margin-left: 40px;
+  padding-left: 10px;
+  &:after {
+    @include content;
+  }
+  dt {
+    float: left; 
+   .list-num {
+      font-size: $fsBase - 1px;
+      color: $gsfreshTimeNormal;
+    }
+    .item-name {
+      display: block;
+      font-size: $fsBase;
+      color: $colorBase;
+    }
+  }
+  dd {
+    float: right;
+    .wrap-price {
+      font-size: $fsBase;
+      color: $colorBase;
+      .price {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+/* 공유하기 팝업 */
+.wrap-layer.wrap-share {
+  .layer-inner {
+    width: 260px;
+  }
+  .wrap-list-share {
+    margin-top: -12px;    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    li {
+      margin-top: 17px;
+      width: 33.33%;
+      &.twitter a {
+        background-image: url('#{$imgIcoPath}/ico_twitter.png');
+      }
+      &.facebook a {
+        background-image: url('#{$imgIcoPath}/ico_facebook.png');
+      }
+      &.kakao a {
+        background-image: url('#{$imgIcoPath}/ico_kakaotalk.png');
+      }
+      &.kakao-story a {
+        background-image: url('#{$imgIcoPath}/ico_kakaostory.png');
+      }
+      &.url-copy a {
+        background-image: url('#{$imgIcoPath}/ico_urlcopy.png');
+      }
+      &.more a {
+        background-image: url('#{$imgIcoPath}/ico_more.png');
+      }
+      a {
+        display: block;
+        padding-top: 45px;
+        font-size: $fsBase - 1px;
+        text-align: center;;
+        color: $colorBase;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: 40px 40px;
+        
+      }
+    }
+  }
+}
+
+/* 상품목록 */
+.adult-certify {
+  padding: 38px 15px 55px;
+  background: #fff;             
+  figure {
+    margin: auto;
+    width: 86px;
+  }
+  .desc {
+    margin-top: 11px;
+    font-size: $fsBase + 2px;
+    color: $colorBase;
+    text-align: center;
+  }
+  .wrap-btn {
+    margin: 18px 0 0 -10px;
+    padding: 0 10px;
+    text-align: center;
+    li {
+      display: inline-block;
+      width: 50%;
+      a {
+        display: block;
+        margin-left: 10px;
+        padding: 98px 0 24px;
+        font-size: $fsBase + 2px;
+        text-align: center;
+        color: $colorBase;
+        background-repeat: no-repeat;
+        background-position: center 28px;
+        background-size: 51px 53px;
+        border: 4px solid $colorBgGray;
+      }
+      @each $type in phone card {
+        .btn-#{$type} {
+          background-image: url('#{$imgIcoPath}/ico_certify_#{$type}_gsfresh.png');
+        }
+      }
+    }
+  } 
+  .wrap-info {
+    margin-top: 40px;
+    padding: 18px 15px 0;
+    border-top: 1px solid $colorBorder;
+    .list-info {
+      margin: 0 0 0 -6px;
+    }
+    strong {
+      display: block;
+      margin-top: 18px;
+      font-weight: 500;
+      font-size: $fsBase - 1px;
+      color: #5f5f5f;
+      .btn-tel {
+        color: #5f5f5f;
+      }
+    }
+  }
+}
+/* 카테고리 선택 레이어 */
+.wrap-layer-category {
+  position: fixed;
+  top: 101px;
+  left: 0;
+  z-index: 200;
+  width: $widthFull;
+  height: calc(100% - 101px);
+  .layer-bg {
+    position: fixed;
+    top: 101px;
+    width: $widthFull;
+    height: calc(100% - 101px);
+    background: rgba(#000, .3);
+  }
+  .layer-category {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: $widthFull;
+    max-height: 100%;
+    background: #fff;
+    li {
+      &.active {
+        a {
+          color: $gsfresh;
+          span {
+            display: inline-block;
+            &:after {
+              @include afterArrow(inline-block, 5px, 3px, $gsfresh, 135deg);
+              margin: 0 0 3px 14px;
+              border-width: 2px 2px 0 0;
+              transform: skew(0, -5deg) rotate(135deg);
+            }
+          }
+        }
+      }
+      & + li {
+        border-top: 1px solid $colorBorder;
+      }
+      a {
+        display: flex;
+        align-items: center;
+        padding-left: 15px;
+        height: 38px;
+        font-size: $fsBase;
+        color: $colorGray;
+      }
+    }
+  }
+}
+.depth-arrow {
+  display: inline-block;
+  padding: 6px 14px 5px;
+  background: url('#{$imgIcoPath}/arw_category.png') no-repeat center 4px;
+  background-size: 6px auto;
+}
+.btn-category {
+  display: inline;
+  &.active:after {
+    transform: rotate(180deg);
+  }
+  span {
+    display: inline;
+    position: relative;
+  }
+  &.depth2 {
+    position: relative;
+    padding-right: 27px;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 19px;
+      height: 19px;
+      background: url('#{$imgIcoPath}/arw_btn_category.png') no-repeat 0 0;
+      background-size: 19px auto;
+    }
+  }
+  &.depth3 {
+    @include ellipsis;
+    position: relative;
+    padding-right: 27px;
+    strong {
+      span {
+        display: inline;
+      }
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 19px;
+      height: 19px;
+      background: url('#{$imgIcoPath}/arw_btn_category.png') no-repeat 0 0;
+      background-size: 19px auto;
+    }
+  }  
+}
+/* 새벽배송 기획 검수용 scss모음 _temp 컴포넌트 삭제하면 필요 없음 */
+/* product_popup.scss */
+// 옵션
+.selected-option-list {
+  .delivery-desc.daybreak {
+    color: $daybreak;
+  }
+}

@@ -1,0 +1,2226 @@
+
+/* 상품목록 템플릿 - Type4. 배너+상품형 */
+.wrap-thrift-slide {
+  padding-bottom: 40px;
+  // border-top: 5px solid $colorBorder;
+  &:after {
+    @include content;
+  }
+  /* .wrap-sales-banner {
+    position: relative;
+    z-index: 1;
+    font-weight: 300;
+    color: $colorBase;
+    .text {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 29px;
+      z-index: 10;
+    }
+    .title {
+      position: relative;
+      font-weight: 500;
+      font-size: $fsBase + 10px;
+      span {
+        display: inline-block;
+        padding-right: 18px;
+        background: url('#{$imgIcoPath}/arw_right_gray.png') right center no-repeat;
+        background-size: 9px auto;
+      }
+    }
+    .desc {
+      margin-top: 3px;
+      font-size: $fsBase + 1px;
+      color: $colorGray;
+      span {
+        display: inline-block;
+      }
+    }
+  } */
+}
+/* 상품목록 템플릿 - Type5. 카테고리형(스와이프) - 더보기 */
+.wrap-product-category {
+  padding-top: 13px;
+}
+/* 기획전 템플릿 - Type6. */
+.promotion-list {
+  &.type-b {
+    .product .wrap-info {
+      &:after {
+        @include content;
+      }
+      dt {
+        padding-bottom: 6px;
+        .title {
+          display: block;
+        }
+        .title em {
+          display: block;
+          @include ellipsis;
+        }
+      }
+      dd {
+        display: inline-block;
+        font-size: $fsBase;
+        & + dd {
+          margin-left: 5px;
+        }
+        &.discount .num,
+        &.selling-price .price {
+          font-size: $fsBase + 3px;
+        }
+      }
+    }
+    .title-desc {
+      padding-top: 0;
+    }
+
+  }
+  /* TODO: 삭제 예정 */
+  /* &.type-e {
+    .wrap-product-slide .slide .wrap-product-info .info {
+      .discount {
+        font-size: $fsBase + 3px;
+        width: 43px;
+        .num {
+          font-size: $fsBase + 14px;
+        }
+      }
+      .list-price {
+        padding-left: 5px;
+      }
+    }
+  }
+  .wrap-product-info {
+    position: relative;
+    text-align: left;
+    .info {
+      &:after {
+        @include content;
+      }
+    }
+    .title-desc {
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      word-wrap: break-word;
+      font-size: $fsBase - 1px;
+      color: #666;
+      padding-top: 10px;
+    }
+    .title {
+      display: block;
+      em {
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        word-wrap: break-word;
+        font-size: $fsBase + 1px;
+        color: $colorBase;
+      }
+    }
+    .discount {
+      display: inline-block;
+      font-weight: 500;
+      font-size: $fsBase;
+      color: $gsfresh;
+      strong {
+        font-size: $fsBase + 3px;
+        font-weight: 700;
+      }
+    }
+    .sale-price {
+      display: inline-block;
+      float: inherit;
+      padding-left: 5px;
+      font-size: $fsBase;
+      strong {
+        font-size: $fsBase + 3px;
+        font-weight: 700;
+      }
+    }
+    .btn-cart, .btn-alarm {
+      position: absolute;
+      top: -5px;
+      right: 7px;
+    }
+  } */
+}
+
+.wrap-inner-promotion {
+  padding: 0 0 40px 20px;
+}
+.promotion-list .wrap-inner-promotion {
+  margin-top: 20px;
+  padding: 0 0 0 20px;
+}
+/* 카테고리 템플릿 - Type.1 해시태그형 */
+.promotion-hashtag {
+  @include scroll-wrapper;
+  padding: 10px 0 10px 20px;
+  // &.center {
+  //   text-align: center;
+  // }
+  .ic-hashtag {
+    display: inline-block;
+    padding: 6px 10px 4px;
+    height: 26px;
+    font-size: $fsBase + 1;
+    color: $colorGray;
+    letter-spacing: -0.5px;
+    background: #f6f6f6;
+    border-radius: 13px;
+    &.active {
+      color: #fff;
+      background: $gsfresh;
+    }
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 20px;
+    }
+    & + .ic-hashtag {
+      margin-left: 5px;
+    }
+  }
+}
+/* IOS 에서만 적용되는 CSS */
+/* .promotion-hashtag .ic-hashtag */
+_::-webkit-full-page-media, _:future, :root .promotion-hashtag .ic-hashtag {
+  padding: 5px 10px 3px;
+}
+
+/* 카테고리 템플릿 - Type.1 해시태그형 - 탭 */
+.wrap-tab-hashtag {
+  padding: 23px 0 40px 20px;
+  .title {
+    font-size: $fsBase + 9px;
+    color: $colorBase;
+  }
+  .promotion-hashtag {
+    // .promotion-hashtag 해시태그형 - 슬라이드형에 기본 패딩 추가로, 탭형에서 역마진
+    margin: 5px 0 0 -20px;
+  }
+  .wrap-tab-content {
+    padding-right: 20px;
+  }
+}
+/* 카테고리 템플릿 - Type2. 탭형 */
+.wrap-category-promotion {
+  @include scroll-wrapper;
+  li {
+    display: inline-block;
+    width: $widthFull;
+    &.active {
+      .btn-promotion {
+        font-weight: 500;
+        color: $gsfresh;
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          z-index: 10;
+          width: $widthFull;
+          height: 2px;
+          background: $gsfresh;
+        }
+      }
+    }
+    .btn-promotion {
+      position: relative;
+      z-index: 1;
+      padding: 22px 0 14px;
+      width: $widthFull;
+      font-size: $fsBase + 1px;
+      color: $colorGray;
+      text-align: center;
+    }
+  }
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  border-top: 5px solid #f4f6fa;
+  &:after {
+    @include content;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: $widthFull;
+    height: 1px;
+    background: $colorBorder;
+  }
+}
+$categoryMenuWidth: var(--categoryMenuWidth);
+.wrap-category-food {
+  &.bg {
+    background: #f6f6f6;
+  }
+  &.text {
+    .list .btn-category {
+      width: auto;
+      min-width: 55px;
+      font-size: $fsBase + 1px;
+    }
+    .list.active .btn-category span {
+      color: $gsfresh;
+    }
+  }
+  &.image, &.icon {
+    @include scroll-wrapper;
+    padding: 15px 0 0;
+    height: 91px;
+    .scroll-inner {
+      display: flex;
+      // flex-wrap: wrap; 8/20 허광남대표 요청 사항 삭제
+      justify-content: space-around;
+      overflow-y: hidden;
+      width: calc(#{$categoryMenuWidth});
+      padding-bottom: 15px;
+    }
+    .list {
+      display: inline-block;
+      &:first-child {
+        padding-left: 11px;
+      }
+      &:last-child {
+        padding-right: 11px;
+      }
+    }
+  }
+  &.image {
+    .list.active .btn-category{
+      border: 2px solid $gsfresh;
+      @at-root .simplycook & {
+        border-color: $simplycook;
+      }
+    }
+  }
+  padding: 15px 0px;
+  border-top: 1px solid $colorBorder;
+  &.scroll:not(.image) {
+    padding: 15px 0 0;
+    .scroll-inner {
+      display: block;
+      padding-bottom: 15px;
+    }
+  }
+  &:not(.image) .scroll-inner {
+    @include scroll-wrapper;
+  }
+  .list {
+    display: inline-block;
+    &:first-child {
+      padding-left: 20px;
+    }
+    & + .list {
+      padding-left: 11px;
+    }
+    &:last-child {
+      padding-right: 20px;
+    }
+    button.btn-category .inner {
+      display: block;
+    }
+    .btn-category {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+      width: 55px;
+      height: 55px;
+      font-weight: 300;
+      font-size: $fsBase - 1px;
+      color: $colorBase;
+      text-align: center;
+      background-color: #fff;
+      border-radius: 50%;
+      figure {
+        display: flex;  // 2020.08.10 이미지형 이미지 55px 이하일 경우 & 비율 다를 경우, 가운데 정렬
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: $widthFull; // 2020.08.10 이미지형 이미지 55px 이하일 경우, 강제로 width: 100% 추가
+        height: 100%;
+      }
+      .inner {
+        padding: 0;
+        width: $widthFull;
+        font-weight: 500;
+        color: $colorBase;
+      }
+    }
+  }
+} 
+/* 카테고리 템플릿 - Type3. 아이콘형 */
+.wrap-category-food.icon {
+  h6 {
+    padding-left: 17px;
+    margin-bottom: 3px;
+    font-size: $fsBase + 1px;
+    font-weight: 500;
+  }
+  .list {
+    .btn-category {
+      &.active,
+      &.active .inner {
+        color: $simplycook;
+      }
+      .inner {
+        padding-top: 32px; 
+        background-repeat: no-repeat;
+        background-position: center 10px;
+        background-size: 19px 20px;
+      }
+    }
+  }
+}
+/* 카테고리 템플릿 - Type3. 아이콘형 */
+.wrap-category-food.mix {
+  .list .btn-category {
+    figure:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: $widthFull;
+      height: 100%;
+      background: rgba(#000, .4);
+    }
+    .inner {
+      color: #fff;
+    }
+  }
+}
+/* 카테고리 템플릿 - Type4. 기본형 */
+.wrap-promotion-filter {
+  position: relative;
+  z-index: 1;
+  padding: 0 15px;
+  font-size: $fsBase;
+  color: $colorGray;
+  &:after {
+    @include content;
+  }
+  &.delivery {
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-between;
+    border-bottom: 1px solid $colorBorder;
+    .delivery-count {
+      display: inline-block;
+      line-height: 40px;
+      color: $colorGray;
+      strong {
+        padding-left: 3px;
+        color: $colorBase;
+      }
+    }
+    .wrap-select-category {
+      float: right;
+    }
+  }
+  span {
+    display: block;
+    position: relative;
+    z-index: 1;
+    select {
+      padding: 0 20px 0 0;
+      line-height: 40px;
+      border: none;
+      appearance: none;
+    }
+  }
+  .wrap-select-category {
+    float: left;
+  }
+  .wrap-select-align {
+    float: right;
+  }
+  .wrap-select-category:after,
+  .wrap-select-align:after {
+    border-top-color: #000;
+    border-right-color: #000;
+  }
+  &.dalisalda.wrap-promotion-filter {
+    padding: 0 20px;
+  }
+}
+/* 링크 버튼 템플릿 - Type1. 타원형 */
+/* 링크 버튼 템플릿 - Type2. 사각형 */
+.wrap-promotion-btn {
+  display: flex;
+  padding: 0 20px;
+  margin: 0 0 20px -10px;
+  &.inline {
+    display: block;
+    @include scroll-wrapper;
+    font-size: 0;
+    .btn {
+      display: inline-block;
+      padding: 13px 30px 11px;
+      width: auto;
+    }
+  }
+  &.circle {
+    .btn {
+      border-radius: 20px;
+    }
+  }
+  .btn {
+    margin-left: 10px;
+    padding: 13px 0 11px;
+    width: $widthFull;
+    font-size: $fsBase;
+    color: $colorBase;
+    text-align: center;
+    background: $colorBorder;
+  }
+}
+/* IOS 에서만 적용되는 CSS */
+/* wrap-promotion-btn */
+_::-webkit-full-page-media, _:future, :root .wrap-promotion-btn .btn {
+  padding: 14px 0 10px;
+}
+
+/* 타이틀 템플릿 - Type1. 좌정렬형 */
+/* 타이틀 템플릿 - Type2. 중앙정렬형 */
+/* 타이틀 템플릿 - Type3. 우정렬형 */
+.wrap-promotion-title {
+  padding: 10px 0;
+  &.center {
+    text-align: center;
+  }
+  &.right {
+    text-align: right;
+  }
+  .desc {
+    font-size: $fsBase;
+    color: $colorGray;
+  }
+  .title  {
+    font-weight: 500;
+    font-size: $fsBase + 6px;
+    color: $colorBase;
+  }
+}
+/* 배너 공통 */
+.wrap-promotion-banner {
+  .banner-list:first-child .promotion-list {
+    margin-top: 10px; // 9/14 류은진 담당 요청건 [DEFC-0000005018]
+  }
+  .promotion-list {
+    margin-top: 60px;
+    padding-bottom: 0; 
+    .wrap-product-slide {
+      padding-bottom: 0;
+    }
+  }
+}
+.promotion-list {
+  .wrap-product-slide {
+    padding-bottom: 20px;
+  }
+}
+.banner-promotion {
+  position: relative;
+  z-index: 1;
+  .wrap-controls {
+    width: 70px;
+    padding: 0 1px 0 28px;
+  }
+  .swiper-pagination {
+    z-index: 11;
+    left: auto;
+    right: 47px;
+    bottom: 20px;
+    padding: 4px 0 3px;
+  }
+}
+
+/* 배너 템플릿 - Type1. 기본형 */
+.wrap-banner-basic {
+  display: block;
+}
+
+/* 배너 템플릿 - Type2. 수동형 */ // TODO: 삭제 예정 
+.wrap-banner-text {
+  display: block;
+  position: relative;
+  z-index: 1;
+  .wrap-text {
+    position: absolute;
+    padding: 20px 15px;
+    .inner {
+      .banner-desc {
+        display: inline-block;
+        font-weight: 300;
+        font-size: $fsBase + 2px;
+        color: $colorGray;
+        border-bottom: 1px solid $colorGray;
+      }
+      .banner-title {
+        margin-top: 7px;
+        font-weight: 300;
+        font-size: $fsBase + 12px;
+        color: $colorBase;
+      }
+    }
+  }
+}
+/* 배너 템플릿 - Type3. 멀티형 */ // TODO: 삭제 예정
+.wrap-banner-multi {
+  display: block;
+  position: relative;
+  z-index: 1;
+  .wrap-text {
+    position: absolute;
+    padding: 20px 30px;
+    .inner {
+      .banner-desc {
+        display: inline-block;
+        font-weight: 500;
+        font-size: $fsBase + 10px;
+      }
+      .banner-title {
+        margin-top: 5px;
+        font-weight: 300;
+        font-size: $fsBase;
+        color: $colorGray;
+      }
+      .banner-btn {
+        margin-top: 4px;
+      }
+      button {
+        padding: 0 21px 0 11px;
+        height: 21px;
+        font-size: $fsBase - 2px;
+        color: $colorGray;
+        border: 1px solid $colorLightGray;
+        border-radius: 21px;
+        background: url('#{$imgIcoPath}/arw_right_gray.png') right 9px center no-repeat;
+        background-size: 9px auto;
+      }
+    }
+  }
+}
+
+/* 배너 템플릿 - Type3. 이미지 + 스와이프형 */
+.theme-plan {
+  position: relative;
+  width: $widthFull;
+  padding: 0 0 25px 20px;
+  .wrap-plan-banner-link {
+    position: relative;
+  }
+  .wrap-theme-plan-title {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    .theme-plan-title {
+      position: relative;
+      padding: 0 7% 15px 7%;
+      font-size: $fsBase + 11px;
+      font-weight: 700;
+      line-height: 1.2;
+      &:after {
+        @include content;
+        position: absolute;
+        bottom: 0;
+        left: 7.5%;
+        width: 40px;
+        height: 2px;
+        background-color: #000;
+      }
+    }
+    .theme-plan-desc {
+      padding: 8px 7% 0 7%;
+      top: 55px;
+      font-size: $fsBase + 1px;
+      font-weight: 700;
+      color: #000;
+    }
+  }
+  .wrap-product-slide {
+    padding-left: 0;
+  }
+  .banner-theme-top {
+    padding-top: 16px;
+  }
+}
+
+/* 배너 템플릿 - 위치, 텍스트 정렬 -> Type8. 택배핫딜 상품목록형 사용 됨 */
+.wrap-text {
+  &[class*="top-"] {
+    top: 0;
+  }
+  &[class*="middle-"] {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &[class*="bottom-"] {
+    bottom: 0;
+  }
+  &[class*="-left"] {
+    left: 0;
+  }
+  &[class*="-right"] {
+    right: 0;
+  }
+  &[class*="-center"] {
+    left: 50%;
+    transform: translateX(-50%);
+    width: $widthFull;
+    text-align: center;
+  }
+  &.middle-center {
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* 배너 템플릿 - Type8. 택배핫딜 상품목록형 */
+.wrap-banner-division {
+  display: block;
+  position: relative;
+  z-index: 1;
+  &.main {
+    overflow: hidden;
+    width: $widthFull;
+    height: 170px;
+    figure {
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
+  .wrap-text {
+    position: absolute;
+    width: $widthFull;
+    &[class*="-right"] {
+      text-align: right;
+    }
+    padding: 0 20px;
+    .inner {
+      padding: 15px 20px;
+      background: #fff;  
+      .banner-desc {
+        font-size: $fsBase;
+        color: $colorGray;
+      }
+      .banner-title {
+        font-weight: 500;
+        font-size: $fsBase + 5px;
+        color: $colorBase;
+      }
+    }
+  }
+}
+/* 배너 템플릿 - Type10. 타이틀+스와이프형 */
+.wrap-title-slide {
+  padding-left: 20px;
+  .title {
+    font-weight: 700;
+    font-size: $fsBase + 7px;
+    color: $colorBase;
+  }
+  .desc {
+    margin-top: 6px;
+    font-weight: 500;
+    font-size: $fsBase + 2px;
+    color: $gsfresh;
+  }
+  .wrap-product-slide {
+    margin-top: 17px; 
+  }
+}
+
+/* 심플리쿡 메인 키비주얼 */
+.main-promotion-slide {
+  .swiper-container {
+    .swiper-slide {
+      a {
+        display: flex;
+        align-items: flex-start;
+        overflow-y: hidden;
+        height: 69.445vw;
+        figure, img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+/* 심플리쿡 - 기획전 타이틀 + 슬라이드 형 */
+.main-item.main-simple {
+  // padding: 30px 0 40px 20px;
+  &.represent.best {
+    // padding: 15px 0 10px 20px;
+  }
+  /* TODO: 삭제 예정 */
+  /* &.represent {
+    padding: 15px 0 50px 20px;
+    .product .item .wrap-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+      padding: 18px 0 15px 20px;
+      width: $widthFull;
+      background: rgba(#000, .4);
+      .item-title .title-desc,
+      .item-title .title em,
+      .discount,
+      .wrap-price .list-price,
+      .wrap-price .sale-price {
+        color: #fff;
+      }
+      .wrap-price {
+        margin: 0; 
+      }
+      .discount .num {
+        line-height: 46px;
+      }
+    }
+  } */
+  /* .title-sub {
+    font-weight: 500;
+    font-size: $fsBase + 3px;
+    color: $colorBase;
+  }
+  .wrap-title {
+    display: block;
+    position: relative;
+    z-index: 1;
+    padding: 8px 0 20px 25px;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      width: 25px;
+      height: 2px;
+      background: $simplycook;
+    }
+    .simply-desc {
+      font-size: $fsBase + 2px;
+      color: $colorGray;
+    }
+    .simply-title {
+      font-size: $fsBase + 7px;
+      color: $colorBase;
+    }
+  } */
+}
+/* 심플리쿡 - 서브카테고리 */ // 5//11 삭제
+/* .wrap-simply-subcategory {
+  margin-top: 12px;
+  .swiper-wrapper {
+    padding-bottom: 20px;
+  }
+  .list {
+    display: block;
+    text-align: center;
+    .category {
+      display: table;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      margin: auto;
+      // width: $widthFull;
+      height: 54px;
+      border-radius: 27px;
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        width: $widthFull;
+        height: 100%;
+        background: rgba(#000, .4);
+      }
+      strong {
+        display: table-cell;
+        position: relative;
+        z-index: 10;
+        padding: 0 20px;
+        line-height: 15px;
+        font-weight: 500;
+        font-size: $fsBase + 1px;
+        color: #fff;
+        vertical-align: middle;
+        word-break: keep-all;
+      }
+      figure img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: -1;
+        transform: translate(-50%, -50%);
+      }
+    }
+    .ic-hashtag {
+      margin-top: 10px;
+    }
+  }
+} */
+
+/* 심플리쿡 - 05/11 */
+.simplycook {
+  .wrap-category-food + .content-box {
+    padding-top: 0;
+  }
+  .content-box {
+    padding: 25px 0 10px;
+    &.type01 {
+      padding-bottom: 0;
+    }
+    &.type02 {
+      padding: 0;
+    }
+    & + .content-box {
+      border-top: 5px solid #f4f6fa;
+    }
+    /* 심쿡특가 */
+    .product-image-07 {
+      padding: 0 0 20px 20px;
+    }
+    .wrap-product-image,
+    .wrap-product-list {
+      border-top: 1px solid $colorBorder;
+    }
+    /* 심쿡 기획전2 */
+    .promotion-list {
+      margin: 0;
+    }
+    /* 카테고리 상품 */
+    .content-title {
+      // padding: 25px 20px 0 20px;
+      padding: 0 20px 0 20px;
+      font-weight: 700;
+      font-size: $fsBase + 7px;
+      color: $colorBase;
+    }
+    .promotion-hashtag {
+      margin-top: 10px;
+      padding: 0 20px 20px;
+    }
+    /* MD 추천 상품 목록 */
+    .md-product-title {
+      border: none;
+    }
+  }
+  /* 카테고리 상품 */
+  .content-box .btn-list-more {
+    display: block;
+    width: $widthFull;
+    border: none;
+    &.hide {
+      span {
+        &:after {
+          @include afterArrow(block, 6px, 6px, $colorGray, -45deg);
+          margin-top: -2px;
+        }
+      }
+    }
+    span {
+      display: inline-block;
+      position: relative;
+      padding: 13px 14px 12px 0;
+      font-size: $fsBase;
+      color: $colorBase;
+      &:after {
+        @include afterArrow(block, 6px, 6px, $colorGray, 135deg);
+        position: absolute;
+        top: 50%;
+        right: 0;
+        z-index: 10;
+        margin-top: -6px;
+      }
+    }
+  }
+  /* 한번에 담기 */
+  .content-box .simply-quick-cart {
+    position: relative;
+    padding-bottom: 63px;
+    .swiper-slide {
+      padding: 20px 20px 0;
+    }
+    .swiper-pagination {
+      bottom: 35px;
+    }
+    .wrap-speed-item {
+      padding: 0 14px;
+      margin-top: 0;
+      border: 1px solid $colorBorder;
+      border-radius: 5px;
+      .thumb {
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        margin: 0 -14px;
+        height: 45vw;
+      }
+      .wrap-list-speed {
+        height: 223px;
+      }
+    }
+    .wrap-speed-item .wrap-speed-total {
+      .wrap-total {
+        margin: 15px -14px 0;
+        padding: 16px 94px 20px 14px;
+        .wrap-price {
+          right: 14px;
+        }
+      }
+      .btn {
+        position: relative;
+        top: 1px;
+        width: calc(100% + 30px);
+        margin: 0 -15px;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+    }
+  }
+  /* 브랜드 메시지 영역 */
+  .wrap-video {
+    display: block;
+    position: relative;
+    z-index: 1;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      width: $widthFull;
+      height: 100%;
+      background: rgba(#000, .3);
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: calc(50% - 21px);
+      left: calc(50% - 21px);
+      z-index: 10;
+      // margin: -34px 0 0 -21px;
+      width: 42px;
+      height: 42px;
+      background:url('#{$imgIcoPath}/ico_video_play.png') no-repeat center center;
+      background-size: 100%;
+    }
+    .wrap-text {
+      position: absolute;
+      bottom: 19px;
+      left: 30px;
+      z-index: 20;
+      color: #fff;
+      text-align: left;
+      .desc {
+        &:before {
+          content: '#';
+        }
+        position: relative;
+        z-index: 1;
+        font-size: $fsBase;
+      }
+      .title {
+        display: block;
+        font-size: $fsBase + 17px;
+      }
+    }
+  }
+}
+
+/* 식단예약 */
+.wrap-promotion-filter + .wrap-product-image {
+  border-top: 5px solid $colorBorder;
+}
+.wrap-simply-calendar {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  background: #f6f6f6;
+  .desc {
+    margin-top: 6px;
+    font-size: $fsBase - 1px;
+    color: $colorLightGray;
+    letter-spacing: -0.1px;
+    &:before {
+      content: '*';
+    }
+  }
+}
+/* 심플리쿡 iframe */
+.full-layer .layer-inner {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  width: $widthFull;
+  margin: 0 auto;
+  transform: translateY(-50%);
+  .inner-box {
+    padding: 0;
+  }
+  .btn-layer-close {
+    top: -30px;
+    right: 0;
+  }
+}
+.wrap-iframe {
+  display: flex;
+  align-items: center;
+  min-width: 320px;
+  min-height: 180px;
+  width: $widthFull;
+  height: 100%;
+  .inner {
+    width: $widthFull;
+  }
+}
+
+/* 기획전 기본형템플릿 */
+.wrap.main-gnb {
+  position: relative;
+  transition: all .2s;
+  main .wrap-banner-promotion:first-child .wrap-banner-period {
+    border-top: 1px solid $colorBorder;
+  }
+}
+
+.wrap-banner-period {
+  &:after {
+    @include content;
+  }
+  p {
+    float: left;
+    padding: 12px 0 12px 15px;
+    font-weight: 300;
+    font-size: $fsBase;
+    color: $colorGray;
+  }
+  button {
+    float: right;
+    margin-right: 6px;
+    width: 40px;
+    height: 40px;
+  }
+}
+/* 브러쉬 라인 */
+.bg-line-brush {
+  &.dark {
+    background-image: url('#{$imgPath}/bg_brushline_dark_repeat_gsfresh.png');
+    &:before {
+      background-image: url('#{$imgPath}/bg_brushline_dark_left_gsfresh.png');
+    }
+    &:after {
+      background-image: url('#{$imgPath}/bg_brushline_dark_right_gsfresh.png');
+    }
+  }
+  &.darkgray {
+    background-image: url('#{$imgPath}/bg_brushline_darkgray_repeat.png');
+    &:before {
+      background-image: url('#{$imgPath}/bg_brushline_darkgray_left.png');
+    }
+    &:after {
+      background-image: url('#{$imgPath}/bg_brushline_darkgray_right.png');
+    }
+  }
+  &.gray {
+    background: none;
+    &:before {
+      bottom: -2px;
+      height: 10px;
+      background-image: url('#{$imgPath}/bg_brushline_gray_left.png');
+    }
+    &:after {
+      bottom: -2px;
+      height: 10px;
+      background-image: url('#{$imgPath}/bg_brushline_gray_right.png');
+    }
+    strong {
+      display: inline-block;
+      position: relative;
+      margin: 0 0 0 -3px;
+      font-weight: 500;
+    }
+    strong:before {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 3px;
+      z-index: -1;
+      width: $widthFull;
+      height: 10px;
+      background: url('#{$imgPath}/bg_brushline_gray_repeat.png') repeat-x 5px bottom;
+      background-size: 1px 10px;
+    }
+  }
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  line-height: 1.3;
+  font-weight: 500;
+  background-size: auto 10px;
+  background-repeat: repeat-x;
+  background-position: left 6px bottom;
+  background-image: url('#{$imgPath}/bg_brushline_repeat_gsfresh.png');
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: -4px;
+    bottom: 0;
+    width: 10px;
+    height: 21px;
+    background-size: auto 10px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-image: url('#{$imgPath}/bg_brushline_left_gsfresh.png');
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    right: -5px;
+    bottom: 0;
+    width: 5px;
+    height: 21px;
+    background-size: auto 10px;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-image: url('#{$imgPath}/bg_brushline_right_gsfresh.png');
+  }
+}
+/* 위대한빅세일 */
+/*
+.wrap-banner-sales {
+  position: relative;
+  z-index: 1;
+  .remain-time {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 32px 30px 26px;
+    width: $widthFull;
+    background: $gsfreshTimeNormal;
+    .desc {
+      font-size: $fsBase + 2px;
+      color: #fff;
+    }
+    .timer {
+      font-weight: 700;
+      font-size: $fsBase + 13px;
+      color: #fff;
+    }
+  }
+  .swiper-pagination {
+    bottom: 10px;
+  }
+  .product {
+    padding: 87px 30px 38px 30px;
+    max-width: 414px;
+    margin: auto;
+    .thumb {
+      position: absolute;
+      top: 55px;
+      right: 30px;
+      overflow: hidden;
+      width: 145px;
+      height: 145px;
+      border-radius: 50%;
+      figure {
+        display: block;
+        width: 145px;
+        height: 145px;
+      }
+    }
+    .btn-cart {
+      bottom: 0;
+      right: 0;
+    }
+  }
+  .wrap-info {
+    position: relative;
+    z-index: 1;
+    margin-top: 42px;
+    padding-right: 150px;
+  } 
+  .info {
+    &:after {
+      @include content;
+    }
+    .title {
+      display: block;
+      line-height: 14px;
+    }
+    .title em {
+      line-height: 14px;
+      font-size: $fsBase;
+      color: $colorBase;
+    }
+    .discount {
+      float: left;
+      margin-right: 5px;
+      font-weight: 500;
+      font-size: $fsBase + 2px;
+      color: $gsfresh;
+      .num {
+        font-size: $fsBase + 18px;
+      }
+    }
+    .list-price {
+      // display: block;
+      float: left;
+      width: calc(100% - 52px);
+      margin-top: 4px;
+      font-size: $fsBase - 1px;
+      color: $colorLightGray;
+    }
+    .sale-price {
+      float: left;
+      min-width: 88px;
+      width: calc(100% - 52px);
+      font-size: $fsBase;
+      color: $colorBase;
+      .price {
+        font-weight: 700;
+        font-size: $fsBase + 3px;
+      }
+    }
+    .product-count {
+      float: none;
+      position: absolute;
+      top: -26px;
+      left: 0;
+      z-index: 1;
+      padding: 3px 6px;
+      font-size: $fsBase - 1px;
+      color: #fff;
+      background: rgba($gsfresh, .8);
+      border-radius: 2px;
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 15px;
+        z-index: 10;
+        width: 0; 
+        height: 0; 
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent; 
+        border-top: 5px solid rgba($gsfresh, .8);
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
+*/
+.wrap-promotion-slide {
+  position: relative;
+  z-index: 1;
+}
+.wrap-banner-sales {
+  border-bottom: 1px solid $colorBorder;
+  & + section h2 + .wrap-product-list {
+    border-top-width: 0;
+  }
+  .header-big-sale {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding-left: 35px;
+    margin-left: -35px;
+    width: calc(100% + 35px);
+    height: 50px;
+    background: #f0f0f0;
+    // border-top: 1px solid $colorBorder;
+    // border-bottom: 1px solid $colorBorder;
+    .bg-line-brush {
+      margin-left: 15px;
+    }
+    h3 {
+      font-size: $fsBase + 3px;
+      font-weight: 500;
+    }
+    .sale-link {
+      padding-right: 15px;
+      li {
+        display: inline-block;
+        padding: 5px 10px 4px;
+        font-weight: 500;
+        font-size: $fsBase;
+        border-radius: 3px;
+        a {
+          display: inline-block;
+          color: $colorGray;
+        }
+        &.active {
+          color: #fff;
+          background: $gsfresh;
+        }
+        & + li {
+          // position: relative;
+          margin-left: 3px;
+        }
+      }
+    }
+  }
+  .count-timer {
+    padding: 20px 0 8px 35px;
+    font-weight: 400;
+    font-size: $fsBase + 2px;
+    color: $colorLightGray;
+    letter-spacing: 2px;
+  }
+  // .product {
+  //   position: relative;
+  //   padding-top: 18px;
+  //   .thumb {
+  //     background: #f6f0e4;
+  //   }
+  //   .wrap-info {
+  //     .info {
+  //     }
+  //     dt {
+  //       position: absolute;
+  //       width: 80%;
+  //       top: 0;
+  //       strong em {
+  //         font-size: $fsBase + 8px;
+  //         font-weight: 500;
+  //         line-height: 1.2;
+  //       }
+  //     }
+  //     dd {
+  //       display: inline-block;
+  //       font-size: $fsBase + 2px;
+  //       &.product-count {
+  //         display: block;
+  //         font-size: $fsBase - 1px;
+  //       }
+  //       &.discount,
+  //       &.sale-price {
+  //         float: initial;
+  //         // padding: 14px 6px 0 0;
+  //         padding: 21px 6px 0 0;
+  //         strong {
+  //           font-size: $fsBase + 11px;
+  //           font-weight: 700;
+  //         }
+  //       }
+  //       &.discount {
+  //         color: $gsfresh;
+  //       }
+  //       &.list-price {
+  //         font-size: $fsBase + 1px;
+  //         color: $colorLightGray;
+  //       }
+  //       // 새벽배송일 경우 배송정보 노출 20.04.01
+  //       &.wrap-delivery-tag {
+  //         display: block;
+  //         padding-top: 2px;
+  //         & + .discount, 
+  //         & ~ .sale-price {
+  //           padding: 0 6px 0 0;
+  //         }
+  //       }
+  //     }
+  //   }
+  //   .btn-cart, .btn-alarm {
+  //     right: 15px;
+  //     bottom: 10px;
+  //   }
+  // }
+  .swiper-pagination {
+    position: static;
+    left: 0;
+    bottom: 0;
+    padding: 6px 0 15px;
+    transform: translate(0, 0);
+    font-size: 0;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    top: calc(50% - 18px);
+    transform: translateY(-50%);
+  }
+}
+
+/* 택배특가 */ // 삭제 예정
+/* .wrap-delivery-slide {
+  position: relative;
+  z-index: 1;
+  margin-top: 0;
+  padding: 0;
+  border-top: 1px solid $colorBorder;
+  .swiper-button-prev,
+  .swiper-button-next {
+    transform: translateY(-47px);
+  }
+  .wrap-product-slide {
+    // padding: 5px 0 47px;
+    padding: 0 0 47px;
+    .swiper-pagination {
+      bottom: 20px;
+    }
+    .swiper-slide {
+      padding: 20px 20px 25px 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 1px 4px 9px rgba(#000, .2);
+      .slide {
+        padding: 0;
+      }
+    }
+  }
+}  */
+/* 택배특가 */
+.hotdeal-top {
+  overflow: hidden;
+  padding-top: 20px;
+  h3 {
+    float: left;
+    padding-left: 19px;
+    width: 100px;
+    box-sizing: border-box;
+  }
+}
+.btn-banner-type-search {
+  float: right;
+  width: calc(100% - 120px);
+  margin: 0 20px 15px 0;
+  padding: 0 10px 0 15px;
+  font-size: $fsBase - 1px;
+  color: $colorLightGray;
+  vertical-align: middle;
+  text-align: left;
+  background: $colorBgGray;
+  border-radius: 30px;
+  span {
+    display: block;
+    padding: 10px 0 5px 0;
+    background-position: right 7px;
+  }
+}
+
+.wrap-banner-search {
+  // display:flex;
+  padding: 0 0 30px;
+  &:after {
+    @include content;
+  }
+  position: relative;
+  .banner-search-title {
+    // float: left;
+    // padding-left: 19px;
+    // width: 80px;
+    // h3 {
+    //   font-size: $fsBase + 4px;
+    //   font-weight: 500;
+    //   line-height: 1.2;
+    // }
+    // .desc {
+    //   position: absolute;
+    //   width: 4px;
+    //   height: 4px;
+    //   left: 18px;
+    //   bottom: 30px;
+    //   transform: rotate(-90deg);
+    //   p {
+    //     position: relative;
+    //     width: 213px;
+    //     font-size: $fsBase - 1px;
+    //     white-space: nowrap;
+    //     color: $colorLightGray;
+    //     &:after{
+    //       @include content;
+    //       position: absolute;
+    //       top: 7px;
+    //       width: $widthFull;
+    //       height: 1px;
+    //       background: #c8c8c8;
+    //     }
+    //     span {
+    //       position: relative;
+    //       z-index: 1;
+    //       padding-right: 8px;
+    //       font-size: $fsBase - 1px;
+    //       white-space: nowrap;
+    //       color: $colorLightGray;
+    //       background: #fff;
+    //     }
+    //   }
+    // }
+  }
+  .wrap-slide-search {
+    // float: left;
+    // width: calc(100% - 80px);
+  }
+}
+/* 스피드마켓  */
+.wrap-banner-speed {
+  display: block;
+  position: relative;
+  z-index: 1;
+  figure {
+    width: 100vw;
+  }
+  .wrap-text {
+    position: absolute;
+    top: 50%;
+    left: 28px;
+    z-index: 10;
+    transform: translateY(-50%);
+    .banner-title {
+      position: relative;
+      z-index: 1;
+      font-size: $fsBase + 12px;
+      color: $colorBase;
+    }
+    .banner-desc {
+      margin-top: 10px;
+      line-height: 17px;
+      font-size: $fsBase;
+      color: $colorGray;
+      .ic-hashtag {
+        display: inline;
+        &:before {
+          display: inline;
+          content: '#'
+        }
+        & + .ic-hashtag {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}
+.ingredient-select {
+  border-bottom: 5px solid $colorBorder;
+  strong {
+    display: block;
+    padding: 20px 15px 0;
+    font-size: $fsBase + 1px;
+    font-weight: 500;
+  }
+  ul {
+    @include scroll-wrapper;
+    padding: 15px 15px 20px;
+    width: $widthFull;
+  }
+  li {
+    display: inline-block;
+    font-size: $fsBase + 2px;
+    font-weight: 500;
+    &.active {
+      button {
+        color: $colorBase;
+      }
+    }
+    button {
+      padding: 0 20px;
+      color: $colorLightGray;
+    }
+    &:first-child {
+      button {
+        padding-left: 0;
+      }
+    }
+    & + li {
+      position: relative;
+      &:before {
+        @include content;
+        position: absolute;
+        left: 0;
+        top: 4px;
+        width: 1px;
+        height: 12px;
+        background: $colorBorder;
+      }
+    }
+  }
+}
+.wrap-list-speed, 
+.simply-quick-cart {
+  & + .wrap-list-speed {
+    border-top: 1px solid $colorBorder;
+  } 
+  .wrap-speed-item {
+    margin-top: 22px;
+    & + .wrap-speed-item {
+      border-top: 1px solid $colorBorder;
+    }
+    .thumb {
+      display: flex;
+      height: 35.75vw;
+      overflow: hidden;
+      margin-right: -20px;
+      img {
+        object-fit: cover;
+      }
+    }
+    .wrap-speed-total .wrap-total {
+      position: relative;
+      z-index: 1;
+      margin-top: 10px;
+      padding: 16px 80px 20px 0;
+      border-top: 1px dotted #c7c7c7;
+      .inp-chk {
+        font-size: $fsBase + 2px;
+        color: $colorBase;
+      } 
+      .wrap-price strong {
+        font-size: $fsBase + 5px;
+      }
+    }
+    .wrap-price {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      z-index: 10;
+      transform: translateY(-50%);
+      font-size: $fsBase;
+      color: $colorBase;
+      strong {
+        font-weight: 700;
+        font-size: $fsBase + 1px;
+      }
+    }
+    .wrap-speed-total .btn {
+      font-weight: 500;
+      font-size: $fsBase + 5px;
+      color: #fff;
+    }
+  }
+}
+.wrap-speed-item .wrap-list-speed {
+  margin-top: 16px;
+  li {
+    & + li {
+      margin-top: 21px;
+    }
+  }
+  .list {
+    position: relative;
+    z-index: 1;
+    &:after {
+      @include content;
+    }
+    .inp-chk {
+      display: block;
+      float: left;
+      height: 40px;
+    }
+    .link {
+      display: block;
+      margin-left: 28px;
+      padding-right: 95px;
+      &:after {
+        @include content;
+      }
+      figure {
+        float: left;
+        width: 40px;
+      }
+      .item-title {
+        margin-left: 50px;        
+        display: flex;
+        align-items: center;
+        line-height: 15px;
+        height: 40px;
+        font-size: $fsBase;
+        color: $colorGray;
+      }
+      .item-title em {
+        @include ellipsis-into-2;
+      }
+    }
+  }
+}
+
+/* 팝업 - 알뜰상품 전체보기 */
+.wrap-banner-thrift {
+  li {
+    font-size: 0;
+    border-top: 5px solid $colorBorder;
+    a {
+      width: 100%;
+      figure {
+        width: 100%;
+      }
+      .wrap-info-guide {
+        padding: 15px 30px 20px;
+      }
+    }
+  }
+}
+
+.wrap-thrift-guide {
+  padding: 15px 30px 24px;
+  dt {
+    font-size: $fsBase + 9px;
+    color: $colorBase;
+  }
+  dd {
+    margin-top: 4px;
+    line-height: 15px;
+    font-weight: 300;
+    font-size: $fsBase + 1px;
+    color: $colorGray;
+    &.expire-date {
+      margin-top: 8px;
+      font-weight: 400;
+      font-size: $fsBase - 1px;
+    }
+    &.expire-date:before {
+      content: '*';
+      font-weight: 400;
+      font-size: $fsBase - 1px;
+    }
+  }
+}
+/* 하루특가 */
+.wrap-banner-oneday {
+  > a {
+    margin-bottom: 15px;
+  }
+  .wrap-product-slide {
+    padding-left: 30px;
+  }
+}
+.wrap-promotion-top { // 하루 특가 상단 타이틀
+  .banner-title {
+    padding: 23px 15px 20px;
+  }
+  a {
+    display: block;
+    width: $widthFull;
+  }
+  .bg-line-brush {
+    font-size: $fsBase + 6px;
+    font-weight: 700;
+  }
+}
+.wrap-oneday-slide {
+  padding: 0 0 35px 35px;
+}
+/* 위대한 빅세일 페이지 */
+.md-product-title {
+  padding: 13px 15px 10px;
+  font-size: $fsBase + 3px;
+  border-top: 5px solid $colorBorder;
+  & + .wrap-product-list {
+    border-top-width: 1px;
+  }
+}
+.wrap-sales-banner { // 마감세일 배너
+  position: relative;
+  z-index: 1;
+  font-weight: 300;
+  color: $colorBase;
+  a {
+    display: block;
+  }
+  .text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 29px;
+    z-index: 10;
+  }
+  .title {
+    position: relative;
+    font-weight: 500;
+    font-size: $fsBase + 10px;
+    span {
+      display: inline-block;
+      &:after {
+        @include afterArrow(inline-block, 5px, 5px, $colorLightGray, 45deg);
+        margin: 0 0px 4px 9px;
+      }
+    }
+  }
+  .desc {
+    margin-top: 3px;
+    font-size: $fsBase + 1px;
+    color: $colorGray;
+    span {
+      display: inline-block;
+    }
+  }
+}
+
+/* 마감세일 상품이란 */
+.wrap-closing-sale {
+  padding: 0 20px;
+  font-size: $fsBase;
+  li {
+    &:first-child {
+      padding-top: 130px;
+      background-position: top 30px center;
+    }
+    & + li {
+      border-top: 1px solid $colorBorder;
+    }
+    padding: 125px 0 20px;
+    text-align: center;
+    h6 {
+      padding: 10px 0 5px;
+      font-size: $fsBase + 6px;
+      color: $gsfresh;
+      font-weight: 500;
+    }
+    dt {
+      padding-bottom: 18px;
+      font-size: $fsBase;
+      font-weight: 500;
+      color: $colorBase;
+    }
+    dd {
+      font-size: $fsBase;
+    }
+    &.closing-sale {
+      background-size: 100px auto;
+      background-repeat: no-repeat;
+      background-position: top 25px center;
+      @each $closing-sale in fresh bread refrigerated processed {
+        &.#{$closing-sale} {
+          background-image: url('#{$imgPath}/img_closing_sale_#{$closing-sale}.jpg');
+        }
+      }
+    }
+  }
+}
+/* 심플리쿡 식단예약 팝업 */
+.simply-reserve-popup {
+  .layer-inner {
+    height: 100%;
+    .layer-content {
+      padding: 0;
+    }
+    .scroll-area {
+      height: 100%;
+    }
+    .layer-content .scroll-area.vb-visible {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .title {
+    height: 55px;
+    line-height: 55px;
+    font-size: $fsBase + 6px;
+    color: $colorBase;
+    text-align: center;
+  }
+  .reserve-service {
+    padding-left: 30px;
+    // width: $widthFull;
+    height: 330px;
+    background:url(#{$imgPath}/img_simply_reserve_popup.png) no-repeat center center;
+    background-size: cover;
+    .reserve-header {
+      margin-top: 30px;
+      font-size: $fsBase + 17px;
+      line-height: 35px;
+      .blue-black {
+        color: $colorBase;
+      }
+      .blue-color {
+        font-weight: 700;
+        color: #245698;
+      }
+    }
+    .desc {
+      margin-top: 12px;
+      padding-top: 0px;
+      font-size: $fsBase;
+      color: $colorGray;
+      text-align: left;
+    }
+    .wrap-product-tag {
+      display: block;
+      margin: 12px 0 0 -5px;
+      width: 146px;
+      .ico-tag {
+        display: inline-block;
+        margin: 5px 0 0 5px;
+        width: 67px;
+        height: 18px;
+        font-size: $fsBase - 1px;
+        font-weight: 300;
+        line-height: 18px;
+        color: $colorBase;
+        background: #fff;
+        border-radius: 30px;
+        text-align: center;
+      }
+    }
+  }
+  .reserve-service:before {
+    display: block;
+    content: '';
+    width: 45px;
+    height: 50px;
+    background:url('#{$imgIcoPath}/ico_simply_cook_popup_info.png') no-repeat center center;
+    background-size: cover;
+  }
+  /* BEST 상품*/
+  .reserve-best {
+    margin-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    border-bottom: 5px solid #f4f6fa;
+    .wrap-promotion-info {
+      padding: 0;
+      .wrap-info-list {
+        display: inline-block;
+      }
+      .wrap-info-list .best-item {
+        display: inline-block;
+        padding: 20px 0 0;
+        width: 100px;
+        margin-left: 10px;
+      }
+      .wrap-info-list .best-item:first-child {
+        margin: 0;
+      }
+      .wrap-info-list .best-item p {
+        font-size: $fsBase - 2px;
+        color: $colorBase;
+      }
+      .wrap-info-list .best-item .item-desc {
+        margin-top: 10px;
+      }
+      .wrap-info-list .best-item .wrap-img>img {
+        border-radius: 50%;
+      }
+    }
+    .best-header:before {
+      display: block;
+      content: 'SIMPLY COOK';
+      margin-left: auto;
+      margin-right: auto;
+      width: 128px;
+      height: 29px;
+      font-size: 8px;
+      font-weight: 300;
+      line-height: 29px;
+      color: #fff;
+      background:url('#{$imgIcoPath}/ico_simply_ribbon.png') no-repeat center center;
+    }
+    .best-header {
+      margin-top: 5px;
+      text-align: center;
+      color: $colorBase;
+      .best-title {
+        margin-top: 5px;
+        font-size: $fsBase + 8px;
+        font-weight: 500;
+      }
+      .reserve-best-desc {
+        font-size: $fsBase + 1px;
+        color: $colorGray;
+      }
+    }
+  }
+  /* 식단예약 혜택 */
+  .reserve-benefit {
+    margin: 30px 20px;
+    text-align: center;
+    .reserve-best-header:before {
+      display: block;
+      content: 'SIMPLY COOK';
+      margin-left: auto;
+      margin-right: auto;
+      width: 128px;
+      height: 29px;
+      font-size: 8px;
+      font-weight: 300;
+      line-height: 29px;
+      color: #fff;
+      background:url('#{$imgIcoPath}/ico_simply_ribbon.png') no-repeat center center;
+    }
+    .reserve-best-header {
+      .reserve-benefit-title {
+        margin-top: 5px;
+        font-size: $fsBase + 8px;
+        font-weight: 500;
+        color: $colorBase;
+      }
+      .reserve-benefit-desc {
+        margin-top: 5px;
+        font-size: $fsBase + 1px;
+        color: $colorGray;
+      }
+    }
+    .wrap-box {
+      width: 320px;
+      margin: 20px auto 0 auto;
+      &:after {
+        @include content;
+      }
+      .reserve-benefit-box {
+        margin-bottom: 10px;
+        float: left;
+        width: 155px;
+        height: 205px;
+        border: 1px solid $colorBorder;
+        border-radius: 5%;
+      }
+      .reserve-benefit-box .label {
+        margin-top: 10px;
+        font-size: $fsBase + 2px;
+        font-weight: 500;
+        color: $colorBase;
+        .desc {
+          display: block;
+          padding-top: 7px;
+          font-size: $fsBase;
+          color: $colorGray;
+        }
+      }
+      .reserve-benefit-box:nth-child(2n) {
+        margin-left: 10px;
+      }
+      .reserve-benefit-box img {
+        margin: 10px auto 0 auto;
+        width: 80px;
+        height: 80px;
+      }
+    }
+    .reserve-benefit-box.first:before {
+      display: block;
+      content: '';
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 35px;
+      height: 15px;
+      background:url('#{$imgIcoPath}/ico_benefit_num_01.png') no-repeat center center;
+      background-size: contain;
+    }
+    .reserve-benefit-box.second:before {
+      display: block;
+      content: '';
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 35px;
+      height: 15px;
+      background:url('#{$imgIcoPath}/ico_benefit_num_02.png') no-repeat center center;
+      background-size: contain;
+    }
+    .reserve-benefit-box.thirth:before {
+      display: block;
+      content: '';
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 35px;
+      height: 15px;
+      background:url('#{$imgIcoPath}/ico_benefit_num_03.png') no-repeat center center;
+      background-size: contain;
+    }
+    .reserve-benefit-box.fourth:before {
+      display: block;
+      content: '';
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 35px;
+      height: 15px;
+      background:url('#{$imgIcoPath}/ico_benefit_num_04.png') no-repeat center center;
+      background-size: contain;
+    }
+  }
+  /* 서비스 이용 방법 */
+  .reserve-use-info {
+    background: #f4f6fa;
+    .reserve-use-info-header {
+      padding-top: 40px;
+      text-align: center;
+      .use-info-title {
+        font-size: $fsBase + 8px;
+        font-weight: 500;
+        color: $colorBase;
+      }
+      .use-info-desc {
+        margin-top: 5px;
+        font-size: $fsBase + 1px;
+        color: $colorGray;
+      }
+    }
+    .use-info-content {
+      margin: 15px 20px 0;
+      height: 450px;
+      ol {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        width: $widthFull;
+        li {
+          span {
+            display: inline-block;
+            padding: 0 8px;
+            margin-bottom: 6px;
+            height: 17px;
+            font-size: $fsBase - 2px;
+            line-height: 17px;
+            color: #fff;
+            background: #5899ca;
+            border-radius: 30px;
+          }
+          p {
+            font-size: $fsBase;
+            font-weight: 500;
+          }
+          @each $step in step1 step2 step3 step4 {
+            &.#{$step} {
+              background-image: url('#{$imgPath}/img_simply_reserve_popup_#{$step}.jpg');
+            }
+          }
+          position: relative;
+          width: 50%;
+          padding: 0 10px 160px 10px;
+          border-bottom: 2px solid $colorBorder;
+          background-size: 132px auto;
+          background-repeat: no-repeat;
+          background-position: center bottom;
+          &:nth-child(2n) {
+            padding: 0 10px 160px 10px;
+            &:before {
+              content: '';
+              position: absolute;
+              left: -12px;
+              bottom: 70px;
+              width: 12px;
+              height: 12px;
+              border: 1px solid #909191;
+              border-left: none;
+              border-top: none;
+              transform: rotate(-45deg);
+            }
+          }
+          & + li + li {
+            padding-top: 15px !important;
+          }
+        }
+      }
+    }
+  }
+}

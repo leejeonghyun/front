@@ -1,0 +1,1478 @@
+/* GNB. */
+// 기획전 리스트
+.promotion-list {
+  padding-bottom:20px;
+  .sub-title-tag {
+    display:block;
+    padding-left:20px;
+    color: $gsfresh;
+    font-size:14px;
+    font-weight: 500;
+  }
+  .sub-title {
+    margin-top:0;
+    padding:2px 20px 12px 20px;
+    font-size:19px;
+    font-weight:700;
+    color:#000;
+    letter-spacing: -1px;;
+  }
+  .inner-promotion {
+    position:relative;
+    overflow: hidden;
+    > a {
+      display:block
+    }
+    > a, img {
+      width:100%;
+      height:100%;
+    }
+  }
+  &.type-a {
+    .area-txt {
+      position: absolute;
+      width:100%;
+      left:0;
+      top:0;
+      padding-top:45px;
+      text-align:center;
+    }
+    .info {
+      color:#00cf7d;
+      font-size:13px;
+      font-weight: 700;
+      border-bottom:2px solid #00cf7d;
+    }
+    .title-middle {
+      padding-top:5px;
+      font-size:20px;
+    }
+    .title {
+      display:block;
+      font-size:35px;
+      font-weight:700;
+    }
+  }
+  /* TODO: product CSS 재정의 후 정의 */
+  &.type-b {
+    overflow:hidden;
+    .inner-promotion {
+      padding-bottom: 41px;
+    }
+    a {
+      height: auto;
+    }
+    .wrap-info {
+      position: absolute;
+      right:0;
+      bottom:-41px;
+      width:calc(100% - 40px);
+      height:96px;
+      padding: 17px 15px;
+      background-color:#f7f3e8;
+    }
+    .title-desc {
+      padding-top:0;
+      min-height: initial;
+      font-size:11px;
+      color:$colorGray;
+    }
+    .btn-cart, .btn-alarm {
+      position: absolute;
+      bottom: 11px;
+      right: 7px;
+    }
+    .title em {
+      padding-right:30px;
+      font-weight:500;
+      font-size:14px;
+    }
+  }
+  &.type-c {
+    overflow:hidden;
+    .btn-cart {
+      position: absolute;
+      bottom: 6px;
+      right: 6px;
+    }
+  }
+  /* TODO: product CSS 재정의 후 정의 */
+  &.type-e {
+    position:relative;
+    padding-top: 35px;
+    // margin-top:35px;
+    .wrap-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    .wrap-product-slide {
+      padding-top:0;
+      .dali-swiper-scrollbar {
+        left: 20px;
+        width: calc(100% - 20px);
+      }
+    }
+    /* TODO: 삭제 예정 */
+    /* .wrap-dali-product-list {
+      padding-left:20px;
+      width:100%;
+    }
+    .dali-swiper-scrollbar {
+      display:none;
+    }
+    .wrap-dali-product-tag, .wrap-dali-alternate {
+      display:none;
+    } */
+  }
+  &.type-d {
+    .btn-cart {
+      position: absolute;
+      bottom: 6px;
+      right: 6px;
+    }
+  }
+}
+.layout-product {
+  overflow:hidden;
+  position:relative;
+  box-sizing: border-box;
+  .dali-item-link {
+    display:block;
+    height: 100%;
+    img,figure {
+      width:100%;
+      height: 100%;;
+    }
+  }
+  .go-link-total {
+    text-align: center;
+    &:after {
+      content:'';
+      display:block;
+      position: absolute;
+      left:0;
+      top:0;
+      width:100%;
+      height:100%;
+      background:url('#{$imgIcoPath}/btn_link_more_wh.png') 50% 45% no-repeat rgba(0,0,0,0.4);
+      background-size:27px 27px;
+    }
+    em {
+      display:inline-block;
+      position: absolute;
+      left:50%;
+      top:65%;
+      font-size:11px;
+      width:30px;
+      margin-left:-15px;
+      color:#fff;
+      z-index: 1;
+    }
+  }
+  /* TODO: 삭제 예정 */
+  /* .btn-dali-cart {
+    position: absolute;
+    top:auto;
+	  bottom: 7px;
+	  right: 7px;
+	  width:40px;
+	  height:40px;
+	  background:url('#{$imgIcoPath}/btn_product_cart.png') 0 0 no-repeat;
+	  background-size:100%;
+  } */
+}
+.layout-product01 {
+  width:66.666%;
+  height:66.6vw;
+  float:left;
+  border-right:1px solid #fff;
+}
+.layout-product02 {
+  width:33.333%;
+  height:66.6vw;
+  float:right;
+  .layout-product03 {
+    height:33.3vw;
+    &:nth-of-type(2) {
+      border-top:1px solid #fff;
+    }
+  }
+}
+.layout-product04 {
+  li {
+    position:relative;
+    width:33.333%;
+    height:33.3vw;
+    box-sizing: border-box;
+    float:left;
+    &:nth-child(n+4) {
+      border-top:1px solid #fff;
+    }
+    &:nth-child(3n+2) {
+      border-right:1px solid #fff;
+      border-left:1px solid #fff;
+    }
+  }
+}
+// 카테고리 전체보기
+.btn-category-list {
+  display: block;
+  float:left;
+  width: calc(100% - 161px);
+  height: 56px;
+  position: relative;
+  z-index: 1;
+  &.active {
+    strong:after {
+      transform: rotate(180deg);
+    }
+  }
+  strong {
+    display: inline-block;
+    position: relative;
+    width: auto;
+    height: 56px;
+    padding: 19px 26px 17px 0;
+    span {
+      width: 100%;
+      @include ellipsis-into-1;
+      word-break: break-all;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      right: 2px;
+      top: calc(50% - 7px);
+      width: 19px;
+      height: 19px;
+      background: url('#{$imgIcoPath}/arw_btn_category.png') no-repeat 0 0;
+      background-size: 19px auto;
+    }
+  }
+}
+.wrap-category-list {
+  position: fixed;
+  left:0;
+  top:55px;
+  width: $widthFull;
+  height: 100%;
+  .wrap-depth02 {
+    background-color:#fff;
+    border-bottom:3px solid #00cf7d;
+    max-height: 260px;
+    > li.open {
+      border-bottom: 1px solid $colorBorder;
+      > button, > .button-a {
+        color:#05cf7d;
+        font-weight: 700;
+        text-decoration: underline;
+      }
+    }
+    &:before {
+      display: none;
+    }
+  }
+  .layer-bg {
+    position: fixed;
+    top: 55px;
+    width: 100%;
+    height: calc(100% - 55px);
+    background: rgba(0, 0, 0, .3);
+  }
+}
+.wrap-category-view {
+  .wrap-depth03 {
+    display:flex;
+    border-top:0;
+    overflow:hidden;
+    padding:0;
+    background-color:#fff;
+    border-bottom:10px solid $colorBgGray;
+    li {
+      border-bottom:1px solid $colorBorder;
+      &:nth-of-type(2n+2) > a {
+        border-right:0;
+      }
+      &:nth-child(2n-1) {
+        border-right: 1px solid $colorBorder !important;
+      }
+      > a {
+        padding: 13px 20px;
+        border-right:1px solid $colorBorder;
+        color:#000;
+      }
+    }
+  }
+}
+.wrap-certification-ingredient {
+  padding:20px 20px 25px;
+  border-bottom:10px solid $colorBgGray;
+  .btn-reflection {
+    margin:10px 0 0;
+    width:100%;
+  }
+  .filter-selected {
+    margin: 0 -20px;
+    border-bottom:0;
+  }
+}
+.ingredient-chk-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top:10px;
+  li {
+    width: 33.33%;
+    padding-bottom:12px;
+    label {
+      font-size:11px;
+      color:$colorBase;
+      padding-top:4px;
+    }
+  }
+}
+// 기획전 상세
+.promotion-title-top {
+  padding:35px 20px;
+  text-align: center;
+  background:url('#{$imgPath}/bg_promotion_title.jpg') 0 0 no-repeat;
+  background-size:cover;
+  &.special-deal {
+    background:url('#{$imgPath}/bg_specialdeal_title.jpg') 0 0 no-repeat;
+    background-size:cover;
+    .area-title  {
+      em {
+        padding-bottom:12px;
+      }
+      h2 {
+        font-size:30px;
+        color:#000;
+        span {
+          display:block;
+          font-size:14px;
+        }
+      }
+      .sub-txt02 {
+        color:#000;
+      }
+      .imp-txt {
+        color:#000;
+        border-color:#000;
+      }
+    }
+    &.special-deal.type02 {
+      background:url('#{$imgPath}/bg_specialdeal_title02.jpg') 0 0 no-repeat;
+      background-size:cover;
+      min-height: 190px;
+      .area-title {
+        text-align: left;
+        h2 {
+          color: #003135;
+          line-height: 1.1;
+          span {
+            font-size: 30px;
+            font-weight: 200;
+          }
+        }
+        .sub-txt02 {
+          color: #003135;
+        }
+        .imp-txt {
+          color: #00935d;
+          border-color: #00935d;
+        }
+      }
+    }
+  }
+  .area-title {
+    em {
+      display:block;
+      font-size:20px;
+      font-weight: 500;
+    }
+    h2 {
+      font-size:35px;
+      font-weight: 700;
+      color:#144733;
+    }
+    .sub-txt01 {
+      position:relative;
+      font-size:13px;
+      padding-top:3px;
+      padding-bottom:30px;
+      &:after {
+        content:'';
+        display:block;
+        position: absolute;
+        left:50%;
+        bottom:15px;
+        width:26px;
+        height: 1px;
+        background-color:#144733;
+        margin-left:-13px;
+      }
+    }
+    .sub-txt02 {
+      font-size:12px;
+      padding-top:13px;
+      line-height: 1.5;
+    }
+    .imp-txt {
+      color:#00cf7d;
+      border-bottom:1px solid #00cf7d;
+    }
+  }
+}
+.area-time {
+  text-align: center;
+  padding:10px;
+  h3 {
+   font-size:15px;
+  }
+  .count-timer {
+    font-size:25px;
+    margin-top:-3px;
+  }
+  .remain-num {
+    font-size: 25px;
+    color: #888;
+    font-weight: 200;
+    .total-num {
+      display:inline-block;
+      font-size: 25px;
+      font-weight: 400;
+    }
+  }
+}
+// 꼭 읽어보세요.
+.read-important {
+  li {
+    &.open {
+      .btn-accordion:after {
+        margin-top:-3px;
+        border-bottom: 1px solid #000;
+        border-left: 1px solid #000;
+        border-top:0;
+        border-right: 0;
+      }
+    }
+    .btn-accordion[aria-expanded="true"]:after {
+      margin-top:-3px;
+      border-bottom: 1px solid #000;
+      border-left: 1px solid #000;
+      border-top:0;
+      border-right: 0;
+    }
+  }
+  .btn-accordion, .title-read-important {
+    display: block;
+    width:100%;
+    padding:15px 20px;
+    text-align: left;
+    font-size:15px;
+    border-bottom:1px solid #000;
+    position:relative;
+      width:100%;
+      padding:11px 20px;
+      text-align:left;
+      font-size:17px;
+      &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        margin-top:-9px;
+        z-index: 10;
+        width: 10px;
+        height: 10px;
+        border-top: 1px solid #000;
+        border-right: 1px solid #000;
+        transform: rotate(135deg);
+      }
+  }
+  .title-read-important {
+    font-weight: 500;
+  }
+  .title-read-important:after {
+    display:none;
+  }
+  .accordion-content, .content-read-important {
+    padding:15px 20px;
+  }
+  &.type02 {
+    font-weight: 700;
+    margin-bottom: 60px;
+    .accordion-content {
+      background-color:#f3f3f3;
+    }
+  }
+}
+/* gnb 브랜드 */
+.img-button-slide {
+  padding-top: 11px;
+  padding-bottom: 12px;
+  text-align: center;
+  .active {
+    .menu-name {
+      color:$dalisalda;
+      &:after {
+        content:'';
+        display:inline-block;
+        width:100%;
+        height:1px;
+        background-color:$dalisalda;
+        position: absolute;
+        left:0;
+        bottom:-1px;
+      }
+    }
+  }
+  .menu-name {
+    display:inline-block;
+    position:relative;
+    max-width: 63px;
+    padding-top:10px;
+    font-size:11px;
+    word-break: break-all;
+  }
+  .wrap-img {
+    display: flex;
+    align-items: center;
+    border: 1px solid $colorBorder;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    overflow: hidden;
+    img {
+      display: inline-block;
+    }
+  }
+  .swiper-slide {
+    width:auto;
+    margin-right:20px;
+    &:first-of-type {
+      margin-left:20px;
+    }
+  }
+}
+.inner-overseas-product {
+  .img-button-slide {
+    .swiper-slide:first-child {
+      .wrap-img {
+        border-radius: 50%;
+        overflow: hidden;
+        border: 0;
+        img {
+          display: inline-block;
+          width: 50px;
+          height: 50px;
+          border-radius: 0;
+        }
+      }
+    }
+    .swiper-slide + .swiper-slide {
+      .wrap-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        img {
+          display: inline-block;
+          width: 20px;
+          height: auto;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}
+.wrap-dali-gnb-brand {
+  .img-button-slide {
+    padding-top:16px;
+    padding-bottom:17px;
+  }
+  .brand-name-info {
+    position:relative;
+    padding:20px;
+    text-align: left;
+    .brand-name {
+      display:inline-block;
+      font-size:23px;
+      font-weight:700;
+    }
+    .btn-it {
+      display:inline-block;
+      margin-left:10px;
+      margin-top: 10px;
+      vertical-align: top;
+    }
+    p {
+      font-size:13px;
+      font-weight:300;
+      padding:5px 0 20px;
+    }
+    .go-link-brand {
+      display:inline-block;
+      position: absolute;
+      right:20px;
+      top:25px;
+      border-bottom:1px solid #000;
+      font-size:13px;
+    }
+  }
+  .brand-product-list {
+    padding-left:20px;
+    .wrap-product-slide {
+      padding: 0;
+    }
+    .swiper-container {
+      padding-bottom:10px;
+    }
+    .dali-swiper-scrollbar {
+      display:none;
+    }
+  }
+}
+/* 오가닉 해외직구 */
+.overseas-title-top {
+  position: relative;
+  &.loop-mode {
+    .wrap-controls,
+    .swiper-number-pagination {
+      display: block;
+    }
+  }
+  .swiper-container {
+    .swiper-slide {
+      a {
+        display: flex;
+        align-items: flex-start;
+        overflow-y: hidden;
+        height: 61.112vw;
+        figure, img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .wrap-controls {
+    display: none;
+    bottom: 10px;
+  }
+  .swiper-number-pagination {
+    display: none;
+    z-index: 11;
+    left: auto;
+    right: 47px;
+    bottom: 10px;
+    padding: 4px 0 3px;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+    background-size: 11px auto;
+    background-position: center;
+    background-repeat:no-repeat;
+    &:after {
+      display:none;
+    }
+  }
+  .swiper-button-prev {
+    left: 2px;
+    background-image: url('#{$imgIcoPath}/btn_main_slide_prev.png');
+  }
+  .swiper-button-next {
+    right: 2px;
+    background-image: url('#{$imgIcoPath}/btn_main_slide_next.png');
+  }
+  // display: flex;
+  // align-items: center;
+  // padding-left: 35px;
+  // height: 225px;
+  // background: url('#{$imgPath}/bg_overseas_title.jpg') 0 0 no-repeat;
+  // background-size: cover;
+  // .area-title-btn {
+  //   width: 100%;
+  //   color: #fff;
+  //   font-size: $fsBase + 4px;
+  //   span {
+  //     display: block;
+  //   }
+  //   strong {
+  //     font-weight: 700;
+  //     line-height: 1.2;
+  //     em {
+  //       font-size: $fsBase + 12px;
+  //     }
+  //   }
+  // }
+  // .btn-go-link {
+  //   position: absolute;
+  //   left: 50%;
+  //   bottom: 22px;
+  //   transform: translateX(-50%);
+  //   border-color: rgba(#fff, .5);
+  //   color: #fff;
+  //   background: none;
+  //   padding-right: 37px;
+  //   &:after {
+  //     position: absolute;
+  //     top: 10px;
+  //     right: 18px;
+  //     @include afterArrow(inline-block, 6px, 6px, rgba(#fff, .5), 45deg);
+  //   }
+  // }
+}
+.btn-go-link, .btn-action {
+  margin-top:15px;
+  font-size:12px;
+  padding:7px 28px 5px 13px;
+  border-radius:25px;
+  border:1px solid #000;
+  background:url('#{$imgIcoPath}/btn_banner_arrow.png') right 13px top 50% no-repeat;
+  background-size:6px 9px;
+}
+.inner-overseas-product {
+  .overseas-button-slide {
+    padding-bottom:20px;
+    padding-top:20px;
+    text-align: center;
+    .wrap-img {
+      img {
+        display: inline-block;
+        width:50px;
+        height:50px;
+      }
+    }
+    .brand-name {
+      display:block;
+      width:65px;
+      padding-top:10px;
+      font-size:11px;
+    }
+  }
+}
+.txt-button-slide {
+  border-top:1px solid #e1e1e1;
+  padding:9px 0 13px;
+  .active {
+    .brand-name {
+      color:$dalisalda;
+      &:after {
+        content:'';
+        display:inline-block;
+        width:100%;
+        height:1px;
+        background-color:$dalisalda;
+        position: absolute;
+        left:0;
+        bottom:-1px;
+      }
+    }
+  }
+  .brand-name {
+    position:relative;
+    font-size:11px;
+  }
+  .swiper-slide {
+    width:auto;
+    margin-right:20px;
+    text-align: center;
+    &:first-of-type {
+      margin-left:20px;
+    }
+  }
+}
+.dalisalda .wrap-dali-filter .select-ui-double {
+  display: flex;
+}
+.dalisalda .wrap-dali-filter .select-ui-double .wrap-select-popup {
+  width:33%;
+  margin-left:0;
+  & + .wrap-btn-list-type {
+    width:33%;
+  }
+  &:nth-of-type(2) {
+    width: 34%;
+  }
+  .btn-select {
+    min-width:0;
+    height: 18px;
+    overflow-x: hidden;
+    span {
+      text-overflow: ellipsis;
+      display: block;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+}
+/* 해외직구 안내 */
+.info-overseas-purchase {
+  .sub-txt01 {
+    padding-top:33px;
+    font-size:17px;
+  }
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  &.top {
+    .area-title {
+      background :url('#{$imgPath}/bg_overseas_purchase_title01.jpg') 0 0 no-repeat;
+      text-align: center;
+      background-size:cover;
+      min-height: 220px;
+      .title {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        padding-left: 42px;
+        height: 166px;
+        width: 100%;
+        text-align: left;
+        font-size: $fsBase + 2px;
+        color: #fff;
+        span {
+          display: block;
+          width: 100%;
+          padding-bottom: 6px;
+        }
+        strong {
+          display: block;
+          width: 100%;
+          font-weight: 700;
+          line-height: 1.2;
+          font-size: $fsBase + 6px;
+          em {
+            font-size: $fsBase + 12px;
+          }
+        }
+      }
+    }
+  }
+  &.include-tab {
+    .area-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 180px;
+      padding-bottom: 54px;
+      background:url('#{$imgPath}/bg_overseas_purchase_title02.jpg') 0 0 no-repeat;
+      background-size:cover;
+      text-align: center;
+    }
+  }
+  .area-content {
+    background-color:#fff;
+    margin: -54px 20px 0 20px;
+  }
+  h3 {
+    padding:10px 0;
+    text-align: center;
+    font-weight:300;
+    .imp-txt {
+      display: inline-block;
+      padding-bottom: 2px;
+      min-width: 153px;
+      text-align: center;
+      font-weight: 700;
+      background:url('#{$imgPath}/bg_overseas_info_title.png') center bottom no-repeat;
+      background-size: 153px auto;
+    }
+  }
+}
+.process-purchase {
+  margin-top:15px;
+  margin-bottom:30px;
+  .wrap-txt {
+    display: block;
+    padding-left: 19px;
+    font-size: $fsBase - 1px;
+    strong {
+      display: block;
+      font-weight: 500;
+      font-size: $fsBase + 2px;
+      letter-spacing: -.8px;
+    }
+  }
+  .bar {
+    font-size:13px;
+    color:#144733;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 20px;
+    height: 64px;
+    margin-top:10px;
+    &:before {
+      display: flex;
+      width: 60px;
+      height: 60px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100%;
+      background-color: #fb6e52;
+      color: #fff;
+      font-weight: 500;
+      font-size: $fsBase + 6px;
+    }
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        &:before {
+          content: '0#{$i}';
+        }
+      }
+    }
+  }
+}
+.overseas-button {
+  width:100%;
+  overflow:hidden;
+  button {
+    width:50%;
+    float:left;
+    text-align: center;
+    font-size:12px;
+    font-weight: 700;
+    padding:25px 0;
+    .num {
+      display:block;
+      color:#00cf7d;
+    }
+    &.active {
+      background-color:#144733;
+      color:#fff;
+      .num {
+        color:#fff;
+      }
+    }
+  }
+}
+.pcc-info-btn {
+  text-align: center;
+  .btn-pcc-popup {
+    display:inline-block;
+    margin:-25px auto 0;
+    font-size:12px;
+    padding:6px 28px 6px 13px;
+    border-radius:25px;
+    border:1px solid #000;
+    background:url('#{$imgIcoPath}/btn_banner_arrow.png') right 13px top 50% no-repeat;
+    background-size:6px 9px;
+  }
+  figure {
+    padding-top:10px;
+  }
+}
+.pcc-issue-info {
+  padding:15px 0 25px;
+  .bar {
+    color:#000;
+  }
+  .txt-impt {
+    font-size:12px;
+    padding-top:5px;
+    padding-bottom:5px;
+  }
+  &.surtax {
+    li {
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+          background-image:url('#{$imgIcoPath}/icon_pcc_issue_list0#{$i+3}.png');
+        }
+      }
+    }
+  }
+  li {
+    padding:15px 0;
+    padding-left:60px;
+    background-position:0 15px ;
+    background-repeat:no-repeat;
+    background-size:45px;
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        @if $i == 2 {
+          border-top:1px solid #e1e4e7;
+          border-bottom:1px solid #e1e4e7;
+        }
+        background-image:url('#{$imgIcoPath}/icon_pcc_issue_list0#{$i}.png');
+      }
+    }
+    .wrap-txt {
+      font-size:12px;
+      color:#000;
+      strong {
+        display:block;
+        font-size:15px;
+        padding-bottom:5px;
+        font-weight: 700;
+        color:#144733;
+      }
+    }
+  }
+}
+.faq-list {
+  padding:20px 0 60px;
+  .faq-title {
+    display:block;
+    font-size:15px;
+    font-weight:700;
+    color:#144733;
+    padding:15px 20px;
+    background:url('#{$imgIcoPath}/icon_faq_title.png') 0 19px no-repeat;
+    background-size:13px 15px;
+  }
+  .faq-comment {
+    padding:10px 20px 18px 40px;
+    font-size:12px;
+    background:url('#{$imgIcoPath}/icon_faq_comment.png') 20px 13px no-repeat #f0f1f2;
+    background-size:13px 12px;
+    text-align:center;
+    border-top:1px solid #e1e4e7;
+    border-bottom:1px solid #e1e4e7;
+
+    > p {
+      text-align:left;
+    }
+    .imp-txt {
+      font-weight:700;
+      color:#0bcf90;
+      text-decoration:underline;
+    }
+  }
+  .imp-txt02 {
+    display:block;
+    color:#ff7b5d;
+  }
+}
+
+/* 스페셜딜 */
+// 사전예약
+.wrap-banner-free-trial {
+  position:relative;
+  a {
+    display:block;
+  }
+  p {
+    position: absolute;
+    left:0;
+    top:0;
+    padding-left:27%;
+    padding-right:20px;
+    padding-top:4.5%;
+    color:#fff;
+    font-size:15px;
+    &:after {
+      content:'';
+      display:block;
+      position: absolute;
+      right:0;
+      top:54%;
+      width:8px;
+      height:12px;
+      background:url('#{$imgIcoPath}/btn_banner_arrow_wh.png') 0 0 no-repeat;
+      background-size:100%;
+    }
+  }
+}
+.gnb-depth02 {
+  display:flex;
+  width:100%;
+  background-color:#f6f6f6;
+  text-align: left;
+  padding: 0 10px;
+  &.sticky {
+    position: fixed;
+    top:56px;
+    left:0;
+    z-index: 50;
+  }
+  a, button {
+    display:block;
+    padding:12px 0;
+    color:$colorLightGray;
+    letter-spacing: -.5px;
+  }
+  li {
+    margin:0 10px;
+    color:$colorLightGray;
+    font-size:13px;
+    a.active , button.active{
+      color:#000;
+      font-weight:700;
+      border-bottom:2px solid #00cf7d;
+    }
+  }
+}
+.dali-time-sale.oneday {
+  padding-bottom:0;
+  .inner-dali-time-sale {
+    padding-top:10px;
+    .count-timer {
+      right:20px;
+    }
+  }
+  & + .dali-time-sale.oneday {
+    padding-top: 30px;
+  }
+}
+.sub-item-title {
+  position:relative;
+  padding-top:35px;
+  padding-left:20px;
+  font-size:25px;
+  font-weight:300;
+  .title-impt {
+    font-weight:500;
+  }
+  .count-timer {
+    position: absolute;
+    right:20px;
+    bottom:-3px;
+  }
+}
+.product + .product > .dali-item.item-large {
+  padding-top:0;
+}
+.wrap-tab-promotion {
+  .wrap-hashtag {
+    padding-top: 13px;
+    height: 55px;
+    overflow: hidden;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    .promotion-hashtag {
+      padding: 0 20px 30px;
+    }
+  }
+  .ic-hashtag.active {
+    color: #144733;
+  }
+}
+/* 달리드림 멤버십 */
+.wrap-dream-pass {
+  .wrap-accordion {
+    background-color: #e9f5f1;
+    margin-bottom:0;
+  }
+  .btn-accordion {
+    padding: 13px 20px;
+    background-color: #fff;
+  }
+}
+.area-top-dream-pass {
+  position:relative;
+  .wrap-txt {
+    position: absolute;
+    top:30px;
+    left:20px;
+    h2 {
+      color:#144733;
+      font-weight: 700;
+      font-size:27px;
+    }
+    p {
+      color:#144733;
+      font-size:12px;
+      padding-top:8px;
+    }
+  }
+  .bg-brush {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 3px;
+      left: -3px;
+      right: 0;
+      z-index: 0;
+      height: 13px;
+      background: rgba(#f07542, .4);
+    }
+  }
+  .btn-dalis-brand {
+    margin:-24px auto 0;
+    width: calc(100% - 80px);
+  }
+}
+.benefit-list {
+ > li {
+   text-align: center;
+   padding:33px 20px 0;
+   > h3 {
+      font-size:22px;
+      font-weight: 700;
+      padding-top:10px;
+      padding-bottom:10px;
+      &.dali-only {
+        position: relative;
+        text-align: center;
+        padding-top:0;
+        > span {
+          display:inline-block;
+          font-size: 11px;
+          font-weight: 700;
+          color: #00cf7d;
+          border-bottom: 1px solid #00cf7d;
+        }
+      }
+   }
+   .benefit-img01 {
+     margin: 0 -10px;
+   }
+   > figure img {
+    margin:auto;
+   }
+  }
+  .benefit-num {
+    img {
+      width: 144px;
+      height: 114px;
+      margin: auto;
+    }
+  }
+}
+.accordion-content {
+  .include-division-line {
+    padding-bottom:15px;
+    margin-bottom:0;
+    &:last-of-type {
+      border-bottom:0;
+    }
+  }
+}
+.include-division-line {
+  border-bottom:1px solid #e1e1e1;
+  margin-bottom:8px;
+  .title-txt02 {
+    display:block;
+    padding:13px 0;
+  }
+}
+figure + .dot-txt.type02 {
+  margin-top:10px;
+}
+.welcome-gift-list {
+  display:flex;
+  padding-bottom:23px;
+  li {
+    margin-top:8px;
+    flex:1;
+  }
+  figure {
+    width:100px;
+    height:100px;
+    border-radius: 50%;
+    overflow:hidden;
+    margin:auto;
+  }
+  .prd-txt {
+    padding-top:8px;
+    text-align: center;
+    span, strong, em {
+      width:100%;
+      display:block;
+      font-size:12px;
+    }
+  }
+}
+.btn-apply {
+  display:block;
+  position: relative;
+  z-index: 1;
+  border-radius: 25px;
+  font-size:16px;
+  font-weight: 500;
+  text-align: center;
+  width:280px;
+  line-height: 48px;
+  margin:0 auto;
+  background-color:#144733;
+  color:#fff;
+  margin-bottom:25px;
+}
+.wrap-dream-pass {
+  .dream-pass-gift {
+    position: relative;
+    // background: url('#{$imgPath}/bg_dali_dream_select_c_title.png') 0 0 no-repeat #f5f5f6;
+    // background-size:100%;
+    // padding:50vw 20px 33px;
+    margin-top: 65px;
+    padding: 86px 20px 33px;
+    text-align: center;
+    background: url('#{$imgPath}/bg_dali_dream_select.png') no-repeat center 0;
+    background-size: 76px 67px;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 26px;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 2px;
+      background: $dalisalda;
+    }
+    h3 {
+      display:inline-block;
+      font-size:21px;
+      text-align: center;
+      font-weight: 700;
+      span {
+        display:block;
+        font-size: 12px;
+        font-weight: 500;
+      }
+    }
+    .btn-apply {
+      background-color: $dalisalda;
+    }
+    .radio-wrap .dream-pass-coupon strong {
+      text-align: center;
+    }
+  }
+}
+.dream-pass-gift {
+  .radio-wrap {
+    overflow:hidden;
+    padding-top:25px;
+    .inp-radio {
+      position:relative;
+      display:block;
+      width:calc(50% - 10px);
+      float:left;
+      padding-bottom:50px;
+      &:nth-of-type(2n+1) {
+        margin-right:20px;
+      }
+    }
+    input[type='radio'] {
+      left: 10vw;
+      bottom: 20px;
+      + label {
+        display:block;
+        position:relative;
+        width:100%;
+        height:81px;
+        padding-left:0;
+        &:before {
+          content:'';
+          display:block;
+          position: absolute;
+          left:0;
+          top:0;
+          width: calc(100% - 8px);
+          height: 81px;
+          box-sizing: border-box;
+          border-left: 5px solid #7fe7be;
+          border-top: 1px solid #7fe7be;
+          border-bottom: 1px solid #7fe7be;
+          background-color:#fff;
+        }
+        &:after {
+          content:'';
+          display:block;
+          position: absolute;
+          right:0;
+          top:0;
+          background:url('#{$imgPath}/bg_dream_pass_coupon_right.png') 0 0 no-repeat;
+          background-size:100%;
+          width:8px;
+          height:81px;
+        }
+        em {
+          position: absolute;
+          bottom: -28px;
+          left: 16vw;
+          font-size:12px;
+          font-weight: 700;
+        }
+      }
+      &:before {
+        content: '';
+        display:block;
+        position: absolute;
+        z-index: 5;
+        border-radius: 100%;
+        background-color:#fff;
+        width: 10px;
+        height: 10px;
+        top: 3px;
+        left: 3px;
+      }
+      &:checked:before {
+        background-color:#00cf7d;
+      }
+    }
+    .dream-pass-coupon {
+      position:relative;
+      padding:10px;
+      font-size:11px;
+      color:#00cf7d;
+      text-align: left;
+      strong {
+        display:block;
+        padding-top:17px;
+        font-size:20px;
+        font-weight: 700;
+        color:#00cf7d;
+      }
+    }
+  }
+}
+
+// 세이브 빅세일
+.save-title-top {
+  position:relative;
+  width:100%;
+  figure {
+    display:block;
+    img {
+      width:100%;
+    }
+  }
+  .area-title {
+    position: absolute;
+    display: table;
+    width:100%;
+    height: 100%;
+    left:0;
+    top:0;
+    padding-left:20px;
+    text-align: left;
+    .wrap-area-text {
+      display:table-cell;
+      vertical-align: middle;
+    }
+    h2 {
+      font-size:30px;
+      font-weight: 500;
+      color: #000;
+    }
+    .sub-txt {
+      font-size:13px;
+      padding-top: 12px;
+      .line-bottom {
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        &:after {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          bottom: -1px;
+          left: 0;
+          z-index: -1;
+          width: 100%;
+          height: 10px;
+          background-color: #00cf7d;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="gsecfocmuimo" basedir="../">
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties" />
+
+	<property name="PROJECT_NAME" value="gsecfocmuimo" />
+	<property name="env.PROJECT_MODE" value="${project.mode}" />
+	<property file="./deploy/${env.PROJECT_MODE}/build_${env.PROJECT_MODE}.properties" />
+
+	<echo message="${project.mode}"/>
+
+	<!-- System Properties -->
+	<property name="web.tar.dir" value="${basedir}/build/web" />
+
+
+	<target name="align">
+        <echo message="===============================================  ${work.home.dir}" />
+		<copy todir="${work.home.dir}" overwrite="yes">
+			<fileset dir="${basedir}" />
+			<mapper type="glob" from="*_${env.PROJECT_MODE}" to="*" />
+		</copy>
+	</target>
+
+	<target name="web_tar">
+		<echo>Delete directory and create directory</echo>
+		<delete dir="${web.tar.dir}" />
+		<mkdir dir="${web.tar.dir}" />
+		<tar destfile="${web.tar.dir}/web_${PROJECT_NAME}.tar" longfile="gnu">
+			<tarfileset dir="${basedir}" preserveLeadingSlashes="true">
+				<exclude name="deploy/**" />
+				<exclude name=".git" />
+			</tarfileset>
+		</tar>
+	</target>
+
+	<target name="webdeploy">
+		<echo message="web.remote.server set to = ${prop.agent.server}" />
+		<echo message="'### WEB Deploy ###" />
+		<sshexec host="${prop.agent.server}" username="${prop.agent.user}" keyfile="${prop.agent.key}" command="rm -rf ${prop.agent.dir}; mkdir -p ${prop.agent.dir}" trust="true" />
+		<scp localfile="${web.tar.dir}/web_${PROJECT_NAME}.tar" todir="${prop.agent.user}@${prop.agent.server}:${prop.agent.dir}" keyfile="${prop.agent.key}" trust="true"  verbose="true" />
+
+		<sshexec host="${prop.agent.server}" username="${prop.agent.user}" keyfile="${prop.agent.key}" command="tar xvf ${prop.agent.dir}/web_${PROJECT_NAME}.tar -C ${prop.agent.dir}; rm -rf ${prop.agent.dir}/web_${PROJECT_NAME}.tar" trust="true" />
+		<echo message="### WEB Deploy finished ###" />
+	</target>
+
+	<target name="web_deploy">
+		<foreach list="${prop.agent.server}" target="webdeploy" param="prop.agent.server" parallel="true" />
+	</target>
+
+	<target name="build_all">
+		<antcall target="align" />
+		<antcall target="web_tar" />
+		<antcall target="web_deploy" />
+	</target>
+</project>

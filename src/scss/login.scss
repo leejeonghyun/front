@@ -1,0 +1,837 @@
+.wrap-login {
+  &:not(.login-main) {
+    height: 100vh;
+  }
+  &.login-main {
+    &:not(.app-login) {
+      background: #000 url('#{$imgPath}/bg_login.jpg') no-repeat center 56px;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+    &.app-login {
+      &:not(.dalisalda) {
+        background: url('#{$imgPath}/bg_applogin_gsfresh.jpg') no-repeat center;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+      &.dalisalda {
+        /*background: url('#{$imgPath}/bg_applogin_dalisalda.png') no-repeat center;*/
+        background-color: #FFF;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+    }
+    position: fixed;
+    color: #fff;
+    // overflow-y: auto;
+    height: 100%;
+    width: 100%;
+    main {
+      position: relative;
+      height: calc(100% - 56px);
+    }
+    .login-wrap {
+      // min-height: calc(100vh - 56px);
+      height: 100%;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: none;
+      // &:after {
+      //   content: '';
+      //   position: fixed;
+      //   z-index: 0;
+      //   left: 0;
+      //   bottom: 0;
+      //   width: 100%;
+      //   height: 100px;
+      //   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+      // }
+      .section-area.login,
+      .list-info {
+        position: relative;
+        z-index: 1;
+        padding: 0 20px 20px;
+      }
+      .section-area.login {
+        .wrap-input-chk {
+         .inp-chk.bg {
+          input[type='checkbox'] + label {
+            font-size: $fsBase + 2px;
+            padding-left: 26px;
+          }
+         }
+        }
+      }
+      .list-info {
+        li {
+          text-shadow: 0 0 5px rgba(0,0,0,1);
+        }
+      }
+    }
+  }
+  .login-wrap {
+    @at-root .wrap-login {
+      &:not(.login-main) {
+        // background: #f6f6f6; 9/2 아이디/비밀번호 찾기 화면 깨짐으로 수정
+      }
+    }
+    .sub-title {
+      font-size: $fsBase + 2px;
+      font-weight: 500;
+      color: $colorBase;
+    }
+    .btn-login {
+      display: block;
+      width: $widthFull;
+      font-size: $fsBase + 5px;
+      line-height: 50px;
+      text-align: center;
+      color: #fff;
+    }
+    &.find {
+      background: none;
+      & + .section-area {
+        padding-top: 20px;
+        border-top: none;
+        .inner {
+          border-top: 1px solid $colorBorder;
+        }
+        .title {
+          padding-top: 20px;
+        }
+      }
+      &:last-child {
+        padding-bottom: 65px;
+      }
+      &.verification {
+        padding-bottom: 165px;
+      }
+      .section-area {
+        .inner {
+          margin: 0 20px;
+        }
+        .desc {
+          padding-top: 7px;
+          font-size: $fsBase;
+          color: $colorGray;
+          letter-spacing: -0.25px;
+          & + .btn-area {
+            padding-top: 20px;
+          }
+        }
+        .text-desc {
+          padding-bottom: 10px;
+          font-size: $fsBase - 1px;
+          letter-spacing: -0.25px;
+          color: $colorGray;
+        }
+      }
+      .title {
+        font-weight: 500;
+        font-size: $fsBase + 3px;
+        color: $colorBase;
+      }
+      .warp-input-txt {
+        & + .btn-area {
+          padding-top: 10px;
+        }
+      }
+      .btn-border {
+        width: $widthFull;
+        font-size: $fsBase;
+        line-height: 40px;
+        color: $gsfresh;
+        border: 1px solid $gsfresh;
+      }
+      .wrap-id-result {
+        .inner {
+          padding: 0 20px;
+        }
+        h3 {
+          padding: 30px 0 15px;
+          font-size: $fsBase + 2px;
+          text-align: center;
+          color: $colorBase;
+        }
+        .sub-btn-area {
+          padding: 0;
+          button, a {
+            height: 40px;
+            margin: 30px 0 60px;
+            font-size: $fsBase;
+            line-height: 40px;
+          }
+        }
+        .id-result-info {
+          padding-bottom: 40px;
+          text-align: center;
+          font-size: $fsBase + 2px;
+        }
+      }
+      .wrap-radio {
+        padding: 30px 0 20px;
+        text-align: center;
+        .inp-radio {
+          & + .inp-radio {
+            margin-left: 50px;
+          }
+        }
+      }
+    }
+  }
+  /* 아이디/비밀번호 찾기 링크*/
+  .list-link-find {
+    float: right;
+    li {
+      display: inline-block;
+      padding: 0 10px;
+      &:last-child {
+        padding-right: 0;
+      }
+      & + li {
+        position: relative;
+      }
+      & + li:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        margin-top:-6px;
+        left: 0;
+        width: 1px;
+        height: 12px;
+        background: $colorBorder;
+      }
+      a {
+        display: block;
+        font-size: $fsBase + 2px;
+        color: #fff;
+      }
+    }
+  }
+  .list-info {
+    margin: 0;
+    padding: 11px 20px 20px;
+    color: #fff;
+    font-size:$fsBase + 1px;
+    // background: #f6f6f6; // 2020.08.14 디자인 디벨롭 수정
+  }
+  .sub-btn-area {
+    display: flex;
+    .btn-md {
+      width: $widthFull;
+      padding: 12px 0 10px;
+      font-size: $fsBase;
+      & + .btn-md {
+        margin-left: 8px;
+      }
+    }
+  }
+}
+.section-area {
+  &.login {
+    @at-root .wrap-login {
+      &:not(.login-main) & {
+        background: #fff;
+      }
+    }
+    .inner {
+      padding: 0 20px;
+    }
+    .warp-input-txt {
+      padding-top: 30px;
+      .inp-txt {
+        padding-left: 15px;
+      }
+    }
+    /* 로그인 오류 - captcha */
+    .wrap-captcha {
+      padding-top: 13px;
+      .inp-txt {
+        padding: 2px 30px 0 10px;
+        height: 40px;
+      }
+      .desc {
+        padding-bottom: 8px;
+        font-size: $fsBase;
+      }
+      .captcha-box {
+        margin-bottom: 10px;
+        border: 1px solid $colorBorder;
+        &:after {
+          @include content;
+        }
+        .captcha {
+          float: left;
+          width: calc(100% - 55px);
+          height: 50px; // 9/22 정승탁 대리 개발 선 반영건 적용
+          img {
+            width: $widthFull;
+            height: 100%;
+          }
+        }
+        .captcha-voice {
+          width: $widthFull;
+          height: 100%;
+          background: #f6f6f6;
+          color: $colorGray;
+          .voice-desc {
+            padding-top: 40px;
+            background: url('#{$imgIcoPath}/ico_voice.png') no-repeat center 12px;
+            background-size: 12px 19px;
+            font-size: $fsBase - 1px;
+            text-align: center;
+          }
+        }
+        .btn-area {
+          float: right;
+          background: #fff;
+          &:after {
+            @include content;
+          }
+          .btn-captcha {
+            display: block;
+            width: 55px;
+            height: 50px; // 9/22 정승탁 대리 개발 선 반영건 적용
+            border-left: 1px solid $colorBorder;
+            & + .btn-captcha {
+              border-top: 1px solid $colorBorder;
+            }
+            &.ico {
+              background-repeat: no-repeat;
+              background-position: center;
+              &.refresh {
+                background-size: 16px 19px;
+                background-image: url('#{$imgIcoPath}/ico_refresh.png');
+              }
+              &.image {
+                background-size: 22px 16px;
+                background-image: url('#{$imgIcoPath}/ico_image.png');
+                &.voice {
+                  background-size: 12px 19px;
+                  background-image: url('#{$imgIcoPath}/ico_voice.png');
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .wrap-input-chk {
+      padding: 9px 0 17px;
+      .inp-chk {
+        font-size: 0;
+      }
+    }
+    .sub-btn-area {
+      padding: 0;
+    }
+    .wrap-login-tel {
+      padding: 20px 0 25px;
+      .link-login-tel {
+        display: block;
+        padding: 5px 0;
+        font-weight: 500;
+        font-size: $fsBase + 2px;
+        text-align: center;
+        color: $colorBase;
+        text-decoration: underline;
+      }
+    }
+  }
+  &.login:not(:first-child) {
+    border-top: none;
+  }
+  &.easy {
+    text-align: center;
+    .sub-title {
+      position: relative;
+      z-index: 1;
+      margin: 20px 0 30px;
+      font-size: $fsBase;
+      text-align: center;
+      color: #fff;
+      .text {
+        display: inline-block;
+        padding: 0 15px;
+        font-size: $fsBase + 2px;
+      }
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        top: 7px;
+        left: -20px;
+        z-index: -1;
+        width: calc(50% - 30px);
+        height: 1px;
+        background: rgba(255, 255, 255, .3);
+      }
+      &:after {
+        left: auto;
+        right: -20px;
+      }
+    }
+    .btn-link {
+      display: inline-block;
+      padding-right: 2px;
+      margin: 20px 0 0;
+      font-weight: 500;
+      font-size: $fsBase + 2px;
+      color: #fff;
+      span {
+        &:after {
+          @include afterArrow(inline-block, 5px, 5px, #fff, 45deg);
+          margin-bottom: 2px;
+        }
+      }
+    }
+  }
+}
+
+/* Common */
+.inp-chk {
+  &.small {
+    input[type='checkbox'] + label {
+      vertical-align: middle;
+    }
+  }
+}
+.inp-chk.type02 {
+  input[type='checkbox']:after {
+    top: -1px;
+    width: 17px;
+    height: 17px;
+    border: none;
+    background-color: transparent;
+  }
+}
+.box-user-info {
+  padding: 35px 0 40px;
+  p {
+    font-size: $fsBase + 3px;
+    text-align: center;
+    color: $colorBase;
+    & + p {
+      padding-top: 5px;
+    }
+  }
+}
+
+/* tablist > type02 */
+.wrap-tab {
+  background: #fff;
+  .tablist {
+    display: flex;
+    &.type02 {
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: $widthFull;
+        height: 1px;
+        background: $colorBorder;
+      }
+      li {
+        width: 50%;
+        height: 40px;
+        button {
+          width: $widthFull;
+          font-size: $fsBase + 2px;
+          line-height: 40px;
+          text-align: center;
+          color: $colorGray;
+          .ic-new {
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            vertical-align: text-top;
+            background: $gsfresh;
+            border-radius: 50%;
+          }
+          &.active {
+            font-weight: 500;
+            color: $gsfresh;
+            &:after {
+              display: block;
+              content: '';
+              position: relative;
+              z-index: 1;
+              top: -2px;
+              width: $widthFull;
+              height: 2px;
+              background: $gsfresh;
+            }
+          }
+        }
+      }
+    }
+    // TODO: 추후 확인
+    /* &.type03 {
+      display: flex;
+      margin: 0 20px;
+      padding-top: 20px;
+      & li {
+        width: $widthFull;
+        line-height: 40px;
+        & + li {
+          button {
+            border-left: none;
+          }
+         }
+        & button {
+          width: $widthFull;
+          font-size: $fsBase;
+          line-height: 40px;
+          text-align: center;
+          color: $colorBase;
+          border: 1px solid $colorBorder;
+          box-sizing: border-box;
+          &.active {
+            border: 1px solid $colorPointGray;
+            background: $colorPointGray;
+            color: #fff !important;
+          }
+        }
+      }
+    } */
+  }
+}
+
+/* popup */
+.full-popup-body {
+  &.login {
+    .inner {
+      padding: 40px 20px !important;
+    }
+    .sub-btn-area {
+      display: flex;
+      button {
+        &:not(.btn-md) {
+          padding: 10px 0 8px;
+          font-size: $fsBase + 2px;
+        }
+        &.btn-md {
+          // width: $widthFull;
+          // font-size: $fsBase;
+          & + .btn-md {
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+    .wrap-user-form {
+      .txt-title {
+        padding: 0;
+        font-weight: 400;
+        font-size: $fsBase + 6px;
+      }
+      .txt-desc {
+        padding-top: 15px;
+        font-size: $fsBase;
+        color: $colorGray;
+      }
+    }
+  }
+}
+.wrap-user-form {
+  .inner {
+    padding: 0 20px;
+  }
+  .txt-title {
+    .txt-name, .txt-point {
+      font-weight: 500;
+      color: $gsfresh;
+    }
+  }
+  .warp-input-txt {
+    padding-top: 25px;
+    & + .txt-notice {
+      padding: 6px 0 20px;
+    }
+    & + .sub-btn-area {
+      padding-top: 25px;
+    }
+  }
+  .txt-notice {
+    display: block;
+    font-size: $fsBase - 1px;
+    color: $colorGray;
+    span {
+      font-weight: 500;
+      color: $colorRed;
+    }
+  }
+
+  & + .sub-btn-area {
+    padding-top: 20px;
+  }
+}
+/* popup > 휴면계정 */
+.wrap-user-form.dormant {
+  .sub-btn-area {
+    padding-top: 175px;
+  }
+}
+/* popup > 아이디 생성 */
+.wrap-user-form.offline {
+  .inner {
+    padding: 40px 20px;
+  }
+}
+/* popup > 임시비밀번호 */
+.wrap-user-form.temporary{
+  .txt-title {
+    text-align: center;
+  }
+  .box-user-info {
+    margin: 20px 0;
+  }
+  .txt-notice {
+    font-size: $fsBase;
+    text-align: center;
+  }
+  .sub-btn-area {
+    padding-top: 30px;
+  }
+}
+/* crm 장애시 로그인 */
+.wrap-user-form.crm-login {
+  position: relative;
+  padding-bottom: 200px;
+  min-height: calc(100vh - 56px);
+  .inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    height: 231px;
+    text-align: center;
+    p {
+      width: $widthFull;
+    }
+    .txt-title {
+      padding-top: 0;
+    }
+    .txt-sub-desc {
+      padding-top: 15px;
+      font-size: $fsBase + 3px;
+      color: $colorGray;
+    }
+  }
+  .list-info {
+    position: absolute;
+    bottom: 0;
+    width: $widthFull;
+  }
+  .sub-btn-area {
+    padding: 0 20px;
+  }
+}
+.crm-login {
+  .floating-btn-area {
+    display: none;
+  }
+}
+/* popup > 미동의회원 로그인 */
+.agreement-layer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .layer-inner {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 300px;
+    min-height: 52px;
+    border-radius: 6px;
+    .inner-box {
+      padding: 0;
+      background-color: #fff;
+    }
+    .title {
+      padding: 40px 0 0;
+      height: auto;
+      font-weight: 500;
+      font-size: $fsBase + 2px;
+      text-align: center;
+      color: $colorBase;
+      border: none;
+    }
+    .desc {
+      padding-top: 12px;
+      font-size: $fsBase;
+      text-align: center;
+      color: $colorBase;
+    }
+    .layer-content {
+      min-height: 78px;
+      .wrap-agreement {
+        padding: 32px 20px 27px;
+      }
+    }
+  }
+  .sub-btn-area {
+    display: flex;
+    .btn-md {
+      & + .btn-md {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+/* 간편 링크 SNS */
+.list-link-sns {
+  margin: 0 -20px;
+  text-align: center;
+  &.txt-type {
+    padding: 25px 0 20px;
+    li {
+      .ico {
+        position: relative;
+        span {
+          position: absolute;
+          bottom: -20px;
+          left: 0;
+          width: 100%;
+          color: #fff;
+          text-align: center;
+          font-size: $fsBase - 2px;
+        }
+      }
+    }
+  }
+  li {
+    display: inline-block;
+    height: 40px;
+    vertical-align: top;
+    .ico {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: auto 19px;
+      background-color: #fff;
+      @each $sns-list in email naver kakaotalk facebook payco certify apple {
+        &.#{$sns-list} {
+          @if ($sns-list == 'certify') {
+            background-size: auto 22px;
+          } @else if ($sns-list == 'apple') {
+            /*background-position-y: 10px;*/
+            background-color:transparent;
+            background-size:40px auto;
+          }
+          background-image: url('#{$imgIcoPath}/ico_link_#{$sns-list}.png');
+        }
+      }
+    }
+    &.link-certify {
+      position: relative;
+      .tag {
+        position: absolute;
+        top: -37px;
+        left: 0;
+        z-index: 10;
+        min-width: 156px;
+        height: 24px;
+        padding: 5px 30px 3px 10px;
+        font-size: $fsBase - 2px;
+        text-align: left;
+        letter-spacing: -0.25px;
+        background: #f2fee8;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 20px;
+        &.gsfresh {
+          color: $gsfresh;
+          border-color: $gsfresh;
+          &:before {
+            border-color: $gsfresh transparent;
+          }
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: -7px;
+          left: 15px;
+          width: 10px;
+          height: 8px;
+          background:url('#{$imgPath}/img_login_bubble_gsfresh.png') no-repeat 0 0;
+          background-size: 10px 8px;
+        }
+        .btn-close {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 29px;
+          height: 100%;
+          background-image: url('#{$imgIcoPath}/ico_tooltip_close_gsfresh.png');
+          background-position: center center;
+          background-size: 9px;
+        }
+      }
+    }
+    & + li {
+      margin-left:7px;
+    }
+  }
+}
+
+.login-top-bn {
+  margin:0 -20px -18px;
+  padding-top:40px;
+  .link-benefit {
+    display:block;
+    line-height:48px;
+    height:48px;
+    text-align:center;
+    border-radius:24px;
+    background-color:rgba(0,0,0,.7);
+    letter-spacing:-1.2px;
+    color:#fff;
+    font-size:$fsBase + 1px;
+    .text-benefit {
+      color:$gsfresh;
+    }
+    .blt-link {
+      display:inline-block;
+      width:15px;
+      height:15px;
+      background-color:#fff;
+      border-radius:50%;
+      position:relative;
+      text-align:center;
+      vertical-align:middle;
+      margin-left:6px;
+      top:-1px;
+      &:after {
+        position:absolute;
+        top:5px;
+        left:4px;
+        display: inline-block;
+        content: '';
+        width:4px;
+        height:4px;
+        border:solid rgba(0,0,0,.7);
+        border-width: 1px 1px 0 0;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        vertical-align:middle;
+      }
+    }
+  }
+}
+.link-join-a {
+  display:block;
+  margin-top:18px;
+  height:48px;
+  text-align:center;
+  font-size:$fsBase + 4px;
+  color:$gsfresh;
+  font-weight:600;
+  line-height:48px;
+  background-color:#fff;
+}

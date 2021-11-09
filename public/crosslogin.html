@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CrossDomain</title>
+</head>
+
+<body>
+  <script>
+
+    function getFirstDomain() {
+      const host = location.host;
+      if (host.indexOf('localhost') > -1) {
+        return 'localhost';
+      }
+
+      let isLocal = false;
+      try {
+        isLocal = process.env.VUE_APP_MODE === 'local';
+      } catch (e) {}
+
+      if (isLocal) {
+        const list = host.split(':');
+        if (list.length > 0) {
+          return list[0];
+        } else {
+          return host;
+        }
+      } else {
+        const list = host.split('.');
+        if (list.length > 2) {
+          list.splice(0, 1);
+        }
+        let firstDomain = '.' + list.join('.');
+        firstDomain = firstDomain.split(':').splice(0, 1).join('');
+        return firstDomain;
+      }
+    }
+
+    function setCookie(cookieName, value, exdays) {
+      const exdate = new Date();
+      exdate.setDate(exdate.getDate() + exdays);
+      const firstDomain = getFirstDomain();
+      let cookieValue =
+        window.btoa(escape(value)) + '; domain=' + firstDomain + '; path=/' + (exdays == null ? '' : '; expires=' + exdate.toUTCString());
+
+      try {
+        if (firstDomain !== 'localhost' && process.env.VUE_APP_MODE !== 'local') {
+          cookieValue += ';samesite=none; secure';
+        }
+      } catch (e) {
+        cookieValue += ';samesite=none; secure';
+      }
+      document.cookie = cookieName + "=" + cookieValue;
+    }
+
+    function deleteCookie(cookieName) {
+      setCookie(cookieName, '', -1);
+
+      if (window.localStorage) {
+        window.localStorage.removeItem(cookieName);
+      }
+    }
+
+    function storeCookie(token) {
+      let isLocal = false;
+      try {
+        isLocal = process.env.VUE_APP_MODE === 'local';
+      } catch (e) {}
+
+      if (getFirstDomain() !== 'localhost' && !isLocal) {
+        deleteCookie('id_token');
+        deleteCookie('refresh_token');
+      }
+      localStorage.setItem('refresh_token', token);
+      setCookie('accounts_refresh_token', token, 1);
+      console.log('token stored...');
+    }
+
+    window.addEventListener('message', function (event) {
+      if (event.data && event.data.refresh_token) {
+        console.log('window.addEventListener:crosslogin:requested');
+        setTimeout(function() {
+          event.source.postMessage('YLOGIN', event.origin);
+          console.log('window.addEventListener:crosslogin:return');
+        }, 3000);
+        storeCookie(event.data.refresh_token);
+        event.source.postMessage('YLOGIN', event.origin);
+        console.log('window.addEventListener:crosslogin:return');
+
+      }
+    }, false);
+    console.log('window.addEventListener:crosslogin');
+
+  </script>
+</body>
+
+</html>

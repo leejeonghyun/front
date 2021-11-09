@@ -1,0 +1,1319 @@
+/* 공통 */
+.wrap-wine25 {
+  .wrap-full-popup {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    width: $widthFull;
+    height: 100%;
+    background: #fff;
+    .btn-layer-close { // 햄버거 메뉴 닫기
+      position: absolute;
+      top: 19px;
+      right: 15px;
+      width: 20px;
+      height: 20px;
+      background: url('#{$imgIcoPath}/ico_sidebar_close.png') no-repeat center;
+      background-size: 15px 15px;
+    }
+    .full-popup-body {
+      position: relative;
+      height: calc(100% - 56px);
+      .bottom-btn-area {
+        margin-top: 20px;
+        padding: 0 20px 20px 20px;
+      }
+    }
+    .header-popup {
+      min-height: 57px;
+      padding: 18px 0 13px;
+      font-size: $fsBase + 6px;
+      line-height: 1.4;
+      text-align: center;
+      color: $colorBase;
+      border-bottom: 1px solid $colorBorder;
+    }
+  }
+  // Floating-btn-area
+  &:not(.non-floating-btn) {
+    .floating-btn-area.dafault { //TODO: 오타 수정 해야 함
+      bottom: 70px;
+    }
+  }
+
+  // 버튼
+  .wine {
+    &.btn-border {
+      min-width: 84px;
+      width: 119px;
+      height: 36px;
+      font-size: 14px;
+      font-weight: 500;
+      border-color: #71788e;
+    }
+  }
+  .area-btn {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    button {
+      flex: 1;
+      height: 48px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 46px;
+      border: 1px solid;
+      border-radius: 8px;
+      & ~ button {
+        margin-left: 10px;
+      }
+      &.strong {
+        border-color: #ff7759;
+        background-color: #ff7759
+      }
+      &.normal {
+        border-color: #71788e;
+        background-color: #555;
+      }
+      &.more {
+        color: #71788e;
+        border-color: #71788e;
+        > em {
+          position: relative;
+          display: inline-block;
+          padding-right: 20px;
+          line-height: 46px;
+          &:after {
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            top: 40%;
+            content: '';
+            margin-left: 10px;
+            width: 7px;
+            height: 7px;
+            border-left: 1px solid #71788e;
+            border-bottom: 1px solid #71788e;
+            transform: rotate(-45deg);
+          }  
+        }   
+      }
+    }
+  }
+  // input type text
+  .input-text-wine {
+    display: inline-block;
+    vertical-align: top;
+    input {
+      width: 100%;
+      height: 34px;
+      border-radius: 8px;
+      background-color: #f5f5f5;
+    }
+  }
+  // 체크박스
+  .inp-chk-wine {
+    position:relative;
+    display:inline-block;
+    vertical-align:middle;
+    line-height: 1;
+    input[type='checkbox'] {
+      position: absolute;
+      top: 50%;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin: -10px 0 0;
+      padding: 0;
+      border: 0;
+      vertical-align: top;
+      border-radius: 0;
+      appearance: none;
+      -webkit-appearance: none;
+      &:after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        border: 1px solid #b2b2b2;
+        background: #fff;
+        border-radius: 4px;
+      }
+      &:before {
+        @include content;
+        position: absolute;
+        z-index: 1;
+        left: 4px;
+        top: 4px;
+        width: 9px;
+        height: 5px;
+        transform: rotate(-45deg);
+      }
+      &:checked:before {
+        border: 2px solid #333;
+        border-right: 0;
+        border-top: 0;
+      }
+      & + label {
+        display: inline-block;
+        padding-left: 30px;
+        font-size: 14px;
+        line-height: 20px;
+        vertical-align: top;
+      }
+      &:disabled:after {
+        background-color: transparent;
+      }
+      &:disabled:before {
+        border-color: $colorBorder;
+      }
+    }
+    &.small {
+      input[type='checkbox'] {
+        margin: -13px 0 0;
+        & + label {
+          padding-left: 27px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  // input 레이아웃
+  .wrap-fieldset {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    & > :first-child {
+      width: calc(100% - 120px);
+      > input {
+        width: calc(100% - 5px);
+      }
+    }
+    & > :last-child {
+      margin-left: 10px;
+      width: 120px;
+    }
+  }
+  // 글자
+  .essential {
+    font-size: inherit;
+    font-weight: 700;
+    color: #ff7759;
+  }
+  .h-title {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #333;
+    & ~ & {
+      margin-top: 20px;
+    }
+    &:after {
+      @include content;
+    }
+    > strong {
+      display: inline-block;
+      padding-top: 12px;
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: 1.1;
+    }
+    .inp-chk-wine input[type="checkbox"] + label {
+      font-size: inherit;
+      font-weight: inherit;
+    }
+    .h-sub-title {   
+      display: inline-block;
+      padding-left: 12px;
+      font-size: 14px;
+      font-weight: 400;
+      &:before {
+        content: '';
+        display: inline-block;
+        margin-right: 12px;
+        margin-top: -2px;
+        width: 1px;
+        height: 20px;
+        background-color: #979797;
+        vertical-align: middle;
+      }
+    }
+    .essential {
+      margin-left: 2px;
+    }
+    .wine.btn-border {
+      float: right;
+      width: 84px;
+    }
+  }
+  .visual-title {
+    font-size: 23px;
+    line-height: 32px;
+    text-align: center;
+  }
+  // 문단
+  .area-desc {
+    position: relative;
+    padding-left: 20px;
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: -1px;
+    color: #777;
+    word-break: keep-all;
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 8px;
+      left: 12px;
+      width: 2px;
+      height: 2px;
+      border-radius: 50%;
+      background-color: #333;
+    }
+    & + & {
+      margin-top: 0;
+    }
+  }
+  // 기본 레이아웃
+  .wrap-wine25-section {
+    padding: 0 10px;
+  }
+  .line {
+    border-top: 1px solid $colorBorder;
+  }
+  // 하단 픽스 버튼
+  .wrap-wine-bottom-btn {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    box-shadow: 0 -3px 12px 0 rgba(150, 150, 150, 0.5);
+    &.reserved {
+      box-shadow: none;
+    }
+    button {
+      width: 30%;
+      font-size: 16px;
+      font-weight: 700;
+      &.btn-bg {
+        &.wine {
+          background: #ff7759;
+          color: #fff;
+        }
+        &.white {
+          background: #fff;
+          color: #71788e;
+          border-top:1px solid #b2b2b2;
+        }
+        &.total {
+          width: 100%;
+          font-size: 14px;
+          line-height: 50px;
+          color: #fff;
+          background: rgba(38, 41, 50, .9);
+          > span {
+            > em {
+              margin-left: 4px;
+              font-size: 20px;
+              color: #fe3e00;
+            }
+          }
+          > i {
+            position: relative;
+            display: inline-block;
+            margin-right: 5px;
+            width: 16px;
+            height: 16px;
+            background-color: #f0f1f5;
+            border-radius: 50%;
+            vertical-align: text-top;
+            &:before,
+            &:after {
+              content: '';
+              position: absolute;
+              left: 4px;
+              display: inline-block;
+              width: 8px;
+              height: 1px;
+              background-color: #3c3e47;
+            }
+            &:before {
+              top: 5px;
+            }
+            &:after {
+              top: 10px;
+            }
+          }
+        }
+      }
+      & + button {
+        width: 70%;
+      }
+    }
+  }
+  // 팝업
+  .popup-wine25 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .layer-inner {
+      position: relative;
+      width: 300px;
+      min-height: 52px;
+      .layer-content {
+        position: relative;
+      }
+      .inner-box {
+        position: relative;
+        padding: 0;
+        min-height: 78px;
+        font-size: 11px;
+        border-radius: 6px;
+        background-color: #fff;
+      }
+      .title {
+        padding: 15px 15px 0 15px;
+        color: #333;
+        h3 {
+          padding: 0;
+          font-size: 18px;
+          color: #333;
+        }
+      } 
+    }
+    .btn-popup-close {
+      position: absolute;
+      top: 15px;
+      right: 16px;
+      width: 23px;
+      height: 23px;
+      background: url('../wine25/assets/images/icon/btn_closed_pop.png') no-repeat center center;
+      background-size: 17px auto;
+    }
+  }
+  /* 상품목록 */
+  // 상품목록 상단
+  .wrap-wine-list-top {
+    height: 60px;
+    .wrap-inp-chk {
+      font-size: 0;
+      span:not(.inp-chk-wine) {
+        display: inline-block;
+        position: relative;
+        padding-left: 24px;
+        font-size: 14px;
+        strong {
+          color: #f44300;
+          font-weight: 700;
+        }
+        &::before {
+          @include content;
+          position: absolute;
+          left: 12px;
+          top: -2px;
+          width: 1px;
+          height: 20px;
+          background: #979797;
+        }
+      }
+    }
+  }
+  // 상품목록
+  .wrap-wine-list {
+    width: 100%;
+    background: #f6f6f6;
+    .tab-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      li {
+        flex: 1;
+        justify-content: center;
+        align-items: center;      
+      }
+      button {
+        padding-top: 1px;
+        width: 100%;
+        font-size: 15px;
+        color: $colorLightGray;
+        text-align: center;
+        line-height: 42px;
+        border: 1px solid #e5e5e5;
+        border-bottom: 1px solid #7aa2fd;
+        background: #f7f7f7;
+        &.active {
+          font-weight: 700;
+          color: #7aa2fd;
+          border-color: #7aa2fd;
+          border-bottom-color: transparent;
+          background-color: #fff;
+        }
+      }
+    }
+    .tab-contents {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .wine-product {
+      padding-top: 20px;
+      width: calc(50% - 5px);
+      .pickup-item {
+        margin-top: 8px;
+        background: #fff;
+        border-radius: 8px;
+        a {
+          width: 100%;
+          overflow: hidden;
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+          img {
+            width: 100%;
+          }
+        }
+      }
+      .item-txt {
+        padding: 15px 7px 13px;
+        height: 215px;
+        .production-origin {
+          @include ellipsis-into-1;
+          font-size: 12px;
+          letter-spacing: -1.4px;
+          strong {
+            color: #f44300;
+            padding-right: 3px;
+          }
+          em {
+            color: #777;
+          }
+        }
+        .production-tit {
+          @include ellipsis-into-2;
+          padding-top: 5px;
+          height: 37px;
+          line-height: 1.2;
+          letter-spacing: -1.2px;
+          font-size: 14px;
+          font-weight: 500;
+        }
+        .production-desc {
+          @include ellipsis-into-3;
+          height: 52px;
+          padding-top: 4px;
+          font-size: 12px;
+          color: #777;
+        }
+        .production-price {
+          padding-bottom: 17px;
+          font-size: 12px;
+          color: $colorLightGray;
+          strong {
+            font-size: 20px;
+            font-weight: 700;
+            color: $colorBase;
+            padding-right: 2px;
+          }
+        }
+        .option-number {
+          float: initial;
+          .txt-number {
+            font-size: 16px;
+            font-weight: 700;
+          }
+        }
+        .item-bottom-btn {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          // text-align: right;
+        }
+        .direct-reserv {
+          width: 50px;
+          height: 27px;
+          padding: 4px 0 2px;
+          border-radius: 27px;
+          background: #707070;
+          font-size: 14px;
+          color: #fff;
+        }
+      }
+    }
+  }
+  // 와인예약안내
+  .wrap-wine25-info {
+    &.active {
+      .layer-inner {
+        bottom: 0;
+      }
+      .layer-bg {
+        opacity: 1;
+        // transition: opacity .25s;
+      }
+    }
+    &.h-auto {
+      height: auto;
+    }
+    position: fixed;
+    z-index: 100;
+    bottom: -100%;
+    width: 100%;
+    height: auto;
+    // opacity: 0;
+    transition: all .25s;
+    .btn-layer-close {
+      top: 28px;
+      // top: 12px;
+      // right: 12px;
+    }
+    .layer-inner {
+      position: relative;
+      height: 100%;
+      z-index: 1;
+      background: #f6f2ed;
+      padding-bottom: 20px;
+      border-radius: 18px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .layer-bg {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,.4);
+      opacity: 0;
+      transition: opacity .25s;
+    }
+    .wine25-info-title {
+      padding-bottom: 20px;
+      text-align: center;
+      h3 {
+        padding-top: 33px;
+        font-size: 24px;
+        font-weight: 700;
+      }
+      .desc {
+        padding-top: 16px;
+        font-size: 14px;
+        font-weight: 700;
+      }
+    }
+    .wine25-info-list {
+      &.icon-list {
+        display: flex;
+        justify-content: space-between;
+        padding: 22px 0;
+        border-top: 1px solid #979797;
+        border-bottom: 1px solid #979797;
+        font-size: 14px;
+        strong {
+          font-weight: 700;
+          letter-spacing: -1.5px;
+        }
+        span {
+          display: block;
+          font-size: 16px;
+          font-weight: 700;
+          text-align: center;
+        }
+        li {
+          padding-top: 51px;
+          @each $icon in time reciept store {
+            &.#{$icon} {
+              background-image: url('../wine25/assets/images/icon/icon_#{$icon}.png');
+            }
+          }
+          background-repeat: no-repeat;
+          background-position: center top;
+          background-size: 36px auto;
+          &.reciept {
+            background-size: 29px auto;
+          }
+        }
+      }
+      &.txt-list {
+        padding-top: 23px;
+        letter-spacing: -.5px;
+        > li {
+          padding: 4px 0 0 20px;
+          background: url('../wine25/assets/images/icon/icon_mark.png') left top 5px no-repeat;
+          background-size: 13px auto;
+          font-size: 12px;
+          .txt-list-inner {
+            li {
+              position: relative;
+              padding-left: 10px;
+              &::before {
+                @include content;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                width: 2px;
+                height: 2px;
+                border-radius: 50%;
+                background: #333;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .wine25-copyright {
+      padding-top: 10px;
+      margin-top: 20px;
+      border-top: 1px solid #ddd;
+      &:after {
+        @include content;
+      }
+      > span {
+        float: right;
+        font-size: 12px;
+        color: #555;
+      }
+    }
+  /* 예약목록, 예약내역, 예약완료 */
+  .wrap-wine-list,
+  .wrap-select-store, 
+  .wrap-reserve-panel,
+  .wrap-reserve-done {
+    padding-bottom: 20px;
+  }
+  // 정보 박스 style 1
+  .area-statement {
+    padding: 12px 15px 8px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    &:after {
+      @include content;
+    }
+    .heading {
+      float: left;
+      margin-bottom: 4px;
+      width: 90px;
+    }
+    > strong {
+      display: block;
+      padding-right: 5px;
+      margin-left: 90px;
+      margin-bottom: 4px;
+      letter-spacing: -1px;
+    }
+    .detail {
+      position: relative;
+      padding-right: 32px;
+      font-weight: 700;
+      text-decoration: underline;
+      &:after {
+        display: inline-block;
+        content: '';
+        position: absolute;
+        top: -2px;
+        right: 0;
+        width: 24px;
+        height: 24px;
+        background: url('../wine25/assets/images/icon/icon_link.png') no-repeat center right;
+        background-size: 100% auto;
+      }
+    }
+    > ul li {
+      position: relative;
+      padding-left: 6px;
+      margin-bottom: 4px;
+      font-size: 13px;
+      color: #343434;    
+      letter-spacing: -1px;
+      word-break: keep-all;
+      &:after {
+        content: '';
+      display: block;
+        position: absolute;
+        top: 8px;
+        left: -2px;
+        width: 2px;
+        height: 2px;
+        border-radius: 50%;
+        background-color: #333;
+      }
+    }
+  }
+  // 정보 박스 style 2 
+  .area-inform {
+    overflow-y: auto;
+    padding: 15px 18px 16px 14px;
+    height: 160px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+  }
+  // 약관
+  .term-content {
+    line-height: 20px;
+    word-break: keep-all;
+    .title {
+      margin-bottom: 4px;
+      font-size: 14px;
+      font-weight: 700;
+      & ~ .title {      
+        margin-top: 20px;
+      }
+    }
+    p {
+      font-size: 12px;
+    }
+    ul {
+      margin-top: 4px;
+      li {
+        position: relative;
+        padding-left: 8px;
+        font-size: 12px;
+        color: #333;
+        letter-spacing: -.5px;
+        line-height: 20px;
+        &:before {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          top: 8px;
+          left: 0px;
+          width: 2px;
+          height: 2px;
+          border-radius: 1px;
+          background-color: #333;
+        }
+      }
+    }
+    table {
+      width: 100%;
+      margin: 20px 0;
+      border: 1px solid #ababab;
+      font-size: 12px;
+      color: #333;
+    }
+    th {
+      padding: 2px 3px;
+      border: 1px solid #ababab;
+      font-weight: 700;
+      vertical-align: middle;
+    }
+    td {
+      padding: 2px 3px;
+      letter-spacing: -1px;
+      border: 1px solid #ababab;
+      .txt-underline {
+        font-weight: 700;
+        text-decoration: underline;
+      }
+    }
+  }
+  // 예약목록
+  .wrap-wine-reserved-list {
+    &:after {
+      @include content;
+    }
+    &.type-desc {
+      .wine-product {
+        height: 140px;
+      }
+      .item-bottom-btn, 
+      .btn-delete {
+        display: none;
+      }
+    }
+    &.type-option {
+      .wine-product {
+        height: 154px;
+      }
+      .length {
+        display: none;
+      }
+    }
+    .wine-product {
+      position: relative;
+      padding-left: 15px;
+      border-radius: 8px;
+      background-color: #f0ece8;
+      &.wine-product {
+        margin-top: 10px;
+      }
+      .btn-delete {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 24px;
+        height: 24px;
+        background: url('../wine25/assets/images/icon/btn_delete.png') no-repeat center center;
+        background-size: 100% auto;
+      }
+    }
+    figure {
+      float: right;
+      margin-left: -15px;
+      height: 100%;
+      > img {
+        width: auto;
+        height: 100%;
+        border-radius: 0 8px 8px 0;
+      }
+    }
+    .reserved-item {
+      width: calc(100% - 125px);
+      .name {
+        padding-top: 19px;
+        font-size: 14px;
+        letter-spacing: -2px;
+      }
+      .desc {
+        display: flex;
+        padding-top: 0;
+        margin-top: 4px;
+        font-size: 13px;
+        color: #666;
+        .type {
+          color: #f44300;
+          & ~ span {
+            margin-left: 4px;
+          }
+        }
+      }
+      .length {
+        margin-top: 6px;
+        font-size: 13px;
+        color: #777;
+      }
+      .price {
+        margin-top: 10px;
+        font-size: 12px;
+        color: #777;
+        > em {
+          font-size: 24px;
+          font-weight: 700;
+          color: #333;
+        }
+      }
+      .item-bottom-btn {
+        margin-top: 12px;
+        .option-number {
+          display: inline-block;
+          float: none ;
+          padding-right: 13px;
+        }
+        .direct-reserve {
+          width: 50px;
+          font-weight: 700;
+          line-height: 30px;
+          border-radius: 8px;
+          background-color: #e0dfde;
+        }
+      }
+      .option-number .txt-number {
+        font-size: 16px;
+        font-weight: 700;
+      }
+    }
+  }
+  // 최종 예약 금액
+  .area-total-price {
+    padding: 0 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 48px;
+    line-height: 46px;
+    border: 1px solid #71788e;
+    border-radius: 8px;
+    &:after {
+      @include content;
+    }
+    .title {
+      float: left;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .price {
+      display: block;
+      margin-left: 100px;
+      font-size: 13px;
+      text-align: right;
+      > em {
+        font-size: 19px;
+        font-weight: 700;
+        color: #f44300;
+      }
+    }
+  }
+  // 예약내역 링크
+  .wrap-reserve-link {
+    ul {
+      display: flex;
+      align-items: center;
+    }
+    li {
+      flex: 1;
+      height: 75px;
+      background-color: #f3f3f3;
+      &.reserve-ing {
+        .length {
+          color: #f44300;
+        }
+      }
+      & ~ li {
+        button {
+          position: relative;
+          &:before {
+            display: block;
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 1px;
+            height: 40px;
+            background-color: #ddd;
+            transform: translateY(-50%);
+          }
+        }
+      }
+      > button {
+        width: 100%;
+        height: 100%;
+        font-size: 14px;      
+        .length {
+          display: block;
+          font-size: 23px;
+          font-weight: 700;
+          line-height: 1.1;
+        }
+      }
+    }
+  }
+  
+  /* 빈예약 내역 */
+  .non-reservation {
+    padding: 73px 59px 20px;
+    min-height: 520px;
+    > figure {
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 35px;
+      width: 198px;
+      height: 198px;
+      > img {
+        border-radius: 50%;
+      }
+    }
+    .area-btn {
+      margin-top: 40px;
+    }
+  }
+  /* 수령점포 찾기 */
+  @at-root .popup-full-wine25 {
+    &.h100 {
+      .inner-full-popup {
+        height: 100%;
+      }
+      .wrap-store-search-result {
+        overflow: hidden;
+        height: 100%;
+      }
+    }
+    .wrap-store-search-result {
+      padding-top: 50px;
+      .wrap-store-spot {
+        position: relative;
+        height: 100%;
+        .area-map {
+          position: relative;
+          height: 100%;
+        }
+      }
+    }
+  }
+  .wrap-map-nav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 100; // 2020.08.19 지도 영역보다 상위로 올라와야해서 올림
+  }
+  .wrap-store-search-method {
+    > ul {
+      display: flex;
+    }
+    .list {
+      flex: 1;
+      align-items: center;
+      height: 50px;
+      border-bottom: 1px solid #bdbdbd;
+      background-color: #fff;
+      & ~ .list {
+        position: relative;
+        &:before {
+          display: block;
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          width: 1px;
+          height: 25px;
+          transform: translateY(-50%);
+          background-color: #dbdbdb;
+        }
+      }
+      &.active {
+        button {
+          color: #f44300;
+          font-weight: 700;
+        }
+      }
+      button {
+        width: 100%;
+        height: 100%;
+        font-size: 14px;
+        &.active {
+          color: #f44300;
+        }
+      }
+    }
+  }
+  // 주소로 찾기 - select box
+  .wrap-select-address {
+    display: flex;
+    align-items: center;
+    > li {
+      position: relative;
+      flex: 1;
+      height: 50px;
+      border-bottom: 1px solid #bdbdbd;
+    }
+    .btn-select-value {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      font-size: 13px;
+      background-color: #fff;
+      &:after {
+        @include afterArrow(block, 6px, 6px, #333, 135deg);
+        position: absolute;
+        right: 10px;
+        top: 18px;     
+        z-index: 2; 
+      }
+    }
+    .wrap-modal-select {    
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      &:after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .list-address {
+      padding: 10px 0;
+      border-left: 1px solid #dbdbdb;
+      border-bottom: 1px solid #dbdbdb;
+      border-right: 1px solid #dbdbdb;
+      background-color: #fff;
+      z-index: 2;
+      &.type-scroll {
+        overflow-y: auto;
+        left: 50%;
+        height: 250px;
+      }
+      button {
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+        font-size: 13px;
+        &.active {
+          color: #f44300;
+        }
+      }
+    }
+  }
+  // 점포명 찾기 - input text
+  .wrap-search-name {
+    position: relative;
+    background-color: #fff;
+    input {
+      padding: 0 50px;
+      width: 100%;
+      height: 50px;
+      border-bottom: 1px solid #dbdbdb;
+      box-sizing: border-box;
+      font-size: 14px;
+      color: #666;
+      text-align: center;
+    }
+    button {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      width: 30px;
+      height: 30px;
+      background: url('../wine25/assets/images/icon/icon_search.png') no-repeat center center;
+      background-size: 21px auto;
+      transform: translateY(-50%);
+    }
+  }
+  
+  /* 수령점포 - 검색결과 */
+  .wrap-store-search-result {
+    padding-top: 50px;
+    .wrap-store-spot {
+      position: relative;
+      height: 100%;
+      .area-map {
+        position: relative;
+        height: 100%;
+      }
+    }
+  }
+  // 툴 팁
+  .area-tip {
+    width: 210px;
+    min-width: 210px;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.73);
+    border-radius: 9px;
+    .tit {
+      height: auto;
+      font-size: 14px;
+      font-weight: 700;
+      color: #ff7541;
+      text-align: center;
+      white-space: normal;
+      padding: 16px 30px 0;
+    }
+    .btn-closed {
+      position: absolute;
+      top: 7px;
+      right: 7px;
+      width: 20px;
+      height: 20px;
+      background: url('../wine25/assets/images/icon/btn_closed.png') no-repeat center center;
+      background-size: 13px auto;
+    }
+    .body {
+      position: relative;
+      height: auto;
+      box-sizing: border-box;
+      padding: 6px 10px 16px;
+      text-align: center;
+      .store-address {
+        display: block;
+        font-size: 12px;
+        font-weight: 700;
+        color: #fff;
+        word-break: keep-all;
+      }
+      .store-number {
+        display: block;
+        margin-top: 7px;
+        font-size: 12px;
+        color: #fff;
+      }
+    }
+  }
+  // 점포명 찾기
+  .area-store-list {
+    padding-top: 50px;
+    background-color: #fff;
+  }
+  .area-store-inform {
+    padding-top: 86px;
+    margin-top: 90px;
+    font-size: 13px;
+    color: #333;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: -.5px;
+    background: url('../wine25/assets/images/icon/icon_inform_store.png') no-repeat top center;
+    background-size: 43px;
+    > strong {
+      display: block;
+      font-weight: 700;
+    }
+  }
+  // 점포명 찾기 - 검색결과가 있을 경우
+  .store-list {
+    padding: 0 15px;
+    background-color: #fff;
+    li {
+      padding: 15px 5px;
+      border-bottom: 1px solid #dbdbdb;
+    }
+    .list {
+      display: table;
+      width: 100%;
+      .ly-inner {
+        display: table-row;
+      }
+    }
+    .content {
+      display: table-cell;
+      &.infrom {
+        padding-right: 15px;
+      }
+    }
+    .tit {
+      font-size: 13px;
+      font-weight: 700;
+      color: #333;
+      line-height: 20px;
+    }
+    address {
+      font-size: 12px;
+      color: #333;
+      line-height: 20px;
+      word-break: keep-all;
+    }
+    .location {
+      width: 103px;
+      vertical-align: middle;
+      > button {
+        padding-left: 35px;
+        height: 26px;
+        line-height: 26px;
+        font-size: 12px;
+        font-weight: 700;
+        text-decoration: underline;
+        background: url('../wine25/assets/images/icon/icon_map_marker_gray.png') no-repeat center left;
+        background-size: 16px auto;
+      }
+    }
+  }
+  // 팝업 - 지도보기
+  .area-spot {
+    .area-map {
+      overflow: hidden;
+      height: 357px;
+      border-radius: 0 0 6px 6px;
+    }
+  }
+  
+}

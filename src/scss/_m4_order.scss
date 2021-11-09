@@ -1,0 +1,368 @@
+.marketFor {
+    .blue_order__goods {
+        margin:20px 20px 0 20px;
+        background:rgba(126,227,221,0.3);
+        padding:10px;
+        font-size:$fsBase;
+    }
+
+    .radio-boxtype {
+        display:flex;
+        > li {
+            width:100%;
+            & + li {
+                margin-left:7px;
+            }
+            input[type="radio"] {
+                position:absolute;
+                &:disabled + label {
+                    opacity:0.5;
+                }
+            }
+            label {
+                width:100%;display:block;
+                box-sizing:border-box;
+                border:solid 1px $colorBorder;text-align:center;
+                color:$colorGray;
+                line-height:38px;
+                &.active {
+                    color:$marketfor;
+                    border-color:$marketfor;
+                }
+            }
+        }
+    }
+    .radio-boxguide {
+        .list-info {margin:0;}
+    }
+
+    .sale_info__box {
+        padding:20px;
+        h4 {
+            font-size:$fsBase + 2px;
+            font-weight:500;margin-bottom:10px;
+        }
+        .discount-list {
+            margin:0;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            dt {
+                h4 {
+                    margin-bottom:0;
+                    strong {font-weight:500;}
+                }
+            }
+            dd {
+                text-align:right;
+                .discount-point {
+                    width:auto;
+                    &:after {
+                        @include content;
+                    }
+                    .txt-use {
+                        float:left;
+                        position:relative;
+                        margin:0;width:auto;
+                        input[type=text],
+                        input[type=number] {
+                            border-color:#e0e0e0;width:85px;height:32px;box-sizing:border-box;
+                            padding:0 22px 0 8px;text-align:right;border-right:0;
+                            &:readonly {
+                                border:0;
+                            }
+                        }
+                        .txt-p {top:50%;width:auto;right:5px;transform:translateY(-50%);}
+                    }
+                    .btn-use {
+                        float:left;
+                        width:65px;height:32px;border-radius:2px;
+                        background:#acacac;
+                        color:#fff;padding:0;margin:0;
+                        &.join {
+                            width:110px;
+                        }
+                    }
+                }
+
+            }
+            & + h4 {margin-top:20px;padding-top:20px;border-top:dashed 1px $colorBorder;}
+            & + .discount-list {
+                margin-top:20px;
+            }
+            & + .wrap-select.w100 {
+                margin-top:10px;
+            }
+        }
+    }
+
+    .position-fixed-total-price {
+        background:$marketfor;
+    }
+    .order-payment {
+        .sub-inner-box {
+            padding-top:20px;
+        }
+    }
+
+    .payment-list {
+        margin-bottom:18px;
+        li {
+        > button {
+            @each $means in mobilepop payco kakaopay naverpay {
+                &.btn-#{$means} {
+                    background-image: url('#{$imgIcoPath}/ico_payment_#{$means}_off.png');
+                    background-size: 90px 20px !important;
+                }
+            }
+        }
+          &.active {
+            > button {
+              @each $means in mobilepop payco kakaopay naverpay {
+                &.btn-#{$means} {
+                  background-image: url('#{$imgIcoPath}/ico_payment_#{$means}_marketfor.png');
+                }
+              }
+            }
+          }
+        }
+    }
+    /*
+    .credit-card {
+        .btn-monthly-info {
+            position:absolute;
+            right:20px;top:18px;
+        }
+    }
+    */
+    .order-paytype {
+        & + .agree-save {margin-top:15px;}
+    }
+    .order_agree_btnbox {
+        border-bottom:solid 10px $colorBgGray;
+        padding:20px;
+        .agree_flex {
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            label {
+                width: calc(100% - 35px);
+                font-size:$fsBase + 2px;
+                font-weight:500;
+                word-break: keep-all;
+            }
+            .agree_txt {
+                font-size:$fsBase - 1px;
+                color:$marketfor;
+            }
+            button {
+                font-size:$fsBase - 1px;
+                border-bottom: solid 1px $marketfor;
+            }
+        }
+        .btn_total__price {
+            margin-top:30px;
+            &.fixed {
+                position:fixed ;
+                left:0;bottom:0;width:100%;
+                z-index:10;
+            }
+            button {
+                background:$marketfor;
+                color:#fff;
+                width:100%;
+                height:50px;
+                font-size:$fsBase + 2px;
+                strong {
+                    font-size:$fsBase + 5px;
+                    font-weight:500;
+                }
+            }
+        }
+        &.rule_pop__box {
+            border:0;padding:0;
+        }
+    }
+
+    .gift-receive-complete {
+        border-bottom:solid 10px $colorBgGray;
+        .msg-complete + .bottom-btn-area {margin-top:0;}
+    }
+    .order-complete {
+        .msg-complete-txt {
+            background-image:url('#{$imgIcoPath}/ico_order_compelete_marketfor.png');
+        }
+        &.failed {
+            .msg-complete-txt {
+                background-image:url('#{$imgIcoPath}/ico_order_failed_marketfor.png');
+                color:$colorRed;
+            }
+
+        }
+    }
+
+    .section-area {
+        border-top-width:15px;
+        .wrap-breakdown {
+            .receive-delivery-info {
+                &+.bottom-btn-area {
+                    margin-top: 15px;
+                }
+            }
+            .txt-delivery {
+                margin-top: 10px;
+                font-size: 11px;
+                color: #999999;
+            }
+        }
+    }
+    .sub-title.flex {
+        display:flex;
+        justify-content: space-between;
+        .price {
+            font-size:$fsBase + 1px;
+            strong {
+                font-weight: 700;
+                font-size:$fsBase + 6px;
+            }
+        }
+        .date {
+            font-size:$fsBase + 2px;
+        }
+    }
+    .bottom-btn-area.back {
+        padding-top:20px;background:$colorBgGray;
+    }
+
+    .full-popup-inner {
+        padding:0 20px;
+        .sub-title {
+            padding-left:0;
+            padding-right:0;
+            border-bottom:0;
+        }
+    }
+    .coupon-list-option {
+        dt {
+            display:flex;
+            justify-content: space-between;
+            font-weight:400;
+            margin:0;
+            .coupon_goods {
+                @include ellipsis;
+            }
+            .price {flex:0 0 70px;text-align:right;margin-left:10px;}
+            & + dd {
+                margin-top:10px;
+            }
+        }
+        dd {
+            & + dt {margin-top:15px;}
+            .no-list {
+                border:solid 1px $colorBorder;
+                background:$colorBgGray;
+                color:$colorGray;
+                line-height:30px;padding:0 10px;
+            }
+        }
+        & + .coupon-list-option {
+            margin-top:15px;
+        }
+        .wrap-select-popup{
+            .btn-select{
+                &.active{
+                    &:after{
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        } 
+    }
+    .dash-area + .dash-area {
+        margin-top:20px;
+        border-top:dashed 1px $colorBorder;
+    }
+
+    .mobile-type {
+        padding:20px;
+        .select-mobile-type {
+            display:flex;
+            justify-content: space-between;
+            .inp-radio {width:50%;}
+        }
+        .input-frm {
+            dt {
+                margin-top:30px;
+            }
+            dd {
+                margin-top:10px;
+                .inp-txt{
+                    padding-right:30px;
+                }
+            }
+        }
+        .input-frm_card {
+            display:flex;
+            input {text-align:center;}
+            & > span {
+                position:relative;
+                width:100%;
+                & + span {
+                    margin-left:10px;
+                }
+                & + span:before {
+                    content:"-";
+                    position:absolute;
+                    left:-11px;top:50%;width:12px;text-align:center;transform:translateY(-50%)
+                }
+            }
+        }
+    }
+
+    .telecom-alert {
+        background:$colorBgGray;
+        padding:10px;
+        margin-top:15px;
+        text-align:left;
+        .dash {
+            padding-left:7.5em;
+            text-indent:-7.5em;
+        }
+    }
+
+    .part_free__guide {
+        dt {
+            margin-bottom:7px;
+            color:$marketfor;
+        }
+        dd {
+            background:$colorBgGray;
+            padding:5px 10px;
+            display:flex;
+            & > strong {
+                width:60px;
+                color:$colorBase;
+            }
+            & > span {
+                color:$colorGray;
+            }
+            & + dd {
+                margin-top:5px;
+            }
+            & + dt {
+                margin-top:15px;
+            }
+        }
+    }
+    .payment-list li.active > button {
+      border-color:$marketfor;
+      color:$marketfor;
+    }
+}
+
+.info-request {
+    li:not(:last-child) {
+      margin-bottom: 7px;
+      word-break: break-all;
+    }
+  }

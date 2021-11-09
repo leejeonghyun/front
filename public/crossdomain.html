@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CrossDomain</title>
+</head>
+
+<body>
+  <script>
+    function getFirstDomain() {
+      const host = location.host;
+      if (host.indexOf('localhost') > -1) {
+        return 'localhost';
+      }
+      const list = host.split('.');
+      if (list.length > 2) {
+        list.splice(0, 1);
+      }
+      let firstDomain = '.' + list.join('.');
+      firstDomain = firstDomain.split(':').splice(0, 1).join('');
+      return firstDomain;
+    }
+
+    function deleteCookie(key) {
+      document.cookie =
+        key + '=; domain=' + getFirstDomain() +
+        '; path=/; expires=' + new Date().toUTCString();
+    }
+
+    function handler(event) {
+      const data = event.data;
+      if (data.logout === 'common') {
+        // 쿠키 삭제
+        deleteCookie('accounts_refresh_token');
+        deleteCookie('refresh_token');
+        deleteCookie('id_token');
+        deleteCookie('CUST_NM');
+        deleteCookie('WEB_ID');
+        deleteCookie('CUST_GRD_CD');
+        deleteCookie('PMBS_JOIN_PRCN_CD');
+        deleteCookie('STOR_ID');
+        deleteCookie('SUPPL_FIRM_CD');
+        deleteCookie('MALL_ID');
+        deleteCookie('STE_CONN_MDA_TYPE_CD');
+        deleteCookie('MBR_TYPE_CD');
+        deleteCookie('ENC_VAL');
+        localStorage.removeItem('accounts_refresh_token');
+        localStorage.removeItem('refresh_token');
+        localStorage.removeItem('id_token');
+        localStorage.removeItem('ENC_VAL');
+
+        // parent에 실행 완료 postMessage
+        event.source.postMessage('YLOGOUT', event.origin);
+      }
+    }
+    window.addEventListener('message', handler, false);
+  </script>
+</body>
+
+</html>

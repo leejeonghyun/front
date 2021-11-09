@@ -1,0 +1,1368 @@
+.wrap-mall {
+  /* GS fresh, 달리살다만 해당할 경우 */
+  @each $mall in gsfresh dalisalda {
+    @at-root .#{$mall} {
+      // 메인 튜토리얼
+      .tutorials-layer {
+        @if $mall == dalisalda { 
+          .btn-layer-close {
+            top: 9px;
+            right: 10px;
+          }
+        }
+      }
+      // 회원가입 튜토리얼
+      .tutorials-layer.signup article section {
+      }
+      // 장바구니 튜토리얼
+      .tutorials-layer.cart article section {
+        @if $mall == dalisalda {
+          h3 .wrap-icon .icon:before {
+            background: $dalisalda;
+            box-shadow: 0 0 15px $dalisalda;
+          }
+          &.tutorials-step1, .gs {
+            display: none;
+          }
+          .dali {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  /* GS fresh, 새벽배송만 해당할 경우 */
+  @each $mall in gsfresh daybreak {
+    @at-root .#{$mall} {
+      @if $mall == gsfresh {
+        /* 메인 */
+        // 헤더
+        .wrap-main-header {
+          &.sticky nav,
+          &.active nav {
+            h1 .logo {
+              background: url('#{$imgRootPath}/logo_#{$mall}.png') no-repeat center center;
+              background-size: 100% auto;
+            }
+          }
+          h1 .logo {
+            width: 122px;
+            height: 17px;
+            background: url('#{$imgRootPath}/logo_#{$mall}_wh.png') no-repeat center center;
+            background-size: 100% auto;
+          }
+        }
+      } @else if $mall == daybreak {
+        /* 메인 */
+        // 헤더
+        .wrap-main-header {
+          &.sticky nav,
+          &.active nav {
+            h1 .logo {
+              background: url('#{$imgRootPath}/logo_#{$mall}.png') no-repeat center center;
+              background-size: 88px auto;
+            }
+          }
+          h1 .logo {
+            width: 88px;
+            height: 27px;
+            background: url('#{$imgRootPath}/logo_#{$mall}_wh.png') no-repeat center center;
+            background-size: 88px auto;
+          }
+        }
+        // 새로 나왔어요
+        .main-item.today-new {
+          &:before {
+            background: $daybreak;
+          }
+        }
+        // 타임세일 (갤러리 위대한 빅세일형 1)
+        .main-item.time-sale .product .btn-cart {
+          bottom: 144px;
+        }
+        .main-item.time-sale .product .wrap-remain {
+          height: 140px;
+          transform: translateY(-46%);
+        }
+        .product.gallery.product-big-sale-01 {
+          .wrap-delivery-tag {
+            position: absolute;
+            top: 10px;
+            left: 150px;
+          }
+          .title-link {
+            padding-top: 15px;
+          }
+        }
+      }
+      // 기획전 - 타이틀 Bg
+      .bg-line-brush {
+        &.dark {
+          background-image: url('#{$imgPath}/bg_brushline_dark_repeat_#{$mall}.png');
+          &:before {
+            background-image: url('#{$imgPath}/bg_brushline_dark_left_#{$mall}.png');
+          }
+          &:after {
+            background-image: url('#{$imgPath}/bg_brushline_dark_right_#{$mall}.png');
+          }
+        }
+      }
+      /* 메인 */
+      // 헤더
+      .wrap-main-header {
+        &.sticky nav,
+        &.active nav {
+          .wrap-header-link {
+            .btn-trendy {
+              background-image: url('#{$imgIcoPath}/ico_header_trendy_#{$mall}.svg');
+            }
+            [class^='btn'].btn-change-shipping {
+              background-image: url('#{$imgIcoPath}/ico_header_change_shipping_#{$mall}_bl.svg');
+            }
+          }
+        }
+        .wrap-header-link [class^='btn'].btn-change-shipping {
+          background-image: url('#{$imgIcoPath}/ico_header_change_shipping_#{$mall}.svg');
+        }
+      }
+    }
+  }
+  /* // GS fresh, 달리살다, 새벽배송 */
+  @each $mall in gsfresh dalisalda daybreak {
+    @at-root .#{$mall} {
+      @if $mall == gsfresh {
+        $mall-color: $gsfresh !global;
+        $mall-color2: $gsfresh !global;
+        $mall-light-color: $gsfreshLight !global;
+        // 메인 타임 세일 컬러 
+        $time-light-color: $gsfreshTimeLight !global;
+        $time-normal-color: $gsfreshTimeNormal !global;
+        $time-dark-color: $gsfreshTimeDark !global;
+      } @else if $mall == dalisalda {
+        $mall-color: $dalisalda !global;
+        $mall-color2: $dalisalda2 !global;
+        $mall-light-color: $dalisaldaLight !global;
+      } @else if $mall == daybreak {
+        $mall-color: $daybreak !global;
+        $mall-color2: $daybreak !global;
+        $mall-light-color: $daybreakLight !global;
+        // 메인 타임 세일 컬러 
+        $time-light-color: $daybreakTimeLight !global;
+        $time-normal-color: $daybreakTimeNormal !global;
+        $time-dark-color: $daybreakTimeDark !global;
+        // 당일, 새벽 간 이동 버튼
+        .area-change-delivery {
+          background-color: $gsfresh;
+          background-image: url('#{$imgRootPath}/logo_gsfresh_wh.svg');
+          background-size: 30px auto;
+        }
+      }
+      // 장바구니 버튼
+      .wrap-headerbar .btn-cart .num, .btn-searchbar-cart .num, .wrap-main-header .wrap-header-link [class^='btn'].btn-cart .num {
+        background: $mall-color2;
+      }
+      // 기획전 - 타이틀 Bg
+      .bg-line-brush:not(.gray) {
+        &:not(.dark) {
+          background-image: url('#{$imgPath}/bg_brushline_repeat_#{$mall}.png');
+          &:before {
+            background-image: url('#{$imgPath}/bg_brushline_left_#{$mall}.png');
+          }
+          &:after {
+            background-image: url('#{$imgPath}/bg_brushline_right_#{$mall}.png');
+          }
+        }
+      }
+      // font-color
+      .lightgreen-font {
+        color: $mall-color !important;
+      }
+      /* 버튼 */
+      // 팝업
+      .btn-bg.lightgreen {
+        background: $mall-color;
+      }
+      .btn-border.lightgreen {
+        color: $mall-color;
+        border-color: $mall-color;
+      }
+      &.wrap-layer .btn-confirm {
+        background-color: $mall-color;
+      }
+      // 탭
+      .tablist {
+        li button.active {
+          color: $mall-color !important;
+          &:after {
+            background: $mall-color !important;
+          }
+        }
+      }
+      /* 기획전 */
+      // 타이틀
+      .promotion-list {
+        .sub-title-tag {
+          color: $mall-color;
+        }
+      }
+      // 템플릿
+      .promotion-hashtag .ic-hashtag.active {
+        background: $mall-color;
+      }
+      .wrap-title-slide {
+        .desc {
+          color: $mall-color;
+        }
+      }
+      .wrap-category-promotion {
+        li.active .btn-promotion {
+          color: $mall-color;
+          &:after {
+            background-color: $mall-color;
+          }
+        }
+      }
+      .wrap-category-food.text .list.active .btn-category span {
+        color: $mall-color;
+      }
+      .wrap-category-food.image .list.active .btn-category {
+        border:2px solid $mall-color;
+      }
+      .img-button-slide .button.active .menu-name {
+        color: $mall-color;
+        &:after {
+          background: $mall-color;
+        }
+      }
+      // 위대한 빅세일
+      .promotion .product.big-sales .wrap-sales-tag .ic-tag {
+        color: $mall-color;
+        border-color: $mall-color;
+      }
+      // 탭
+      .tablist {
+        .ic-new {
+          background: $mall-color !important;
+        }
+        li button.active {
+          color: $mall-color !important;
+          &:after {
+            background: $mall-color !important;
+          }
+        }
+      }
+      /* input 요소 */
+      // text
+      .tbl-member tr td .inp-box .inp-number:focus,
+      .inp-txt:focus {
+        border-color: $mall-color !important;
+      }
+      // checkbox
+      .inp-chk {
+        input[type='checkbox'] {
+          &:checked:before {
+            border-color: $mall-color;
+          }
+        }
+        // 배경 green인 경우 (장바구니 서브메인)
+        &.bg {
+          input[type='checkbox'] {
+            &:checked:after {
+              background-color: $mall-color;
+              border-color: $mall-color;
+            }
+          }
+        }
+        &.bg {
+          input[type='checkbox'] {
+            &:checked:before {
+              border-color: #fff;
+              background-color: $mall-color;
+            }
+          }
+        }
+      }
+      .inp-radio-bg {
+        input:checked:after {
+          background-color: $mall-color;
+          border-color: $mall-color;
+        }
+      }
+      // 라디오버튼 20 x 20
+      .inp-radio {
+        input[type='radio'] {
+          &:checked:before {
+            background-color: $mall-color;
+          }
+        }
+      }
+      /* 메인 */
+      // 헤더
+      // .wrap-main-header {
+      //   &.sticky nav,
+      //   &.active nav {
+      //     h1 .logo {
+      //       background: url('#{$imgRootPath}/logo_daybreak.png') no-repeat center center;
+      //       background-size: 88px auto;
+      //     }
+      //     .wrap-header-link {
+      //       .btn-trendy {
+      //         background-image: url('#{$imgIcoPath}/ico_header_trendy_daybreak.png');
+      //       }
+      //       [class^='btn'].btn-change-shipping {
+      //         background-image: url('#{$imgIcoPath}/ico_header_change_shipping_daybreak_bl.png');
+      //       }
+      //     }
+      //   }
+      //   h1 .logo {
+      //     width: 88px;
+      //     height: 27px;
+      //     background: url('#{$imgRootPath}/logo_daybreak_wh.png') no-repeat center center;
+      //     background-size: 88px auto;
+      //   }
+      //   .wrap-header-link [class^='btn'].btn-change-shipping {
+      //     background-image: url('#{$imgIcoPath}/ico_header_change_shipping_daybreak.png');
+      //   }
+      // }
+      // 메인 튜토리얼
+      .wrap-layer.tutorials-layer .layer-content .wrap-swiper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+        background: $mall-color;
+      }
+      header {
+        .wrap-searchbar {          
+          &:after {
+            background: $mall-color;
+          }
+        }
+      }
+      .wrap-searchbar {
+        border-color: $mall-color;
+      }
+      // 하단 티커 
+      .wrap-ticker {
+        .wrap-speech {
+          background-color: $mall-color;
+          &:after {
+            background-image: url('#{$imgPath}/bg_speech_bubble_#{$mall}.png');
+          }
+        }
+      }
+      // Gnb 
+      .wrap-gnb {
+        .swiper-slide .active,
+        &.sticky .swiper-slide .active {
+          color: $mall-color;
+          &:after {
+            background-color: $mall-color;
+          }
+        }
+      }
+      .my-brand > li .brand-name .ico-new {
+        background-color: $mall-color;
+      }
+      // 기획전 카테고리 템플릿
+      .promotion-hashtag .ic-hashtag.active {
+        background-color: $mall-color;
+      }
+      // 햄버거 메뉴
+      .wrap-user {
+        .wrap-user-btn li .num {
+          background-color:$mall-color;
+        }
+        .delivery-desc .time, .guide-login em {
+          color:$mall-color;
+        }
+        .inner .wrap-user-info .user-grade {
+          color:$mall-color;       
+        }
+        .guide-login {
+          em {
+            color: $mall-color;
+          }
+        }
+      }
+      .wrap-menu-btn li .active, .wrap-menu-btn li > .active {
+        &::after {
+          background: $mall-color;
+        }
+      }
+      .wrap-menu-category .wrap-depth02 {
+        & > li.open button {
+          color: $mall-color;
+        }
+      }
+      .wrap-list-depth a.btn-special {
+        color: $mall-color;
+        &:after {
+          border-color: $mall-color;
+        }
+      }
+      // 배송가능시간 안내 - 가장 빠른 배송시간
+      .wrap-delivery-info .wrap-delivery-list .time {
+        color: $mall-color;
+      }
+      // 메인 타임
+      .product.gallery.product-big-sale-01 .wrap-info .wrap-remain.time-color {
+        background: $time-dark-color;
+        &.light {
+          background: $time-light-color;
+        }
+        &.normal {
+          background: $time-normal-color;
+        }
+        &.dark {
+          background: $time-dark-color;
+        }
+      }
+      // 검색어 순위 - 지금 뜨고 있어요
+      .wrap-list-chart {
+        .btn-list-chart[aria-expanded=true] {
+          background-color: $mall-color;
+          border-color: $mall-color;
+        }
+      }
+      /* 고객센터 */
+      // 탭
+      .customerservice-wrap,
+      .faq-wrap {
+          .list-link li .ico.active {
+            color: $mall-color;
+          }
+        }
+      // 쳇봇 이미지
+      .counselingtalk strong {
+        &:before {
+          background-image: url('#{$imgIcoPath}/ico_counselingtalk_#{$mall}.png');
+        }
+        &.ico.talk:before {
+          background-image: url('#{$imgIcoPath}/ico_counselingtalk_small_#{$mall}.png');
+        }
+        &.ico.write:before {
+          background-image: url('#{$imgIcoPath}/ico_write_small_#{$mall}.png');
+        }
+      }
+      // 1:1 상담톡
+      .section-bottom {
+        .floating-btn-chatbot a {
+          background-image: url('#{$imgIcoPath}/ico_counselingtalk_#{$mall}.png');
+        }
+      }  
+      // 작성하기 버튼
+      .icon-write span {
+        background-image: url('#{$imgIcoPath}/ico_write_#{$mall}.png');
+      }
+      // 몰 탭
+      .wrap-searchresult {
+        button {
+          &.active {
+            color: $mall-color;
+            &:after {
+              background: $mall-color;
+            }
+          }
+        }
+      }
+      // N icon
+      .list-accordion .btn-accordion .wrap-title .ico-new {
+        color: $mall-color;
+      }
+      // calendar
+      .calendar-custom.vdp-datepicker__calendar {
+        .cell.selected,
+        .cell:not(.blank):not(.disabled).day:hover,
+        .cell:not(.blank):not(.disabled).month:hover,
+        .cell:not(.blank):not(.disabled).year:hover {
+          &:after {
+            background: $mall-color;
+          }
+        }
+      }
+      /* 장바구니 */
+      .cart-category-product {
+        .title-cate label {
+          .txt-count {
+            color:$mall-color;
+          }
+        }
+      }
+      .cart-product-list {
+        /*.wrap-alert {
+          p {
+            color: $mall-color;
+          }
+        }*/
+        dl .discount:not(.ico-benefit) {
+          color: $mall-color;
+        }
+        .btn-bottom .btn-keep.active {
+          color: $mall-color;
+          border-color: $mall-color;
+        }
+      }
+      .addr-change-layer .txt-caution1 {
+        color: $mall-color;
+      }
+      .btn-gift {
+        background-color:$mall-color;
+        /*background-image: url('#{$imgIcoPath}/ico_cart_gift_#{$mall}.png');*/
+      }
+      // 옵션 팝업 포인트 컬러
+      .selected-option-list li .option-gift {
+        color: $mall-color;
+      }
+      .option-footer-info-txt p strong.complete {
+        color: $mall-color;
+      }
+      // 선물하기 포인트 컬러
+      .txt-time-desc strong {
+        color: $mall-color;
+      }
+      // 금액대별 사은품 안내 - 스탬프 별 색
+      .special-gift-layer .gift-list li.cart-gift-stemp:after {        
+        background: url('#{$imgPath}/_img_cart_stemp_star_full_#{$mall}.png') no-repeat;
+        background-size: 21.25vw auto;
+      }
+      /* 상품목록 */
+      // 카테고리 
+      .wrap-layer-category .layer-category li.active {
+        a {
+          color: $mall-color;
+        }
+        span:after {
+          border-color: $mall-color;
+        }
+      }
+      // 슬라이드
+      .wrap-product-slide {
+        .slide .wrap-product-info .info .discount {
+          color: $mall-color;
+        }
+      }
+      // 배송유형 
+      .product .wrap-delivery-tag {
+        .delivery-info:not(.overseas) {
+          // color: $mall-color;
+          // border-color: $mall-color;
+        }
+      }
+      // 햄버거 메뉴 브랜드 탭
+      .wrap-brand-btn li .active {
+        color: $mall-color;
+      }
+      // 글자색
+      // .product .wrap-delivery-tag .delivery-desc, 20.07.23 검색 하단 최근 본 상품 컬러 새벽배송 문구 분기 불필요
+      .product .wrap-info .discount {
+        color: $mall-color;
+      }
+      // 개인화 태그
+      // .product-personal-tag {
+      //   background: $mall-color; 
+      // }
+      // 위대한 빅세일
+      .wrap-banner-sales .header-big-sale .sale-link li.active {
+        background: $mall-color;
+      }
+      // 별점
+      .product.gallery.product-category .product-comment .item-score {
+        background: url('#{$imgIcoPath}/ico_review_star_#{$mall}.png') no-repeat left 3px;
+        background-size: 13px 13px;        
+      }  
+      .certification-component .active .title {
+        color: $mall-color;
+        &:after {
+          background-color: $mall-color;
+        }
+      }
+      .title-txt03 span {
+        color: $mall-color;
+      }
+      .wrap-layer.wrap-package .wrap-list-package .info dt .list-num {
+        color: $mall-color;
+      }
+      // 성인인증 아이콘 
+      .adult-certify .wrap-btn li {
+        .btn-phone {
+          background-image: url('#{$imgIcoPath}/ico_certify_phone_#{$mall}.png');
+        }
+        .btn-card {
+          background-image: url('#{$imgIcoPath}/ico_certify_card_#{$mall}.png');
+        }
+      }
+      /* 상품상세 */
+      // 상품정보
+      .product-top-info {
+        &:not(.reserve) {
+          .delivery-info {
+            color: $mall-color;
+            border-color: $mall-color;
+          }
+        }
+        .wrap-info .discount {
+          color: $mall-color;
+        }
+      }
+      .product-top-visual .detail-view .product-info dd.discount {
+        color: $mall-color;
+      }
+      // 탭
+      .detail-view-tab li.active {
+        &:after {
+          background: $mall-color;
+        }
+        a {
+          color: $mall-color;
+          span {
+            color: $mall-color;
+          }
+        }
+      }
+      // MD talk 
+      .product .md-talk .ic-tag {
+        background-image: url('#{$imgPath}/bg_mdtalk_#{$mall}.png');
+      }
+      // MD talk icon
+      .wrap-list-review > li.box-md-talk .wrap-tag .ic-tag {
+        color: $mall-color;
+      }
+      .wrap-md-talk .ic-tag {
+        background-image: url('#{$imgPath}/bg_mdtalk_#{$mall}.png');
+      }
+      .wrap-average-detail .wrap-graph .wrap-item-graph dd .wrap-percent .percent, 
+      .wrap-list-review > li.box-md-talk .wrap-tag .ic-tag:before {
+        background: $mall-color;
+      }
+      // 리뷰추천 아이콘 
+      .wrap-list-review .review-recommend .btn-like.active {
+        color: $mall-color;
+        background-image: url('#{$imgIcoPath}/ico_like_on_#{$mall}.png');
+        border-color: $mall-color;
+      }
+      // 상품 QnA 아이콘
+      .qna-list dl .qna-a {
+        background-image: url('#{$imgIcoPath}/ico_qna_a_#{$mall}.png');
+      }
+      // 인증성분 팝업
+      .btn-detail-view {
+        background-color: $mall-color;
+      }
+      // 장바구니
+      .cart-category li > a.active:not(.disabled) .num,
+      .cart-category li .disabled.active:not(.disabled) .num {
+        color: $mall-color;
+      }
+      .wrap-cart-footer .btn-area li.order .btn-order {
+        background: $mall-color;
+      }
+      .addr-layer .addr-list .default,
+      .delivery-management .delivery-list .addr-list .default {
+        /*color: $mall-color;*/
+        background-color:$mall-color;
+      }
+      .point {
+        color: $mall-color !important;
+      }
+      .total-price-info .btn-go-today {
+        color: $mall-color;
+        &:after {
+          border-color: $mall-color;
+        }
+      }
+      .cart-benefit-slide .benefit-slide dl .price .discount {
+        color: $mall-color;
+      }
+      .wrap-layer .btn-confirm {
+        background: $mall-color;
+      }
+      .cart-before-login .banner-time-sale {
+        background: $mall-color;
+      }
+      // 장바구니 튜토리얼
+      .tutorials-layer.cart article section.tutorials-step2 .wrap-icon .icon:after {
+        border-color: $mall-color;
+      }
+      // 여러곳으로 보내기
+      .addrlist-slide .slide-pagination .btn-paging.active,
+      .addrlist-slide .slide-pagination .btn-add.active {
+        background: $mall-color;
+      }
+      // 선물하기
+      .write-gift-msg .slide-img .inner-img-slide input[type='radio']:checked + label:after {
+        border-color: $mall-color;
+      }
+      /* 주문결제 */
+      .tab-list .tablist button.active {
+        border-color: $mall-color;
+      }
+      .position-fixed-total-price {
+        background: $mall-color;
+      }
+      // toggle check
+      .btn-circle.active {
+        background: $mall-color;
+      }
+      .wrap-list-setting li .inner .inner-setting .inp-setting:checked + label {
+        background: $mall-color !important;
+      }
+      // 2020.08.11 디자인 디벨롭
+      .order-payment .total-price {
+        background: $mall-color;
+      }
+      .wrap-branch-title {
+        .branch {
+          border-color: $mall-color;
+          color: $mall-color;
+        }
+      }
+      .sub-title.border,
+      .accordion-wrap .tit-accordion .tit {
+        .bg-line-brush .required {
+          color: $mall-color;
+        }
+      }
+      .payment-list {
+        li.active > button {
+          color: $mall-color;
+          border-color: $mall-color;
+          @each $means in mobilepop payco kakaopay naverpay { 
+            &.btn-#{$means} { 
+              background-image: url('#{$imgIcoPath}/ico_payment_#{$means}_#{$mall}.png');
+            }
+          }
+        }
+      }
+      /* 마이페이지 */
+      // 서브메인
+      &.wrap-mypage {
+        .inner .btn-signal.active:after {
+          background-color: $mall-color;
+        }
+        .wrap-link-group .link {
+          &.gs-total-point,
+          .box-point .title.gspoint:before {
+            background-image: url('#{$imgIcoPath}/ico_point_small_#{$mall}.png');
+          }
+          &.gs-rewards {
+            background-image: url('#{$imgIcoPath}/ico_rewards_small_#{$mall}.png');
+          }
+          &.gs-coupon {
+            background-image: url('#{$imgIcoPath}/ico_coupon_small_#{$mall}.png');
+          }
+          &.gs-pointcard {
+            background-image: url('#{$imgIcoPath}/ico_pointcard_small_#{$mall}.png');
+          }
+        }
+      } 
+      .pointcard-layer .layer-inner .inner-box {
+        background-color: $mall-color;
+      }
+      .my-status .status .step span.current strong {
+        color: $mall-color;
+      }
+      .my-content .information .grade em {
+        color: $mall-color;
+      }
+      // 현 위치로 주소검색 버튼 아이콘
+      .form-layout-address dd .ico-addr span {
+        background-image: url('#{$imgIcoPath}/ico_addr_#{$mall}.png');
+      }
+      // 주소검색 버튼
+      .btn-map-search {
+        background-color: $mall-color;
+      }
+      // 주문배송 현황
+      .order-shipping-item .shipping-step .badge {
+        color: $mall-color;
+        border-color: $mall-color;
+      }
+      // 주문배송 조회
+      .cart-product-list dl .delivery-name {
+        color: $mall-color;
+        border-color: $mall-color;
+      }
+      .plus-badge {
+        background-color: $mall-color;
+      }
+      // 행사상품 미충족
+      .cart-product-list .go-shopping span span.red {
+        color: $mall-color !important;
+      }
+      // 2020.08.12 디자인 디벨롭
+      .order-shipping-item .shipping-step .step-state li.current {
+        color: $mall-color;
+        span:before {
+          background: $mall-color;
+        }
+      }
+      // 주문배송 현황 아이콘
+      .step-state li span {
+        &.current {
+          color: $mall-color;
+        }
+        @each $step in icon_shipping, icon_shipping_complete, icon_take_back, icon_product_confirm, icon_refund {
+          &.#{$step} {
+            &.current {
+              &:before {               
+                background-image: url('#{$imgIcoPath}/#{$step}_on_#{$mall}.png');
+              }
+            }
+          }
+        }
+      }
+      .order-shipping-item .partical-cancellation .detail-status .em-txt {
+        background-color: $mall-color;
+      }
+      .order-shipping-item .shipping-step .step-state li.current .real-time {
+        background-color: $mall-color;
+        &:after {
+          border-bottom-color: $mall-color;
+        }
+      }
+      // 배송만족도 조사
+      .wrap-satisfation-survey .question-list .satisfation-area {
+        button, li {
+          @for $i from 1 through 5 {
+            &:nth-child(#{$i}).active:before {
+              background-image: url('#{$imgIcoPath}/icon_smile0#{$i}_on_#{$mall}.png');
+            }
+          }
+        }
+      }
+      .content-inner-wrap .delivery-box .modify {
+        color: $mall-color;
+      }
+      // 방문날짜 선택 점포 변경 레이어 팁
+      .btn-select-pickup {
+        &:before {
+          border-bottom-color: $mall-color;
+        }
+        .btn {
+          background-color: $mall-color;
+          border-color: $mall-color;
+        }
+      }
+      // 선물/조르기
+      .received-gift-info span,
+      .wrap-received-gift .gift-item-details .person-state .state.accept,
+      .wrap-bowing-gift .bowing-item-details .state.accept,
+      .wrap-breakdown .due-date .state,
+      .gift-item-details .details-cont .btn-area-resend > p {
+        color: $mall-color;
+      }
+      .gift-item-details .wrap-image-state .state {
+        &.delivery-ing,
+        &.empty-delivery-info,
+        &.product-prepare {
+          background: rgba($mall-color, 0.8);
+        } 
+      }
+      // 스피트 마켓
+      .promotion-hashtag .ic-hashtag.active {
+        background-color: $mall-color;
+      }
+      /* 회원가입 */
+      // 통합회원 가입 혜택 아이콘
+      .list-benefit .ico {
+        @each $type in coupon benefit gspoint {
+          &.#{$type} {
+            background-image: url('#{$imgIcoPath}/ico_signup_#{$type}_#{$mall}.png');
+          }
+        }
+      }
+      // 친구초대 회원가입 새벽배송 색상 예외처리
+      @if $mall == daybreak {
+        .wrap-signup.signup-main .welcome-friend-desc .btn-signup-friend,
+        .full-popup-body.signup.signup-main .welcome-friend-desc .btn-signup-friend {
+          color: #777cf5;
+          border-color: #777cf5;
+          &:before {
+            border-color: #777cf5;
+          }
+        }
+      } @else {
+        .wrap-signup.signup-main .welcome-friend-desc .btn-signup-friend,
+        .full-popup-body.signup.signup-main .welcome-friend-desc .btn-signup-friend {
+          color: $mall-color;
+          border-color: $mall-color;
+          &:before {
+            border-color: $mall-color;
+          }
+        }
+      }
+      .wrap-inp-btn .btn-input.active.lightgreen {
+        background-color: $mall-color;
+      }
+      .signup-layer-inner {
+        .list-benefit .ico { 
+          @each $benefit-type in time card coupon2 {
+            &.#{$benefit-type} {
+              background-image: url('#{$imgIcoPath}/ico_signup_#{$benefit-type}_#{$mall}.png');
+            }
+          }
+        }
+        .btn-area .btn-link:before {
+          background-image: url('#{$imgIcoPath}/ico_addr_#{$mall}.png');
+        }
+      }
+      .full-popup-body.signup .friend .title .name {
+        color: $mall-color;
+      }
+      .full-popup-body.signup .friend .area-image .ico {
+        @each $join-coupon in new add { 
+          &.#{$join-coupon} {
+            background-image: url('#{$imgPath}/img_signup_coupon_#{$join-coupon}_#{$mall}.png');
+          }
+        }
+      }
+      /* 로그인 */
+      .list-link-sns li.link-certify .tag {
+        @if ($mall == 'daybreak') {
+          background: #e8e8e8;
+        }
+        &:after { 
+          background-image: url('#{$imgPath}/img_login_bubble_#{$mall}.png');
+        }
+        &.gsfresh {
+          color: $mall-color;
+          border-color: $mall-color;
+          &:before {
+            border-color: $mall-color transparent;
+          }
+        }
+        &.type-a {
+          color:#fff;
+          background-color:rgba(0,0,0,.7);
+          border-color:transparent;
+          font-size:$fsBase;
+          white-space:nowrap;
+          padding-right:24px;
+          &:after {
+            bottom:-8px;
+            background:none;
+            width:0;
+            height:0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 7px solid rgba(0,0,0,.7);
+          }
+          .btn-close {
+            background:none;
+            &:before,
+            &:after {
+              content:'';
+              width:10px;
+              height:1px;
+              background-color:#fff;
+              position:absolute;
+              top:50%;
+              left:50%;
+              margin-left:-5px;
+            }
+            &:before {
+              transform:rotate(45deg);
+              -webket-transform:rotate(45deg);
+            }
+            &:after {
+              transform:rotate(-45deg);
+              -webket-transform:rotate(-45deg);
+            }
+          }
+        }
+        .btn-close { 
+          background-image: url('#{$imgIcoPath}/ico_tooltip_close_#{$mall}.png');
+        }
+      }
+      .wrap-user-form .txt-title .txt-name,
+      .wrap-user-form .txt-title .txt-point {
+        color: $mall-color;
+      }
+      &.wrap-login .login-wrap.find .btn-border {
+        color: $mall-color;
+        border-color: $mall-color;
+      }
+      // 회원 등급
+      .wrap-certify .box-grade .wrap-gauge {
+        .mygrade {
+          color: $mall-color;
+        }
+        .gauge .bar {
+          background-color: $mall-color;
+        }
+      }
+      .section-area .wrap-grade .list-benefit li .ico.coupon {
+        @each $coupon-benefit in vvip vip {
+          &.#{$coupon-benefit} {
+            background-image: url('#{$imgIcoPath}/ico_grade_coupon_#{$coupon-benefit}_#{$mall}.png');
+          }
+        }
+      }
+      .list-grade-benefit {
+        .list-benefit li .ico { //TODO: 20.04.10 디자인 컨펌 중/ 디자인 필요
+          @each $grade-benefit in gspoint rewards {
+            &.#{$grade-benefit} {
+              // background-image: url('#{$imgIcoPath}/ico_grade_#{$grade-benefit}.png');
+            }
+          }
+          &.coupon {
+            @each $coupon-benefit in vvip vip family {
+              &.#{$coupon-benefit} {
+                // background-image: url('#{$imgIcoPath}/ico_grade_coupon_#{$coupon-benefit}.png');
+              }
+            }
+          }
+        }
+      }
+      .box-point .title {
+        &.gspoint:before {
+          background-image: url('#{$imgIcoPath}/ico_point_small_#{$mall}.png');
+        }
+        &.rewards:before {
+          background-image: url('#{$imgIcoPath}/ico_rewards_small_#{$mall}.png');
+        }
+      }
+      .list-point li .num {
+        color: $mall-color;
+      }
+      .inner-tablist.flex-type li.active {
+        button {
+          color: $mall-color;
+          border-color: $mall-color;
+        }
+        &.active {
+          .title {
+            color: $mall-color;
+          }
+          .num {
+            color: $mall-color;
+          }
+        }
+      }
+      // 알림함
+      .mypage-notice-list dd.on:before {
+        background-color: $mall-color;
+      }
+      .flex-type.wrap-btn button.active {
+        color: $mall-color;
+        border-color: $mall-color;
+      }
+      // 상품평
+      .list-type01 .list-type01-inner .list-type01-footer .right .btn-border {
+        color: $mall-color;
+        border-color: $mall-color;
+      }
+      // 상품평 별점
+      .wrap-star-rate .wrap-star .star.active {
+        background-image: url('#{$imgIcoPath}/ico_star_lg_#{$mall}.png');
+      }
+      .wrap-review .wrap-star .star-score {
+        background-image: url('#{$imgIcoPath}/ico_star_sm_full_#{$mall}.png');
+      }
+      .wrap-review-write .wrap-review-recommend {
+        .inp-recommend:checked + label {
+          color: $mall-color;
+          background-image: url('#{$imgIcoPath}/ico_like_lg_on_#{$mall}.png');
+        }
+        .inp-recommend.down:checked + label {
+          background-image: url('#{$imgIcoPath}/ico_dislike_lg_on_#{$mall}.png');
+        }
+      }
+      .wrap-list-review li {
+        .review-inner .star {
+          .review-recommend-tag {
+            color: $mall-color;
+            border-color: $mall-color;
+          }
+        }
+        .review-footer .like-desc .num{
+          color: $mall-color;
+        }
+      }
+      .wrap-review-write .wrap-detail-rate .inp-rate:checked + label {
+        color: $mall-color;
+        border-color: $mall-color;
+      }
+      .list-type01 .list-type01-inner .list-type01-header .txt-state {
+        &:not(.cancel) {
+          color: $mall-color;
+        }
+      }
+      .area-link .btn-inquiry {
+        color: $mall-color;
+        border-color: $mall-color;
+      }
+      /* 설정 */
+      &.wrap-setting .wrap-list-setting li.update .inner .btn-border, &.wrap-setting .wrap-list-setting li.login .btn-arr {
+        color: $mall-color;
+        border-color: $mall-color;
+      }
+      /* 검색 */
+      // 검색 목록 개인화 태그
+      .wrap-product-list .product.search .wrap-personalize-tag .ico-personalize, 
+      .wrap-product-image .product.search .wrap-personalize-tag .ico-personalize {
+        background: $mall-color;
+      }
+      // 글자색
+      .filter-item-score .toggle-inner-list:first-child .inp-radio.small input[type='radio']:checked + label,
+      .plan-product .discount {
+        color: $mall-color;
+      }
+      .input-check-border input[type=checkbox]:checked + label:after {
+        border-color: $mall-color;
+      }
+      // 별점
+      .wrap-product-list .product.search .product-review .purchase-score strong, 
+      .wrap-product-image .product.search .product-review .purchase-score strong,
+      .product .sub-info .product-review .purchase-score strong {
+        background-image: url('#{$imgIcoPath}/ico_review_star_#{$mall}.png');
+      }
+      // 필터 내 별점
+      .filter-item-score .toggle-inner-list .inp-radio .product-review .purchase-score.star3:before,
+      .filter-item-score .toggle-inner-list .inp-radio .product-review .purchase-score.star4:before {
+        background-image: url('#{$imgIcoPath}/ico_review_star_full_#{$mall}.png');
+      }
+      // 인기 검색어 1, 2, 3순위
+      .wrap-search-slide {        
+        .wrap-search-tab .tab-contents {
+          li {
+            &:first-child,
+            &:nth-child(2),
+            &:nth-child(3) {
+              span:first-child {
+                color: $mall-color;
+              }
+              span.new span {
+                color: #ff7d57;
+              }
+            }
+          }
+        }
+      } 
+      // 자동저장 checkbox
+      .wrap-toggle-button input[type='checkbox']:checked + .input-toggle:after {
+        background: $mall-color;
+      }
+      /* 쿠폰 */
+      .wrap-coupon {
+        border-color: $mall-light-color;
+        .price {
+          color: $mall-color;
+        }
+        .type {
+          color: $mall-color;
+        }
+        .text {
+          color: $mall-color;
+        }
+        // 쿠폰 상세형
+        &.type-detail {
+          .usedtype {
+            color: $mall-color;
+          }
+          &:after {
+            background-image: url('#{$imgPath}/bg_coupon_big_#{$mall}.png');
+          }
+        }
+        // 쿠폰 리스트형
+        &.type-list {
+          &::after {
+            background-image: url('#{$imgPath}/bg_coupon_small_#{$mall}.png');
+          }
+        }
+        // 쿠폰 리스트형
+        &.type-popup {
+          .title {
+            color: $mall-color;
+          }
+          &:after {
+            background-image: url('#{$imgPath}/bg_coupon_middle_#{$mall}.png');
+          }
+        }
+      }
+      .badge.day {
+        color: $mall-color;
+        border: 1px solid $mall-color;
+      }
+      .type-reward {
+        .cont {
+          color: $mall-color;
+        }
+      }
+      // 에러페이지
+      &.wrap-error, .wrap-error {
+        @each $error in code, network, system, item, program  {
+          &.#{$error} {
+            background-image: url('#{$imgPath}/bg_error_#{$error}_#{$mall}.jpg');
+          }
+        }
+      }
+      // 이벤트 템플릿 
+      @if $mall == dalisalda {
+        .wrap-btn-type .btn.type4 {
+          color: #144733;
+        }
+      }@else if $mall == daybreak {
+        .wrap-btn-type .btn.type4 {
+          color: #fff;
+        }
+      }
+      .wrap-btn-type {
+        > .btn[class*='type'] {
+          background: $mall-color;
+        }
+      }
+      // 이벤트 당첨자 발표
+      .notice-content .wrap-list-winner li .title .num {
+        color: $mall-color;
+      }
+      .wrap-event-templete.alert-layer .text > span {
+        color: $mall-color;
+      }
+      // APP PUSH 알림 수신 동의
+      .templete-event .event-app-push > dl dt {
+        color: $mall-color;
+      }
+      &.templete-event .event-cont {
+        // 07. 고지형 이벤트_광고수신동의 이벤트
+         &.event-adagree .chk-list ul li:last-child input[type='checkbox']:checked {
+          background: $mall-color; 
+        }
+        // 08.고지형 이벤트_단순 응모 이벤트
+        // 09.광고수신동의이벤트
+        &.wrap-app-push,
+        &.event-app-push {
+          .btn-toggle input[type='checkbox']:checked {
+            background-image: url('#{$imgPath}/img_event_toggle_#{$mall}_on.png');
+          }
+        }
+        // 10.SNS 공유이벤트
+        // 12.댓글이벤트(포토)
+        &.event-sns {
+          .wrap-prize .inform > em.prize {
+            color: $mall-color;
+          }
+          .wrap-event-sns .wrap-reply .btn-submit {
+            background: $mall-color;  
+          }
+        }
+      }
+      // 장바구니 진입 시 뜨는 말풍선
+      .wrap-speech-gift {
+        background: $mall-color;
+        &:after {
+          border-top-color: $mall-color;
+        }
+      }
+      // 마감세일 상품이란
+      &.wrap-closing-sale li h6,
+      .wrap-closing-sale li h6 {
+        color: $mall-color;
+      }
+      // 로딩바
+      .inner-loading .loading-spinner {
+        div {
+          &.step01 {
+            background: $mall-color;
+            @include spinner-animation (2.3s, #{$mall}loadingLeft, $mall-color, infinite, left, top);
+          }
+          &.step02 {
+            background: $mall-color;
+            @include spinner-animation (2.3s, #{$mall}loadingRight, $mall-color, infinite, right, bottom);
+          }
+        }
+      }
+    }
+  }
+  /* // 심플리쿡 */
+  @each $mall in simplycook {
+    @at-root .#{$mall} {
+      $mall-color: $simplycook;
+      // header
+      .wrap-main-header {
+        &.sticky nav,
+        &.active nav {
+          h1 .logo {
+            margin-top: -5px;
+            width: 37px;
+            height: 36px;
+            background: url('#{$imgRootPath}/logo_#{$mall}.svg') no-repeat center center;
+            background-size: 37px auto;
+          }
+        }
+      }
+      .wrap-main-header .wrap-header-link [class^='btn'].btn-cart .num {
+        background-color: $simplycook;
+      }
+      .wrap-main-header.sticky nav .wrap-header-link .btn-trendy,
+      .wrap-main-header.active nav .wrap-header-link .btn-trendy {
+        background-image: url('#{$imgIcoPath}/ico_header_trendy_simplycook.svg');
+      }
+      // gnb
+      .wrap-gnb-slide .swiper-slide .active {
+        color: $mall-color;
+        &:after {
+          background: $mall-color;
+        }
+      }
+      // 상품 유닛
+      main .product {
+        .ico-benefit.plus {
+          background-image: url('#{$imgIcoPath}/icon_badge_plus_simply.png');
+        }
+        .wrap-delivery-tag .delivery-info:not(.overseas),
+        .wrap-delivery-tag .delivery-desc {
+          border-color: $mall-color;
+          color: $mall-color;
+        }
+        
+        .ico-benefit.new {
+          background-image: url('#{$imgIcoPath}/icon_badge_new_simply.png');
+        }
+        .wrap-info .discount {
+          color: $mall-color;
+        }
+        // MD talk 
+        .md-talk .ic-tag {
+          background-image: url('#{$imgPath}/bg_mdtalk_simply.png');
+        }
+      }
+      // 배너 템플릿
+      .promotion-list .sub-title-tag { // Type4. 타이틀+이미지+스와이프형
+        color: $mall-color;
+      }
+      .wrap-title-slide .desc { // Type10. 타이틀+스와이프형
+        color: $mall-color;
+      }
+      // 카테고리 템플릿
+      .promotion-hashtag .ic-hashtag.active {
+        background: $mall-color;
+      }
+      // 
+      .wrap-speed-item {
+        .inp-chk {
+          input[type='checkbox'] {
+            &:checked:before {
+              border-color: $mall-color;
+            }
+          }
+        }
+        .btn {
+          background: $mall-color;
+        }
+      }
+      // 식단 관리
+      .calendar-custom {
+        header {
+          span {
+            height: 50px;
+            line-height: 50px;
+          }
+        }
+        .cell.selected:after,
+        .cell:not(.blank):not(.disabled).day:hover:after,
+        .cell:not(.blank):not(.disabled).month:hover:after,
+        .cell:not(.blank):not(.disabled).year:hover:after {
+          background-color: $mall-color !important;
+        }
+      }
+    }
+  }
+}

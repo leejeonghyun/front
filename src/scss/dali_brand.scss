@@ -1,0 +1,1065 @@
+.wrap-dali-gnb-brand-list {
+  .area-brand {
+    & + .area-brand {
+      padding-top: 20px;
+    }
+  }
+  .visual-top {
+    position: relative;
+    figure {
+      position: relative;
+      width: 100%;
+      height: 57vw;
+      overflow: hidden;
+    }
+    img {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &::before {
+      @include content;
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,.4);
+    }
+    &::after {
+      @include content;
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      bottom: -1px;
+      width: 100%;
+      height: 7.2vw;
+      background: url('#{$imgPath}/bg_dali_brand_bottom.png') left bottom no-repeat;
+      background-size: 100% auto;
+    }
+  }
+}
+/* 브랜드관 list */
+.brand-title-top {
+  position:relative;
+	.area-bg {
+    position: relative;
+    height: 104vw;
+    overflow: hidden;
+		img {
+      position: absolute;
+      top: 50%;
+      width:100%;
+      transform: translateY(-50%);
+      filter: gray;
+      -webkit-filter: grayscale(100%);
+    }
+    &::after {
+      @include content;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,.7);
+    }
+  }
+  .area-logo-txt {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height: 100%;
+    color:#fff;
+    text-align:center;
+    > figure {
+      // display: flex;
+      display: block;
+      // align-items: center;
+      // justify-content: center;
+      width:100%;
+      // width:120px;
+      // height:120px;
+      // margin:50px auto 0;
+      // color:#ff0000;
+      text-align: center;
+      img {
+        display: inline-block;
+        margin:auto;
+        width:auto;
+        max-width:120px;
+        max-height:120px;
+      }
+    }
+    &.type-width-size01 {
+      > figure {
+        width:200px;
+      }
+      img {
+        max-width:200px;
+      }
+    }
+    &.type-width-size02 {
+      > figure {
+        width:155px;
+      }
+      img {
+        max-width:155px;
+      }
+    }
+    &.type-width-size03 {
+      > figure {
+        width:85px;
+      }
+      img {
+        max-width:85px;
+      }
+    }
+    h2 {
+      width:100%;
+      padding-top:32px;
+      color:#fff;
+      font-size:30px;
+      font-weight:700;
+    }
+    p {
+      width:100%;
+      padding-top:10px;
+      font-size:13px;
+      color:#fff;
+      line-height: 1.6;
+    }
+    .area-logo-bottom {
+      width:100%;
+      padding-top:13px;
+      .btn-more {
+        color:#fff;
+        font-size:12px;
+        border-bottom:1px solid #fff;
+        padding-bottom:1px;
+      }
+    }
+  }
+  .btn-it {
+    position:absolute;
+    right:20px;
+    top:45px;
+    width: 25px;
+    height: 23px;
+    background-image: url('#{$imgIcoPath}/btn_it_off_big.png');
+    &.active {
+      background-image: url('#{$imgIcoPath}/btn_it_on_big.png');
+    }
+  }
+}
+.brand-product-button-slide.swiper-container {
+  height:45px;
+  background-color:#144733;
+  padding-bottom:30px;
+  .swiper-slide {
+    width:auto;
+    margin-right:8px;
+    &:first-of-type {
+      margin-left:8px;
+    }
+  }
+  button {
+    padding-top:12px;
+    .brand-name {
+      display:block;
+      min-width:50px;
+      font-size:13px;
+      color:rgba(255,255,255,0.5);
+    }
+   &.active{
+    .brand-name {
+      padding-top:12px;
+      margin-top:-4px;
+      color:#fff;
+      background:url('#{$imgIcoPath}/btn_active_brand_list.png') 50% 0 no-repeat;
+      background-size:9px;
+    }
+   } 
+  }
+}
+/* 브랜드 상세 view */
+.nanum-myeongjo {
+  font-family: 'NanumMyeongjo';
+}
+.wrap-full-popup.brand-view {
+  background-color:#f1f1f1;
+  .full-popup-body {
+    height:100%;
+  }
+  .area-logo-txt {
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    color:#fff;
+    text-align:center;
+    > figure {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width:160px;
+      height:160px;
+      margin:35vw auto 0;
+      color:#ff0000;
+      img { 
+        margin:auto;
+        width:auto;
+        max-width:160px;
+        max-height:160px;
+      }
+    }
+    &.type-width-size01 {
+      > figure {
+        width:250px;
+      }
+      img {
+        max-width:250px;
+      }
+    }
+    &.type-width-size02 {
+      > figure {
+        width:190px;
+      }
+      img {
+        max-width:190px;
+      }
+    }
+  }
+  .btn-layer-close {
+    position: absolute;
+    top: 22px;
+    width: 20px;
+    height: 20px;
+    right: 20px;
+    background-image:url('#{$imgIcoPath}/btn_popup_close_wh.png');
+    background-repeat: no-repeat;
+    background-size: 100% ;
+  }
+}
+.brand-view-top {
+  position:relative;
+  &:after {
+    content:'';
+    display:block;
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:75px;
+    background:url('#{$imgPath}/bg_brand_top_bottom.png') 0 0 no-repeat;
+    background-size:cover;
+  }
+  .area-bg {
+    position: relative;
+    &::after {
+      @include content;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,.7);
+    }
+  }
+}
+.area-title {
+  text-align:center;
+  .title-brand-story {
+    position:relative;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:5px;
+    &:after {
+      content:''; 
+      display:block;
+      position:absolute;
+      z-index:-1;
+      left:0; 
+      bottom:0;
+      width:100%;
+      height:10px;
+      background-color:#cdece0;
+    }
+  }
+  .title-brand-name {
+    display:block;
+    margin-top:20px;
+    font-size:35px;
+    line-height:1;
+    font-weight:700;
+    span {
+      display:block;
+      padding-top:10px;
+      font-size:13px;
+    }
+  }
+  .title-sub-info {
+    font-size:14px;
+    margin-top:25px;
+    padding:0 25px;
+  }
+}
+.area-top-image {
+  position:relative;
+  margin-top:35px;
+  padding:20px 35px 0;
+  &:after {
+    content:'';
+    display:block;
+    position:absolute;
+    left:50%;
+    top:0;
+    margin-left:-55px;
+    width:111px;
+    height:39px;
+    background:url('#{$imgPath}/img_brand_view_deco01.png') 0 0 no-repeat;
+    background-size:cover;
+  }
+}
+.wrap-area-speech {
+  strong {
+    display:block;
+    text-align: center;
+    padding-top:20px;
+    font-size:14px;
+    figure,img {
+      width:100px;
+      margin:auto;
+    }
+  }
+  &.include-bg {
+    min-height: 275px;
+    background:url('#{$imgPath}/bg_area_speech.png') 50% 0 no-repeat;
+    background-size:259px 269px;
+  }
+}
+.area-speech {
+  position:relative;
+  margin-top:35px;
+  font-size:17px;
+  font-weight:700;
+  text-align:center;
+  padding:30px 35px;
+  &:before, &:after {
+    content:'';
+    display:block;
+    position:absolute;
+    left:50%;
+    margin-left:-10px;
+    width:20px;
+    height:18px;
+    background-repeat:no-repeat;
+    background-size:100%;
+    background-position:0 0;
+  }
+  &:before {
+    top:0;
+    background-image:url('#{$imgIcoPath}/ico_quotation_marks01.png');
+  }
+  &:after {
+    bottom:0;
+    background-image:url('#{$imgIcoPath}/ico_quotation_marks02.png');
+  }
+}
+.area-img-circle {
+  position:relative;
+  width:100%;
+  height:103vw;
+  padding-top:75px;
+  background-repeat:no-repeat;
+  background-position: right 20px top 50%;
+  background-image:url('#{$imgPath}/bg_circle_img_pink.png');
+  background-size:calc(100% - 20px);
+  z-index: -1;
+  &.circle-green {
+    background-image:url('#{$imgPath}/bg_circle_img_green.png');
+  }
+  &.circle-green02 {
+    background-image:url('#{$imgPath}/bg_circle_img_green02.png');
+  }
+  &.circle-green03 {
+    background-image:url('#{$imgPath}/bg_circle_img_green03.png');
+  }
+  &.circle-blue {
+    background-image:url('#{$imgPath}/bg_circle_img_blue.png');
+  }
+  &.circle-blue02 {
+    background-image:url('#{$imgPath}/bg_circle_img_blue02.png');
+  }
+  &.circle-blue03 {
+    background-image:url('#{$imgPath}/bg_circle_img_blue03.png');
+  }
+  &.circle-orange {
+    background-image:url('#{$imgPath}/bg_circle_img_orange.png');
+  }
+  &.circle-orange02 {
+    background-image:url('#{$imgPath}/bg_circle_img_orange02.png');
+  }
+  &.circle-pink02 {
+    background-image:url('#{$imgPath}/bg_circle_img_pink02.png');
+  }
+  &.line-orange {
+    &:before {
+      background-image:url('#{$imgPath}/bg_line_img_orange.png');
+    }
+  }
+  &.line-pink {
+    &:before {
+      background-image:url('#{$imgPath}/bg_line_img_pink.png');
+    }
+  }
+  &.line-green {
+    &:before {
+      background-image:url('#{$imgPath}/bg_line_img_green.png');
+    }
+  }
+  &.line-blue {
+    &:before {
+      background-image:url('#{$imgPath}/bg_line_img_blue.png');
+    }
+  }
+  &.line-red {
+    &:before {
+      background-image:url('#{$imgPath}/bg_line_img_red.png');
+    }
+  }
+  &:before {
+    content:'';
+    display:block;
+    position: absolute;
+    left:0;
+    top:0;
+    width:147px;
+    height: 148px;
+    background-size:100%;
+    z-index: 1;
+    background-repeat:no-repeat;
+    background-position:0 0;
+    background-image:url('#{$imgPath}/bg_line_img_blue.png');
+    background-size:100%;
+  }
+  figure {
+    width:230px;
+    height:230px;
+    border-radius:50%;
+    overflow:hidden;
+    margin:auto;
+  }
+}
+.area-txt-big {
+  margin-top:50px;
+  font-size:25px;
+  line-height:1.5;
+  text-align:center;
+  font-weight:700;
+}
+.brand-view-content{
+  position:relative;
+  padding-bottom:350px;
+  li, p, span, strong {
+    font-family: 'NanumMyeongjo';
+  }
+  > .area-bg {
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    z-index:-1;
+  }
+  .area-txt {
+    margin-top:25px;
+    font-size:14px;
+    padding:0 35px;
+    line-height:1.5;
+    text-align:center;
+    .imp-txt {
+      &.color-red {
+        color:#7e2323;
+      }
+      padding-top:20px;
+      font-weight:700;
+      color:#144733;
+    }
+    .imp-txt02 {
+      font-family: 'NanumMyeongjo';
+      font-weight:700;
+      text-decoration: underline;
+    }
+    .imp-txt03 {
+      font-family: 'NanumMyeongjo';
+      text-decoration: underline;
+    }
+    .sub-txt {
+      display:block;
+      font-size:12px;
+      padding-top:3px;
+    }
+  }
+}
+.area-video {
+  width:100%;
+  padding-top:50px;
+  iframe {
+    width: 100%;
+    height: 56.2vw;
+  } 
+}
+.font-italic {
+  font-style: italic;
+  font-size:14px;
+  line-height: 1.5;
+  figure {
+    margin:20px -35px 30px;
+  }
+}
+.area-image-info-txt {
+  padding-top:120px;
+  margin-top:50px;
+  .top-image-txt {
+    figure {
+      margin-top:-120px;
+      float:left;
+      width:305px;
+    }
+    &:after {
+      @include content;
+    }
+  }
+  .bottom-image-txt {
+    > figure, img {
+      max-width:360px;
+      margin:auto;
+    }
+    figure {
+      padding:35px 0 5px 0;
+    }
+  }
+  .inner-image-txt {
+    background-color:#e7e4dc;
+    padding-bottom:35px;
+    margin-bottom:25px;
+    &.bg-none {
+      background-color:transparent;
+    }
+    &.bg-blue {
+      background-color:#e5e9ee;
+    }
+  }
+  .txt-box {
+    background-color:#96866e;
+    float:right;
+    width:315px;
+    margin-top:-35px;
+    font-size:14px;
+    padding:24px 20px;
+    color:#fff;
+    &.title {
+      color:#fff;
+      font-size:25px;
+      background-color:#363637;
+    }
+    &.bg-green {
+      background-color:#97b04f;
+    }
+    &.bg-blue {
+      background-color:#65799a;
+    }
+  }
+}
+.area-image01 {
+  padding-right:20px;
+}
+.area-image02 {
+  padding-top:40px;
+  figure, img {
+    width:100%;
+  }
+}
+.list-character01, .list-character02, .list-character03 {
+  padding:0 35px;
+  li {
+    padding-top:20px;
+    span {
+      display:inline-block;
+      position:relative;
+      margin-bottom:10px;
+      z-index: 1;
+      font-weight:700;
+      &:after {
+        position:absolute;
+        left:0; 
+        bottom:2px;
+        content:'';
+        z-index: -1;
+        display:inline-block;
+        width:100%;
+        height: 10px;
+        background-color:#8bdcb6;
+      }
+    }
+  }
+}
+.list-character02, .list-character03 {
+  li {
+    font-size:17px;
+    font-weight:700;
+  }
+  span {
+    font-size:17px;
+  }
+}
+.list-character01 {
+  text-align: center;
+  span, p {
+    font-size:14px;
+  }
+}
+.list-character03 {
+  padding-left:45px;
+   p {
+    font-size:14px;
+    font-weight: 400;
+  }
+}
+.list-character02 {
+  span {
+    margin-left:5px;
+  }
+}
+.list-character04 {
+  li {
+    text-align: center;
+    margin:0 35px;
+    padding-bottom:25px;
+    font-size:13px;
+    border-bottom:1px solid #c8c8c9;
+    &:last-child {
+      border-bottom:0;
+    }
+    figure {
+      max-width:112px;
+      margin:auto;
+    }
+  }
+}
+.list-character05 {
+  li {
+    text-align: center;
+    margin:0 35px;
+    figure {
+      max-width:160px;
+      margin:37px auto 25px;
+    }
+    p {
+      padding:25px 15px;
+      background-color:#fff;
+      border-radius: 10px;
+      border:1px solid #d5d5d5;
+      font-size:11px;
+      font-weight: 700;
+      span {
+        display:block;
+        padding-top:15px;
+        color:#666;
+        font-style: italic;
+        font-weight: 400;
+      }
+    }
+  }
+}
+.area-info-test {
+  background:url('#{$imgPath}/bg_brand_test04_07.jpg') 0 0 no-repeat;
+  background-size:100%;
+  margin-top:20px;
+  padding-top:50px;
+  .area-txt-big, .area-txt {
+    color:#fff;
+  }
+  .area-txt-big {
+    margin-top:0;
+  }
+  .area-txt {
+    padding-bottom:38px;
+  }
+  figure {
+    padding:0 20px;
+  }
+}
+.area-bottom-info-txt {
+  position:relative;
+  padding-bottom:100vw;
+  background-color:#000;
+  margin-top:-25px;
+  .area-bg {
+    position: absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+  }
+  .area-txt-big {
+    padding-top:60px;
+    padding-bottom:30px;
+  }
+  .area-txt-big, .area-txt {
+    margin-top:0;
+    color:#fff;
+  } 
+}
+.area-image-info-txt02 {
+  position:relative;
+  margin-top:45px;
+  padding-top:150px;
+  .inner-image-txt {
+    background-color:#3a3846;
+  }
+  figure {
+    display:block;
+    padding:0 35px;
+    position: absolute;
+    top:0;
+    left:0;
+  }
+  .area-txt {
+    margin-top:0;
+    padding-top:180px;
+    padding-bottom:65px;
+    color:#fff;
+    .imp-txt {
+      color:#fff;
+      font-weight:400;
+      text-decoration: underline;
+    }
+  }
+}
+/* 브랜드 소개 */
+.wrap-brand-introduce {
+  padding:42px 20px 0;
+}
+.brand-introduce01 > figure {
+  margin:0 -20px;
+}
+.brand-introduce-title {
+  display:inline-block;
+  margin-top:20px;
+  margin-bottom:15px;
+  font-size:23px;
+  font-weight: 500;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  background-image:url('#{$imgPath}/bg_main_title01.png');
+  background-repeat: no-repeat;
+  background-size: 100% 25px;
+  background-position: 0 100%;
+}
+.brand-introduce01 {
+  .area-speech {
+    margin-top: 0;
+    padding: 23px 35px;
+    font-size: 19px;
+    color: $dalisalda;
+    &:before,
+    &:after {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+.brand-introduce-desc {
+  margin-top: 22px;
+  text-align: center;
+  .txt {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 18px;
+    & +.txt {
+      margin-top: 18px;
+    }
+  }
+}
+// .brand-introduce-txt { //2020.08.24 삭제
+//   padding-bottom:35px;
+//   text-align: center;
+//   font-size:15px;
+//   span {
+//     display:block;
+//     font-weight: 500;
+//   }
+// }
+.brand-introduce-dia {
+  position:relative;
+  width:100%;
+  max-width:320px;
+  height:316px;
+  margin:auto;
+  border: 3px solid #00cf7d;
+  background:url('#{$imgPath}/bg_dia_brand_info.png') 0 0 no-repeat;
+  background-size:cover;
+  .principle {
+    display:block;
+    position: absolute;
+    left:50%;
+    margin-left:-40px;
+    width:80px;
+    color:#00cf7d;
+    font-size: 23px;
+    font-weight: 700;
+    text-align: center;
+    padding:6px;
+    background-color:#fff;
+    &.top {
+      top:-22px;
+    }
+    &.bottom {
+      bottom:-22px;
+    }
+  }
+  ul {
+    overflow:hidden;
+    li {
+      width:50%;
+      height: 168px;
+      padding:20px 15px;
+      float:left;
+      text-align: center;
+      font-size:12px;
+      font-weight: 300;
+      &:first-child, &:nth-child(2) {
+        height: 142px;
+      }
+      strong {
+        display:block;
+        font-size:25px;
+        font-weight: 700;
+        color:#144733;
+        padding-bottom:5px;
+      }
+    }
+  }
+}
+.slide-dali-info {
+  .swiper-slide {
+    padding-top: 78px;
+  }
+  .dali-info01, .dali-info02, .dali-info03, .dali-info04 {
+    position: relative;
+    height: 210px;
+    background-color: #f6f4f4;
+    background-repeat:no-repeat;
+    margin-bottom: 33px;
+    &::after {
+      @include content;
+      position: absolute;
+      background-repeat:no-repeat;
+      background-size: 100% auto;
+    }
+  }
+  h3 {
+    padding-top: 32px;
+    font-size: 25px;
+    font-weight: 300;
+    padding-left: 20px;
+    span {
+      font-weight: 700;
+    }
+  }
+  strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 14px 25px 8px 25px;
+  }
+  p {
+    font-size: 12px;
+    font-weight: 300;
+    padding: 8px 25px 0;
+  }
+  .dali-info01::after {
+    background-image: url('#{$imgPath}/bg_dali_brand_info01.png');
+    width: 111px;
+    height: 105px;
+    right: 22px;
+    top: -36px;
+  }
+  .dali-info02::after {
+    background-image: url('#{$imgPath}/bg_dali_brand_info02.png');
+    width: 119px;
+    height: 113px;
+    right: 14px;
+    top: -48px;
+  }
+  .dali-info03::after {
+    background-image: url('#{$imgPath}/bg_dali_brand_info03.png');
+    width: 102px;
+    height: 104px;
+    right: 15px;
+    top: -35px;
+  }
+  .dali-info04::after {
+    background-image: url('#{$imgPath}/bg_dali_brand_info04.png');
+    width: 141px;
+    height: 103px;
+    right: 13px;
+    top: -35px;
+  }
+}
+.selection-criteria {
+  margin-top:-5px;
+  li {
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    border-top:1px dashed #e9e9e9;
+    padding:15px 0;
+    overflow:hidden;
+    &:first-child { 
+      border:none;
+    }
+    .wrap-img {
+      width:71px;
+      padding:0 7px;
+      // float:left;
+      text-align: center;
+      font-size:12px;
+      font-weight: 700;
+      color:#144733;
+      figure, img {
+        width:100%;
+      }
+      figure {
+        padding-bottom: 8px;
+        width: 53px;
+        margin: 0 auto;
+      }
+    }
+    .wrap-txt {
+      width: calc(100% - 71px);
+      padding-left:10px;
+      // float:left;
+      .dot-txt {
+        font-size:12px;
+        padding-bottom:0;
+        font-weight: 300;
+      }
+    }
+  }
+}
+.dali-dream-pass {
+  width:100%;
+  overflow:hidden;
+  margin-bottom:15px;
+  li {
+    &:first-child {
+      width:100%;
+    }
+    width:50%;
+    float:left;
+    text-align: center;
+    figure {
+      width:110px;
+      margin:auto;
+    }
+    p {
+      font-size:12px;
+      padding:8px 0 24px;
+      span {
+        display:block;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+      }
+    }
+  }
+  & + .btn-dalis-brand {
+    margin:15px 30px 20px;
+    width: calc(100% - 60px);
+  }
+}
+/* 2020.08.24 삭제 */
+/* .brand-introduce04  {
+  padding-bottom:20px;
+} */
+/* .brand-introduce04 .dali-goods {
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    figure {
+      width: 130px;
+      height: 170px;
+      img {
+        height: 100%;
+      }
+    }
+    .goods-info {
+      width: calc(100% - 165px);
+      strong {
+        position: relative;
+        display: block;
+        padding-bottom: 14px;
+        font-size: $fsBase + 4px;
+        font-weight: 700;
+        &::after {
+          @include content;
+          bottom: 0px;
+          left: 0;
+          position: absolute;
+          height: 2px;
+          width: 40px;
+          background-color: #000;
+        }
+      }
+      p {
+        padding-top: 17px;
+        font-size: $fsBase;
+      }
+    }
+    &:nth-child(2n) {
+      figure {
+        order: 2;
+      }
+      .goods-info {
+        order: 1;
+      }
+    }
+    & + li {
+      padding-top: 40px
+    }
+  }
+} */
+.btn-dalis-brand {
+  position: relative;
+  display: block;
+  background-color: #00d17e;
+  color: #fff;
+  border-radius: 40px;
+  font-size: 17px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 55px;
+  span:after {
+    display: inline-block;
+    content: '';
+    clear: both;
+    margin-left: 5px;
+    margin-bottom: 2px;
+    width: 9px;
+    height: 9px;
+    border: 1px solid #fff;
+    border-bottom: 0;
+    border-right: 0;
+    box-sizing: border-box;
+    transform: rotate(135deg);
+  }
+}

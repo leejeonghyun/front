@@ -1,0 +1,1192 @@
+/* 모바일 앱인 경우 메인 슬라이드 이미지 위치 변경. */
+.mobile-app {
+  .wrap-main-slide .wrap-swiper .swiper-container .swiper-wrapper .swiper-slide {
+    height: 130.278vw; // 720*938 기준 (status bar -(43*2))
+    img {
+      margin: 0;
+      // margin-top: -43px;
+    }
+  }
+}
+
+.wrap.main {
+  transform: none;
+  .wrap-footer {
+    border-top: none;
+  }
+}
+
+/* MainHeader.vue */
+.wrap-main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: $widthFull;
+  &.sticky,
+  &.active {
+    nav {
+      background: #fff;
+      &:before {
+        display: none;
+      }
+      h1 .logo {
+        background-image: url('#{$imgRootPath}/logo_gsfresh.png');
+      }
+      .wrap-header-link .btn-search {
+        background-image: url('#{$imgIcoPath}/ico_header_search_bl.svg');
+      }
+      .wrap-header-link .btn-trendy {
+        background-image: url('#{$imgIcoPath}/ico_header_trendy_gsfresh.svg');
+      }
+      .wrap-header-link .btn-cart {
+        background-image: url('#{$imgIcoPath}/ico_header_cart_bl.svg');
+      }
+      .wrap-header-link .btn-change-shipping {
+        background-image: url('#{$imgIcoPath}/ico_header_change_shipping_gsfresh_bl.svg');
+      }
+    }
+  }
+  &.sticky {
+    background: #fff;
+  }
+  nav {
+    padding: 11px 27px 11px 20px;
+    height: 45px;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: $widthFull;
+      height: 123px;
+      background: url('#{$imgRootPath}/bg_header_gradation.png') repeat-x 0 0;
+      background-size: 1px 123px;
+      opacity: .3;
+    }
+    &:after {
+      @include content;
+    }
+    h1 {
+      float: left;
+      .logo {
+        display: inline-block;
+        width: 122px;
+        height: 17px;
+        background: url('#{$imgRootPath}/logo_gsfresh_wh.png') no-repeat 0 0;
+        background-size: 100% auto;
+        vertical-align: middle;
+      }
+    }
+  }
+  .wrap-header-link {
+    display: block;
+    float: right;
+    [class^='btn'] {
+      display: inline-block;
+      width: 23px;
+      height: 23px;
+      vertical-align: middle;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 18px auto;
+      &.btn-search {
+        background-image: url('#{$imgIcoPath}/ico_header_search.svg');
+      }
+      &.btn-trendy {
+        margin-left: 10px;
+        background-image: url('#{$imgIcoPath}/ico_header_trendy.svg');
+        background-size: 19px auto;
+      }
+      &.btn-cart {
+        position: relative;
+        z-index: 1;
+        margin-left: 10px;
+        background-color: transparent;
+        background-image: url('#{$imgIcoPath}/ico_header_cart.svg');
+      }
+      &.btn-cart .num {
+        top: -2px;
+        left: 15px;
+        z-index: 10;
+      }
+      &.btn-change-shipping {
+        margin-left: 10px;
+        background-image: url('#{$imgIcoPath}/ico_header_change_shipping_gsfresh.svg');
+        background-size: 20px auto;
+      }
+    }
+  }
+}
+
+/* MainHeader Transition */
+.wrap-main-header,
+.wrap-main-header nav h1 .logo,
+.wrap-main-header nav .wrap-header-link,
+.wrap-main-header.sticky,
+.wrap-main-header.sticky nav h1 .logo,
+.wrap-main-header.sticky nav .wrap-header-link,
+.wrap-main-header.active,
+.wrap-main-header.active nav h1 .logo,
+.wrap-main-header.active nav .wrap-header-link,
+.wrap-gnb .wrap-gnb-slide,
+.wrap-gnb.sub .wrap-gnb-slide,
+.wrap-gnb.sticky .wrap-gnb-slide {
+  transition: all .2s;
+}
+
+.wrap-modal-trendy {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  width: 100%;
+  padding: 18px 0 33px 0;
+  background: #fff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  .btn-modal-close {
+    position: absolute;
+    bottom: 0px;
+    z-index: 10;
+    width: $widthFull;
+    height: 20px;
+    color: transparent;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: calc(50% - 40px);
+      width: 80px;
+      height: 4px;
+      background: #dedede;
+      border-radius: 4px;
+    }
+  }
+}
+$trendyLength: var(--trendyLength);
+.wrap-slide-trendy {
+  width: 100%;
+  @include scroll-wrapper;
+  white-space: nowrap;
+}
+.wrap-slide-trendy .wrap-list-trendy {
+  display: flex;
+  width: calc(((20.834vw + 4px) * #{$trendyLength}) + 20px);
+  .swiper-slide {
+    width: 20.834vw;
+    margin: 0 2px;
+    &:first-child {
+      margin-left: 10px;
+    }
+    &:last-child {
+      margin-right: 10px;
+    }
+  }
+  .swiper-slide a {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    .wrap-img {
+      width: 15.278vw;
+      height: 15.278vw;
+      display: block;
+      overflow: hidden;
+      border-radius: 50%;
+      img {
+        height: 100%;
+      }
+    }
+    .keyword {
+      @include ellipsis;
+      display: block;
+      width: 100%;
+      margin-top: 10px;
+      padding: 0 3px;
+      text-align: center;
+      font-weight: 300;
+      font-size: $fsBase + 1px;
+      text-align: center;
+      color: $colorBase;
+    }
+    .ico-hashtag {
+      @include ellipsis;
+      display: block;
+      width: 100%;
+      margin: auto;
+      padding: 2px 6px 0;
+      font-weight: 500;
+      font-size: $fsBase;
+      text-align: center;
+      color: $colorBase;
+      background: #ededed;
+      border-radius: 10px;
+      &:before {
+        content: '#';
+        display: inline;
+      }
+    }
+  }
+}
+
+/* main-slide */
+.wrap-main-slide {
+  position: relative;
+  z-index: 1;
+  .swiper-slide {
+    img {
+      margin-top: -43px;
+    }
+  }
+  .wrap-controls {
+    bottom: 50px;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none; // 9/9 류은진 담당 요청건 (DEFC-0000004749)
+    margin-top: -45px;
+  }
+  .swiper-number-pagination {
+    z-index: 11;
+    right: 56px;
+    bottom: 50px;
+    left: auto;
+    width: 35px;
+    transform: none;
+    text-align: center;
+  }
+  .swiper-slide {
+    overflow-y: hidden;
+    height: 118.33vw; // 720*938 기준 (status bar -(43*2))
+    a {
+      display: flex;
+      align-items: flex-start;
+      height: 100%;
+    }
+  }
+}
+
+/* banner-slide */
+.wrap-swiper-slide.banner-slide {
+  width: $widthFull;
+  height: 64px;
+  &.loop-mode {
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: block;
+    }
+  }
+  .swiper-pagination {
+    bottom: 0;
+    top: auto;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .swiper-container-autoheight,
+  .swiper-wrapper,
+  .swiper-slide {
+    height: 64px;
+  }
+  a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: $widthFull;
+    height: 100%;
+    img {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: auto;
+      height: 100%;
+      transform: translateX(-50%);
+    }
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 32px;
+    display: none;
+    // margin-top: -12px;
+  }
+  .btn-slide-controls {
+    margin-top: -4px;
+  }
+}
+
+/* menu-slide */
+$gnbWidth: var(--gnbWidth);
+.wrap-gnb {
+  position: absolute;
+  top: calc(130.278vw - 45px);
+  z-index: 98;
+  @include scroll-wrapper;
+  width: $widthFull;
+  font-size: 0;
+  background: rgba(0, 0, 0, 0.5);
+  &.sub {
+    border-bottom: 1px solid $colorBorder;
+    background-color: #fff;
+  }
+  &.sub,
+  &.sticky {
+    position: fixed;
+    top: 44px !important;
+    left: 0;
+    z-index: 98;
+    background: #fff;
+    &:after {
+      content: none;
+    }
+  }
+  &.sub .wrap-gnb-slide,
+  &.sticky .wrap-gnb-slide {
+    // width: calc(#{$gnbWidth} - 65px);
+    .swiper-slide a:not(.active) {
+      color: $colorBase;
+    }
+    .swiper-slide:last-child { // 9/16 무한 루프건 개발 미반경으로 인해 추가된 코드
+      padding-right: 0;
+    }
+  }
+  &.sticky ~ .area-change-delivery {
+    display: none;
+  }
+  .wrap-gnb-slide {
+    position: relative;
+    display: flex;
+    // justify-content: space-around;
+    // width: $gnbWidth;
+    // padding-right: 65px;
+  }
+  .swiper-slide {
+    display: inline-block;
+    width: auto;
+    font-size: 0;
+    line-height: 0;
+    a {
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      padding: 15px 10px;
+      height: 45px;
+      font-weight: 300;
+      font-size: $fsBase + 5px;
+      line-height: 1;
+      color: #fff;
+    }
+    &:last-child { // 9/16 무한 루프건 개발 미반경으로 인해 추가된 코드
+      padding-right: 65px;
+    }
+  }
+  .swiper-slide .active {
+    font-weight: 700;
+    color: $gsfresh;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      z-index: 10;
+      width: 4px;
+      height: 4px;
+      background: $gsfresh;
+      border-radius: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+/* quick menu */
+$quickMenuWidth: var(--quickMenuWidth);
+.wrap-main-quick {
+  overflow: hidden;
+  height: 83px;
+  .wrap-quick-menu {
+    @include scroll-wrapper;
+    width: $widthFull;
+    background: #fff;
+  }
+}
+.wrap-main-quick .wrap-list-quick {
+  display: flex;
+  // flex-wrap: wrap; 8/20 허광남대표 요청 사항 삭제
+  justify-content: space-around;
+  width: calc(#{$quickMenuWidth});
+  height: 103px;
+  font-size: 0;
+  text-align: center;
+  a {
+    display: inline-block;
+    padding: 20px 4px 13px 4px;
+    // flex: 1;
+    width: 66px;
+    font-weight: 500;
+    font-size: $fsBase;
+    text-align: center;
+    span {
+      display: inline-block;
+      @include ellipsis;
+      width: calc(66px - 8px);
+    }
+    figure {
+      margin: 0 auto 10px;
+      width: 28px;
+      height: 24px;
+    }
+    &:first-child {
+      padding-left: 8px;
+      width: 70px;
+      span {
+        width: calc(70px - 12px);
+      }
+    }
+    &:last-child {
+      padding-right: 8px;
+      width: 70px;
+      span {
+        width: calc(70px - 12px);
+      }
+    }
+  }
+}
+
+/* 당일, 새벽 간 이동 버튼 */
+.area-change-delivery {
+  display: block;
+  position: absolute;
+  top: calc(130.278vw - 45px);
+  right: 0;
+  z-index: 98;
+  width: 65px;
+  height: 45px;
+  text-align: center;
+  background: $daybreakTimeLight url('#{$imgRootPath}/logo_daybreak_wh.svg') no-repeat center center;
+  background-size: 54px auto;
+  border-radius: 25px 0 0 25px;
+}
+
+/* 배송가능시간 안내 */
+.wrap-delivery-info {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #f6f6f6;
+  .wrap-delivery-list {
+    display: flex;
+    align-items: center;
+  }
+  .intro-text {
+    display: block;
+    position: relative;
+    margin: 0 12px 0 32px;
+    font-size: $fsBase - 1px;
+    line-height: 1.3;
+    color: $colorGray;
+    background-size: 24px 14px;
+    border-bottom: 1px solid #ababab;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -32px;
+      width: 24px;
+      height: 14px;
+      background: url('#{$imgIcoPath}/ico_main_delivery.png') no-repeat;
+      background-size: 100% auto;
+      transform: translateY(-50%);
+    }
+  }
+  .intro-time {
+    display: block;
+    .time {
+      font-weight: 700;
+      font-size: $fsBase + 2px;
+      color: $gsfresh;
+      &.arrow:after {
+        @include afterArrow(inline-block, 5px, 5px,  $daybreak, 45deg);
+        margin-left: 3px;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+/* 개인화 영역 */
+.wrap-recommend-tab {
+  border-bottom: 1px solid #c4c4c4;
+  @at-root .main-item + & {
+    border-top: 10px solid $colorBgGray;
+  }
+  & + .main-item {
+    border-top: none;
+  }
+  &.open {
+    border-bottom: none;
+    .wrap-product-slide.product-image-19 {
+      padding-top: 0;
+    }
+    & + .main-item {
+      border-top: 10px solid $colorBgGray;
+    }
+  }
+  div.btn-recommend {
+    &:after {
+      display: none;
+    }
+  }
+  .btn-recommend {
+    position: relative;
+    z-index: 1;
+    padding: 17px 20px;
+    width: $widthFull;
+    font-weight: 500;
+    font-size: $fsBase + 2px;
+    text-align: left;
+    color: $colorBase;
+    &[aria-expanded=true]:after {
+      margin-top: -2px;
+      transform: rotate(-45deg);
+    }
+    &:after {
+      @include afterArrow(inline-block, 6px, 6px,  #000, 135deg);
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      z-index: 10;
+      margin-top: -6px;
+    }
+  }
+}
+
+/* main-item */
+.main-item {
+  padding: 30px 0;
+  & + .main-item {
+    position: relative;
+    z-index: 10;
+    border-top: 10px solid $colorBgGray;
+  }
+  & ~ .main-item {
+    padding: 50px 0 30px;
+  }
+  article + article {
+    margin-top: 30px;
+  }
+  .main-item-title {
+    padding-left: 20px;
+    font-weight: 700;
+    font-size: $fsBase + 15px;
+    .logo {
+      display: block;
+      margin-top: -50px;
+      margin-bottom: 10px;
+      & > img {
+        width: 51px;
+      }
+    }
+  }
+  .wrap-relatived-keywords {
+    @include scroll-wrapper;
+    display: block;
+    margin-top: 10px;
+    padding-left: 20px;
+    .relatived-keywords {
+      display: inline-block;
+      padding: 4px 9px 1px;
+      height: 24px;
+      border: 1px solid #666;
+      border-radius: 12px;
+      & + .relatived-keywords {
+        margin-left: 4px;
+      }
+      span:before {
+        content: '#';
+      }
+      span {
+        display: block;
+        font-weight: 300;
+        font-size: $fsBase + 1px;
+        color: #666;
+      }
+    }
+  }
+  // 메인 상품목록 공통
+  .product {
+    & + .product-image-07,
+    & + .product-image-19 {
+      margin-top: -15px;
+    }
+  }
+}
+/* IOS 에서만 적용되는 CSS */
+/* relatived-keywords */
+_::-webkit-full-page-media, _:future, :root .main-item .wrap-relatived-keywords .relatived-keywords {
+  padding-top: 3px;
+}
+
+/* 새로운 상품 */
+.main-item.today-new {
+  position: relative;
+  z-index: 1;
+  border: none;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    height: 100vw;
+    background: $gsfreshTimeNormal;
+  }
+  .main-item-title {
+    color: #fff;
+  }
+}
+
+/* 핫딜 */
+.wrap-deal-slide {
+  padding: 5px 20px 20px;
+  .swiper-slide {
+    width: 80.56vw;
+    margin-right: 20px;
+    .product-06 {
+      &:nth-of-type(2) {
+        margin-top: -10px;
+      }
+    }
+  }
+  & + .swiper-scrollbar {
+    margin-left: 20px;
+  }
+}
+/* 검색어 순위 */
+.main-item.search-chart {
+  padding-bottom: 32px;
+}
+.wrap-list-chart {
+  padding-left: 20px;
+  margin-top: 13px;
+  // height: calc(430px + 40.27vw);
+  height: calc(412px + 40.27vw);
+  .list {
+    @for $i from 1 through 15 {
+      &:nth-child(#{$i}) .btn-list-chart:before {
+        content: '#{$i}.';
+      }
+    }
+  }
+  .accordion-content {
+    &.accordion-leave-active {
+      transition: height .3s ease-in-out;
+    }
+    &.accordion-enter-active {
+      transition: height .4s ease-in-out, opacity .2s ease-in .2s;
+    }
+    .wrap-product-slide {
+      padding: 16px 0;
+    }
+  }
+
+  .btn-list-chart {
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: $widthFull;
+    height: 50px;
+    font-weight: 500;
+    font-size: $fsBase + 3px;
+    line-height: 50px;
+    text-align: left;
+    @at-root .wrap-list-chart .list:not(:first-child) .btn-list-chart {
+      border-top: 1px solid $colorBorder;
+      &[aria-expanded=true] {
+        border-top: none;
+      }
+    } // 8/27 김경희과장님 요청건
+    &:before {
+      margin-right: 8px;
+    }
+    &:after {
+      @include afterArrow(inline-block, 6px, 6px, #000, 135deg);
+      position: absolute;
+      top: 50%;
+      right: 23px;
+      z-index: 10;
+      margin-top: -1px;
+    }
+    &[aria-expanded=true] {
+      padding-left: 24px;
+      font-weight: 700;
+      color: #fff;
+      background: $gsfresh;
+      border-color: $gsfresh;
+      &:after {
+        border-color:#fff;
+        transform: rotate(-45deg);
+      }
+      .ico-status.up,
+      .ico-status.down {
+      background-image: url('#{$imgIcoPath}/ico_level_active.png');
+      }
+      .ico-status.down {
+      transform: rotate(180deg);
+      }
+      .ico-status.no-change {
+        background-color: #fff;
+      }
+    }
+    .ico-status {
+      display: inline-block;
+      margin-left: 13px;
+      width: 8px;
+      height: 10px;
+      vertical-align: middle;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100% auto;
+      &.up {
+        background-image: url('#{$imgIcoPath}/ico_level_up.png');
+      }
+      &.down {
+        background-image: url('#{$imgIcoPath}/ico_level_down.png');
+      }
+      &.no-change {
+        content: '';
+        top: 50%;
+        left: 50%;
+        width: 8px;
+        height: 2px;
+        background: #c4c4c4;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+
+@keyframes up {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    bottom: 0;
+  }
+}
+@keyframes speechBubble {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+// 검색어 순위 + 개인화
+.main-item.recent-list {
+  .wrap-recommend-tab {
+    .btn-recommend {
+      padding: 17px 0;
+    }
+    .accordion-content {
+      padding: 0 0 16px 0;
+    }
+  }
+}
+
+// 하단 회원가입 안내 티커
+.wrap-ticker {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: -81px;
+  left: 0;
+  z-index: 0;
+  width: $widthFull;
+  height: 81px;
+  transition: bottom .5s ease-in-out;
+  &:after {
+    @include content;
+  }
+  &.active {
+    bottom: 60px;
+  }
+  &.typing {
+    .wrap-speech .btn-close {
+      opacity: 1;
+    }
+  }
+  &.personalize {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    padding-left: 10px;
+    height: 61px;
+    .model {
+      bottom: -61px;
+      margin-left: 0;
+      height: 61px;
+      background: url('#{$imgPath}/img_model_bottom.png') no-repeat 10px 0;
+      background-size: 44px 61px;
+    }
+    .wrap-speech {
+      // width: 276px;
+      letter-spacing: -0.5px;
+      box-shadow: none;
+      &:after {
+        bottom: 9px;
+        left: -6px;
+        transform: rotate(26deg);
+      }
+      .btn-close {
+        right: 13px;
+      }
+    }
+  }
+  .model {
+    float: left;
+    margin-left: 20px;
+    width: 60px;
+    height: 81px;
+    opacity: 0;
+    background: url('#{$imgPath}/img_main_bottom.png') no-repeat 0 0;
+    background-size: 60px 82px;
+    animation: up .5s linear forwards .4s;
+  }
+  .wrap-speech {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 10px 35px 10px 17px;
+    max-width: 267px;
+    min-height: 38px;
+    opacity: 0;
+    background: $gsfresh;
+    border-radius: 17px;
+    box-shadow: 0 4px 8px rgba(#000, .3);
+    animation: speechBubble .9s linear forwards .8s;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom:0;
+      left: -1px;
+      z-index: 20;
+      width: 10px;
+      height: 7px;
+      background: url('#{$imgPath}/bg_speech_bubble_gsfresh.png') no-repeat 0 0;
+      background-size: 100%;
+    }
+    .speech-bubble {
+      flex-grow: 1;
+      font-weight: 500;
+      font-size: $fsBase + 1px;
+      color: #fff;
+    }
+    .btn-close {
+      position: absolute;
+      top: 9px;
+      right: 12px;
+      z-index: 20;
+      width: 20px;
+      height: 20px;
+      opacity: 0;
+      background: none;
+      transition: opacity .2s linear 5s;
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 10px;
+        z-index: 30;
+        width: 1px;
+        height: 15px;
+        background: #fff;
+        border-radius: 1px;
+      }
+      &:before {
+        transform: rotate(45deg);
+      }
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+@media screen and (max-width:359px) {
+  .wrap-ticker {
+    .wrap-speech {
+      max-width: 227px;
+    }
+  }
+}
+
+// 새벽배송 안내 팝업
+.btn-move-gsfresh {
+  position: relative;
+  font-size: $fsBase - 1px;
+  text-align: center;
+  color: $colorBase;
+  border-bottom: 1px solid $colorBase;
+  &:after {
+    @include afterArrow(inline-block, 5px, 5px, #000, 45deg);
+    margin: 0 2px 1px 0;
+  }
+}
+.popup-responsive {
+  .layer-inner .layer-content.daybreak-delivery {
+    .inner-delivery {
+      min-height: 322px;
+      opacity: 1;
+      background: #fff url('#{$imgRootPath}/logo_daybreak.png') no-repeat 20px 15px;
+      background-size: 72px auto;
+      border-radius: 10px 10px 0 0;
+      .title {
+        padding: 52px 0 15px;
+        text-align: center;
+        border-bottom: 1px solid $colorBorder;
+        > strong {
+          display: block;
+          font-size: $fsBase + 2px;
+          line-height: 20px;
+          color: $daybreak;
+        }
+      }
+    }
+  }
+  .daybreak-delivery {
+    .area-delivery-addr {
+      margin: 4px 0 10px;
+      padding: 0 15px;
+      width: $widthFull;
+      font-size: $fsBase - 1px;
+      .tit {
+        display: block;
+        margin-bottom: 3px;
+      }
+      span {
+        line-height: 16px;
+        color: $colorGray;
+        &.nonregistered {
+          color: $colorRed;
+        }
+      }
+    }
+    @at-root & .area-delivery-desc, .daybreak-delivery .daybreak-delivery .area-delivery-desc {
+      width: $widthFull;
+      border: 1px solid $colorBgGray;
+      .delivery-desc-title {
+        display: block;
+        margin-bottom: 12px;
+        font-size: $fsBase - 1px;
+        line-height: 30px;
+        text-align: center;
+        color: $colorBase;
+        background-color: $colorBgGray;
+      }
+      li {
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        padding: 0 15px 8px;
+        font-size: $fsBase - 1px;
+        color: $colorGray;
+        * {
+          display: inline-block;
+          vertical-align: top;
+        }
+        em {
+          word-break: keep-all;
+          &::after {
+            display: inline;
+            content: ':';
+            padding-left: 3px;
+          }
+        }
+        > span {
+          margin-left: 3px;
+          word-break: keep-all;
+        }
+        &:last-child {
+          padding: 0 15px 12px;
+        }
+      }
+    }
+    .area-btn {
+      margin: 8px 0 15px;
+      text-align: center;
+    }
+  }
+}
+.daybreak-delivery .daybreak-delivery {
+  padding: 20px 20px 0;
+}
+
+// 새벽배송 안내 페이지
+.wrap-inform-daybreak {
+  padding-bottom: 20px;
+  .area-desc {
+    position: relative;
+    height: 280px;
+    background: url('#{$imgPath}/bg_daybreakdelivery_inform.png') no-repeat center center;
+    background-size: cover;
+    &:after {
+      display: block;
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 30px;
+      width: 72px;
+      height: 22px;
+      background: url('#{$imgPath}/logo_daybreak_w.png') no-repeat center center;
+      background-size: 100% auto;
+    }
+    .desc {
+      padding: 77px 0 0 30px;
+      font-weight: 300;
+      font-size: $fsBase + 8px;
+      line-height: 26px;
+      color: #fff;
+      > strong {
+        font-weight: 700;
+        color: $daybreakTimeLight;
+      }
+    }
+  }
+  .area-inform {
+    &.zone {
+      .wrap-input {
+        display: block;
+        position: relative;
+        margin-bottom: 5px;
+        height: 32px;
+        input {
+          padding-left: 10px;
+          padding-right: 37px;
+          width: $widthFull;
+          height: 100%;
+          box-sizing: border-box;
+          border: 1px solid $daybreak;
+        }
+        button {
+          position: absolute;
+          right: 0;
+          top: 1px;
+          width: 37px;
+          height: 30px;
+          background: url('#{$imgIcoPath}/ico_search_bl.png') no-repeat center center;
+          background-size: 16px auto;
+        }
+      }
+      .address-list {
+        li {
+          padding: 10px 0;
+          font-size: 0;
+          border-bottom: 1px solid $colorBorder;
+          > em {
+            display: inline-block;
+            width: 42px;
+            font-size: $fsBase + 1px;
+            vertical-align: top;
+          }
+          > span {
+            display: inline-block;
+            width: calc(100% - 42px);
+            font-size: $fsBase;
+            line-height: 18px;
+            color: $colorGray;
+            vertical-align: top;
+            word-break: keep-all;
+          }
+        }
+      }
+    }
+    &.schedule {
+      position: relative;
+      background-color: #eff0f9;
+      &:after {
+        @include afterArrow(inline-block, 10px, 10px, $colorLightGray, 45deg);
+        position: absolute;
+        top: 121px;
+        left: 50%;
+        margin-left: -6px;
+      }
+      .cont {
+        display: flex;
+        margin-top: 5px;
+      }
+      .deadline,  .arrive{
+        width: 50%;
+        height: 110px;
+        text-align: center;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: 110px 110px;
+      }
+      .deadline {
+        background-image: url('#{$imgPath}/img_daybreakdelivery_deadline.png');
+      }
+      .arrive {
+        background-image: url('#{$imgPath}/img_daybreakdelivery_arrive.png');
+        .time {
+          color: $daybreakTimeLight;
+        }
+      }
+      strong {
+        display: block;
+        padding-top: 24px;
+        height: 46px;
+        font-size: $fsBase + 1px;
+        color: #fff;
+      }
+      .time {
+        display: block;
+        padding-top: 14px;
+        height: 64px;
+        font-weight: 500;
+        font-size: $fsBase + 3px;
+        color: $daybreak;
+      }
+    }
+    &.dayoff {
+      .desc {
+        font-size: $fsBase;
+        line-height: 18px;
+        text-align: center;
+        color: $colorGray;
+        > span {
+          display: block;
+          color: $colorLightGray;
+        }
+      }
+      .operating {
+        margin: 15px auto 10px;
+        width: 300px;
+        height: 107px;
+        background: url('#{$imgPath}/img_daybreakdelivery_dayoff.png') no-repeat center center;
+        background-size: 100% auto;
+      }
+      .sub-desc {
+        font-size: $fsBase - 1px;
+        text-align: center;
+        color: $colorLightGray;
+      }
+    }
+    .title {
+      padding-top: 30px;
+      padding-bottom: 15px;
+      font-weight: 500;
+      font-size: $fsBase + 6px;
+      text-align: center;
+    }
+    .cont {
+      padding: 0 30px 30px;
+    }
+  }
+}

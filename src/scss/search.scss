@@ -1,0 +1,1757 @@
+.wrap-search {
+  padding-top: 51px;
+}
+/* 상단 검색바 */
+header:not(.category-header) .wrap-searchbar {
+  position: fixed;
+  top: 0;
+  z-index: 11;
+  padding: 10px 91px 0 91px;
+  width: $widthFull;
+  height: 51px;
+  background: #fff;
+  border-bottom: 0;
+  &:after {
+    @include content;
+    position: absolute;
+    left: 15px;
+    bottom: 0;
+    width: calc(100% - 30px);
+    height: 1px;
+    background: $gsfresh;
+  }
+  .btn-searchbar-prev {
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+  .btn-home {
+    position: absolute;
+    top: 0;
+    left: 41px;
+    height: 51px;
+  }
+  .btn-searchbar-cart {
+    top: 10px;
+    right: 15px;
+  }
+  .wrap-input.search input[type='text'] {
+    padding: 5px 0;
+    height: 100%;
+  }
+}
+
+.wrap-searchbar {
+  position: relative;
+  padding-right: 0px;
+  height: 41px;
+  border-bottom: 1px solid $gsfresh;
+  .btn-searchbar-prev {
+    position: absolute;
+    top: 0;
+    left: -15px;
+    z-index: 10;
+    height: 39px;
+  }
+}
+.btn-searchbar-cart {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  width: 37px;
+  height: 39px;
+  background: url('#{$imgIcoPath}/ico_header_cart_bl.svg') no-repeat right 18px center;
+  background-size: 18px 17px;
+  .num {
+    top: 7px;
+    left: 14px;
+  }
+}
+.wrap-input.search {
+  input[type='text'] {
+    padding: 3px 0 3px 10px;
+    width: $widthFull;
+    height: 33px;
+    font-weight: 700;
+    font-size: $fsBase + 5px;
+    vertical-align: bottom;
+    box-sizing: content-box;
+    &::placeholder {
+      font-weight: 400;
+      font-size: $fsBase;
+    }
+  }
+  .btn-reset {
+    top: 17px;
+    right: 55px;
+  }
+}
+/* IOS 에서만 적용되는 CSS */
+/* wrap-input.search */
+_::-webkit-full-page-media, _:future, :root .wrap-input.search input[type='text']::placeholder {
+  padding: 5px 0 1px;
+}
+
+.btn-searchbar-search {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  margin-right: 5px;
+  width: 32px;
+  height: 32px;
+  background: url('#{$imgIcoPath}/ico_header_search_bl.svg') no-repeat center;
+  background-size: 16px 17px;
+  &.gray {
+    background: url('#{$imgIcoPath}/ico_search_gray.png') no-repeat center;
+    background-size: 16px auto;
+  }
+}
+.wrap-typo {
+  padding: 10px 0 0 15px;
+  font-size: $fsBase;
+  color: $colorBase;
+  // background: url('#{$imgIcoPath}/ico_exclamation.png') no-repeat left 15px;
+  background-size: 13px auto;
+  strong {
+    font-weight: 500;
+    border-bottom: 1px solid $colorBase;
+    button {
+      color: $colorBase;
+    }
+  }
+}
+.wrap-bottom-btn-search {
+  border-top: 1px solid $colorBorder;
+  padding: 15px 0 25px;
+  text-align: center;
+}
+.search-write {
+  margin-left: 15px;
+  width: 92px;
+  height: 32px;
+  font-size: $fsBase;
+  color: $colorGray;
+  border: 1px solid $colorBorder;
+  border-radius: 2px;
+}
+.search-filter-reset {
+  display: block;
+  margin: 20px auto 0;
+  width: 92px;
+  height: 32px;
+  font-size: $fsBase;
+  color: $colorGray;
+  border: 1px solid $colorBorder;
+  border-radius: 2px;
+}
+/* 검색결과 몰 선택 메뉴 탭 리스트 */
+nav {
+  &.sticky {
+    position: fixed;
+    top: 51px;
+    left: 0;
+    z-index: 11;
+    width: $widthFull;
+    & + main {
+      padding-top: 42px;
+    }
+  }
+}
+/* 몰 탭 리스트 */
+.wrap-searchresult {
+  @include scroll-wrapper;
+  position: relative;
+  height: 42px;
+  background: #fff;
+  &.tab-default {
+    button {
+      padding: 0 27px;
+      min-width: 33.333vw;
+      text-align: center;
+      justify-content: center;
+    }
+  }
+  &:after {
+    @include content;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-bottom: 1px solid $colorBorder;
+  }
+  ul {
+    // white-space: nowrap;
+    &.scroll-area-x {
+      height: 70px;
+    }
+    li {
+      display: inline-block;
+      border-bottom: 1px solid $colorBorder;
+    }
+  }
+  button {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    padding: 0 18px;
+    height: 41px;
+    text-align: center;
+    color: $colorLightGray;
+    &.active {
+      color: $gsfresh;
+      &:after {
+        content: '';
+        position: absolute;
+        z-index: 10;
+        width: $widthFull;
+        height: 2px;
+        left: 0;
+        bottom: -1px;
+        background: $gsfresh;
+      }
+      .info {
+        color: $colorBase;
+      }
+    }
+    .info {
+      display: inline-block;
+      position: relative;
+      font-size: $fsBase - 2px;
+      line-height: 1;
+      color: #7f7f7f;
+    }
+    p {
+     line-height: 1.1;
+    }
+    strong {
+      display: inline-block;
+      font-weight: 500;
+      font-size: $fsBase + 3px;
+    }
+    .num {
+      padding: 0 0 0 4px;
+      font-size: $fsBase - 1px;
+      &:before {
+        display: inline;
+        content: '(';
+      }
+      &:after {
+        display: inline;
+        content: ')';
+      }
+    }
+  }
+}
+/* 연관검색어 */
+.related-searches {
+  overflow: hidden;
+  height: 41px;
+  border-bottom: 1px solid $colorBorder;
+  .inner-related-searches {
+    // padding: 10px 0 10px 15px;
+    // width: $widthFull;
+    // .swiper-slide {
+    //   & + .swiper-slide {
+    //     button {
+    //       padding-left: 20px;
+    //     }
+    //   }
+    //   width: auto;
+    // }
+    ul {
+      padding: 8px 20px;
+      white-space: nowrap;
+      &.scroll-area-x {
+        height: 65px;
+      }
+      li {
+        display: inline-block;
+        & + li {
+          margin-left: 20px;
+        }
+      }
+    }
+    button {
+      display: inline-block;
+      padding: 5px 0;
+      font-size: $fsBase;
+      line-height: 1;
+      color: #7f7f7f;
+      background: #fff;
+    }
+  }
+}
+/* 검색필터 */
+.wrap-filter {
+  &.sticky {
+    position: fixed;
+    top: 93px;
+    left: 0;
+    width: $widthFull;
+    z-index: 11;
+    & + .search-filter-text,
+    & + .filter-input-check {
+      margin-top: 38px;
+    }
+    & + .contents-body {
+      margin-top: 40px;
+    }
+  }
+}
+/* 검색필터 1열 */
+.btn-filter-layer {
+  position: relative;
+  height: 40px;
+  text-align: right;
+  background: #fff;
+  border-bottom: 1px solid $colorBorder;
+  &:after {
+    @include content;
+  }
+  .btn.text {
+    position: relative;
+    float: left;
+    padding: 0 24px 0 15px;
+    height: 40px;
+    font-size: $fsBase;
+    // font-weight: 700;
+    &:after {
+      @include afterArrow(inline-block, 7px, 7px, $colorGray, -45deg);
+      position: absolute;
+      right: 3px;
+      top: 15px;
+    }
+  }
+  .btn.icon {
+    width: 41px;
+    height: 40px;
+    line-height: 46px;
+    text-align: center;
+    border-left: 1px solid $colorBorder;
+  }
+}
+/* 검색 필터 목록 */
+.search-filter-text {
+  overflow: hidden;
+  height: 31px;
+  font-size: $fsBase;
+  color: #7f7f7f;
+  border-bottom: 1px solid $colorBorder;
+  .inner-filter-text {
+    &.scroll-area-x {
+      height: 51px;
+    }
+    width: $widthFull;
+    ul {
+      padding-left: 5px;
+      white-space: nowrap;
+    }
+    .filter-text {
+      display: inline-block;
+      position: relative;
+      padding:  18px 0 10px;
+      line-height: 31px;
+      &.except {
+        color: #b7b7b7;
+      }
+    }
+    .btn-filter-del {
+      position: absolute;
+      top: 5px;
+      right: 0;
+      width: 20px;
+      height: 20px;
+      background: url('#{$imgIcoPath}/ico_filter_del.png') no-repeat center center;
+      background-size: 9px 9px;
+    }
+  }
+}
+/* 검색필터 체크박스 */
+.filter-input-check {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  height: 40px;
+  font-size: $fsBase;
+  text-align: right;
+  .btn.icon-question {
+    margin-left: 0;
+  }
+  .wrap-toggle-button {
+    padding-left: 16px;
+  }
+  .inp-chk {
+    margin-right: 10px;
+  }
+}
+
+.plan-product {
+  @include flexSpaceBetween;
+}
+.wrap-planshop-slide {
+  background: $colorBorder;
+  border-top: 5px solid $colorBorder;
+  border-bottom: 5px solid $colorBorder;
+  .inner-planshop-slide {
+    padding: 28px 15px 20px 15px;
+    background: #fff;
+    .plan-ad-txt {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 30px;
+      height: 16px;
+      background: url('#{$imgIcoPath}/ico_ad.png') no-repeat center;
+      background-size: 24px auto;
+      border: 1px solid #ebebeb;
+    }
+  }
+  .planshop-slide-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-bottom: 15px;
+    &:after {
+      @include content;
+    }
+  }
+  .label-plan {
+    padding-right: 3px;
+    &:before {
+      display: inline;
+      content: '['
+    }
+    &:after {
+      display: inline;
+      content: ']'
+    }
+  }
+  h2 {
+    display: inline-block;
+    font-size: $fsBase + 2px;
+    line-height: 1.2;
+  }
+}
+.btn-text.more {
+  position: absolute;
+  top: 26px;
+  right: 15px;
+  font-size: $fsBase - 1px;
+  color: $colorBase;
+  border-bottom: 1px solid $colorBase;
+}
+/* 다른사람들은 이 상품을 사고 있어요. */
+.wrap-recommend {
+  position: relative;
+  padding: 28px 15px 14px 15px;
+  border-top: 5px solid $colorBorder;
+  &.dalisalda {
+    padding: 28px 15px 25px 15px;
+  }
+  h2 {
+    padding-bottom: 17px;
+    font-size: $fsBase + 2px;
+  }
+  .btn-more.image {
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 1;
+      width: 25px;
+      height: 1px;
+      background: #fff;
+      transform: translateX(-50%);
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      width: 1px;
+      height: 25px;
+      background: #fff;
+      transform: translateY(-50%);
+    }
+    figure {
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: $widthFull;
+        height: 100%;
+        background: rgba(#000, .4);
+      }
+    }
+  }
+}
+/* 필터 레이어 팝업 */
+.wrap-search {
+  &.popup-open {
+    position: absolute;
+    overflow: hidden;
+    width: $widthFull;
+    height: 100%;
+  }
+  .contents-body {
+    .wrap-product-list + .wrap-product-list {
+      border-top: 1px solid $colorBorder;
+    }
+  }
+}
+.wrap-filter-layer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  z-index: 100;
+  width: 69.44%;
+  min-width: 250px;
+  height: 100%;
+  opacity: 0;
+  transition: all .25s;
+  &.active {
+    opacity: 1;
+    right: 0;
+    .inner-filter-layer {
+      right: 0;
+    }
+    .layer-bg {
+      opacity: 1;
+    }
+  }
+  .layer-bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: $widthFull;
+    height: 100%;
+    background: rgba(#000, .4);
+    transition: opacity .25s;
+  }
+  .inner-filter-layer {
+    position: relative;
+    height: 100%;
+    background: #fff;
+    transition: right .25s;
+  }
+  .radio-filter-searchbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    margin-top: 14px;
+    padding: 0 15px;
+    .btn-reset {
+      right: 32px;
+    }
+  }
+  .btn-searchbar-search {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    margin-right: 0;
+  }
+  .input-border {
+    padding: 2px 56px 0 10px;
+    width: $widthFull;
+    height: 32px;
+    font-size: $fsBase;
+    background: #fff;
+    border: 1px solid $colorBorder;
+    box-sizing: border-box;
+  }
+  .btn-reset-filter {
+    position: absolute;
+    top: 18px;
+    right: 42px;
+    padding: 3px 5px;
+    width: 20px;
+    height: 20px;
+    font-size: $fsBase - 1px;
+    background: url('#{$imgIcoPath}/ico_filter_reset.png') no-repeat center center;
+    background-size: 17px auto;
+  }
+}
+/* 필터 레이어 팝업 헤더 */
+.filter-layer-header {
+  width: $widthFull;
+  .filter-layer-header-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 15px;
+    height: 56px;
+    vertical-align: middle;
+    border-bottom: 1px solid $colorBorder;
+    h2 {
+      display: inline-block;
+      padding-right: 8px;
+      font-weight: 500;
+      font-size: $fsBase + 5px;
+    }
+    span {
+      font-size: $fsBase - 1px;
+      color: $colorLightGray;
+    }
+  }
+}
+/* 선택된 필터 값 */
+.filter-selected {
+  overflow: hidden;
+  height: 49px;
+  border-bottom: 5px solid $colorBorder;
+  .swiper-container {
+    padding: 10px 15px;
+  }
+  .swiper-slide {
+    position: relative;
+    width: auto;
+    padding: 7px 23px 5px 11px;
+    font-size: $fsBase;
+    line-height: 1;
+    color: #7f7f7f;
+    background: $colorBgGray;
+    border-radius: 24px;
+    & + .swiper-slide {
+      margin-left: 5px;
+    }
+    .icon-delete,
+    button {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 24px;
+      height: 24px;
+      background: url('#{$imgIcoPath}/ico_filter_del.png') no-repeat right 10px center;
+      background-size: 9px auto;
+    }
+  }
+}
+/* IOS 에서만 적용되는 CSS */
+_::-webkit-full-page-media, _:future, :root .filter-selected .swiper-slide {
+  padding: 8px 23px 4px 11px;
+}
+/* 필터 레이어 팝업 본문 */
+.filter-selected + .filter-layer-body {
+  &.scroll-area {
+    height: calc(100% - 105px);
+  }
+  &.active {
+    .filter-toggle {
+      overflow: hidden;
+      height: 100%;
+    }
+  }
+  .filter-all {
+    top: 105px;
+    height: calc(100% - 105px);
+  }
+}
+.filter-layer-body {
+  position: relative;
+  padding-bottom: 25px;
+  &.active {
+    .filter-toggle {
+      overflow: hidden;
+      height: calc(100% - 31px);
+    }
+    height: 100%;
+  }
+  &.scroll-area {
+    height: calc(100% - 56px);
+  }
+  dt {
+    position: relative;
+    height: 39px;
+    font-size: $fsBase + 1px;
+    font-weight: 500;
+    line-height: 39px;
+    border-bottom: 1px solid $colorBorder;
+    &.active {
+      & + dd {
+        padding: 5px 15px 0;
+        height: auto;
+        &.filter-item-score {
+          padding: 13px 15px 5px;
+        }
+        &.wrap-filter-price {
+          position: relative;
+          padding: 14px 15px;
+        }
+      }
+      .btn-toggle-filter:after {
+        top: 17px;
+        transform: rotate(-45deg);
+      }
+    }
+    &.inner-searchbar {
+      height: 0;
+      & + dd {
+        padding: 14px 15px 0;
+        height: auto;
+        .radio-filter-searchbar {
+          margin: 0;
+          padding: 0;
+          width: $widthFull;
+          border: 0;
+        }
+        .btn-searchbar-search {
+          right: 0;
+        }
+      }
+    }
+    p {
+      padding-left: 15px;
+      overflow: hidden;
+      height: 39px;
+    }
+    .btn-toggle-filter {
+      position: absolute;
+      top: 0px;
+      right: 1px;
+      width: 39px;
+      height: 39px;
+      text-align: left;
+    }
+  }
+  dd {
+    overflow: hidden;
+    padding: 0 15px;
+    height: 0;
+    & + dt {
+      height: 44px;
+      border-top: 5px solid $colorBorder;
+    }
+    .toggle-inner-list.input-check-border {
+      display: block;
+      padding: 9px 0 9px 29px;
+    }
+    label span {
+      &:before {
+        display: inline;
+        content: ' (';
+      }
+      &:after {
+        display: inline;
+        content: ') ';
+      }
+    }
+    .toggle-inner-list:last-child {
+      margin-bottom: 5px;
+    }
+  }
+  .btn-grey.btn-toggle {
+    margin: 5px -15px 0;
+    width: calc(100% + 30px);
+  }
+  .btn-toggle-filter {
+    position: relative;
+    &:after {
+      @include afterArrow(inline-block, 7px, 7px, $colorBase, 135deg);
+      position: absolute;
+      right: 15px;
+      top: 13px;
+    }
+  }
+  .filter-all {
+    position: fixed;
+    z-index: 11;
+    top: 56px;
+    // right: -100%;
+    width: 69.44%;
+    min-width: 250px;
+    height: calc(100% - 25px);
+    background: #fff;
+    transition: right .3s;
+    .radio-filter {
+      @include flexSpaceBetween;
+      align-items: center;
+      margin: 0 -15px;
+      padding: 0 15px;
+      width: calc(100% + 30px);
+      height: 38px;
+      border-bottom: 1px solid $colorBorder;
+      .inp-radio {
+        font-size: 0;
+      }
+    }
+    .radio-filter-searchbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      position: relative;
+      // margin: 0 -15px;
+      padding: 0 15px 0;
+      // width: calc(100% + 30px);
+      // border-bottom: 1px solid $colorBorder;
+      .btn-reset {
+        right: 47px;
+      }
+    }
+    dl {
+      position: relative;
+    }
+    .btn-prev-filter {
+      position: absolute;
+      left: 10px;
+      top: 0;
+      width: 28px;
+      height: 38px;
+      &:before {
+        @include afterArrow(inline-block, 7px, 7px, $colorBase, -135deg);
+        position: absolute;
+        left: 12px;
+        top: 15px;
+      }
+    }
+    .txt-prev-filter {
+      padding-left: 42px;
+      width: $widthFull;
+      text-align: left;
+    }
+    dd {
+      &.scroll-area {
+        height: calc(100% - 39px);
+      }
+      & + dt {
+        border-top: 5px solid $colorBorder;
+      }
+      .inner-filter-all {
+        height: 100%;
+      }
+    }
+    .wrap-inner-search {
+      margin: 0 -15px;
+      padding-bottom: 14px;
+      width: calc(100% + 30px);
+      border-bottom: 1px solid $colorBorder;
+    }
+    .brand-sorting {
+      position: relative;
+      padding: 14px 15px 0;
+      &:before {
+        content: '';
+        position: absolute;
+        right: 25px;
+        top: 26px;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 7px solid $colorBase;
+      }
+      select {
+        padding: 0 10px;
+        width: $widthFull;
+        height: 32px;
+      }
+    }
+  }
+  .star-view {
+    position: absolute;
+    top: 16px;
+  }
+  /* 우측 적용 버튼 */
+  // .btn-filter-sm {
+  //   // position: absolute;
+  //   // top: 9px;
+  //   // right: 15px;
+  //   margin-top: 10px;
+  //   width: $widthFull;
+  //   height: 32px;
+  //   background: $colorBorder;
+  //   color: $colorBase;
+  // }
+  .input-innertext {
+    display: inline-block;
+    position: relative;
+    width: calc((100% - 57px) / 2);
+    height: 32px;
+    font-size: $fsBase;
+    background: #fff;
+    border: 1px solid $colorBorder;
+    input {
+      padding: 3px 22px 0 10px;
+      width: $widthFull;
+      height: 100%;
+      text-align: right;
+      box-sizing: border-box;
+    }
+    .won {
+      position: absolute;
+      right: 8px;
+      top: 8px;
+    }
+  }
+  .hyphen {
+    padding: 0 5px 0 6px;
+  }
+}
+.filter-toggle {
+  dd {
+    p {
+      label {
+        display: block;
+        @include ellipsis;
+      }
+    }
+  }
+}
+/* 별점 버튼 */
+.filter-item-score {
+  position: relative;
+  .toggle-inner-list {
+    & + .toggle-inner-list {
+      padding-top: 15px;
+    }
+    &:first-child .inp-radio.small input[type='radio'] {
+      &:checked {
+        & + label {
+          color: $gsfresh;
+        }
+      }
+    }
+  }
+  // height: 50px !important;
+  .toggle-inner-list .inp-radio .product-review {
+    position: relative;
+    padding-left: 109px;
+    .purchase-score {
+      position: absolute;
+      top: 1px;
+      left: 22px;
+      width: 82px;
+      height: 14px;
+      background: url('#{$imgIcoPath}/ico_review_star_empty.png') no-repeat;
+      background-size: 82px auto;
+      &:before,
+      &:after {
+        content: '';
+      }
+      &.star4:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 66px;
+        height: 14px;
+        background: #fff url('#{$imgIcoPath}/ico_review_star_full_gsfresh.png') no-repeat;
+        background-size: 82px auto;
+      }
+      &.star3:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 14px;
+        background: #fff url('#{$imgIcoPath}/ico_review_star_full_gsfresh.png') no-repeat;
+        background-size: 82px auto;
+      }
+    }
+  }
+}
+/* 행사추천 팝업 */
+.wrap-recommend-popup {
+  position: fixed;
+  bottom: -100%;
+  z-index: 100;
+  width: $widthFull;
+  height: 100%;
+  max-height: calc(100% - 26px); // 26 : 레이어 팝업 상단 여유
+  // opacity: 0;
+  transition: all .25s;
+  &.active {
+    .layer-inner {
+      bottom: 0;
+    }
+    .layer-bg {
+      opacity: 1;
+      // transition: opacity .25s;
+    }
+  }
+  &.h-auto {
+    height: auto;
+  }
+  .header-popup {
+    padding: 26px 13px 10px;
+    text-align: left;
+    .btn-layer-close {
+      top: 28px;
+    }
+  }
+  .layer-inner {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    background: #fff;
+    border-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .layer-bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: $widthFull;
+    height: 100%;
+    background: rgba(#000, .4);
+    opacity: 0;
+    transition: opacity .25s;
+  }
+  .recommend-popup-body {
+    &.scroll-area {
+      max-height: calc(100% - 62px);
+    }
+  }
+}
+.btn-close-search-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: $widthFull;
+  height: 20px;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: calc(50% - 40px);
+    width: 80px;
+    height: 4px;
+    background: #dedede;
+    border-radius: 4px;
+  }
+}
+/* 의견 남기기 팝업 */
+.wrap-write-popup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: -1;
+  bottom: -100%;
+  left: 0;
+  width: $widthFull;
+  height: 100%;
+  transition: all .25s;
+  &.active {
+    opacity: 1;
+    z-index: 300;
+    bottom: 0;
+    .layer-bg {
+      opacity: 1;
+    }
+  }
+  .layer-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $widthFull;
+    height: 100%;
+    opacity: 0;
+    background: rgba(#000, .4);
+    transition: opacity .25s;
+  }
+  .layer-inner {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 50px;
+    width: $widthFull;
+    background: #fff;
+    border-radius: 10px;
+    // transform: translate(-50%, -50%);
+    .popup-title {
+      padding: 21px 20px 15px;
+      font-size: $fsBase + 2px;
+      font-weight: 500;
+      line-height: 1;
+    }
+    .wrap-textarea {
+      padding: 0 20px 15px;
+      width: $widthFull;
+      textarea {
+        padding: 10px;
+        width: $widthFull;
+        height: 137px;
+        font-size: $fsBase;
+        border: 1px solid $colorBorder;
+        box-sizing: border-box;
+      }
+    }
+    .btn-fixed {
+      position: absolute;
+      height: 50px;
+      font-size: $fsBase;
+    }
+  }
+}
+/* input checkbox border 있는 타입 (진한 녹색)*/
+.input-check-border {
+  display: inline-block;
+  position: relative;
+  padding: 0 0 0 21px;
+  // line-height: 1;
+  input[type='checkbox'] {
+    position: absolute;
+    left: 0;
+    top: 8px;
+    margin: 0;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-radius: 2px;
+  }
+  label {
+    font-size: $fsBase + 1px;
+  }
+  label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border: 1px solid $colorBorder;
+    border-radius: 2px;
+    box-sizing: border-box;
+  }
+  label:after {
+    @include afterArrow(inline-block, 10px, 5px, $colorBorder, -225deg);
+    border-width: 2px 2px 0 0;
+    position: absolute;
+    top: 12px;
+    left: 4px;
+  }
+  input[type='checkbox']:checked {
+    & + label:after {
+      border-color: $gsfresh;
+    }
+  }
+}
+/* toggle 버튼 */
+.wrap-toggle-button {
+  display: inline-block;
+  position: relative;
+  .input-toggle {
+    position: relative;
+    padding-right: 32px;
+    font-size: $fsBase;
+    color: $colorBase;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      right: 14px;
+      z-index: 1;
+      width: 12px;
+      height: 12px;
+      background: #fff;
+      border-radius: 50%;
+      transition: right .1s ease-in;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 1px;
+      width: 27px;
+      height: 14px;
+      border-radius: 14px;
+      background: #c8c8c8;
+    }
+  }
+  input[type='checkbox'] {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    margin: 0;
+    width: 27px;
+    height: 14px;
+    border-radius: 14px;
+    background: transparent;
+    &:checked + .input-toggle {
+      &:before {
+        right: 1px;
+      }
+      &:after {
+        // background: #a0d02b;
+        background: $gsfresh;
+      }
+    }
+  }
+}
+/* 레이어 닫기 버튼 */
+.btn-filter-close {
+  position: absolute;
+  top: 19px;
+  right: 15px;
+  width: 20px;
+  height: 20px;
+  background: url('#{$imgIcoPath}/ico_filter_close.png') no-repeat center;
+  background-size: 15px auto;
+}
+/* 배경 회색 버튼 */
+.btn-grey {
+  display: block;
+  width: $widthFull;
+  height: 35px;
+  font-size: $fsBase - 1px;
+  background: $colorBgGray;
+  color: $colorLightGray;
+}
+.btn-search-icon {
+  display: block;
+  float: right;
+  width: 32px;
+  height: 32px;
+  border: 1px solid $colorBorder;
+  background: #f8f8f8 url('#{$imgIcoPath}/ico_search_gray.png') no-repeat center center;
+  background-size: 16px auto;
+  border-radius: 2px;
+}
+/* 인라인 요소 옆 toggle button */
+.btn-toggle { // 삭제 예정
+  span {
+    display: inline-block;
+    position: relative;
+    // padding-right: 20px;
+    &:after {
+      @include afterArrow(inline-block, 7px, 7px, $colorLightGray, 135deg);
+      margin: 0 0 3px 10px;
+      // @include content;
+      // position: absolute;
+      // right: 2px;
+      // top: 2px;
+      // width: 7px;
+      // height: 7px;
+      // border: 1px solid $colorLightGray;
+      // border-left: 0;
+      // border-top: 0;
+      // transform: rotate(45deg)
+    }
+  }
+}
+/* 검색어 입력 중 팝업 */
+.wrap-search-layer {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  z-index: -1;
+  width: $widthFull;
+  height: calc(100% - 26px);
+  transition: all .25s;
+  &.active {
+    opacity: 1;
+    z-index: 300;
+    bottom: 0;
+    .layer-bg {
+      opacity: 1;
+    }
+    .inner-search-layer {
+      bottom: 0;
+    }
+  }
+  .layer-bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: $widthFull;
+    height: 100%;
+    opacity: 0;
+    background: rgba(#000, .4);
+    transition: opacity .25s;
+  }
+  .inner-search-layer {
+    position: relative;
+    padding-top: 17px;
+    width: $widthFull;
+    height: 100%;
+    background: #fff;
+    border-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    // transition: bottom .25s;
+    .wrap-input.search {
+      padding: 0 70px 0 26px;
+      // margin: 0 60px 0 26px;
+      input[type='text'] {
+        &:placeholder {
+          font-size: $fsBase;
+        }
+      }
+      .btn-reset {
+        right: 30px;
+        top: 8px
+      }
+    }
+    .wrap-searchbar {
+      margin: 3px 15px 0;
+      .btn-searchbar-search {
+        top: 4px;
+        margin-right: -3px;
+      }
+    }
+  }
+  .search-content {
+    height: calc(100% - 44px); // 44px : wrap-searchbar outerHeight
+  }
+  .wrap-recommend-search {
+    overflow: hidden;
+    height: 41px;
+    border-bottom: 1px solid $colorBorder;
+    &.plan {
+      margin: 0 15px;
+    }
+    /* 추천 기획전 */
+    .btn-text-plan-recommend {
+      display: block;
+      position: relative;
+      margin: 0 5px;
+      width: calc(100% - 8px);
+      height: 100%;
+      font-size: $fsBase;
+      text-align: left;
+      &:after {
+        @include afterArrow(inline-block, 7px, 7px, $colorBase, 45deg);
+        position: absolute;
+        right: 2px;
+        top: 50%;
+        margin-top: -3px;
+      }
+      p {
+        @include ellipsis;
+        padding-right: 10px;
+      }
+      span {
+        padding-right: 3px;
+        font-weight: 700;
+        color: $colorLightGray;
+      }
+    }
+    .swiper-container {
+      padding: 0 20px;
+    }
+    .swiper-slide {
+      padding: 13px 0;
+      width: auto;
+      font-size: $fsBase;
+      color: $colorGray;
+      line-height: 1.2;
+      & + .swiper-slide {
+        margin-left: 20px;
+      }
+    }
+  }
+  /* 실시간 검색어 입력 중 */
+  .wrap-search-ing {
+    position: relative;
+    padding: 0 15px 15px;
+    &.scroll-area {
+      height: calc(100% - 41px);
+    }
+    li {
+      padding: 0 5px;
+    }
+    button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: $widthFull;
+      height: 38px;
+      font-size: $fsBase;
+      color: #fd6d4c;
+      span:first-child {
+        @include ellipsis;
+        display: inline-block;
+        margin-right: 10px;
+      }
+      em {
+        color: $colorBase;
+      }
+      .date {
+        color: $colorLightGray;
+      }
+    }
+  }
+  .inner-search-btn-wrap {
+    @include flexSpaceBetween;
+    position: absolute;
+    bottom: 1px;
+    margin-left: 1px;
+    padding: 12px 15px 0;
+    width: calc(100% - 17px);
+    height: 44px;
+    background: #fff;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    button {
+      font-size: $fsBase - 1px;
+      color: $colorGray;
+    }
+  }
+}
+/* 실시간 검색어 입력 전 */
+.wrap-search-slide {
+  position: relative;
+  padding: 37px 0 0;
+  height: calc(100% - 15px); // 15px : 하단 padding값, 추천 검색어 없을 경우
+  @at-root .wrap-search-layer .search-content {
+    .wrap-recommend-search + .wrap-search-slide {
+      height: calc(100% - 41px - 15px); // 41x : wrap-recommend-search outerHeight, 15px : 하단 padding값height: cal
+    }
+  }
+  &.search-results {
+    padding: 17px 15px;
+    border-top: 5px solid $colorBorder;
+    h3 {
+      padding: 8px 10px 10px;
+      font-size: $fsBase + 3px;
+      font-weight: 500;
+    }
+  }
+  /* 인기 검색어 */
+  .wrap-search-tab {
+    position: relative;
+    height: calc(100% - 25px); // 25px : 타이틀 outerHeight
+    border: 1px solid $colorBorder;
+    border-radius: 5px;
+    .search-tab {
+      display: flex;
+      justify-content: space-between;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+      button {
+        width: $widthFull;
+        height: 38px;
+        font-size: $fsBase + 1px;
+        letter-spacing: -.3px;
+        color: $colorLightGray;
+        box-sizing: content-box;
+        border-bottom: 1px solid $colorBorder;
+        &.active {
+          position: relative;
+          margin: -1px;
+          border: 1px solid $colorBorder;
+          border-bottom: 0;
+          border-top-right-radius: 5px;
+          border-top-left-radius: 5px;
+          font-weight: 700;
+          color: $colorBase;
+          &:after {
+            @include content;
+            position: absolute;
+            bottom: -1px;
+            width: $widthFull;
+            height: 1px;
+            background: #fff;
+          }
+        }
+      }
+    }
+    .search-tab-contents {
+      height: calc(100% - 39px); // 39px - search-tab outerHeight
+    }
+    .tab-contents {
+      &.simplycook {
+        li {
+          span:nth-child(2) {
+            width: calc(100% - 82px);
+          }
+          span:last-child {
+            width: 60px;
+            height: auto;
+            font-size: $fsBase - 2px;
+            color: #fd6d4c;
+            text-align: right;
+            i {
+              display: block;
+              position: relative;
+              height: 39px;
+              &:after {
+                @include content;
+                position: absolute;
+                top: calc(50% - 1px);
+                right: 10px;
+                width: 8px;
+                height: 2px;
+                background-color: #c4c4c4;
+              }
+            }
+          }
+        }
+        .wrap-tag .btn-hash-tag {
+          display: block;
+          padding: 5px 0;
+        }
+      }
+      li {
+        margin: 0 14px;
+        border-bottom: 1px solid $colorBorder;
+        &:first-child,
+        &:nth-child(2),
+        &:nth-child(3) {
+          span:first-child {
+            color: $gsfresh;
+          }
+          span.new span {
+            color: #ff7d57;
+          }
+        }
+        button {
+          @include flexSpaceBetween;
+          align-items: center;
+          width: $widthFull;
+          height: 39px;
+          font-size: $fsBase;
+        }
+        span:first-child {
+          width: 22px;
+          text-align: center;
+        }
+        span:nth-child(2) {
+          @include ellipsis;
+          width: calc(100% - 50px);
+          padding-left: 5px;
+          text-align: left;
+        }
+        span:last-child {
+          float: right;
+          width: 28px;
+          height: 39px;
+        }
+      }
+      .up {
+        background: url('#{$imgIcoPath}/ico_level_up.png') no-repeat center;
+        background-size: 8px auto;
+      }
+      .down {
+        background: url('#{$imgIcoPath}/ico_level_down.png') no-repeat center;
+        background-size: 8px auto;
+      }
+      .new {
+        font-weight: 700;
+        font-size: $fsBase - 2px;
+        line-height: 38px;
+        span {
+          // color: #ff7d57 !important;
+          color: #ff7d57;
+        }
+      }
+      .no-change {
+        &:before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 8px;
+          height: 2px;
+          background: #c4c4c4;
+          transform: translate(-50%, -50%);
+        }
+        position: relative;
+      }
+      .search-date {
+        display: inline-block;
+        float: right;
+        padding: 6px 14px 0 0;
+        font-size: $fsBase - 2px;
+        color: $colorLightGray;
+      }
+      .wrap-tag {
+        clear: both;
+        margin-top: 35px;
+        padding: 5px 14px 10px;
+        font-size: $fsBase;
+        .title {
+          display: block;
+          margin-bottom: 3px;
+          padding: 5px 0 7px;
+          font-weight: 500;
+          border-bottom: 1px solid $colorBorder;
+        }
+        .btn-hash-tag {
+          padding: 5px 25px 5px 0;
+          &:before {
+            display: inline;
+            content: '#';
+          }
+        }
+      }
+    }
+  }
+  .swiper-container {
+    height: 100%;
+  }
+  .swiper-slide {
+    padding-left: 15px;
+    &:first-child { // 2020.08.04 inner-search-btn-wrap 이 position: absolute로 인해 간격 필요
+      .inner-search-slide {
+        padding-bottom: 45px;
+      }
+    }
+    &:last-child {
+      padding-right: 15px;
+    }
+    h4 {
+      padding: 0 0 4px 10px;
+      font-weight: 500;
+      font-size: $fsBase + 3px;
+    }
+  }
+  .inner-search-slide {
+    position: relative;
+    border: 1px solid $colorBorder;
+    border-radius: 5px;
+    height: calc(100% - 25px);
+    /* 최근 검색어 자동 저장 끄기 */
+    .auto-save-off {
+      padding-top: 65px;
+      text-align: center;
+      font-size: $fsBase;
+      p {
+        padding-top: 18px;
+        color: $colorLightGray;
+      }
+    }
+    li:not(.ico-benefit) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      position: relative;
+      margin: 0 14px;
+      height: 37px;
+      border-bottom: 1px solid $colorBorder;
+      &:last-child {
+        border-bottom: 0;
+      }
+      span, button {
+        font-size: $fsBase;
+      }
+      button:not(.btn-icon-del) {
+        @include ellipsis;
+        display: block;
+        width: calc(100% - 37px);
+        height: 100%;
+        text-align: left;
+      }
+    }
+    .btn-icon-del {
+      position: absolute;
+      right: -10px;
+      width: 37px;
+      height: 37px;
+      background: url('#{$imgIcoPath}/ico_search_del.png') no-repeat right 15px center;
+      background-size: 9px auto;
+    }
+  }
+  .swiper-pagination-bullet {
+    width: 7px;
+    height: 7px;
+    background: #bcbcbc;
+    opacity: 1;
+  }
+  .swiper-pagination-bullet-active {
+    width: 14px;
+    background: $colorBase;
+    border-radius: 7px;
+  }
+  .swiper-pagination {
+    position: absolute;
+    top: 10px;
+    bottom: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    span {
+      & + span {
+        margin-left: 5px;
+      }
+    }
+  }
+  /* 상품 리스트 */
+  .item {
+    a {
+      @include flexSpaceBetween;
+      align-items: center;
+      width: $widthFull;
+    }
+    .wrap-info {
+      width: calc(100% - 89px);
+    }
+    .info {
+      dt strong {
+        display: block;
+        overflow: hidden;
+        max-height: 36px;
+        font-size: $fsBase + 1px;
+        line-height: 1.3;
+        font-weight: 500;
+      }
+      em {
+        @include ellipsis-into-2;
+      }
+    }
+    dd {
+      font-size: $fsBase;
+      & + dd:not(.dali-price) {
+        margin-left: 6px;
+      }
+      strong {
+        font-weight: 700;
+        font-size: $fsBase + 5px;
+      }
+    }
+  }
+  /* 전체보기 버튼 */
+  .btn-text-more {
+    position: absolute;
+    right: 6px;
+    top: 2px;
+    padding-right: 18px;
+    font-size: $fsBase - 1px;
+    &:after {
+      @include afterArrow(inline-block, 5px, 5px, $colorBase, 45deg);
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      margin-top: -4px;
+    }
+  }
+}
+
+/* 다른사람들은 이 상품을 사고 있어요 팝업 */
+.wrap-search-product-slide {
+  padding: 30px 0 30px 20px;
+  & + .wrap-search-product-slide {
+    border-top: 1px solid $colorBorder;
+  }
+  h4 {
+    padding-bottom: 14px;
+    font-size: $fsBase + 3px;
+  }
+}
+/* 가로스크롤 */
+.scroll-area-x {
+  overflow-y: hidden !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display:none;
+  }
+}
+/* 신상품 */
+.wrap-best-item {
+  border-top: 5px solid $colorBorder;
+  h3 {
+    padding: 22px 25px 7px;
+    font-weight: 500;
+    font-size: $fsBase + 3px;
+    border-bottom: 1px solid $colorBorder;
+  }
+}

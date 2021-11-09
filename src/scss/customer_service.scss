@@ -1,0 +1,852 @@
+/* 고객센터 */
+.wrap-customerservice {
+  .inner {
+    padding: 0 20px;
+  }
+  .section-area {
+    padding: 20px;
+    &:after {
+      @include content;
+    }
+    &.tab {
+      padding: 0;
+      border-top: 10px solid $colorBgGray;
+      h2 {
+        padding: 20px 20px 15px;
+        border-bottom: 1px solid $colorBorder;
+      }
+    }
+    &.question {
+      padding: 20px 20px 0;
+    }
+    &.service {
+      padding: 0 20px 11px;
+    }
+    h2 {
+      padding-bottom: 15px;
+      font-weight: 500;
+      font-size: $fsBase + 2px;
+      color: $colorBase;
+    }
+    .customer-search {
+      padding-bottom: 100px;
+    }
+  }
+  .list-link {
+    position: relative;
+    border-left: 1px solid $colorBorder; // 2020.08.03 : 보더 긋는 규칙 변경(버튼 좌측 노출 기준) 
+    &.tab {
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        display: flex;
+        align-items: center;
+        width: 25%;
+        height: auto;
+        @for $i from 1 through 8 {
+          @if $i < 5 {
+            &:nth-child(#{$i}) {
+              border-top: 1px solid $colorBorder; // 2020.08.03 : 보더 긋는 규칙 변경(버튼 좌측 노출 기준) 
+            }
+          }
+        }
+      }
+    }
+    li {
+      float: left;
+      width: 33.33%;
+      height: auto;
+      border-right: 1px solid $colorBorder; // 2020.08.03 : 보더 긋는 규칙 변경(버튼 좌측 노출 기준)
+      border-bottom: 1px solid $colorBorder;
+      .link-cs {
+        display: block;
+        padding: 15px 0;
+        width: $widthFull;
+        font-size: $fsBase - 1px;
+        text-align: center;
+        color: $colorGray;
+      }
+      .ico {
+        position: relative;
+        padding: 10px 0 6px;
+        &.active {
+          color: $gsfresh;
+          &:before {
+            background-position: 0 -18px;
+          }
+        }
+        img {
+          position: absolute;
+          top: 7px;
+          left: 50%;
+          width: 24px;
+          height: 18px;
+          transform: translateX(-50%);
+        }
+        &.ico-all {
+          padding: 50px 0 0;
+          &:before {
+            top: 15px;
+            width: 19px;
+            height: 19px;
+            background-image: url('#{$imgIcoPath}/ico_cs_all.png');
+            background-size: 19px;
+          }
+        }
+      }
+    }
+    &:after {
+      @include content;
+    }
+  }
+  .list-link-service {
+    width: $widthFull;
+    li {
+        border-top: 1px solid $colorBorder;
+      a {
+        display: block;
+        position: relative;
+        z-index: 1;
+        // padding: 17px 0;
+        padding: 19px 0 15px;
+        font-size: $fsBase;
+        color: $colorBase;
+        &:after {
+          @include afterArrow(inline-block, 5px, 5px, $colorGray, 45deg);
+          position: absolute;
+          top: 50%;
+          right: 2px;
+          z-index: 10;
+          margin-top: -3px;
+        }
+      }
+      &:last-child {
+        padding-bottom: 6px;
+      }
+    }
+  }
+  /* 고객센터 > 메인 */
+  .customerservice-wrap {
+    .question {
+      h2 {
+        float: left;
+      }
+      .wrap-btn {
+        margin-bottom: 20px;
+        button {
+          padding: 11px 0;
+          height: 40px;
+          font-size: $fsBase + 1px;
+        }
+      }
+    }
+  }
+  /* 고객센터 > FAQ */
+  .faq-wrap {
+    .cont-accordion {
+      .link-more {
+        display: inline-block;
+        float: none;
+        margin-top: 20px;
+        font-size: $fsBase;
+        color: $colorGray;
+      }
+    }
+  }
+  /* 고객센터 > 1:1 문의 */
+  .inquiry-wrap {
+    .txt-desc {
+      padding: 20px 0;
+      font-size: $fsBase;
+      color: $colorGray;
+    }
+    .area-select {
+      .wrap-select {
+        width: $widthFull;
+        select {
+          width: $widthFull;
+          color: $colorBase;
+        }
+        & + .btn-orderproduct {
+          margin-top: 10px;
+        }
+      }
+    }
+    /* textarea */
+    .wrap-textarea {
+      margin-top: 10px;
+      background-color: #fff;
+      .inner-textarea {
+        position: relative;
+        padding: 10px;
+        height: 240px;
+        border: 1px solid $colorBorder;
+      }
+      textarea {
+        width: $widthFull;
+        height: 138px;
+        font-size: $fsBase;
+        border: none;
+        box-sizing: border-box;
+      }
+      .txt-byte {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        font-size: $fsBase - 1px;
+        text-align: right;
+        color: $colorLightGray;
+      }
+      .wrap-btn-imageupload {
+        position: relative;
+        height: 40px;
+        font-size: $fsBase - 1px;
+        color: $colorGray;
+        border: 1px solid $colorBorder;
+        border-top: none;
+        input {
+          overflow: hidden;
+          position: absolute;
+          width: 0;
+          opacity: 0;
+        }
+        .btn-imageupload {
+          display: block;
+          position: relative;
+          padding-left: 36px;
+          width: 90px;
+          height: 40px;
+          line-height: 40px;
+          &:before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 12px;
+            width: 22px;
+            height: 16px;
+            background: url('#{$imgIcoPath}/ico_imgupdate.png') no-repeat;
+            background-size: 22px 16px;
+          }
+        }
+        .desc {
+          position: absolute;
+          top: 12px;
+          right: 10px;
+        }
+      }
+    }
+    /* 이미지 업로드 */
+    .wrap-imageupload {
+      display: flex;
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      .file-image {
+        position: relative;
+        width: 45px;
+        height: 45px;
+        & + .file-image {
+          margin-left: 10px;
+        }
+        input {
+          overflow: hidden;
+          position: absolute;
+          width: 0;
+          opacity: 0;
+        }
+        img {
+          border-radius: 3px;
+          height: 100%;
+        }
+        .reset {
+          display: block;
+          position: absolute;
+          top: -10px;
+          right: -10px;
+          padding: 5px;
+          text-align: center;
+          &:before {
+            display: block;
+            content: '';
+            width: 15px;
+            height: 15px;
+            background: url('#{$imgIcoPath}/ico_btn_reset_gr.png') no-repeat;
+            background-size: 15px;
+          }
+        }
+      }
+    }
+    .wrap-btn {
+      display: flex;
+      padding: 20px 0;
+      button {
+        padding: 9px 0 7px;
+        height: 40px;
+        font-size: $fsBase + 2px;
+        @at-root {
+          /* IOS 에서만 적용되는 CSS */
+          /* .wrap-customerservice .inquiry-wrap .wrap-btn button */
+          _::-webkit-full-page-media, _:future, :root & {
+            padding: 8px 0;
+          }
+        }
+        & + button {
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+  /* 고객센터 > 공지사항 */
+  .btn-more-detail-view {
+    padding: 20px;
+  }
+  .section-area .wrap-searchbar {
+    height: 32px;
+    border: none;
+  }
+  .wrap-search {
+    position: relative;
+    padding-top: 0;
+    height: 34px;
+    border: 1px solid $colorBorder;
+    .inp-search {
+      padding: 0 70px 0 10px;
+      width: calc(100% - 80px);
+      height: 32px;
+      font-size: $fsBase;
+      border-radius: 2px;
+    }
+    .btn-reset {
+      top: 5px;
+      right: 38px;
+    }
+    .btn-search {
+      content: '';
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      width: 16px;
+      height: 17px;
+      background: url('#{$imgIcoPath}/ico_header_search_bl.png') no-repeat;
+      background-size: 16px 17px;
+    }
+    & + .list-link {
+      margin-top: 15px;
+    }
+  }
+  .chatbot {
+    .notice {
+      padding: 30px 0;
+      font-size: $fsBase;
+      text-align: center;
+      color: $colorLightGray;
+    }
+  }
+  // 쳇봇 아이콘 버튼/ 고객센터 자주 묻는 질문 리스트 없음 케이스 버튼
+  @at-root .counselingtalk {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    width: $widthFull;
+    height: 30px;
+    font-size: $fsBase;
+    color: $colorGray;
+    &:not(.link):after {
+      @include afterArrow(inline-block, 6px, 6px, $colorGray, 45deg);
+      position: absolute;
+      top: 50%;
+      right: 2px;
+      z-index: 10;
+      margin-top: -4px;
+    }
+    strong {
+      position: relative;
+      padding-left: 47px;
+      text-align: center;
+      color: $colorBase;
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: -50%;
+        width: 32px;
+        height: 30px;
+        background: url('#{$imgIcoPath}/ico_counselingtalk_gsfresh.png') no-repeat center center;
+        background-size: 100%;
+      }
+      &.ico {
+        color: $colorGray;
+        &.talk {
+          padding-left: 26px;
+          &:before {
+            top: -3px;
+            width: 20px;
+            height: 19px;
+            background-image: url('#{$imgIcoPath}/ico_counselingtalk_small_gsfresh.png');
+          }
+        }
+        &.write {
+          padding-left: 19px;
+          &:before {
+            top: 0;
+            width: 12px;
+            height: 14px;
+            background-image: url('#{$imgIcoPath}/ico_write_small_gsfresh.png');
+          }
+        }
+      }
+      span {
+        padding-left: 3px;
+        color: $colorGray
+      }
+    }
+    &.link {
+      display: inline-block;
+      margin-bottom: 30px;
+      width: 50%;
+      height: 40px;
+      background: none;
+      border: 1px solid $colorBorder;
+      &.write {
+        padding: 9px 0;
+        min-width: 190px;
+        &:before {
+          display: none;
+        }
+        span {
+          display: inline-block;
+          padding-left: 17px;
+          background: url('#{$imgIcoPath}/ico_write_gsfresh.png') no-repeat;
+          background-size: 12px auto;
+        }
+      }
+      &:before {
+        left: 40px;
+        top: 9px;
+      }
+      & + .link {
+        border-left: none;
+      }
+    }
+  }
+}
+.btn-orderproduct {
+  position: relative;
+  padding: 0 10px;
+  width: $widthFull;
+  height: 32px;
+  font-size: $fsBase;
+  line-height: 2.6;
+  text-align: left;
+  color: $colorBase;
+  border: 1px solid $colorBorder;
+  &:after {
+    @include afterArrow(inline-block, 5px, 5px, $colorBase, 45deg);
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    z-index: 10;
+    margin-top: -3px;
+  }
+}
+.wrap-search-layer {
+  &.selectproduct {
+    height: calc(100% - 200px);
+    .inner-search-layer {
+      padding: 0;
+      .wrap-selectproduct {
+        & + .wrap-selectproduct {
+          border-top: 10px solid $colorBgGray;
+        }
+      }
+      .popup-header {
+        position: relative;
+        padding: 19px 20px;
+        border-bottom: 1px solid $colorBorder;
+        h3 {
+          font-weight: 500;
+          font-size: $fsBase + 2px;
+          color: $colorBase;
+        }
+      }
+      .popup-body {
+        height: 100%;
+        .wrap-tab {
+          height: calc(100% - 108px);
+          .tablist {
+            li {
+              position: relative;
+              height: 50px;
+              button {
+                line-height: 50px;
+              }
+            }
+          }
+          .scroll-area {
+            height: calc(100% - 51px);
+          }
+        }
+        .info-top {
+          padding: 11px 20px;
+          border-bottom: 1px solid $colorBorder;
+          .date {
+            display: inline-block;
+            font-size: $fsBase;
+            vertical-align: middle;
+            color: $colorBase;
+          }
+          .num-order {
+            display: inline-block;
+            padding-left: 8px;
+            font-size: $fsBase;
+            vertical-align: middle;
+            color: $colorGray;
+          }
+          &:after {
+            @include content;
+          }
+        }
+        .info-product-top {
+          padding-bottom: 11px;
+          font-size: $fsBase + 2px;
+        }
+        .info-product {
+          padding: 20px;
+          & + .info-product {
+            position: relative;
+            &:before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 20px;
+              width: calc(100% - 40px);
+              height: 1px;
+              border-top: 1px dashed $colorBorder;
+            }
+          }
+          .list-product {
+            padding-left: 15px;
+            li {
+              .comp-product {
+                display: flex;
+                .inp-chk {
+                  width: 30px;
+                  input[type='checkbox'] {
+                    top: 0;
+                    margin: 0;
+                    background: #fff;
+                  }
+                }
+                .thumb {
+                  img {
+                    width: 75px;
+                    height: 75px;
+                  }                
+                }
+                .text {
+                  padding-left: 10px;
+                  .brand {
+                    width: auto;
+                    height: auto;
+                    font-size: $fsBase - 1px;
+                    color: #d2d2d2;
+                  }
+                  .name {
+                    padding-top: 10px;
+                    font-size: $fsBase + 1px;
+                    color: $colorBase;
+                  }
+                }
+              }
+              & + li {
+                padding-top: 20px;
+              }
+            }
+          }
+        }
+        .btn-arrow { // 삭제 예정
+          display: block;
+          position: relative;
+          z-index: 1;
+          float: right;
+          padding: 0 20px 0 10px;
+          font-size: $fsBase - 1px;
+          line-height: 27px;
+          color: $colorGray;
+          border: 1px solid $colorBorder;
+          border-radius: 2px;
+          &:after {
+            @include afterArrow(inline-block, 5px, 5px, $colorBase, 45deg);
+            position: absolute;
+            top: 50%;
+            right: 2px;
+            z-index: 10;
+            margin-top: -3px;
+          }
+        }
+      }
+    }
+    .btn-del {
+      top: 22px;
+      right: 20px;
+    }
+  }
+}
+/* 답변 알림요청 */
+.wrap-answerrequest {
+  padding-top: 15px;
+  font-size: $fsBase;
+  .inner-answerrequest {
+    &:after {
+      @include content;
+    }
+  }
+  .inp-chk {
+    float: left;
+  }
+  .inp-chk.small input[type='checkbox'] {
+    margin-top: -7px;
+  }
+  .inp-chk input[type='checkbox'] + label {
+    font-size: $fsBase;
+    color: $colorBase;
+  }
+  .txt-number {
+    display: inline-block;
+    position: relative;
+    padding-left: 11px;
+    font-weight: 500;
+    font-size: $fsBase;
+    color: $colorBase;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 6px;
+      width: 1px;
+      height: 9px;
+      background: $colorBorder;
+    }
+  }
+}
+.servicecenter {
+  padding: 13px 0;
+  width: $widthFull;
+  .call {
+    .link-tel {
+      padding-bottom: 1px;
+      font-weight: 500;
+      font-size: $fsBase + 2px;
+      color: $colorBase;
+      border-bottom: 1px solid $colorBase;
+    }
+  }
+  .info {
+    padding-top: 3px;
+    strong {
+      display: inline-block;
+      padding-right: 6px;
+      font-size: $fsBase;
+      color: $colorBase;
+    }
+    span {
+      display: block;
+      position: relative;
+      // padding-left: 6px;
+      font-size: $fsBase - 1px;
+      color: $colorGray;
+    }
+  }
+  & + .servicecenter {
+    border-top: 1px solid $colorBorder;
+  }
+}
+.customer-search {
+  .list-accordion {
+    .btn-accordion {
+      .wrap-title .title {
+        span:first-child {
+          &:before {
+            display: inline;
+            content: '[';
+          }
+          &:after {
+            display: inline;
+            content: ']';
+          }
+          padding-right: 3px;
+        }
+        strong {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+.list-accordion {
+  .btn-accordion {
+    display: block;
+    position: relative;
+    width: calc(100% - 40px);
+    margin: 0 20px;
+    padding: 19px 0 16px;
+    text-align: left;
+    background: #fff;
+    border-bottom: 1px solid $colorBorder;
+    &:after {
+      @include afterArrow(inline-block, 10px, 10px, $colorLightGray, 135deg);
+      position: absolute;
+      top: 50%;
+      right: 2px;
+      margin-top: -7px;
+    }
+    &[aria-expanded='true']:after {
+      transform: rotate(-45deg);
+    }
+    .wrap-title {
+      padding-right: 20px;
+      line-height: 12px;
+      text-align: left;
+      &.fix {
+        padding-left: 18px;
+        font-weight: 500;
+        background: url('#{$imgIcoPath}/ico_fix.png') left top no-repeat;
+        background-size: 13px auto;
+      }
+      &.new {
+        .ico-new {
+          display: inline-block;
+        }
+      }
+      .title {
+        font-size: $fsBase;
+        color: $colorBase;
+      }
+      .ico-new {
+        display: none;
+        padding-left: 5px;
+        font-weight: 700;
+        font-size: $fsBase;
+        color: $gsfresh;
+      }
+    }
+    span {
+      &.date {
+        display: block;
+        padding-top: 5px;
+        font-size: $fsBase - 1px;
+        color: $colorLightGray;
+      }
+      &:after {
+        display: none;
+      }
+    }
+  }
+  .cont-accordion {
+    position: relative;
+    top: -1px;
+    padding: 20px;
+    font-size: $fsBase;
+    color: $colorBase;
+    background: #f6f6f6;
+    img {
+      width: $widthFull !important;
+      height: auto !important;
+    }
+  }
+}
+.link-more {
+  display: block;
+  position: relative;
+  float: right;
+  padding-right: 2px;
+  font-size: $fsBase - 1px;
+  color: $colorGray;
+  &:after {
+    @include afterArrow(inline-block, 5px, 5px, $colorBase, 45deg);
+    margin: 0 0 1px 2px;
+  }
+}
+.box-selectproduct {
+  position: relative;
+  margin-top: 10px;
+  padding: 8px 35px 8px 10px;
+  height: 50px;
+  background: #f6f6f6;
+  border: 1px solid $colorBorder;
+  box-sizing: border-box;
+  p {
+    font-size: $fsBase;
+    color: $colorGray;
+  }
+  .data {
+    strong {
+      padding-right: 3px;
+      font-weight: 500;
+      color: $colorBase
+    }
+    padding-bottom: 3px;
+  }
+  .productname {
+    span {
+      @include ellipsis;
+      display: inline-block;
+      width: 190px;
+      vertical-align: middle;
+    }
+  }
+  .btn-del {
+    top: 14px;
+  }
+}
+/* 작성하기 버튼 */
+.icon-write {
+  span {
+    display: inline-block;
+    padding-left: 17px;
+    background: url('#{$imgIcoPath}/ico_write_gsfresh.png') no-repeat left center;
+    background-size: 12px auto;
+  }
+}
+// 탭바 플로팅 쳇봇 바로가기
+.section-bottom {
+  .floating-btn-chatbot {
+    position: absolute;
+    right: 17px;
+    bottom: 80px;
+    transition: bottom .3s;
+    &.show {
+      bottom: 135px;
+    }
+    a {
+      display: block;
+      padding: 27px 8px 0;
+      width: 55px;
+      height: 55px;
+      text-align: center;
+      line-height: 0;
+      font-weight: 300;
+      background: #fff url('#{$imgIcoPath}/ico_counselingtalk_gsfresh.png') no-repeat center 6px;
+      background-size: 17px auto;
+      border: 1px solid $colorBorder;
+      border-radius: 50%;
+      span {
+        font-size: $fsBase - 2px;
+        line-height: 1.1;
+        letter-spacing: -0.5px;
+      }
+    }
+    & + .floating-btn-area {
+      .btn-bottom-top {
+        display: none;
+      }
+      &.show {
+        .btn-bottom-top {
+          display: block;
+        }
+      }
+    }
+  }
+}

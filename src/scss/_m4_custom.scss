@@ -1,0 +1,1088 @@
+$gsfresh : #37d32e;
+$dalisalda : #00ce7c;
+$daybreak : #3c49a9;
+$simplycook : #21589b;
+$marketfor : #111;
+
+$fsBase : 12px;
+$fsSubTitle : 16px;
+$colorBase : #222;
+$colorGray : #606060;
+$colorPointGray : #656565;
+$colorLightGray : #999;
+$colorBorder : #e0e0e0;
+$colorBgGray : #f6f6f6;
+$colorPoint : #019A92;
+$colorPoint2 :#40D0C8;
+$colorPoint3 :#9fe7e3;
+$colorRed : #cd042a;
+$mall-color : #111;
+$mfToneDown: #31728a; // 마켓포 color 추가 '톤다운' - 지환
+$mfdiscount: #fe6e54; // 마켓포 color 추가 '톤다운' - 지환
+$widthFull : 100%;
+$imgRootPath : '../assets/images';
+$imgIcoPath : '../assets/images/icon';
+$imgPath : '../assets/images/img';
+
+.marketfor {
+    .inp-radio-bg {
+        input:checked::after {
+            background:$mall-color;
+            border-color:$mall-color;
+        }
+    }
+
+    /* tab */
+    .wrap-tab {
+        .tablist {
+            &.type02 {
+                button {
+                    font-size:$fsBase;
+                    &.active {
+                        color:$mall-color;
+                        &:after {
+                            background:$mall-color;
+                        }
+                    }
+                }
+                &.small {
+                    li {height:45px !important;}
+                    button {
+                        box-sizing:border-box;
+                        height:45px !important;
+                        line-height:45px !important;
+                        font-size:$fsBase;
+                    }
+                }
+            }
+        }
+    }
+    /* popup */
+    .header-popup {
+        border-bottom:0;
+    }
+    .btn-map-search {
+        background-color:#111;
+    }
+    .list-accordion .btn-accordion[aria-expanded='true']:after {
+        margin-top:-3px;
+    }
+
+    .inner-loading .loading-spinner {
+        div {
+          &.step01 {
+            background: $mall-color;
+            @include spinner-animation (2.3s, marketforloadingLeft, $mall-color, infinite, left, top);
+          }
+          &.step02 {
+            background: $mall-color;
+            @include spinner-animation (2.3s, marketforloadingRight, $mall-color, infinite, right, bottom);
+          }
+        }
+    }
+}
+
+.marketfor {
+
+    .full-popup-body {
+        &.signup.signup-main {
+            background: none;
+        }
+        &.login {
+            .sub-btn-area {
+                button.btn-md {
+                    width: 100%
+                }
+            }
+        }
+    }
+
+    .box-point .title.gspoint:before {
+        background:url('#{$imgIcoPath}/ico_point_small_marketfor.png') center center no-repeat;
+        background-size:cover;
+        vertical-align: -4px;
+    }
+
+    .list-point li .num {color:$mall-color;}
+}
+
+.public_domain {
+    .wrap-select select:disabled {
+        background-color:$colorBgGray;
+    }
+
+    .list-info.inner {
+        margin:0;
+        li:first-child {padding-top:0;}
+        & + .radio_list {
+            margin-top:10px;
+        }
+    }
+    .bottom-btn-area .btn-md {
+        font-size:$fsBase + 2px;
+        height:auto;
+        &.full {
+            width:100%;
+            margin:0 !important;
+        }
+        &.disabled {
+            background-color: #c8c8c8;
+            cursor: default;
+        }
+    }
+    .card-list {
+        li {
+            margin-top:0;
+        }
+    }
+    .bg-line-brush {
+        > em.point {
+            position:absolute;
+            right:-9px;top:-2px;
+            &.red {
+                color:$colorRed !important;
+            }
+        }
+        .required {
+            color:$colorPoint2  !important;
+        }
+    }
+
+    .order-payment {
+        .small {
+            color: $colorBase;
+        }
+        &.total-payment {
+            padding-top: 0;
+            .payment-list {
+                padding-top: 0;
+            }
+        }
+        .sub-title {
+            &.with-description {
+                height: auto;
+                min-height: 50px;
+                padding: 15px 20px;
+            }
+            .delivery-txt {
+                margin: 10px 0 0;
+                padding: 0;
+                background: none;
+                text-align: left;
+            }
+        }
+    }
+
+    .btn-lg {padding:0;}
+    .box-point .wrap-txt-point .txt-point + .txt-point {padding-top:0;}
+}
+
+
+// 고객센터
+.marketfor {
+    &.wrap-customerservice {
+        .section-area {
+            border-top-width:10px;
+            h2 {
+                &.line {
+                    border-bottom: 1px solid $colorBorder;
+                    margin:0 -20px;
+                    padding-left:20px;
+                }
+            }
+            .customer-tab {
+                .tabcontents {
+                    margin:0 -20px;
+                }
+            }
+        }
+        .counselingtalk {
+            strong {
+            &:before {
+                width: 30px;
+                height: 30px;
+                background-image: url('#{$imgIcoPath}/ico_counselingtalk_marketfor.png');
+                background-size:cover;
+            }
+            &.ico {
+                color: $colorGray;
+                &.talk {
+                padding-left: 26px;
+                &:before {
+                    top:50%;
+                    width:19px;
+                    height:19px;
+                    margin-top:-9px;
+                    margin-right:4px;
+                    background-size:19px;
+                    background-image: url('#{$imgIcoPath}/ico_counselingtalk_marketfor.png');
+                }
+                }
+                &.write {
+                padding-left: 19px;
+                &:before {
+                    top:50%;
+                    margin-top:-7px;
+                    margin-right:4px;
+                    width:12px;
+                    height:14px;
+                    background-size:12px 14px;
+                    background-image: url('#{$imgIcoPath}/ico_write_marketfor.png');
+                }
+                }
+            }
+            }
+        }
+        .list-link-service {
+            width: $widthFull;
+            margin-bottom:20px;
+            li {
+                &:last-child {padding-bottom:0;}
+            }
+        }
+
+        .list-link {
+          &.tab {
+            li {
+              display: flex;
+              align-items: center;
+              width: 25%;
+              height: auto;
+            }
+          }
+          li {
+            align-items:center;
+            height: auto;
+            border-right: 1px solid $colorBorder;
+            border-bottom: 1px solid $colorBorder;
+            &:first-child {
+              margin-left: -1px;
+              width: calc(25% + 1px);
+              .ico.active:before {
+                left:0;
+              }
+            }
+            .link-cs {
+              padding: 8px 0;
+              &.active {
+                color: $marketfor;
+                &:before {
+                  @include content;
+                  position:absolute;
+                  left:-1px;top:-1px;right:-1px;bottom:-1px;
+                  border:solid 1px $marketfor;
+                }
+              }
+            }
+          }
+        }
+        .icon-write {
+            border:solid 1px $marketfor;
+            color:$marketfor;
+          span {
+            display: inline-block;
+            padding-left: 17px;
+            background: url('#{$imgIcoPath}/ico_write_marketfor.png') no-repeat left center;
+            background-size: 12px auto;
+            font-size:13px;
+          }
+        }
+        .servicecenter {
+          .call .link-tel {
+            padding-bottom:0;line-height:1.1em;
+          }
+          .info span {
+              display:inline-block;
+              position:relative;
+              padding-left:7px;
+              &:before {
+                  content:'';
+                  display:block;
+                  position:absolute;
+                  left:0;
+                  top:50%;
+                  width:1px;
+                  height:12px;
+                  background-color:#c8c8c8;
+                  margin-top:-6px;
+              }
+          }
+        }
+        .wrap-user .inner {
+            padding: 17px 15px;
+        }
+    }
+    .list-accordion .btn-accordion .wrap-title.new .ico-new {
+        color:#31728a;
+    }
+
+    .wrap-nolist.chatbot > div {
+        width:100%;
+    }
+
+    .wrap-search-layer.selectproduct {
+        .inner-search-layer {
+            .popup-body .info-top {
+                background:#e6e6e6;
+                border:0;
+            }
+            .popup-header.noborder {border:0;}
+            .title_flex__area {
+                border-bottom:dashed 1px $colorBorder;
+                padding: 13px 20px 10px 20px;
+            }
+            .cart-product-list {
+                margin-top:0;border-top:0;
+                & > li {
+                    padding:15px 0;
+                }
+            }
+            .wrap-selectproduct + .wrap-selectproduct {border-top:solid 15px #f6f6f6;}
+        }
+    }
+}
+
+// 고객센터 공통화
+.type-new {
+    &.wrap-customerservice {
+        .inner {
+            &.top-select {
+                padding-bottom:20px;
+                border-bottom:10px solid $colorBgGray;
+                .wrap-select select {
+                    background-image:url('#{$imgIcoPath}/ico_select_bl.png');
+                }
+            }
+        }
+        .section-area {
+            border-top-width:10px;
+            &.type-a {
+                padding-top:15px;
+            }
+            &.type-b {
+                border-top:0;
+                padding:0 20px;
+            }
+            &.service-v2 {
+                padding: 0 20px 7px;
+                border-bottom:10px solid $colorBgGray;
+            }
+            h2 {
+                padding-bottom:12px;
+                &.line {
+                    border-bottom: 1px solid $colorBorder;
+                    margin:0 -20px;
+                    padding-left:20px;
+                }
+            }
+            .customer-tab {
+                .tabcontents {
+                    margin:0 -20px;
+                }
+            }
+            .btn-more-detail-view {
+                padding:20px 0;
+            }
+        }
+        .counselingtalk {
+            strong {
+                &:before {
+                    width: 30px;
+                    height: 30px;
+                    background-image: url('#{$imgIcoPath}/ico_counselingtalk_marketfor.png');
+                    background-size:cover;
+                }
+                &.ico {
+                    color: $colorGray;
+                    &.talk {
+                        padding-left: 26px;
+                        &:before {
+                            top:50%;
+                            width:19px;
+                            height:19px;
+                            margin-top:-9px;
+                            margin-right:4px;
+                            background-size:19px;
+                            background-image: url('#{$imgIcoPath}/ico_counselingtalk_marketfor.png');
+                        }
+                    }
+                    &.write {
+                        padding-left: 19px;
+                        &:before {
+                            top:50%;
+                            margin-top:-7px;
+                            margin-right:4px;
+                            width:12px;
+                            height:14px;
+                            background-size:12px 14px;
+                            background-image: url('#{$imgIcoPath}/ico_write_marketfor.png');
+                        }
+                    }
+                }
+            }
+        }
+        .list-link-service {
+            width: $widthFull;
+            margin-bottom:20px;
+            li {
+                &:last-child {padding-bottom:0;}
+                a:after {
+                    @include afterArrow(inline-block, 5px, 5px, $colorLightGray, 45deg);
+                }
+            }
+        }
+
+        .list-link {
+            &.tab {
+                li {
+                    display: flex;
+                    align-items: center;
+                    width: 25%;
+                    height: auto;
+                }
+            }
+            li {
+                align-items:center;
+                height: auto;
+                border-right: 1px solid $colorBorder;
+                border-bottom: 1px solid $colorBorder;
+                &:first-child {
+                    margin-left: -1px;
+                    width: calc(25% + 1px);
+                    .ico.active:before {
+                        left:0;
+                    }
+                }
+                .link-cs {
+                    padding: 8px 0;
+                    &.active {
+                        color: $marketfor;
+                        &:before {
+                            @include content;
+                            position:absolute;
+                            left:-1px;top:-1px;right:-1px;bottom:-1px;
+                            border:solid 1px $marketfor;
+                        }
+                    }
+                }
+            }
+        }
+        .icon-write {
+            border:solid 1px $marketfor;
+            color:$marketfor;
+            span {
+                display: inline-block;
+                padding-left: 17px;
+                background: url('#{$imgIcoPath}/ico_write_marketfor.png') no-repeat left center;
+                background-size: 12px auto;
+                font-size:13px;
+            }
+        }
+        .servicecenter {
+            .call .link-tel {
+                padding-bottom:0;line-height:1.1em;
+            }
+            .info span {
+                display:inline-block;
+                position:relative;
+                padding-left:7px;
+                &:before {
+                    content:'';
+                    display:block;
+                    position:absolute;
+                    left:0;
+                    top:50%;
+                    width:1px;
+                    height:12px;
+                    background-color:#c8c8c8;
+                    margin-top:-6px;
+                }
+            }
+        }
+        .inquiry-wrap .area-select {
+            .wrap-select select {
+                background-image:url('#{$imgIcoPath}/ico_select_bl.png');
+            }
+            .btn-orderproduct:after {
+                border-color:$colorLightGray;
+            }
+        }
+        .customerservice-wrap {
+            .link-more {
+                position:relative;
+                top:4px;
+            }
+        }
+    }
+    .list-accordion .btn-accordion .wrap-title {
+        &.new .ico-new {
+            color:#31728a;
+        }
+        .title {
+            strong {
+                font-weight:700;
+            }
+        }
+    }
+
+    .tab-list {
+        .tablist {
+            &.t-base {
+                border-top:1px solid $colorBorder;
+                li {
+                    font-size:$fsBase + 1px;
+                }
+            }
+            button {
+                &.active {
+                    color:$marketfor;
+                    border-color: $marketfor;
+                    strong {
+                        color:$marketfor;
+                    }
+                }
+                strong {
+                    font-weight:500;
+                    color:$colorLightGray;
+                }
+            }
+        }
+        &.type-a {
+            margin:0 -20px;
+            .tablist {
+                & > li {
+                    font-size: $fsBase + 1px;
+                    button {
+                        strong {
+                            font-weight:400;
+                        }
+                        &.active strong{
+                            font-weight:700;
+                        }
+                    }
+                }
+            }
+        }
+        &.inner {
+            border-bottom:solid 1px $marketfor;
+            margin:0 -20px;
+            .tablist {
+                justify-content: flex-start;
+                & > li {
+                    font-size:$fsBase + 2px;
+                    width:auto;
+                    border:0;
+                    button {
+                        line-height:40px;
+                        height:40px;
+                        strong {
+                            font-weight:400;
+                        }
+                        &.active {
+                            border:0;
+                            strong {
+                                font-weight:700;
+                            }
+                        }
+                    }
+                    & + li {margin-left:24px;}
+                }
+            }
+        }
+    }
+
+    .wrap-nolist.chatbot > div {
+        width:100%;
+    }
+
+    // .wrap-search-layer.selectproduct {
+    //     height:auto;
+    //     .inner-search-layer {
+    //         .popup-body .info-top {
+    //             background:#e6e6e6;
+    //             border:0;
+    //         }
+    //         .popup-body .wrap-tab {
+    //             height:auto;
+    //             .scroll-area {
+    //                 height:50vh;
+    //             }
+    //             .tablist.type-a {
+    //                 margin:20px;
+    //                 li {
+    //                     height:40px;
+    //                     flex:1;
+    //                     button {
+    //                         line-height:38px;
+    //                         font-size:$fsBase - 1px;
+    //                         width:100%;
+    //                         text-align:center;
+    //                         border:1px solid #e0e0e0;
+    //                         color:$colorGray;
+    //                         &.active {
+    //                             border-color:#111;
+    //                             color:#111;
+    //                             position:relative;
+    //                             z-index:2;
+    //                         }
+    //                     }
+    //                     ~ li button {
+    //                         width:calc(100% + 1px);
+    //                         margin-left:-1px;
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //         .popup-header.noborder {border:0;}
+    //         .title_flex__area {
+    //             border-bottom:dashed 1px $colorBorder;
+    //             padding: 13px 20px 10px 20px;
+    //         }
+    //         .cart-product-list {
+    //             margin-top:0;border-top:0;
+    //             & > li {
+    //                 padding:15px 0;
+    //             }
+    //         }
+    //         .wrap-selectproduct + .wrap-selectproduct {border-top:solid 15px #f6f6f6;}
+    //     }
+    // }
+    .btn-reset:after {
+        top:5px;
+        width:13px;
+        height:13px;
+        background-size:13px 13px;
+    }
+    .wrap-nolist.chatbot {
+        padding-top:20px;
+        .counselingtalk.link {
+            margin-bottom:0;
+        }
+    }
+    .link-more:after {
+        @include afterArrow(inline-block, 5px, 5px, $colorGray, 45deg);
+    }
+    .wrap-nolist.searchList {
+        margin-top:-40px;
+        min-height:80px;
+        p {
+            color:$colorLightGray;
+        }
+    }
+    .wrap-footer {
+        border-top:none !important;
+    }
+}
+
+.wrap-checkbox-text {
+    &.cashtype {
+        .wrap-checkbox{
+            label {
+                &:before {
+                  content: '신청';
+                }
+                &:after {
+                  content: '미신청';
+                }
+            }
+        }
+
+    }
+}
+
+.wrap-loading {
+    z-index:10000;
+}
+
+// 회원가입, 로그인 통합
+.integrate-member__wrap {
+    background:#fff;
+    header.subheader {
+        padding-top:0;
+    }
+    .header-popup {
+        border-bottom:0;
+    }
+    // main {
+    //     padding-top:60px !important;
+    //     background:#fff !important;
+    // }
+    &.wrap-signup {
+        &.signup-main {
+            background: none;
+            main {
+                height:100%;
+                padding-top: 60px;
+            }
+            .welcome-desc {
+                padding: 40px 20px 0;
+                text-align: left;
+                font-size: 20px;
+                line-height: 30px;
+                color: $marketfor;
+                letter-spacing: -.75px;
+                background: none;
+                word-break: keep-all;
+            }
+            .sns-desc {color:$marketfor;}
+            .area-text + .btn-area {padding:0;}
+            .welcome-friend-desc {
+                position:relative;
+                left:auto;
+                top:auto;
+                text-align:left;
+                padding: 40px 0 0 74px;
+                color:$marketfor;
+                font-size:$fsSubTitle + 1px;
+                &:before {
+                    @include content;
+                    position:absolute;
+                    left: 20px;
+                    top:50%;
+                    width:44px;
+                    height:41px;
+                    background:url('#{$imgIcoPath}/ico_join_invited_marketfor.png') left center no-repeat;
+                    background-size:cover;
+                }
+                strong {
+                    color:#019a92;font-weight:700;
+                }
+                .btn-signup-friend {
+                    color:$marketfor;
+                    border-color:$marketfor;
+                    border-bottom: none;
+                    &:before {
+                        border-color:$marketfor;
+                        top:4px;
+                    }
+                }
+            }
+            .area-benefit {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 20px 0 25px;
+                li {
+                    position: relative;
+                    flex: 1;
+                    padding-top: 74px;
+                    text-align: center;
+                    font-size: 13px;
+                    color: #606060;
+                    &:nth-child(1) {
+                        &:before {
+                            background-image:url('#{$imgIcoPath}/ico-benefit-a2.png');
+                        }
+                    }
+                    &:nth-child(2) {
+                        &:before {
+                            background-image:url('#{$imgIcoPath}/ico-benefit-b2.png');
+                        }
+                    }
+                    &:nth-child(3) {
+                        &:before {
+                            background-image:url('#{$imgIcoPath}/ico-benefit-c2.png');
+                        }
+                    }
+                    &:nth-child(4) {
+                        &:before {
+                            background-image:url('#{$imgIcoPath}/ico-benefit-d2.png');
+                        }
+                    }
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        width: 68px;
+                        height: 68px;
+                        margin-left: -34px;
+                        border-radius: 18px;
+                        background-color: #f0f0f0;
+                        background-repeat: no-repeat;
+                        background-size: 28px;
+                        background-position: center;
+                    }
+                    &+li {
+                        margin-left: 9px;
+                    }
+                }
+            }
+            .sns-desc {
+                position: relative;
+                span {
+                    width: auto;
+                    min-width: 105px;
+                    padding: 0 10px;
+                }
+                .line {
+                    width: calc(50% - 10px);
+                    height: 1px;
+                    background: #f0f0f0;
+                }
+            }
+        }
+        .wrap-agreement {
+            .wrap-input-chk {
+                .inp-chk {
+                    height: auto;
+                    line-height: 20px;
+                    &.small input[type='checkbox'] {
+                        top: 9px;
+                        background-color: transparent;
+                        margin: -6px 0 0;
+                    }
+                }
+            }
+        }
+        .warp-input-txt {
+            padding-top:29px;
+            border-top:solid 1px $colorBorder;
+            .inp-txt {
+                padding-top:0;
+                line-height:38px;
+            }
+            .wrap-inp-btn {
+                .btn-input {
+                    &.active {
+                        background:$marketfor;
+                    }
+                }
+            }
+        }
+    }
+    &.wrap-login {
+        &.login-main {
+            background: none;
+            color:$marketfor;
+            &.app-login {
+                &.marketfor {
+                    background: #111 url('#{$imgPath}/bg_applogin_marketfor.png') no-repeat center;
+                    background-size: cover;
+                    background-attachment: fixed;
+                }
+            }
+            main {
+                padding-top: 60px;
+                height:100%;
+            }
+        }
+        .section-area.login {
+            padding-bottom:0;
+            &.easy {
+                margin-top: 30px;
+                .sub-title {
+                    margin:0;
+                    padding:0 0 20px 0;
+                    color:$marketfor;
+                    .text {
+                        background: #fff;
+                    }
+                    &:before {
+                        left: 0;
+                        background: #f0f0f0;
+                    }
+                    &:after {
+                        right: 0;
+                        background: #f0f0f0;
+                    }
+                }
+                .btn-link {
+                    margin:30px 0;
+                    color:$marketfor;
+                    span:after {
+                        border-color:$marketfor;
+                    }
+                }
+            }
+            .warp-input-txt {
+                padding: 20px 0 0;
+            }
+            .link-benefit {
+                display: block;
+                padding: 30px 0 0;
+                font-size: 12px;
+                color: #222;
+                line-height: 12px;
+                &:after {
+                    content: '';
+                    display: inline-block;
+                    width: 5px;
+                    height: 5px;
+                    border: solid #111;
+                    border-width: 1px 1px 0 0;
+                    -webkit-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                    vertical-align: 1px;
+                    margin-left: 4px;
+                }
+                .text-benefit {
+                    font-weight: 500;
+                    color: #019a92;
+                }
+            }
+            .list-info {
+                margin: 0 0 50px 0;
+                background:$colorBgGray;
+                padding:20px;
+                color:$marketfor;
+                li {
+                    text-shadow:none;
+                    &:first-child {padding-top:0;}
+                }
+            }
+        }
+        .wrap-input-chk {
+            padding-bottom:25px;
+        }
+        .wrap-tab .tablist.type02 li button.active {
+            color:$marketfor;border-color:$marketfor;
+            &:after {background:$marketfor;}
+        }
+        .login-wrap {
+            &.find {
+                .btn-border {
+                    color: $marketfor;
+                    border-color: $marketfor;
+                }
+                &:last-child {
+                    padding-bottom: 30px;
+                }
+            }
+        }
+        .list-link-member {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            li {
+                position: relative;
+                &+li {
+                    padding-left: 10px;
+                    margin-left: 10px;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        width: 1px;
+                        height: 10px;
+                        margin-top: -5px;
+                        background-color: #999;
+                    }
+                }
+                a {
+                    font-size: 12px;
+                    color: #222;
+                }
+            }
+        }
+        .wrap-user-form {
+            .txt-title {
+                .txt-point {
+                    color:#019A92;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    .wrap-agreement {
+        .wrap-input-chk {
+            .inp-chk.small input[type='checkbox']:before {
+                border-width: 2px 2px  0 0;
+            }
+        }
+    }
+    .list-link-sns {
+        margin:0;
+        display:flex;
+        justify-content:space-around;
+        padding-top:20px;
+        li {
+            text-align:center;
+            .ico {
+                background-color:#f0f0f0;
+                display:block;margin:0 auto;
+                position:relative;
+                &>span {
+                    font-size: 0;
+                }
+                &.kakaotalk {
+                    background-size: 18px auto;
+                }
+                &.apple {
+                    background-size: 16px auto;
+                }
+            }
+            &.link-certify {
+                .tag {
+                    top:-35px;
+                    background:#fff;
+                    color: $colorPoint;
+                    border-color: $colorPoint2;
+                    &:before {
+                        border-color: $colorPoint2 transparent;
+                    }
+                    &:after {
+                        bottom:-8px;
+                        background-image: url('#{$imgPath}/img_login_bubble_marketfor.png');
+                    }
+                }
+                .btn-close {
+                    background-image: url('#{$imgIcoPath}/ico_tooltip_close_marketfor.png');
+                }
+            }
+        }
+    }
+    // 로그인 gsfresh 자동로그인 검은색으로 나와서 주석
+    // .inp-chk {
+    //     input[type='checkbox'] {
+    //         &:before {
+    //             border-color:#fff;
+    //         }
+    //         &:after {
+    //             border-color: $colorBorder;
+    //             background: $colorBorder;
+    //         }
+    //         &:checked::before {
+    //             border-color:#fff;
+    //         }
+    //         &:checked::after {
+    //             border-color: $marketfor;
+    //             background: $marketfor;
+    //         }
+    //     }
+    //     &.type02 {
+    //         input[type='checkbox'] {
+    //             margin-top:-9px;
+    //             &:before {
+    //                 border-color:$colorBorder;
+    //             }
+    //             &:after {
+    //                 border-color: transparent;
+    //                 background: transparent;
+    //             }
+    //             &:checked::before {
+    //                 border-color:$marketfor;
+    //             }
+    //         }
+    //     }
+    // }
+    .inp-radio input[type='radio']:checked:before {
+        background:$marketfor;
+    }
+    .wrap-user-form .txt-title .txt-name,
+    .wrap-user-form .txt-title .txt-point {
+        color:#019A92;
+    }
+    .wrap-inp-btn .btn-input.active.lightgreen {background:$marketfor;}
+    .sub-btn-area {
+        button.btn-md {width:100%}
+    }
+
+}
+
+.wrap-full-popup.active {
+    z-index:1000;
+}
+
+@import "_m4_layout";
+@import "_m4_search";

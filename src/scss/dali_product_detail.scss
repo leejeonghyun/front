@@ -1,0 +1,284 @@
+/* 상품상세 */
+.product-top-info {
+  position:relative;
+  text-align: left;
+  .wrap-dali-info {
+    position: relative;
+    .title-desc {
+      font-size:13px;
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      word-wrap: break-word;
+      color:#666;
+      padding-top:10px;
+      & + .title {
+        padding-top: 3px;
+      }
+    }
+    .title {
+      display:block;
+      em {
+        font-size:17px;
+        font-weight: 700;
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        word-wrap: break-word;
+      }
+    }
+    .dali-list-price {
+      padding-top:10px;
+      font-size:11px;
+      .title-price {
+        display:inline-block;
+        color:#666;
+        &:after {
+          content:'';
+          display:inline-block;
+          width:1px;
+          height:9px;
+          margin:0 5px;
+          background-color:#ccc;
+        }
+      }
+      .price {
+        color:#666;
+      }
+    }
+    .dali-sale-price .dali-list-price02 {
+      display:inline-block;
+      font-size: 13px;
+      color: #a2a2a2;
+      padding:0 5px;
+      margin-top: 7px;
+      vertical-align: top;
+      .price {
+        font-size: 13px;
+      }
+    }
+    .icon-question:before {
+        margin-top:5px;
+    }
+    .dali-sale-price {
+      font-size:18px;
+      vertical-align: top;
+      padding-top:0;
+      .title-dali-sale-price {
+        margin-top:7px;
+        display:inline-block;
+        padding: 3px 8px 2px 5px;
+        background-color:#00cf7d;
+        color:#144733;
+        font-size:10px;
+        font-weight:700;
+        border-radius:0 15px 15px 0;
+        vertical-align:top;
+        & + strong.price {
+          margin-left:5px;
+        }
+      }
+      .price {
+        font-size:23px;
+        display:inline-block;
+        margin:0 1px 0 0;
+        font-weight:700;
+      }
+    }
+    .btn.free-90days {
+      padding: 15px 0 12px;
+    }
+  }
+}
+  /* 쿠폰 */ 
+.wrap-dali-info {
+  .btn-sns {
+    position: absolute;
+    z-index: 10;
+    top: -25px;
+    right: -9px;
+    background-size: 21px 23px;
+  }
+}
+.btn {
+  &.dali-icon-question {
+    border:1px solid #ccc;
+    border-radius:3px;
+    padding:1px 5px;
+    font-size:11px;
+    vertical-align: top;
+    margin-top:7px;
+    margin-left:3px;
+  }
+  &.free-90days {
+    display:block;
+    font-size:12px;
+    padding: 18px 0 12px;
+    background:url('#{$imgIcoPath}/btn_banner_arrow03.png') top 50% right 0 no-repeat;
+    background-size:5px 9px;
+    text-align: left;
+    span {
+      font-weight: 500;
+      color: #00cf7d;
+    }
+  }
+} 
+/* 상품배너 */
+.product-banner04 {
+  border-top: 1px solid $colorBgGray;
+  background-color:#fff;
+  & + .certification-component {
+    border-top:10px solid #f5f5f5;
+  }
+  a {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px;
+    min-height: 90px;
+  }
+  figure {
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    img {
+      height: 100%;
+    }
+  }
+  .banner-txt {
+    padding-left:20px;
+    width: calc(100% - 50px);
+    strong {
+      font-size:16px;
+      font-weight: 700;
+      &:after {
+        content:'';
+        display:inline-block;
+        margin-left:9px;
+        margin-top:1px;
+        width:7px;
+        height: 12px;
+        background:url('#{$imgIcoPath}/btn_banner_arrow_gray.png') 0 0 no-repeat;
+        background-size:100%;
+      }
+    }
+    span {
+      display:block;
+      font-size:13px;
+      color:#666;
+      padding-top:5px;
+    }
+  }
+}
+.certification-component {
+  padding:15px 0;
+  background-color:#fff;
+  text-align: center;
+  .swiper-container {
+    padding-top:15px;
+    padding-bottom:0;
+  }
+  figure {
+    width: 69px;
+    height: 69px;
+    margin: auto;
+    padding: 5px;
+    img {
+      height: 100%;
+    }
+  }
+  .swiper-slide {
+    width:auto;
+    margin-right:8%;
+    &:first-child {
+      margin-left:20px;
+    }
+    &:last-child {
+      margin-right:20px;
+    }
+  }
+  .active {
+    .title {
+      display:inline-block;
+      position:relative;
+      color:$gsfresh;
+      &:after {
+        content: '';
+        display: inline-block;
+        width: 100%;
+        height: 1px;
+        background-color: $gsfresh;
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+      }
+    }
+  }
+  strong {
+    padding-top:5px;
+    display:block;
+    font-size:12px;
+  }
+}
+.product-banner05 {
+  border-top:10px solid #f5f5f5;
+  a {
+    display:block;
+  }
+}
+.product-recommend {
+  padding-top:30px;
+  padding-bottom:20px;
+  padding-left:20px;
+  border-top:10px solid #f5f5f5;
+  background-color:#fff;
+  &:last-of-type {
+    margin-bottom:10px;
+  }
+  .title-txt03 {
+    display:block;
+    padding-left:0;
+    padding-bottom:15px;
+  }
+  & + .product-recommend {
+    border-top:0;
+    padding-top:10px;
+  }
+  .wrap-product-slide {
+    padding:0;
+  }
+}
+.option-banner {
+  padding: 0 20px;
+  .btn.free-90days {
+    padding-bottom:14px;
+    border-bottom:1px dotted $colorBorder;
+    background-position:top 55% right 0;
+  }
+}
+.popup-certification.description-layer .layer-inner .inner-box {
+  padding-bottom:15px;
+  &:after {
+    content:'';
+    display:block;
+    clear: both;
+  }
+}
+.btn-detail-view {
+  display:block;
+  width:auto;
+  float:right;
+  margin-right:20px;
+  padding:5px 10px;
+  font-size:12px;
+  background-color:#00cf7d;
+  color:#000;
+  text-align: center;
+}

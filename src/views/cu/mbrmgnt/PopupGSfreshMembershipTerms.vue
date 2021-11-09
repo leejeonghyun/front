@@ -1,0 +1,62 @@
+<!--
+Design: views/cu/SC-FO-CU-GF-MP-014
+Pg id:
+Uri: /cu/pop_gsfres_shipterms
+-->
+<template>
+  <div id="popupGSfreshMembershipTerms" class="wrap-full-popup" role="dialog" aria-modal="true">
+  <!-- <div id="popupGSfreshMembershipTerms" class="wrap-full-popup" role="dialog" aria-modal="true" :class="{active : this.modalActive.popupGSfreshMembershipTerms}"> -->
+    <div class="header-popup">
+      <h5><strong>GS 리테일 멤버십(GS&POINT) 회원약관</strong></h5>
+    </div>
+    <div class="full-popup-body scroll-area">
+      <div class="inner-full-popup">
+        <div class="wrap-terms-type" v-html="cntrCt">
+        </div>
+      </div>
+    </div>
+    <button class="btn-layer-close" @click="popupAction">
+      <span class="hidden">닫기</span>
+    </button>
+  </div>
+</template>
+
+<script>
+import LayerPopupMixin from '@/mixins/LayerPopupMixin';
+import ApiUtils from '@/common/ApiUtils';
+export default {
+  name: "PopupGSfreshMembershipTerms",
+  data() {
+    return {
+      cntrCt: "",
+      resultCode: "",
+      resultMessage: ""
+    };
+  },
+  components: {
+  },
+  mixins: [LayerPopupMixin],
+  methods: {
+    popupAction() {
+      this.$emit('popupEvent', 'popupGSfreshMembershipTerms');
+      this.modalActiveEvent('popupGSfreshMembershipTerms');
+    },
+  },
+  mounted: function() {
+      const data = {code: "R011"};
+      ApiUtils.get('/fo/cu/mbrmgnt/member-join-agreement', data)
+      .then((res) => {
+        if (res.data.data.resultCode != "00000") {
+            console.error(res.data.data.resultMessage);
+            this.$dialog.alert(res.data.data.resultMessage);
+            return;
+        } else {
+          this.cntrCt = res.data.data.cntrCt;
+        }
+      });
+      this.modalActiveEvent('popupGSfreshMembershipTerms');
+  },
+  updated() {
+  }
+};
+</script>

@@ -1,0 +1,515 @@
+.txt-impt {
+  font-weight:700;
+}
+/* 상단 GNB */
+.wrap .wrap-dali-gnb {
+  position:fixed;
+  width:100%;
+  left:0;
+  top:55px;
+  z-index:98;
+  height: 35px;
+  overflow:hidden;
+  &.sticky {
+    &:before {
+      content:'';
+      display:block;
+      position: absolute;
+      top:-2px;
+      left:0;
+      height: 4px;
+      width:100%;
+      background-color:#fff;
+    }
+    .wrap-dali-gnb-slide {
+      padding-left:10px;
+      padding-right:10px;
+      padding-bottom:10px;
+      background: #fff;
+      .swiper-slide a:not(.active) {
+        color: #000;
+      }
+      .swiper-slide .active {
+        color:#144733;
+        &:after {
+          background: #144733;
+        }
+      }
+    }
+  }
+  .swiper-container {
+    padding-bottom:0;
+  }
+  .wrap-dali-gnb-slide {
+    width:100%;
+    padding-left:10px;
+    padding-right:10px;
+    padding-bottom:10px;
+    @include scroll-wrapper;
+    // padding-left:20px;
+  }
+  .swiper-slide {
+    display: inline-block;
+    width: auto; 
+    a {
+      display: block;
+      position: relative;
+      z-index: 1;
+      padding: 8px 0;
+      margin:0 12px; 
+      font-size: 14px;
+      color: #144733;
+    }
+  }
+  // .swiper-slide-active a, .swiper-slide-duplicate-active a {
+  .swiper-slide .active {
+    color: #000;
+    font-weight: 700;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+      width: 100%;
+      height: 2px;
+      background: #124734;
+    }
+  }
+}
+/* 슬라이드 공통 */
+.wrap-product-slide,
+.swiper-container {
+  .dali-item-link {
+    width: 100%;
+  }
+  .dali-swiper-scrollbar {
+    position: absolute;
+    left:auto;
+    right:0;
+    bottom:0;
+    width:100%; 
+    height: 2px;
+    background: #e1e1e1;
+    .swiper-scrollbar-drag {
+      background: #000;
+      border-radius: 0;
+    }
+  }
+}
+/* section area */
+.dali-section-area {
+  position:relative;
+  margin-top:8px;
+  padding:20px 0 20px 20px;
+  &.type02 {
+    margin-top:0;
+    padding-top:0;
+    &:before {
+      display:none;
+    }
+  }
+  &:before {
+    content:'';
+    display:block;
+    clear: both;
+    position: absolute;
+    width:100%;
+    height:8px;
+    background-color:#f2f2f2;
+    top:-8px;
+    left:0;
+    border-top:1px solid $colorBorder;
+  }
+  h2 {
+    font-size:17px;
+    padding-bottom:10px;
+    a {
+      float:right;
+      margin-right:20px;
+      font-size:13px;
+      color:#7f7f7f;
+      border-bottom:1px solid #7f7f7f;
+    }
+  }
+}
+/* 검색 창 */
+.wrap-searchbar-dali {
+  position: relative;
+  padding-right: 0px;
+  height: 39px;
+  border-bottom: 1px solid $colorBase;
+}
+.wrap-searchbar-dali .wrap-input.search {
+  input[type=text] {
+    &::placeholder {
+      font-weight: 400;
+      color: $colorLightGray;
+    }
+    width: 100%;
+    height: 33px;
+    font-size: 14px;
+  }
+  .btn-reset {
+    position: absolute;
+    right:33px;
+    top:2px;
+    width: 24px;
+    height: 24px;
+    &:after {
+      @include content;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: 15px;
+      height: 15px;
+      background: url('#{$imgIcoPath}/btn_reset.png') no-repeat center;
+      background-size: 15px 15px;
+    }
+  }
+}
+.btn-searchbar-search-dali {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  width: 32px;
+  height: 32px;
+  background: url('#{$imgIcoPath}/ico_search_bl.png') no-repeat center;
+  background-size: 18px 18px;
+}
+/* text style */
+.imp-txt {
+  font-weight: 700;
+}
+.light-txt {
+  display:inline-block;
+  font-weight: 200;
+}
+.bar-txt {
+  position: relative;
+  padding-left:10px;
+  padding-bottom:5px;
+  font-size:12px;
+  color:#444;
+  span {
+    display: inline-block;
+    font-size:12px;
+    font-weight: 300; 
+    color:#444;
+  }
+  &:before {
+    content:'- ';
+    display:inline-block;
+    position: absolute;
+    left:0;
+    top:0;
+  }
+}
+.dot-txt {
+  text-align: left;
+  font-size:13px;
+  position:relative;
+  padding-left:15px;
+  padding-bottom:7px;
+  font-weight: 400;
+  line-height: 1.7;
+  &:before {
+    content:'';
+    display:block;
+    position: absolute;
+    width:2px;
+    height:2px;
+    background-color:#000;
+    border-radius: 50%;
+    left:6px;
+    top:9px;
+  }
+  &.type02 {
+    font-size:12px;
+    font-weight: 200;
+    color:rgba(0,0,0,0.8);
+    padding-bottom:0;
+    &:before {
+      width:3px;
+      height:3px;
+      background-color:rgba(0,0,0,0.5);
+    }
+  }
+  &.type03 {
+    font-size:12px;
+    padding-bottom:0;
+    &:before {
+      width:3px;
+      height:3px;
+      background-color:#ccc;
+    }
+  }
+  &.type04 {
+    font-size:11px;
+    padding-bottom:2px;
+    color:$colorGray;
+    padding-left:10px;
+    line-height: 1.4;
+    & + .type04 {
+      margin-top:3px;
+    }
+    & + .sub-title-txt01 {
+      padding-top: 20px;
+    }
+    &:before {
+      top:7px;
+      left:3px;
+      width:2px;
+      height:2px;
+      background-color:$colorGray;
+    }
+    a {
+      color:$colorGray;
+    }
+  }
+  &.type05 {
+    font-size:12px;
+    padding-bottom:0;
+    &:before {
+      background-color:#777;
+    }
+  }
+}
+.title-txt01 {
+  padding-top:25px;
+  text-align:center;
+  font-size:16px;
+}
+.title-txt02 {
+  font-size:14px;
+  font-weight: 700;
+}
+.title-txt03 {
+  padding-left:20px;
+  font-size:15px;
+  font-weight: 700;
+  text-align: left;
+  span {
+    color:$gsfresh;
+  }
+}
+.title-txt04 {
+  display:block;
+  font-size:17px;
+  color:$colorBase;
+}
+.title-txt05 {
+  font-size:17px;
+  color:#000;
+  font-weight: 700;
+}
+.title-txt06 {
+  font-size:17px;
+  color:#000;
+  font-weight: 500;
+}
+.title-txt07 {
+  font-size:18px;
+  color:#000;
+  font-weight: 700;
+}
+.sub-title-txt01 {
+  display:block;
+  font-size:12px;
+  color:$colorBase;
+  padding:15px 0 9px;
+}
+.count-timer {
+  font-weight:700;
+  font-size:30px;
+  color:#00cf7d;
+}
+
+/* 달리살다, gs fresh 컬러 변경 및 레이아웃 수정*/
+.dalisalda {
+  // 상품 상세
+  .wrap-review {
+    .wrap-star {
+      .star-score {
+        background-image: url('#{$imgIcoPath}/ico_star_sm_full_dalisalda.png');
+      }
+    }
+  }
+  .qna-list dl .qna-a {
+    background-image:  url('#{$imgIcoPath}/ico_qna_a_dalisalda.png');
+  }
+  .detail-view + .detail-view {
+    border-top:10px solid #f5f5f5;
+  }
+  .detail-info-view {
+    .detail-view + .detail-view {
+      border-top:0;
+    }
+  }
+  .detail-view-toggle-contents {
+    border-bottom:1px solid $colorBorder;
+  }
+  .review-recommend {
+    .btn-like {
+      &.active {
+        color: #00cf7d;
+        border-color: #00cf7d;
+        background-image: url('#{$imgIcoPath}/ico_like_on_dalisalda.png');
+      }
+    }
+  }
+  .btn-bg.lightgreen {
+    color:#144733;
+  }
+  .wrap-product-list, .wrap-product-image {
+    // border-top:10px solid #f5f5f5;
+    &:after {
+      display:none;
+    }
+  }
+  .wrap-product-image {
+    // 20.07.30 달리살다 상품 전용 검색결과 GSfresh와 스타일 동일하게 적용
+    @at-root .dalisalda:not(.wrap-search) {
+      .wrap-product-image {
+        padding: 0 15px;
+        &:before {
+          display:none;
+        }
+        .product-item {
+          border-right:0;
+          border-bottom:0;
+        }
+        .product {
+          width:100%;
+          box-sizing:border-box;
+          padding: 22px 5px 14px;
+        }
+      }
+    }
+  }
+  .detail-view-tab {
+    border-top:10px solid #f5f5f5;
+  }
+  .wrap-coupon.type-summary:after {
+    background-image:url('#{$imgPath}/bg_coupon.png');
+  }
+  // select ui
+  .only-select-box .wrap-select-popup {
+    width: 100%;
+    border-right: 0;
+  }
+  .wrap-dali-filter { 
+    .btn-filter-layer {
+      background-color:#f6f6f6;
+    }
+  }
+  .wrap-dali-filter .wrap-select-popup {
+    position: relative;
+    width:65%;
+    height:100%;
+    float:left;
+    padding:11px 0 11px 20px;
+    border-right:1px solid #e1e1e1;
+    .wrap-modal-select {
+      width: 100%;
+    }
+    & + .wrap-select-popup {
+      margin-left: 5px;
+    }
+    .btn-select {
+      position: relative;
+      padding-right: 20px;
+      padding-left:0;
+      width:100%;
+      height: 100%;
+      text-align: left;
+      font-size: 13px;
+      border: none;
+      background-color:transparent;
+      &:after {
+        display: block;
+        content: '';
+        clear: both;
+        position: absolute;
+        transform:initial;
+        right: 15px;
+        top: 50%;
+        margin-top:-3px;
+        width: 0; 
+        height: 0; 
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 5px solid #666;
+      }
+    }
+    .wrap-modal-select { 
+      position: absolute;
+      top: 36px;
+      left: 0;
+      z-index: 30;
+      background: #fff;
+      border: 1px solid #c8c8c8;
+      &:after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      }
+    }  
+  }
+  // 햄버거 메뉴
+  .wrap-user {
+    .wrap-user-btn li a .num {
+      background-color:#00cf7d;
+    }
+    .delivery-desc .time, .guide-login em {
+      color:#00cf7d;
+    }
+  }
+  // 스크롤바
+  .swiper-container .swiper-scrollbar {
+    height: 2px;
+    background: #e1e1e1;
+    .swiper-scrollbar-drag {
+      background-color:#000;
+    }
+  }
+  // 필터
+  .filter-item-score .product-review .purchase-score.star3:before,
+  .filter-item-score .product-review .purchase-score.star4:before {
+    background: #fff url('#{$imgIcoPath}/ico_review_star_full_dalisalda.png') no-repeat;
+    background-size: 82px auto;
+  }
+}
+.gsfresh {
+  // 스크롤바
+  .swiper-container .dali-swiper-scrollbar {
+    height: 3px;
+    background: $colorBgGray;
+    .swiper-scrollbar-drag {
+      background-color:#c4c4c4;
+    }
+  }
+  // 상품상세
+  .product-banner05, .product-recommend {
+    border-top: 5px solid $colorBorder;
+  }
+  .btn-detail-view {
+    color:#fff;
+  }
+}
+.dalisalda .wrap-tabbar .wrap-btn-tabbar .wrap-channel.open .btn-tabbar.channel ~ .channel {
+  background-color: transparent;
+}
+
+
+@import "dali_main";
+@import "dali_gnb";
+@import "dali_product";
+@import "dali_brand";
+@import "dali_product_detail";
+@import "dali_tip";

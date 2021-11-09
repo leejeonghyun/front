@@ -1,0 +1,860 @@
+/* 마이페이지 알림함 */
+.wrap-mypage-notice {
+  padding: 20px 20px 0;
+}
+.flex-type {
+  display: flex;
+  &.wrap-btn {
+    padding: 20px 20px 0;
+  }
+  li,
+  button {
+    position: relative;
+    width: $widthFull;
+    &.active {
+      z-index: 1;
+    }
+    & + li,
+    & + button {
+      margin-left: -1px;  
+    }
+  }
+  li.active button,
+  button.active {
+    color: $gsfresh;
+    border-color: $gsfresh;
+  }
+  button {
+    padding: 12px 0 10px;
+    font-size: $fsBase;
+    color: $colorLightGray;
+  }
+}
+/* inner tab content */
+.wrap-inner-tab-contents {
+  position: relative;
+  margin: 20px 0 0;
+}
+.wrap-inner-tab-contents .wrap-title {
+  text-align: center;
+  h3 {
+    font-size: $fsBase + 2px;
+    font-weight: 500;
+  }
+  .btn-setting {
+    top: -4px;
+    right: 0;
+  }
+}
+.mypage-notice-list {
+  figure {
+    width: 55px;
+    height: 55px;
+    img {
+      border-radius: 50%;
+    }
+  }
+  dt {
+    padding: 16px 0 10px;
+    font-size: $fsBase;
+    font-weight: 500;
+    text-align: center;
+  }
+  dd {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    padding: 12px 0 12px 24px;
+    border: 1px solid $colorBorder;
+    border-radius: 10px;
+    &:before {
+      @include content;
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      z-index: 2;
+      width: 10px;
+      height: calc(100% + 2px);
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+    &.on:before {
+      background: $gsfresh;
+    }
+    &.off:before {
+      background: $colorBorder;
+    }
+    & + dd {
+      margin-top: 10px;
+    }
+    .notice-list-info {
+      padding-left: 14px;
+      width: calc(100% - 70px);
+      &.item {
+        .item-info {
+          padding-top: 3px;
+        }
+        .discount {
+          float: initial;
+          margin-right: 10px;
+          font-weight: 500;
+          font-size: $fsBase + 5px;
+          color: $gsfresh;
+          span {
+            font-size: $fsBase;
+          }
+        }
+        .list-price {
+          margin-right: 5px;
+          font-size: $fsBase;
+          color: #a2a2a2;
+        }
+        .sale-price {
+          float: initial;
+          font-weight: 700;
+          font-size: $fsBase + 5px;
+          span {
+            font-size: $fsBase;
+          }
+        }
+        & > p {
+          @include ellipsis;
+        }
+        & > span {
+          margin-top: 8px;
+          span {
+            padding-left: 3px;
+          }
+        }
+      }
+      & > strong {
+        display: block;
+        padding-bottom: 11px;
+        font-size: $fsBase + 1px;
+      }
+      p {
+        font-size: $fsBase;
+        color: $colorGray;
+        em {
+          color: $colorBase;
+          padding-right: 3px;
+        }
+      }
+      & > span {
+        display: block;
+        position: relative;
+        margin-top: 12px;
+        font-size: $fsBase - 1px;
+        color: $colorLightGray;
+        letter-spacing: -0.5px;
+      }
+    }
+    .btn-notice-cancel {
+      position: absolute;
+      right: 8px;
+      bottom: 8px;
+      padding: 4px 6px 2px;
+      // height: 23px;
+      font-size: $fsBase - 1px;
+      color: $colorGray;
+      border-radius: 2px;
+    }
+  }
+}
+.notice-info-txt {
+  padding: 18px 0 14px;
+  font-size: $fsBase - 1px;
+  text-align: center;
+  color: $colorGray;
+  &.list {
+    text-align: left;
+    li {
+      &:before {
+        display: inline;
+        content: '·';
+        padding-right: 3px;
+      }
+      position: relative;
+      padding-left: 6px;
+      text-indent: -6px;
+    }
+    li + li {
+      padding-top: 12px;
+    }
+  }
+}
+/* 자주 구매 상품 */
+.wrap-personalize-filter {
+  &:before {
+    @include content;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    width: $widthFull;
+    height: 1px;
+    background: $colorBorder;
+  }
+  position: relative;
+  .personalize-filter-check {
+    padding: 0 15px;
+    .filter-input-check {
+      justify-content: left;
+    }
+    .wrap-select-popup.list {
+      .btn-select {
+        min-width: 80px;
+        padding-left: 0;
+      }
+    }
+  }
+  .position-right {
+    position: absolute;
+    right: 15px;
+  }
+}
+.wrap-personalize-list {
+  border-top: 10px solid $colorBgGray;
+  .product.image.product-05 {
+    padding-top: 28px;
+  }
+}
+.wrap-personalize-item-option {
+  padding: 13px 15px;
+  border-bottom: 1px solid $colorBorder;
+}
+.item-option-top {
+  @include flexSpaceBetween;
+  p:not(.wrap-chk) {
+    span {
+      & + span {
+        padding-left: 18px;
+        &:before {
+          @include content;
+          position: absolute;
+          left: 8px;
+          top: 3px;
+          width: 1px;
+          height: 9px;
+          background: $colorLightGray;
+        }
+      }
+      display: inline-block;
+      position: relative;
+      font-size: $fsBase;
+      color: $colorLightGray;
+    }
+  }
+}
+.wrap-chk {
+    span:not(.inp-chk) {
+      padding-left: 30px;
+      font-weight: 500;
+      font-size: $fsBase + 2px;
+      color: $colorBase;
+    }
+    .inp-chk input[type='checkbox'] {
+      left: 0;
+      margin: -11px 0 0;
+    }
+    .inp-chk input[type='checkbox'] + label {
+      padding-left: 0;
+    }
+  }
+.item-option-list {
+  padding-top: 7px;
+  font-size: $fsBase - 1px;
+  color: $colorLightGray;
+}
+/* 자주 구매 페이지 하단 마케팅 배너 */
+.wrap-banner {
+  border-bottom: 5px solid $colorBorder;
+}
+/* 추천상품 */
+.wrap-mypage-item-list {
+  &:last-child {
+    border-bottom: 5px solid $colorBorder;
+  }
+  h3 {
+    padding: 15px 20px;
+    font-weight: 500;
+    font-size: $fsBase + 2px;
+    border-top: 10px solid $colorBgGray;
+  }
+  h4 {
+    padding: 15px 20px 0;
+    border-top: 5px solid $colorBgGray;
+    font-weight: 500;
+    font-size: $fsBase + 1px;
+  }
+}
+/* 최근 본 상품 */
+.recent-item-list {
+  border-top: 10px solid $colorBgGray;
+  &:last-of-type {
+    .wrap-product-list {
+      border-bottom: 5px solid $colorBorder;
+    }
+  }
+  .wrap-chk {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    height: 50px;
+    border-bottom: 1px solid $colorBorder;
+  }
+}
+/* 마이페이지 : 결제수단관리 */
+.payinfo-list {
+  font-size: $fsBase;
+  li {
+    position: relative;
+    border-bottom: 1px solid $colorBorder;
+    button:not(.btn-delete) {
+      padding-left: 20px;
+      width: $widthFull;
+      height: 56px;
+      text-align: left;
+      &:after {
+        @include content;
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        width: 10px;
+        height: 10px;
+        border: solid $colorBase;
+        border-width: 1px 1px 0 0;
+        transform: rotate(45deg) translateY(-50%);
+      }
+    }
+  }
+}
+.inner-payinfo-list {
+  @include flexSpaceBetween;
+  align-items: center;
+  padding: 0 20px;
+  width: $widthFull;
+  height: 71px;
+  figure {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+  }
+  dl {
+    padding-left: 45px;
+  }
+  .btn-delete {
+    width: 40px;
+    height: 20px;
+    font-size: $fsBase - 1px;
+    color: $colorGray;
+    border: 1px solid $colorBorder;
+    border-radius: 2px;
+  }
+}
+/*  결제수단 추가 버튼 */
+.wrap-addcard {
+  padding: 20px;
+  .btn-addcard {
+    width: $widthFull;
+    height: 40px;
+    font-size: $fsBase;
+    text-align: center;
+    border: 1px solid $colorBorder;
+    border-radius: 2px;
+    span {
+      position: relative;
+      padding-right: 9px;
+      background: url('#{$imgIcoPath}/ico_plus_sm_black.png') right center no-repeat;
+      background-size: 6px 7px;
+    }
+  }
+}
+/* 신규 카드 등록 */
+.wrap-card-register {
+  position: relative;
+  dl {
+    padding: 36px 20px 0;
+    dt {
+      padding-bottom: 5px;
+      font-size: $fsBase;
+    }
+    dd {
+      & + dt {
+        padding-top: 28px;
+      }
+      input[type='number'],
+      input[type='password'] {
+        height: 23px;
+      }
+      .inputcell1 {
+        width: calc((100% - 24px) / 4);
+        text-align: center;
+        border-bottom: 1px solid $colorBorder;
+        &.secret {
+          background: url('#{$imgIcoPath}/ico_secret.png') no-repeat center center;
+          background-size: 9px auto;
+        }
+        & + .inputcell1 {
+          margin-left: 8px;
+        }
+      }
+      .inputcell2 {
+        width: calc((100% - 8px) / 2);
+        text-align: center;
+        border-bottom: 1px solid $colorBorder;
+      }
+    }
+  }
+}
+.card-dsc {
+  padding: 30px 20px 0;
+  font-size: $fsBase - 1px;
+  color: $colorGray;
+  &:before {
+    display: inline;
+    content: '·';
+    padding-right: 3px;
+  }
+}
+/* 카드 스캔 버튼 */
+.btn-card-scan {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  padding: 10px 0;
+  font-size: $fsBase;
+  span {
+    display: inline-block;
+    padding-left: 15px;
+    background: url('#{$imgIcoPath}/ico_card_scan.png') left center no-repeat;
+    background-size: 10px auto;
+  }
+}
+.inner-fullpopup-pay {
+  height: 100%;
+  & > div {
+    height: 100%;
+  }
+  .header-popup {
+    position: relative;
+    .btn-prev {
+      display: block;
+      position: absolute;
+      top: 0;
+      width: 40px;
+      height: 56px;
+      background: url('#{$imgIcoPath}/ico_btn_header_prev.png') no-repeat 15px 22px;
+      background-size: 19px 16px;
+    }
+  }
+}
+/* 보안키패드 */
+.security-keyboard {
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  padding: 15px 20px;
+  width: $widthFull;
+  background: $colorBorder;
+  .find-password {
+    position: absolute;
+    top: -35px;
+    left: 0;
+    width: $widthFull;
+    font-size: $fsBase + 1px;
+    text-align: center;
+    color: $colorGray;
+  }
+  strong {
+    display: block;
+    padding-bottom: 15px;
+    font-size: $fsBase + 1px;
+    color: $colorGray;
+  }
+  .keyboard {
+    span {
+      &:nth-child(4n+1) {
+        margin-left: 0;
+      }
+      display: block;
+      float: left;
+      margin-left: 6px;
+      margin-bottom: 6px;
+      width: calc((100% - 18px) / 4);
+      height: 44px;
+      button {
+        display: block;
+        width: $widthFull;
+        height: 100%;
+        font-size: $fsBase + 5px;
+        text-align: center;
+        background: #fff;
+        border-radius: 2px;
+        &.btn-keyboard-backspace {
+          background: #fff url('#{$imgIcoPath}/ico_keyboard_backspace.png') no-repeat center center;
+          background-size: 32px 18px;
+        }
+      }
+    }
+  }
+  .wrap-keyboard-btn {
+    @include flexSpaceBetween;
+    width: $widthFull;
+  }
+}
+/* 카드 스캔 */
+.wrap-card-scan {
+  .card-scan-dimmed {
+    position: absolute;
+    width: $widthFull;
+    height: 100%;
+    background: rgba(#000, .5);
+  }
+  .inner-card-scan {
+    position: absolute;
+    top: 147px;
+    left: 0;
+    z-index: 1;
+    width: $widthFull;
+    height: 100%;
+    .card-info {
+      display: block;
+      position: absolute;
+      top: -55px;
+      padding: 0 20px;
+      width: $widthFull;
+      font-size: $fsBase;
+      color: #fff;
+      dt, dd {
+        display: block;
+        padding-bottom: 6px;
+      }
+      dt {
+        float: left;
+        width: 77px;
+      }
+      dd {
+        width: calc(100% - 77px);
+        font-weight: 500;
+        font-size: $fsBase + 2px;
+      }
+    }
+  }
+  .camera-image {
+    position: relative;
+    margin: 0 auto;
+    width: calc(100% - 40px);
+    height: 206px;
+  }
+  .camera-box {
+    position: relative;
+    margin: 0 auto;
+    width: calc(100% - 40px);
+    height: 206px;
+    background: #fff;
+    border: 1px solid $colorBorder;
+    &:before,
+    &:after,
+    span:before,
+    span:after {
+      @include content;
+      position: absolute;
+      z-index: 2;
+      width: 24px;
+      height: 24px;
+      border: 4px solid $gsfresh;
+    }
+    &:before {
+      top: -1px;
+      right: -1px;
+      border-bottom: 0;
+      border-left: 0;
+    }
+    &:after {
+      bottom: -1px;
+      left: -1px;
+      border-top: 0;
+      border-right: 0;
+    }
+    span {
+      display: block;
+      &:before {
+        top: -1px;
+        left: -1px;
+        border-bottom: 0;
+        border-right: 0;
+      }
+      &:after {
+        bottom: -1px;
+        right: -1px;
+        border-top: 0;
+        border-left: 0;
+      }
+    }
+  }
+  .scan-bottom {
+    padding-top: 23px;
+    .card-dec {
+      height: 50px;
+      font-size: $fsBase;
+      text-align: center;
+      color: #fff;
+    }
+    .wrap-card-scan-btn {
+      @include flexSpaceBetween;
+      padding: 0 20px;
+      width: $widthFull;
+    }
+  }
+}
+/* 결제비밀번호 입력 */
+.wrap-card-password {
+  padding-top: 49px;
+  font-size: $fsBase + 3px;
+  text-align: center;
+  .card-password-active {
+    padding-top: 20px;
+    text-align: center;
+    span {
+      & + span {
+        margin-left: 10px;
+      }
+      display: inline-block;
+      width: 13px;
+      height: 13px;
+      background: #c0c0c0;
+      border-radius: 13px;
+    }
+  }
+}
+.btn-keyboard-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 20px;
+  height: 20px;
+  background: url('#{$imgIcoPath}/ico_keyboard_close.png') no-repeat center center;
+  background-size: 13px 13px;
+}
+/* 달리드림 정기결제 카드관리 */
+// regularStep1
+.regular-payment-card {
+  padding: 30px 60px;
+  text-align: center;
+  .btn-regist-card {
+    display: block;
+    margin: 0 auto;
+    padding: 90px 0 50px;
+    width: 240px;
+    font-size: $fsBase;
+    color: $colorGray;
+    background: #f5f5f5 url('#{$imgIcoPath}/ico_add.png') no-repeat center 48px;
+    background-size: 32px;
+    border-radius: 20px;
+  }
+  > .btn {
+    margin-top: 10px;
+    padding: 5px 0 5px 18px;
+    font-size: $fsBase - 1px;
+    color: $colorBase;
+  }
+  .btn-load-card {
+    background: url('#{$imgIcoPath}/ico-load.png') no-repeat left center;
+    background-size: 11px;
+  }
+  .btn-scan-card {
+    margin-left: 30px;
+    background: url('#{$imgIcoPath}/ico-scan.png') no-repeat left center;
+    background-size: 11px;
+  }
+}
+.wrap-regular-payment {
+  padding: 20px;
+  &.border {
+    border-top: 10px solid $colorBgGray;
+  }
+}
+.list-agree {
+  margin-top:-20px;
+  > li {
+    padding: 20px 0;
+    border-top: 1px solid $colorBorder;
+    &:first-child {
+      border: none;
+    }
+    .btn-accordion {
+      position: relative;
+      width: $widthFull;
+      text-align: left;
+      &:after {
+        content: '';
+        position: absolute;
+        right: 20px;
+        top: 9px;
+        width: 7px;
+        height: 7px;
+        border: 1px solid $colorBase;
+        border-top: 0;
+        border-left: 0;
+        transform: rotate(45deg);
+      }
+    }
+    .btn-accordion[aria-expanded='true'] {
+      &:after {
+        transform: rotate(-135deg);
+      }
+    }
+  }
+  .list-agree-detail {
+    padding: 10px 0 25px 20px;
+    border-bottom: 1px solid $colorBase;
+    li {
+      line-height: 25px;
+    }
+  }
+}
+.regular-payment-result {
+  dl {
+    overflow: hidden;
+    dt {
+      float: left;
+      font-weight: 500;
+      font-size: $fsBase + 2px;
+      color: $colorBase;
+    }
+    dd {
+      float: right;
+      font-weight: 700;
+      font-size: $fsBase + 7px;
+      color: $colorBase;
+      span {
+        font-weight: 400;
+        font-size: $fsBase + 1px;
+        color: $colorBase;
+      }
+    }
+  }
+}
+.btn-reqular-payment-submit {
+  display: block;
+  margin-top: 20px;
+  padding: 18px 0;
+  width: $widthFull;
+  font-weight: 500;
+  font-size: $fsBase + 5px;
+}
+.regist-card-info {
+  margin-top: 15px;
+  li {
+    position: relative;
+    margin-top: 7px;
+    padding-left: 7px;
+    font-size: $fsBase - 1px;
+    color: $colorGray;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 7px;
+      left: 0;
+      width: 2px;
+      height: 2px;
+      background-color: $colorGray;
+      border-radius: 2px;
+    }
+  }
+}
+
+// 결제수단관리 카드불러오기 팝업
+.simple-payment-list {
+  input[type='radio'] {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  .simple-payment-card {
+    overflow: hidden;
+    padding-left: 3px;
+    .icon {
+      display: block;
+      overflow: hidden;
+      float: left;
+      width: 30px;
+      height: 30px;
+    }
+    .card-info {
+      float: left;
+      padding-left: 10px;
+      span {
+        display: block;
+        font-size: $fsBase;
+        color: $colorBase;
+      }
+    }
+  }
+}
+
+// regularStep2
+.regular-payment-card {
+  .card {
+    display: block;
+    margin: 0 auto;
+    padding: 20px;
+    width: 240px;
+    height: 155px;
+    text-align: left;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    .card-company {
+      font-weight: 500;
+      font-size: $fsBase + 2px;
+      color: $colorBase;
+      .icon {
+        display: inline-block;
+        overflow: hidden;
+        margin-right: 5px;
+        width: 24px;
+        height: 24px;
+        vertical-align: middle;
+      }
+    }
+    .card-number {
+      margin-top: 7px;
+      font-size: $fsBase + 1px;
+      color: $colorGray;
+    }
+    .card-name {
+      margin-top: 3px;
+      font-size: $fsBase + 1px;
+      color: $colorGray;
+    }
+    .wrap-select {
+      margin-top: 10px;
+      background-color: #fff;
+    }
+  }
+}
+.wrap-regular-payment {
+  > .payment-next {
+    margin-top:-20px;
+  }
+}
+.payment-next {
+  padding: 20px 0;
+  border-top: 1px solid $colorBorder;
+  border-bottom: 1px solid $colorBorder;
+  dl {
+    overflow: hidden;
+    font-size: $fsBase;
+    color: $colorBase;
+    dt {
+      float: left;
+    }
+    dd {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
