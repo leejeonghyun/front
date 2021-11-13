@@ -1,6 +1,6 @@
 <!--
 Design: SC-FO-CU-GF-MS-018
-Uri: /cu/test_login
+Uri: /cu/test_login --
 -->
 <template>
   <div class="wrap-login">
